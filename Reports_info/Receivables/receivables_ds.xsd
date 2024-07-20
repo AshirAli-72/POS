@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="receivables_ds" targetNamespace="http://tempuri.org/receivables_ds.xsd" xmlns:mstns="http://tempuri.org/receivables_ds.xsd" xmlns="http://tempuri.org/receivables_ds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pos_dbConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pos_dbConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Reports_info.Properties.Settings.GlobalReference.Default.pos_dbConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="epos_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="epos_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Reports_info.Properties.Settings.GlobalReference.Default.epos_dbConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="receivables_ds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="receivables_ds" msprop:Generator_UserDSName="receivables_ds">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Customers_Sales" msprop:Generator_TableClassName="Customers_SalesDataTable" msprop:Generator_TableVarName="tableCustomers_Sales" msprop:Generator_TablePropName="Customers_Sales" msprop:Generator_RowDeletingName="Customers_SalesRowDeleting" msprop:Generator_RowChangingName="Customers_SalesRowChanging" msprop:Generator_RowEvHandlerName="Customers_SalesRowChangeEventHandler" msprop:Generator_RowDeletedName="Customers_SalesRowDeleted" msprop:Generator_UserTableName="Customers_Sales" msprop:Generator_RowChangedName="Customers_SalesRowChanged" msprop:Generator_RowEvArgName="Customers_SalesRowChangeEvent" msprop:Generator_RowClassName="Customers_SalesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lastCredits" msprop:Generator_ColumnVarNameInTable="columnlastCredits" msprop:Generator_ColumnPropNameInRow="lastCredits" msprop:Generator_ColumnPropNameInTable="lastCreditsColumn" msprop:Generator_UserColumnName="lastCredits" type="xs:double" />
+              <xs:element name="due_days" msprop:Generator_ColumnVarNameInTable="columndue_days" msprop:Generator_ColumnPropNameInRow="due_days" msprop:Generator_ColumnPropNameInTable="due_daysColumn" msprop:Generator_UserColumnName="due_days" type="xs:dateTime" />
+              <xs:element name="full_name" msprop:Generator_ColumnVarNameInTable="columnfull_name" msprop:Generator_ColumnPropNameInRow="full_name" msprop:Generator_ColumnPropNameInTable="full_nameColumn" msprop:Generator_UserColumnName="full_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cus_code" msprop:Generator_ColumnVarNameInTable="columncus_code" msprop:Generator_ColumnPropNameInRow="cus_code" msprop:Generator_ColumnPropNameInTable="cus_codeColumn" msprop:Generator_UserColumnName="cus_code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cnic" msprop:Generator_ColumnVarNameInTable="columncnic" msprop:Generator_ColumnPropNameInRow="cnic" msprop:Generator_ColumnPropNameInTable="cnicColumn" msprop:Generator_UserColumnName="cnic">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mobile_no" msprop:Generator_ColumnVarNameInTable="columnmobile_no" msprop:Generator_ColumnPropNameInRow="mobile_no" msprop:Generator_ColumnPropNameInTable="mobile_noColumn" msprop:Generator_UserColumnName="mobile_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telephone_no" msprop:Generator_ColumnVarNameInTable="columntelephone_no" msprop:Generator_ColumnPropNameInRow="telephone_no" msprop:Generator_ColumnPropNameInTable="telephone_noColumn" msprop:Generator_UserColumnName="telephone_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="address1" msprop:Generator_ColumnVarNameInTable="columnaddress1" msprop:Generator_ColumnPropNameInRow="address1" msprop:Generator_ColumnPropNameInTable="address1Column" msprop:Generator_UserColumnName="address1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="email" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_UserColumnName="email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bank_name" msprop:Generator_ColumnVarNameInTable="columnbank_name" msprop:Generator_ColumnPropNameInRow="bank_name" msprop:Generator_ColumnPropNameInTable="bank_nameColumn" msprop:Generator_UserColumnName="bank_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="account_no" msprop:Generator_ColumnVarNameInTable="columnaccount_no" msprop:Generator_ColumnPropNameInRow="account_no" msprop:Generator_ColumnPropNameInTable="account_noColumn" msprop:Generator_UserColumnName="account_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="credit_limit" msprop:Generator_ColumnVarNameInTable="columncredit_limit" msprop:Generator_ColumnPropNameInRow="credit_limit" msprop:Generator_ColumnPropNameInTable="credit_limitColumn" msprop:Generator_UserColumnName="credit_limit" type="xs:double" />
+              <xs:element name="opening_balance" msprop:Generator_ColumnVarNameInTable="columnopening_balance" msprop:Generator_ColumnPropNameInRow="opening_balance" msprop:Generator_ColumnPropNameInTable="opening_balanceColumn" msprop:Generator_UserColumnName="opening_balance" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

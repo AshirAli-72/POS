@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.ReportViewer.2015.Runtime</id>
+    <version>12.0.2.2402</version>
+    <title>MICROSOFT® REPORT VIEWER 2015 RUNTIME</title>
+    <authors>SvenMuller</authors>
+    <owners>SvenMuller</owners>
+    <projectUrl>https://www.microsoft.com/en-us/download/details.aspx?id=45496</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Microsoft Report Viewer 2015 Runtime redistributable package DLL's for Web based applications.</description>
+    <summary>Microsoft Report Viewer 2015 Runtime redistributable package DLL's for Web based applications.</summary>
+    <releaseNotes>This nuget package contains dlls needed for web applications. More info can be found at https://www.microsoft.com/en-us/download/details.aspx?id=45496</releaseNotes>
+    <copyright>Microsoft</copyright>
+    <tags>Microsoft ReportViewer 2015 Visual Studio .net</tags>
+  </metadata>
+</package>

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="CounterSales_info" Label="CounterSales_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="Banks_Loan_info" Label="Banks_Loan_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Installments_info" Label="Installments_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Investors_info" Label="Investors_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Demand_info" Label="Demand_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="RefereningMaterial" Label="RefereningMaterial" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="Banking_info" Label="Banking_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Backup_and_Restore" Label="Backup_and_Restore" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Recoverier_info" Label="Recoverier_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="WebConfig" Label="WebConfig" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Supplier_Chain_info" Label="Supplier_Chain_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Stock_management" Label="Stock_management" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Settings_info" Label="Settings_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Reports_info" Label="Reports_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Purchase_info" Label="Purchase_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Products_info" Label="Products_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Message_box_info" Label="Message_box_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Login_info" Label="Login_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Expenses_info" Label="Expenses_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Dashboard" Label="Dashboard" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="LiveCharts 0.9.7" Label="LiveCharts 0.9.7" Category="Package" />
+    <Node Id="LiveCharts.WinForms 0.9.7.1" Label="LiveCharts.WinForms 0.9.7.1" Category="Package" />
+    <Node Id="LiveCharts.Wpf 0.9.7" Label="LiveCharts.Wpf 0.9.7" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Customers_info" Label="Customers_info" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+    <Node Id="Spices_pos" Label="Spices_pos" Category="Project" />
+    <Node Id="EntityFramework 6.4.4" Label="EntityFramework 6.4.4" Category="Package" />
+    <Node Id="Guna.UI2.WinForms 2.0.2" Label="Guna.UI2.WinForms 2.0.2" Category="Package" />
+    <Node Id="Microsoft.Reporting.WinForms.v11 1.0.0.0" Label="Microsoft.Reporting.WinForms.v11 1.0.0.0" Category="Package" />
+    <Node Id="PrinterUtility 1.2.0" Label="PrinterUtility 1.2.0" Category="Package" />
+    <Node Id="SoftwareProtector 1.0.5.1" Label="SoftwareProtector 1.0.5.1" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="CounterSales_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="CounterSales_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Banks_Loan_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Banks_Loan_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Banks_Loan_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Installments_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Installments_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Installments_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Investors_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Investors_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Investors_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Demand_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Demand_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Demand_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="RefereningMaterial" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="RefereningMaterial" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Banking_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Banking_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Banking_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Backup_and_Restore" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Backup_and_Restore" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Backup_and_Restore" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Recoverier_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Recoverier_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Recoverier_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Recoverier_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="WebConfig" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="WebConfig" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="WebConfig" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="WebConfig" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Supplier_Chain_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Supplier_Chain_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Supplier_Chain_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Supplier_Chain_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Stock_management" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Stock_management" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Stock_management" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Stock_management" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Settings_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Settings_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Settings_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Settings_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Reports_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Reports_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Reports_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Reports_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Purchase_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Purchase_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Purchase_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Purchase_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Products_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Products_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Products_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Products_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Message_box_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Message_box_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Message_box_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Message_box_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Login_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Login_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Login_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Login_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Expenses_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Expenses_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Expenses_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Expenses_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="LiveCharts.WinForms 0.9.7.1" Target="LiveCharts 0.9.7" Category="Package Dependency" />
+    <Link Source="LiveCharts.WinForms 0.9.7.1" Target="LiveCharts.Wpf 0.9.7" Category="Package Dependency" />
+    <Link Source="LiveCharts.Wpf 0.9.7" Target="LiveCharts 0.9.7" Category="Package Dependency" />
+    <Link Source="Dashboard" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Dashboard" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Dashboard" Target="LiveCharts.WinForms 0.9.7.1" Category="Installed Package" />
+    <Link Source="Dashboard" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Dashboard" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Customers_info" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Customers_info" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Customers_info" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Customers_info" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+    <Link Source="Spices_pos" Target="EntityFramework 6.4.4" Category="Installed Package" />
+    <Link Source="Spices_pos" Target="Guna.UI2.WinForms 2.0.2" Category="Installed Package" />
+    <Link Source="Spices_pos" Target="Microsoft.Reporting.WinForms.v11 1.0.0.0" Category="Installed Package" />
+    <Link Source="Spices_pos" Target="PrinterUtility 1.2.0" Category="Installed Package" />
+    <Link Source="Spices_pos" Target="SoftwareProtector 1.0.5.1" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

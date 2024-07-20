@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="customer_ledger_ds" targetNamespace="http://tempuri.org/customer_ledger_ds.xsd" xmlns:mstns="http://tempuri.org/customer_ledger_ds.xsd" xmlns="http://tempuri.org/customer_ledger_ds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="testing_databaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="testing_databaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Reports_info.Properties.Settings.GlobalReference.Default.testing_databaseConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pos_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pos_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Reports_info.Properties.Settings.GlobalReference.Default.pos_dbConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="customer_ledger_ds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="customer_ledger_ds" msprop:Generator_UserDSName="customer_ledger_ds">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Customer_Sales" msprop:Generator_TableClassName="Customer_SalesDataTable" msprop:Generator_TableVarName="tableCustomer_Sales" msprop:Generator_TablePropName="Customer_Sales" msprop:Generator_RowDeletingName="Customer_SalesRowDeleting" msprop:Generator_RowChangingName="Customer_SalesRowChanging" msprop:Generator_RowEvHandlerName="Customer_SalesRowChangeEventHandler" msprop:Generator_RowDeletedName="Customer_SalesRowDeleted" msprop:Generator_UserTableName="Customer_Sales" msprop:Generator_RowChangedName="Customer_SalesRowChanged" msprop:Generator_RowEvArgName="Customer_SalesRowChangeEvent" msprop:Generator_RowClassName="Customer_SalesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:string" minOccurs="0" />
+              <xs:element name="billNo" msprop:Generator_ColumnVarNameInTable="columnbillNo" msprop:Generator_ColumnPropNameInRow="billNo" msprop:Generator_ColumnPropNameInTable="billNoColumn" msprop:Generator_UserColumnName="billNo" type="xs:string" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:string" minOccurs="0" />
+              <xs:element name="net_amount" msprop:Generator_ColumnVarNameInTable="columnnet_amount" msprop:Generator_ColumnPropNameInRow="net_amount" msprop:Generator_ColumnPropNameInTable="net_amountColumn" msprop:Generator_UserColumnName="net_amount" type="xs:double" minOccurs="0" />
+              <xs:element name="debit" msprop:Generator_ColumnVarNameInTable="columndebit" msprop:Generator_ColumnPropNameInRow="debit" msprop:Generator_ColumnPropNameInTable="debitColumn" msprop:Generator_UserColumnName="debit" type="xs:double" minOccurs="0" />
+              <xs:element name="credits" msprop:Generator_ColumnVarNameInTable="columncredits" msprop:Generator_ColumnPropNameInRow="credits" msprop:Generator_ColumnPropNameInTable="creditsColumn" msprop:Generator_UserColumnName="credits" type="xs:double" minOccurs="0" />
+              <xs:element name="pCredits" msprop:Generator_ColumnVarNameInTable="columnpCredits" msprop:Generator_ColumnPropNameInRow="pCredits" msprop:Generator_ColumnPropNameInTable="pCreditsColumn" msprop:Generator_UserColumnName="pCredits" type="xs:double" minOccurs="0" />
+              <xs:element name="Balance" msprop:Generator_ColumnVarNameInTable="columnBalance" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_UserColumnName="Balance" type="xs:double" minOccurs="0" />
+              <xs:element name="full_name" msprop:Generator_ColumnVarNameInTable="columnfull_name" msprop:Generator_ColumnPropNameInRow="full_name" msprop:Generator_ColumnPropNameInTable="full_nameColumn" msprop:Generator_UserColumnName="full_name" type="xs:string" minOccurs="0" />
+              <xs:element name="cus_code" msprop:Generator_ColumnVarNameInTable="columncus_code" msprop:Generator_ColumnPropNameInRow="cus_code" msprop:Generator_ColumnPropNameInTable="cus_codeColumn" msprop:Generator_UserColumnName="cus_code" type="xs:string" minOccurs="0" />
+              <xs:element name="opening_balance" msprop:Generator_ColumnVarNameInTable="columnopening_balance" msprop:Generator_ColumnPropNameInRow="opening_balance" msprop:Generator_ColumnPropNameInTable="opening_balanceColumn" msprop:Generator_UserColumnName="opening_balance" type="xs:double" minOccurs="0" />
+              <xs:element name="lastCredits" msprop:Generator_ColumnVarNameInTable="columnlastCredits" msprop:Generator_ColumnPropNameInRow="lastCredits" msprop:Generator_ColumnPropNameInTable="lastCreditsColumn" msprop:Generator_UserColumnName="lastCredits" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

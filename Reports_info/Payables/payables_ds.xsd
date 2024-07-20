@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="payables_ds" targetNamespace="http://tempuri.org/payables_ds.xsd" xmlns:mstns="http://tempuri.org/payables_ds.xsd" xmlns="http://tempuri.org/payables_ds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pos_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pos_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Reports_info.Properties.Settings.GlobalReference.Default.pos_dbConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="epos_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="epos_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Reports_info.Properties.Settings.GlobalReference.Default.epos_dbConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="payables_ds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="payables_ds" msprop:Generator_UserDSName="payables_ds">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Supplier_payments" msprop:Generator_TableClassName="Supplier_paymentsDataTable" msprop:Generator_TableVarName="tableSupplier_payments" msprop:Generator_TablePropName="Supplier_payments" msprop:Generator_RowDeletingName="Supplier_paymentsRowDeleting" msprop:Generator_RowChangingName="Supplier_paymentsRowChanging" msprop:Generator_RowEvHandlerName="Supplier_paymentsRowChangeEventHandler" msprop:Generator_RowDeletedName="Supplier_paymentsRowDeleted" msprop:Generator_UserTableName="Supplier_payments" msprop:Generator_RowChangedName="Supplier_paymentsRowChanged" msprop:Generator_RowEvArgName="Supplier_paymentsRowChangeEvent" msprop:Generator_RowClassName="Supplier_paymentsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="previous_payables" msprop:Generator_ColumnVarNameInTable="columnprevious_payables" msprop:Generator_ColumnPropNameInRow="previous_payables" msprop:Generator_ColumnPropNameInTable="previous_payablesColumn" msprop:Generator_UserColumnName="previous_payables" type="xs:double" />
+              <xs:element name="due_days" msprop:Generator_ColumnVarNameInTable="columndue_days" msprop:Generator_ColumnPropNameInRow="due_days" msprop:Generator_ColumnPropNameInTable="due_daysColumn" msprop:Generator_UserColumnName="due_days" type="xs:dateTime" />
+              <xs:element name="full_name" msprop:Generator_ColumnVarNameInTable="columnfull_name" msprop:Generator_ColumnPropNameInRow="full_name" msprop:Generator_ColumnPropNameInTable="full_nameColumn" msprop:Generator_UserColumnName="full_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telephone_no" msprop:Generator_ColumnVarNameInTable="columntelephone_no" msprop:Generator_ColumnPropNameInRow="telephone_no" msprop:Generator_ColumnPropNameInTable="telephone_noColumn" msprop:Generator_UserColumnName="telephone_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mobile_no" msprop:Generator_ColumnVarNameInTable="columnmobile_no" msprop:Generator_ColumnPropNameInRow="mobile_no" msprop:Generator_ColumnPropNameInTable="mobile_noColumn" msprop:Generator_UserColumnName="mobile_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="contact_person" msprop:Generator_ColumnVarNameInTable="columncontact_person" msprop:Generator_ColumnPropNameInRow="contact_person" msprop:Generator_ColumnPropNameInTable="contact_personColumn" msprop:Generator_UserColumnName="contact_person">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bank_name" msprop:Generator_ColumnVarNameInTable="columnbank_name" msprop:Generator_ColumnPropNameInRow="bank_name" msprop:Generator_ColumnPropNameInTable="bank_nameColumn" msprop:Generator_UserColumnName="bank_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bank_account" msprop:Generator_ColumnVarNameInTable="columnbank_account" msprop:Generator_ColumnPropNameInRow="bank_account" msprop:Generator_ColumnPropNameInTable="bank_accountColumn" msprop:Generator_UserColumnName="bank_account">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="remarks" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_UserColumnName="remarks">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

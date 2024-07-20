@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="duration_ds" targetNamespace="http://tempuri.org/duration_ds.xsd" xmlns:mstns="http://tempuri.org/duration_ds.xsd" xmlns="http://tempuri.org/duration_ds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="duration_ds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="duration_ds" msprop:Generator_DataSetName="duration_ds">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:long" />
+              <xs:element name="date" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_UserColumnName="date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="start_time" msprop:Generator_ColumnPropNameInRow="start_time" msprop:Generator_ColumnPropNameInTable="start_timeColumn" msprop:Generator_ColumnVarNameInTable="columnstart_time" msprop:Generator_UserColumnName="start_time" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="end_time" msprop:Generator_ColumnPropNameInRow="end_time" msprop:Generator_ColumnPropNameInTable="end_timeColumn" msprop:Generator_ColumnVarNameInTable="columnend_time" msprop:Generator_UserColumnName="end_time" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="total_hours" msprop:Generator_ColumnPropNameInRow="total_hours" msprop:Generator_ColumnPropNameInTable="total_hoursColumn" msprop:Generator_ColumnVarNameInTable="columntotal_hours" msprop:Generator_UserColumnName="total_hours" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="full_name" msprop:Generator_ColumnPropNameInRow="full_name" msprop:Generator_ColumnPropNameInTable="full_nameColumn" msprop:Generator_ColumnVarNameInTable="columnfull_name" msprop:Generator_UserColumnName="full_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opening_cash" msprop:Generator_ColumnPropNameInRow="opening_cash" msprop:Generator_ColumnPropNameInTable="opening_cashColumn" msprop:Generator_ColumnVarNameInTable="columnopening_cash" msprop:Generator_UserColumnName="opening_cash" type="xs:double" minOccurs="0" />
+              <xs:element name="total_sales" msprop:Generator_ColumnPropNameInRow="total_sales" msprop:Generator_ColumnPropNameInTable="total_salesColumn" msprop:Generator_ColumnVarNameInTable="columntotal_sales" msprop:Generator_UserColumnName="total_sales" type="xs:double" minOccurs="0" />
+              <xs:element name="total_return_amount" msprop:Generator_ColumnPropNameInRow="total_return_amount" msprop:Generator_ColumnPropNameInTable="total_return_amountColumn" msprop:Generator_ColumnVarNameInTable="columntotal_return_amount" msprop:Generator_UserColumnName="total_return_amount" type="xs:double" minOccurs="0" />
+              <xs:element name="total_void_orders" msprop:Generator_ColumnPropNameInRow="total_void_orders" msprop:Generator_ColumnPropNameInTable="total_void_ordersColumn" msprop:Generator_ColumnVarNameInTable="columntotal_void_orders" msprop:Generator_UserColumnName="total_void_orders" type="xs:double" minOccurs="0" />
+              <xs:element name="expected_amount" msprop:Generator_ColumnPropNameInRow="expected_amount" msprop:Generator_ColumnPropNameInTable="expected_amountColumn" msprop:Generator_ColumnVarNameInTable="columnexpected_amount" msprop:Generator_UserColumnName="expected_amount" type="xs:double" minOccurs="0" />
+              <xs:element name="cash_amount_received" msprop:Generator_ColumnPropNameInRow="cash_amount_received" msprop:Generator_ColumnPropNameInTable="cash_amount_receivedColumn" msprop:Generator_ColumnVarNameInTable="columncash_amount_received" msprop:Generator_UserColumnName="cash_amount_received" type="xs:double" minOccurs="0" />
+              <xs:element name="balance" msprop:Generator_ColumnPropNameInRow="balance" msprop:Generator_ColumnPropNameInTable="balanceColumn" msprop:Generator_ColumnVarNameInTable="columnbalance" msprop:Generator_UserColumnName="balance" type="xs:double" minOccurs="0" />
+              <xs:element name="remarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_UserColumnName="remarks" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
