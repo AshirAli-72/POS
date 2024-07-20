@@ -6,18 +6,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_counter_sales));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_taskbar = new System.Windows.Forms.Panel();
             this.btn_barcode = new Guna.UI2.WinForms.Guna2Button();
             this.btnInstallmentPlan = new Guna.UI2.WinForms.Guna2Button();
@@ -94,19 +82,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.CartDataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Item_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.market_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.add = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chkScanByImei = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txt_qty = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
@@ -175,7 +150,6 @@
             this.flowLayoutPanel2.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CartDataGridView)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -1554,218 +1528,6 @@
             this.label10.Text = "Product Name";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // CartDataGridView
-            // 
-            this.CartDataGridView.AllowUserToAddRows = false;
-            this.CartDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.CartDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.CartDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.CartDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.CartDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.CartDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Item_name,
-            this.qty,
-            this.discount,
-            this.market_price,
-            this.rate,
-            this.stock,
-            this.add,
-            this.Delete,
-            this.note,
-            this.barcode,
-            this.PID,
-            this.SID});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(110)))), ((int)(((byte)(190)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.CartDataGridView.DefaultCellStyle = dataGridViewCellStyle12;
-            this.CartDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.CartDataGridView.Location = new System.Drawing.Point(677, -31);
-            this.CartDataGridView.MultiSelect = false;
-            this.CartDataGridView.Name = "CartDataGridView";
-            this.CartDataGridView.ReadOnly = true;
-            this.CartDataGridView.RowHeadersVisible = false;
-            this.CartDataGridView.RowHeadersWidth = 51;
-            this.CartDataGridView.RowTemplate.Height = 30;
-            this.CartDataGridView.Size = new System.Drawing.Size(73, 16);
-            this.CartDataGridView.TabIndex = 51;
-            this.CartDataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.CartDataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.CartDataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.CartDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.CartDataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.CartDataGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.CartDataGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.CartDataGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.CartDataGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.CartDataGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CartDataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.CartDataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.CartDataGridView.ThemeStyle.HeaderStyle.Height = 23;
-            this.CartDataGridView.ThemeStyle.ReadOnly = true;
-            this.CartDataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.CartDataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.CartDataGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.CartDataGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.CartDataGridView.ThemeStyle.RowsStyle.Height = 30;
-            this.CartDataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.CartDataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.CartDataGridView.Visible = false;
-            this.CartDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CartDataGridView_CellContentClick);
-            // 
-            // Item_name
-            // 
-            this.Item_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.Item_name.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Item_name.FillWeight = 593.401F;
-            this.Item_name.HeaderText = "Product Name";
-            this.Item_name.MinimumWidth = 210;
-            this.Item_name.Name = "Item_name";
-            this.Item_name.ReadOnly = true;
-            // 
-            // qty
-            // 
-            this.qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.qty.DefaultCellStyle = dataGridViewCellStyle4;
-            this.qty.FillWeight = 50F;
-            this.qty.HeaderText = "Qty";
-            this.qty.MinimumWidth = 40;
-            this.qty.Name = "qty";
-            this.qty.ReadOnly = true;
-            this.qty.Width = 40;
-            // 
-            // discount
-            // 
-            this.discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.discount.DefaultCellStyle = dataGridViewCellStyle5;
-            this.discount.HeaderText = "Dis";
-            this.discount.MinimumWidth = 40;
-            this.discount.Name = "discount";
-            this.discount.ReadOnly = true;
-            this.discount.Width = 40;
-            // 
-            // market_price
-            // 
-            this.market_price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.market_price.DefaultCellStyle = dataGridViewCellStyle6;
-            this.market_price.FillWeight = 70F;
-            this.market_price.HeaderText = "Tax";
-            this.market_price.MinimumWidth = 60;
-            this.market_price.Name = "market_price";
-            this.market_price.ReadOnly = true;
-            this.market_price.Width = 60;
-            // 
-            // rate
-            // 
-            this.rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.rate.DefaultCellStyle = dataGridViewCellStyle7;
-            this.rate.HeaderText = "Amount";
-            this.rate.MinimumWidth = 60;
-            this.rate.Name = "rate";
-            this.rate.ReadOnly = true;
-            this.rate.Width = 60;
-            // 
-            // stock
-            // 
-            this.stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.stock.DefaultCellStyle = dataGridViewCellStyle8;
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 40;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            this.stock.Width = 40;
-            // 
-            // add
-            // 
-            this.add.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 7.5F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(115)))), ((int)(((byte)(155)))));
-            this.add.DefaultCellStyle = dataGridViewCellStyle9;
-            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.add.HeaderText = "Add";
-            this.add.MinimumWidth = 10;
-            this.add.Name = "add";
-            this.add.ReadOnly = true;
-            this.add.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.add.Text = "Add";
-            this.add.UseColumnTextForButtonValue = true;
-            this.add.Visible = false;
-            this.add.Width = 40;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete.HeaderText = "Del";
-            this.Delete.MinimumWidth = 10;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "X";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 40;
-            // 
-            // note
-            // 
-            this.note.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 7.5F);
-            this.note.DefaultCellStyle = dataGridViewCellStyle11;
-            this.note.HeaderText = "Note";
-            this.note.MinimumWidth = 6;
-            this.note.Name = "note";
-            this.note.ReadOnly = true;
-            this.note.Visible = false;
-            // 
-            // barcode
-            // 
-            this.barcode.HeaderText = "Barcode";
-            this.barcode.MinimumWidth = 6;
-            this.barcode.Name = "barcode";
-            this.barcode.ReadOnly = true;
-            this.barcode.Visible = false;
-            // 
-            // PID
-            // 
-            this.PID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.PID.HeaderText = "PID";
-            this.PID.MinimumWidth = 6;
-            this.PID.Name = "PID";
-            this.PID.ReadOnly = true;
-            this.PID.Visible = false;
-            // 
-            // SID
-            // 
-            this.SID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.SID.HeaderText = "SID";
-            this.SID.MinimumWidth = 6;
-            this.SID.Name = "SID";
-            this.SID.ReadOnly = true;
-            this.SID.Visible = false;
-            // 
             // chkScanByImei
             // 
             this.chkScanByImei.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -2056,7 +1818,6 @@
             this.panel16.Controls.Add(this.panel12);
             this.panel16.Controls.Add(this.txt_date);
             this.panel16.Controls.Add(this.btnPrevious);
-            this.panel16.Controls.Add(this.CartDataGridView);
             this.panel16.Controls.Add(this.btnNext);
             this.panel16.Controls.Add(this.lbl_credits);
             this.panel16.Controls.Add(this.chkWholeSale);
@@ -2995,7 +2756,6 @@
             this.panel10.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CartDataGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
@@ -3064,7 +2824,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_recovery;
         private Guna.UI2.WinForms.Guna2Button btnRewards;
         private Guna.UI2.WinForms.Guna2Button btn_barcode;
-        private Guna.UI2.WinForms.Guna2DataGridView CartDataGridView;
         private System.Windows.Forms.Label txt_sub_total;
         private System.Windows.Forms.Label txt_discount;
         private System.Windows.Forms.Label txt_lastCredits;
@@ -3083,18 +2842,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label txtCustomerPoints;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn discount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn market_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
-        private System.Windows.Forms.DataGridViewButtonColumn add;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.DataGridViewTextBoxColumn note;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barcode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SID;
         private System.Windows.Forms.Panel panel10;
         private Guna.UI2.WinForms.Guna2Button btn_dicount;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

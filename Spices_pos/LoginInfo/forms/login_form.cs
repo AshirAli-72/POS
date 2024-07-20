@@ -9,6 +9,7 @@ using System.Diagnostics;
 using Guna.UI2.WinForms;
 using Spices_pos.DatabaseInfo.WebConfig;
 using Spices_pos.LoginInfo.controllers;
+using Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses;
 
 namespace Spices_pos.LoginInfo.forms
 {

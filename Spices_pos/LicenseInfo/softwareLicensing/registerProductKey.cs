@@ -6,6 +6,7 @@ using Message_box_info.forms;
 using RefereningMaterial;
 using RefereningMaterial.ReferenceClasses;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses;
 
 namespace Spices_pos.LicenseInfo.softwareLicensing
 {
@@ -26,17 +27,27 @@ namespace Spices_pos.LicenseInfo.softwareLicensing
             InitializeComponent();
         }
 
-        Datalayers data = new Datalayers(webConfig.con_string);
-        ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
+        RunMigrations runScripts = new RunMigrations(webConfig.con_string);
         error_form error = new error_form();
         done_form done = new done_form();
         public static int role_id = 0;
+
+        private void migrationScripts()
+        {
+            //7X9G1-0YZT4-EH509-D3XW3-06D5E-7WYB4
+
+            runScripts.runMigration("tables_script_version_0.2.23.sql");
+            runScripts.runMigration("indexes_script_version_0.2.23.sql");
+            runScripts.runMigration("create_views_procedures_script_version_0.2.23.sql");
+            runScripts.runMigration("alter_views_procedures_script_version_0.2.23.sql");
+        }
 
         private void registerProductKey_Load(object sender, EventArgs e)
         {
             try
             {
-                GetSetData.addFormCopyrights(lblCopyrights);
+                //GetSetData.addFormCopyrights(lblCopyrights);
+                migrationScripts();
 
                 ClassDefaultValuesSetInDB.InsertValuesInTableRegistrationAndPermissions();
             }
