@@ -6,6 +6,7 @@ using RefereningMaterial;
 using Login_info.controllers;
 using System.Data.SqlClient;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace Spices_pos.CounterSalesInfo.CustomControls
 {
@@ -21,6 +22,7 @@ namespace Spices_pos.CounterSalesInfo.CustomControls
             }
         }
 
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
@@ -42,7 +44,7 @@ namespace Spices_pos.CounterSalesInfo.CustomControls
                 lblAmount.Visible = true;
                 //btnExpand.Image = Properties.Resources.uhold_item_red;
 
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_discount");
+                GetSetData.Data = generalSettings.ReadField("show_discount");
 
                 if (GetSetData.Data == "Enabled")
                 {
@@ -53,7 +55,7 @@ namespace Spices_pos.CounterSalesInfo.CustomControls
                     txtDiscount.Visible = false;
                 }
 
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "price_box");
+                GetSetData.Data = generalSettings.ReadField("price_box");
 
                 if (GetSetData.Data == "Yes")
                 {
@@ -483,7 +485,7 @@ namespace Spices_pos.CounterSalesInfo.CustomControls
 
                 if (quantity >= existing_quantity_db) //consider as increment in quantity
                 {
-                    string isStockLimitSetToZero = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "setStockLimitToZero");
+                    string isStockLimitSetToZero = generalSettings.ReadField("setStockLimitToZero");
 
                     if ((quantity <= quantity_db) || (TextData.category == "Services") || (TextData.category == "MISCELLANEOUS") || (is_return == true) || (isStockLimitSetToZero == "No"))
                     {
@@ -1028,7 +1030,7 @@ namespace Spices_pos.CounterSalesInfo.CustomControls
 
                 //*********************************************************
 
-                string isStockLimitSetToZero = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "setStockLimitToZero");
+                string isStockLimitSetToZero = generalSettings.ReadField("setStockLimitToZero");
 
 
                 if ((cart_quantity_db <= quantity_db) || (TextData.category == "Services") || (TextData.category == "MISCELLANEOUS") || (is_return == true) || (isStockLimitSetToZero == "No"))

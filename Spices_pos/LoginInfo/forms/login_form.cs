@@ -10,6 +10,7 @@ using Guna.UI2.WinForms;
 using Spices_pos.DatabaseInfo.WebConfig;
 using Spices_pos.LoginInfo.controllers;
 using Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace Spices_pos.LoginInfo.forms
 {
@@ -31,6 +32,7 @@ namespace Spices_pos.LoginInfo.forms
         }
 
         //datalayer data = new datalayer(webConfig.con_string);
+        //DashboardPermissionsManager dashboardPermissions = new DashboardPermissionsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         //done_form done = new done_form();
@@ -75,6 +77,10 @@ namespace Spices_pos.LoginInfo.forms
         {
             try
             {
+                //string fieldName = "pos"; // or any field name you want to read
+                //string fieldValue = dashboardPermissions.ReadSpecificField(fieldName);
+                //MessageBox.Show($"Field '{fieldName}' value: {fieldValue}");
+
                 txtDate.Text = DateTime.Now.ToLongDateString();
                 btnPin.FillColor = Color.LemonChiffon;
 

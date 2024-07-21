@@ -10,6 +10,7 @@ using System.Globalization;
 using System.Diagnostics;
 using RefereningMaterial;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace Products_info.forms
 {
@@ -31,6 +32,7 @@ namespace Products_info.forms
             //setFormColorsDynamically();
         }
 
+        ButtonPermissions2 buttonPermissions2 = new ButtonPermissions2(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         error_form error = new error_form();
@@ -81,15 +83,16 @@ namespace Products_info.forms
             {
                 //GetSetData.addFormCopyrights(lblCopyrights); 
                 //**********************************************************************************************
-                savebutton.Visible = bool.Parse(data.UserPermissions("products_save", "pos_tbl_authorities_button_controls2", role_id));
-                btnUpdate.Visible = bool.Parse(data.UserPermissions("products_update", "pos_tbl_authorities_button_controls2", role_id));
+                savebutton.Visible = bool.Parse(buttonPermissions2.ReadFieldByRoleId(role_id, "products_save"));
 
-                if (bool.Parse(data.UserPermissions("products_save", "pos_tbl_authorities_button_controls2", role_id)) == false && bool.Parse(data.UserPermissions("products_update", "pos_tbl_authorities_button_controls2", role_id)) == false)
+                btnUpdate.Visible = bool.Parse(buttonPermissions2.ReadFieldByRoleId(role_id, "products_update"));
+
+                if (bool.Parse(buttonPermissions2.ReadFieldByRoleId(role_id, "products_save")) == false && bool.Parse(buttonPermissions2.ReadFieldByRoleId(role_id, "products_update")) == false)
                 {
                     pnl_exit.Visible = false;
                 }
 
-                pnl_save.Visible = bool.Parse(data.UserPermissions("products_exit", "pos_tbl_authorities_button_controls2", role_id));
+                pnl_save.Visible = bool.Parse(buttonPermissions2.ReadFieldByRoleId(role_id, "products_exit"));
                 discountValue = data.UserPermissions("discountType", "pos_general_settings");
 
                 if (discountValue == "Yes")

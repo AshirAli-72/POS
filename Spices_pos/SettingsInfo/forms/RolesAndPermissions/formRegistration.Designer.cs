@@ -473,9 +473,9 @@
             this.pnl_all_forms6.Controls.Add(this.label139);
             this.pnl_all_forms6.Controls.Add(this.label140);
             this.pnl_all_forms6.Controls.Add(this.label141);
-            this.pnl_all_forms6.Location = new System.Drawing.Point(680, 591);
+            this.pnl_all_forms6.Location = new System.Drawing.Point(694, 591);
             this.pnl_all_forms6.Name = "pnl_all_forms6";
-            this.pnl_all_forms6.Size = new System.Drawing.Size(146, 38);
+            this.pnl_all_forms6.Size = new System.Drawing.Size(276, 29);
             this.pnl_all_forms6.TabIndex = 98;
             this.pnl_all_forms6.Visible = false;
             // 

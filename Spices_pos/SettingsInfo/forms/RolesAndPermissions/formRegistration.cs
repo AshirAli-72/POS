@@ -9,6 +9,7 @@ using RefereningMaterial;
 using Supplier_Chain_info.forms;
 using Expenses_info.forms;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses;
 
 namespace Settings_info.forms.RolesAndPermissions
 {
@@ -856,6 +857,18 @@ namespace Settings_info.forms.RolesAndPermissions
             if (chk_reports_company_ledger.Checked == true)
             {
                 TextData.company_ledger = true;
+            }
+
+
+            if (chk_reports_generateInvoices.Checked == true)
+            {
+                TextData.generateInvoices = true;
+            }
+
+
+            if (chk_reports_chequeDetails.Checked == true)
+            {
+                TextData.chequeDetails = true;
             }
 
             buttonControls.insert_reports_button_controls();
@@ -1840,6 +1853,8 @@ namespace Settings_info.forms.RolesAndPermissions
                 checked_values_for_tbl_authorities_button_controls1();
                 checked_values_for_tbl_authorities_button_controls2();
                 checked_values_for_tbl_authorities_button_controls3();
+
+                ClassCreateUpdateJsonFile.readWritePermissionsJsonFile();
             }
             
         }

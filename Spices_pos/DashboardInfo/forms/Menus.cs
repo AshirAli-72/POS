@@ -41,6 +41,7 @@ using Spices_pos.DashboardInfo.controllers;
 using Spices_pos.LicenseInfo.forms;
 using Spices_pos.LicenseInfo.softwareLicensing;
 using Products_info.forms.RecipeDetails;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace Spices_pos.DashboardInfo.Forms
 {
@@ -78,8 +79,11 @@ namespace Spices_pos.DashboardInfo.Forms
         {
             InitializeComponent();
             spanel2.Width = 0;
-        }      
-       
+        }
+
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
+        DashboardPermissionsManager dashboardPermissions = new DashboardPermissionsManager(webConfig.con_string);
+        ReportPermissionsManager reportPermissions = new ReportPermissionsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
@@ -139,6 +143,193 @@ namespace Spices_pos.DashboardInfo.Forms
                 MessageBox.Show(es.Message);
             }
         }
+        
+        private void system_user_permissions()
+        {
+            this.Invoke((MethodInvoker)delegate
+            {
+                //setFormColorsDynamically();
+                //GetSetData.addFormCopyrights(lblCopyrights);
+                //***************************************************************************************************
+
+                //MessageBox.Show(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "products", role_id.ToString()));
+
+                product_btn.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "products"));
+                btnDeals.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "products"));
+                purchase_btn.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "purchases"));
+                guna2GroupBox4.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "purchases"));
+                guna2GroupBox5.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "expenses"));
+                btn_stock.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "stock"));
+                posBtn.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "pos"));
+                reportsButton.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "reports"));
+                btn_db_backup.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "backups"));
+                btn_restore.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "restores"));
+                button_settings.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "settings"));
+                btnCapital.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "capital"));
+                btnDailyBalance.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "dailyBalance"));
+                btnAbout.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "aboutLicense"));
+                btnCharity.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "charity"));
+                btnLoanGiven.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "charity"));
+                btnCustomers.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "customers"));
+                btnEmployees.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "employee"));
+                btnSuppliers.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "suppliers"));
+                btnDemands.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "logout"));
+                btnCustomerDues.Visible = bool.Parse(dashboardPermissions.ReadFieldByRoleId(role_id, "customer_dues"));
+
+
+                if (generalSettings.ReadField("singleAuthorityClosing") == "Yes")
+                {
+                    btnEndDay.Visible = true ;
+                }
+                else
+                {
+                    btnEndDay.Visible = false;
+                }
+
+                #region
+                // Reports Permissions
+
+                btnCompanyLedger.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "company_ledger"));
+                btnCompStatement.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "company_statement"));
+                Cus_ledger_button.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "customer_ledger"));
+                btnCusStatement.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "customer_statement"));
+                button_sales_report.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "sales_report"));
+                guna2GroupBox2.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "sales_report"));
+                customer_returns_btn.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "returns_report"));
+                btn_day_book.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "day_book"));
+                btn_stock_report.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "stock"));
+                btn_recoveries.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "recoveries"));
+                btnReceivables.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "receivables"));
+                btnPayables.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "payables"));
+                btnInOutBalance.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "balance_in_out"));
+                btnProfitLoss.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "income_statement"));
+                //btnCheques.Visible = bool.Parse(reportPermissions.ReadFieldByRoleId(role_id, "chequeDetails"));
+              
+                #endregion
+            });
+        }
+
+        #region
+
+        //private void system_user_permissions()
+        //{
+        //    this.Invoke((MethodInvoker)delegate
+        //    {
+        //        //setFormColorsDynamically();
+        //        //GetSetData.addFormCopyrights(lblCopyrights);
+        //        //***************************************************************************************************
+
+        //        //MessageBox.Show(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "products", role_id.ToString()));
+
+        //        product_btn.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "products", role_id.ToString()));
+        //        btnDeals.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "products", role_id.ToString()));
+        //        purchase_btn.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "purchases", role_id.ToString()));
+        //        guna2GroupBox4.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "purchases", role_id.ToString()));
+        //        guna2GroupBox5.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "expenses", role_id.ToString()));
+        //        btn_stock.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "stock", role_id.ToString()));
+        //        posBtn.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "pos", role_id.ToString()));
+        //        reportsButton.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "reports", role_id.ToString()));
+        //        btn_db_backup.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "backups", role_id.ToString()));
+        //        btn_restore.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "restores", role_id.ToString()));
+        //        button_settings.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "settings", role_id.ToString()));
+        //        btnCapital.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "capital", role_id.ToString()));
+        //        btnDailyBalance.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "dailyBalance", role_id.ToString()));
+        //        btnAbout.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "aboutLicense", role_id.ToString()));
+        //        btnCharity.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "charity", role_id.ToString()));
+        //        btnLoanGiven.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "charity", role_id.ToString()));
+        //        btnCustomers.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "customers", role_id.ToString()));
+        //        btnEmployees.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "employee", role_id.ToString()));
+        //        btnSuppliers.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "suppliers", role_id.ToString()));
+        //        btnDemands.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "logout", role_id.ToString()));
+        //        btnCustomerDues.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "customer_dues", role_id.ToString()));
+
+        //        GetSetData.query = @"select singleAuthorityClosing from pos_general_settings;";
+        //        string singleAuthorityClosing = data.SearchStringValuesFromDb(GetSetData.query);
+
+
+        //        if (singleAuthorityClosing == "Yes")
+        //        {
+        //            btnEndDay.Visible = true;
+        //        }
+        //        else
+        //        {
+        //            btnEndDay.Visible = false;
+        //        }
+
+        //        // Reports Permissions
+
+        //        btnCompanyLedger.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "company_ledger", role_id.ToString()));
+        //        btnCompStatement.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "company_statement", role_id.ToString()));
+        //        Cus_ledger_button.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "customer_ledger", role_id.ToString()));
+        //        btnCusStatement.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "customer_statement", role_id.ToString()));
+        //        button_sales_report.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "sales_report", role_id.ToString()));
+        //        guna2GroupBox2.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "sales_report", role_id.ToString()));
+        //        customer_returns_btn.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "returns_report", role_id.ToString()));
+        //        btn_day_book.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "day_book", role_id.ToString()));
+        //        btn_stock_report.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "stock", role_id.ToString()));
+        //        btn_recoveries.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "recoveries", role_id.ToString()));
+        //        btnReceivables.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "receivables", role_id.ToString()));
+        //        btnPayables.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "payables", role_id.ToString()));
+        //        btnInOutBalance.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "balance_in_out", role_id.ToString()));
+        //        btnProfitLoss.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "income_statement", role_id.ToString()));
+        //        //btnGenerateInvoices.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "generateInvoices", role_id.ToString()));
+        //        //btnCheques.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "chequeDetails", role_id.ToString()));
+        //    });
+        //}
+
+        //private void system_Reports_permissions()
+        //{
+        //    this.Invoke((MethodInvoker)delegate
+        //    {
+        //        //***************************************************************************************************
+        //        btnCompanyLedger.Visible = bool.Parse(data.UserPermissions("company_ledger", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btnCompStatement.Visible = bool.Parse(data.UserPermissions("company_statement", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        Cus_ledger_button.Visible = bool.Parse(data.UserPermissions("customer_ledger", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btnCusStatement.Visible = bool.Parse(data.UserPermissions("customer_statement", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        button_sales_report.Visible = bool.Parse(data.UserPermissions("sales_report", "pos_tbl_authorities_reports", role_id));
+        //        guna2GroupBox2.Enabled = bool.Parse(data.UserPermissions("sales_report", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        customer_returns_btn.Visible = bool.Parse(data.UserPermissions("returns_report", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btn_day_book.Visible = bool.Parse(data.UserPermissions("day_book", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btn_stock_report.Visible = bool.Parse(data.UserPermissions("stock", "pos_tbl_authorities_reports", role_id));
+        //        //guna2GroupBox1.Enabled = bool.Parse(data.UserPermissions("stock", "pos_tbl_authorities_reports", role_id));
+        //        //guna2GroupBox3.Enabled = bool.Parse(data.UserPermissions("stock", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btn_recoveries.Visible = bool.Parse(data.UserPermissions("recoveries", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btnReceivables.Visible = bool.Parse(data.UserPermissions("receivables", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btnPayables.Visible = bool.Parse(data.UserPermissions("payables", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btnInOutBalance.Visible = bool.Parse(data.UserPermissions("balance_in_out", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btnProfitLoss.Visible = bool.Parse(data.UserPermissions("income_statement", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btnGenerateInvoices.Visible = bool.Parse(data.UserPermissions("generateInvoices", "pos_tbl_authorities_reports", role_id));
+
+        //        //***************************************************************************************************
+        //        btnCheques.Visible = bool.Parse(data.UserPermissions("chequeDetails", "pos_tbl_authorities_reports", role_id));
+        //    });
+        //}
 
         //private void system_user_permissions()
         //{
@@ -210,136 +401,18 @@ namespace Spices_pos.DashboardInfo.Forms
 
         //    });
         //}
-        
-        private void system_user_permissions()
-        {
-            this.Invoke((MethodInvoker)delegate
-            {
-                //setFormColorsDynamically();
-                //GetSetData.addFormCopyrights(lblCopyrights);
-                //***************************************************************************************************
 
-                //MessageBox.Show(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "products", role_id.ToString()));
-
-                product_btn.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "products", role_id.ToString()));
-                btnDeals.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "products", role_id.ToString()));
-                purchase_btn.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "purchases", role_id.ToString()));
-                guna2GroupBox4.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "purchases", role_id.ToString()));
-                guna2GroupBox5.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "expenses", role_id.ToString()));
-                btn_stock.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "stock", role_id.ToString()));
-                posBtn.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "pos", role_id.ToString()));
-                reportsButton.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "reports", role_id.ToString()));
-                btn_db_backup.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "backups", role_id.ToString()));
-                btn_restore.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "restores", role_id.ToString()));
-                button_settings.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "settings", role_id.ToString()));
-                btnCapital.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "capital", role_id.ToString()));
-                btnDailyBalance.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "dailyBalance", role_id.ToString()));
-                btnAbout.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "aboutLicense", role_id.ToString()));
-                btnCharity.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "charity", role_id.ToString()));
-                btnLoanGiven.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "charity", role_id.ToString()));
-                btnCustomers.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "customers", role_id.ToString()));
-                btnEmployees.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "employee", role_id.ToString()));
-                btnSuppliers.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "suppliers", role_id.ToString()));
-                btnDemands.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "logout", role_id.ToString()));
-                btnCustomerDues.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetDashboardAuthorities", "customer_dues", role_id.ToString()));
-
-                GetSetData.query = @"select singleAuthorityClosing from pos_general_settings;";
-                string singleAuthorityClosing = data.SearchStringValuesFromDb(GetSetData.query);
-
-
-                if (singleAuthorityClosing == "Yes")
-                {
-                    btnEndDay.Visible = true;
-                }
-                else
-                {
-                    btnEndDay.Visible = false;
-                }
-
-                // Reports Permissions
-
-                btnCompanyLedger.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "company_ledger", role_id.ToString()));
-                btnCompStatement.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "company_statement", role_id.ToString()));
-                Cus_ledger_button.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "customer_ledger", role_id.ToString()));
-                btnCusStatement.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "customer_statement", role_id.ToString()));
-                button_sales_report.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "sales_report", role_id.ToString()));
-                guna2GroupBox2.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "sales_report", role_id.ToString()));
-                customer_returns_btn.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "returns_report", role_id.ToString()));
-                btn_day_book.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "day_book", role_id.ToString()));
-                btn_stock_report.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "stock", role_id.ToString()));
-                btn_recoveries.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "recoveries", role_id.ToString()));
-                btnReceivables.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "receivables", role_id.ToString()));
-                btnPayables.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "payables", role_id.ToString()));
-                btnInOutBalance.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "balance_in_out", role_id.ToString()));
-                btnProfitLoss.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "income_statement", role_id.ToString()));
-                //btnGenerateInvoices.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "generateInvoices", role_id.ToString()));
-                //btnCheques.Visible = bool.Parse(GetSetData.ProcedureGetDashboardAuthorities("ProcedureGetReportsAuthorities", "chequeDetails", role_id.ToString()));
-            });
-        }
-        
-        //private void system_Reports_permissions()
-        //{
-        //    this.Invoke((MethodInvoker)delegate
-        //    {
-        //        //***************************************************************************************************
-        //        btnCompanyLedger.Visible = bool.Parse(data.UserPermissions("company_ledger", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btnCompStatement.Visible = bool.Parse(data.UserPermissions("company_statement", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        Cus_ledger_button.Visible = bool.Parse(data.UserPermissions("customer_ledger", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btnCusStatement.Visible = bool.Parse(data.UserPermissions("customer_statement", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        button_sales_report.Visible = bool.Parse(data.UserPermissions("sales_report", "pos_tbl_authorities_reports", role_id));
-        //        guna2GroupBox2.Enabled = bool.Parse(data.UserPermissions("sales_report", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        customer_returns_btn.Visible = bool.Parse(data.UserPermissions("returns_report", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btn_day_book.Visible = bool.Parse(data.UserPermissions("day_book", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btn_stock_report.Visible = bool.Parse(data.UserPermissions("stock", "pos_tbl_authorities_reports", role_id));
-        //        //guna2GroupBox1.Enabled = bool.Parse(data.UserPermissions("stock", "pos_tbl_authorities_reports", role_id));
-        //        //guna2GroupBox3.Enabled = bool.Parse(data.UserPermissions("stock", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btn_recoveries.Visible = bool.Parse(data.UserPermissions("recoveries", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btnReceivables.Visible = bool.Parse(data.UserPermissions("receivables", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btnPayables.Visible = bool.Parse(data.UserPermissions("payables", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btnInOutBalance.Visible = bool.Parse(data.UserPermissions("balance_in_out", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btnProfitLoss.Visible = bool.Parse(data.UserPermissions("income_statement", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btnGenerateInvoices.Visible = bool.Parse(data.UserPermissions("generateInvoices", "pos_tbl_authorities_reports", role_id));
-
-        //        //***************************************************************************************************
-        //        btnCheques.Visible = bool.Parse(data.UserPermissions("chequeDetails", "pos_tbl_authorities_reports", role_id));
-        //    });
-        //}
+        #endregion
 
         private void notificationAlertSound()
         {
             try
             {
-                string notificationSound = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "notificationSound");
+                string notificationSound = generalSettings.ReadField("notificationSound");
 
                 if (notificationSound == "Yes")
                 {
-                    GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "picture_path");
+                    GetSetData.Data = generalSettings.ReadField("picture_path");
 
                     // Play Sound *****************************************************
                     GetSetData.Data = @"" + GetSetData.Data + "notify.wav";
@@ -396,8 +469,8 @@ namespace Spices_pos.DashboardInfo.Forms
             //TextData.general_options = data.SearchStringValuesFromDb(GetSetData.query);
             
             
-            TextData.server = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_notifications");
-            TextData.general_options = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_graphs");
+            TextData.server = generalSettings.ReadField("show_notifications");
+            TextData.general_options = generalSettings.ReadField("show_graphs");
 
 
             if (TextData.server == "Enabled")
@@ -694,7 +767,7 @@ namespace Spices_pos.DashboardInfo.Forms
         {
             try
             {
-                TextData.backup_path = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "picture_path");
+                TextData.backup_path = generalSettings.ReadField("picture_path");
                 TextData.image_path = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "logo_path");
 
                 if (TextData.backup_path != "nill" && TextData.backup_path != "")
@@ -872,7 +945,7 @@ namespace Spices_pos.DashboardInfo.Forms
         {
             try
             {
-                TextData.general_options = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_graphs");
+                TextData.general_options = generalSettings.ReadField("show_graphs");
 
                 if (TextData.general_options == "Yes")
                 {
@@ -1190,7 +1263,7 @@ namespace Spices_pos.DashboardInfo.Forms
 
                 // **********************************************************************************
 
-                TextData.general_options = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_graphs");
+                TextData.general_options = generalSettings.ReadField("show_graphs");
 
                 if (TextData.general_options == "Yes")
                 {

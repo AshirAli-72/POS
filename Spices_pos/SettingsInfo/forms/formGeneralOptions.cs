@@ -8,6 +8,7 @@ using System.Drawing.Printing;
 using RefereningMaterial;
 using System.Diagnostics;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace Settings_info.forms
 {
@@ -23,6 +24,7 @@ namespace Settings_info.forms
             }
         }
 
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
@@ -39,17 +41,17 @@ namespace Settings_info.forms
         //{
         //    //try
         //    //{
-        //    //    int dark_red = data.UserPermissionsIds("dark_red", "pos_colors_settings");
-        //    //    int dark_green = data.UserPermissionsIds("dark_green", "pos_colors_settings");
-        //    //    int dark_blue = data.UserPermissionsIds("dark_blue", "pos_colors_settings");
+        //    //    int dark_red = generalSettings.ReadFieldIds("dark_red", "pos_colors_settings");
+        //    //    int dark_green = generalSettings.ReadFieldIds("dark_green", "pos_colors_settings");
+        //    //    int dark_blue = generalSettings.ReadFieldIds("dark_blue", "pos_colors_settings");
 
-        //    //    int back_red = data.UserPermissionsIds("back_red", "pos_colors_settings");
-        //    //    int back_green = data.UserPermissionsIds("back_green", "pos_colors_settings");
-        //    //    int back_blue = data.UserPermissionsIds("back_blue", "pos_colors_settings");
+        //    //    int back_red = generalSettings.ReadFieldIds("back_red", "pos_colors_settings");
+        //    //    int back_green = generalSettings.ReadFieldIds("back_green", "pos_colors_settings");
+        //    //    int back_blue = generalSettings.ReadFieldIds("back_blue", "pos_colors_settings");
 
-        //    //    int fore_red = data.UserPermissionsIds("fore_red", "pos_colors_settings");
-        //    //    int fore_green = data.UserPermissionsIds("fore_green", "pos_colors_settings");
-        //    //    int fore_blue = data.UserPermissionsIds("fore_blue", "pos_colors_settings");
+        //    //    int fore_red = generalSettings.ReadFieldIds("fore_red", "pos_colors_settings");
+        //    //    int fore_green = generalSettings.ReadFieldIds("fore_green", "pos_colors_settings");
+        //    //    int fore_blue = generalSettings.ReadFieldIds("fore_blue", "pos_colors_settings");
 
         //    //    //****************************************************************
 
@@ -98,70 +100,70 @@ namespace Settings_info.forms
         {
             try
             {
-                TextData.backup_path = data.UserPermissions("backup_path", "pos_general_settings");
-                TextData.pic_path = data.UserPermissions("picture_path", "pos_general_settings");
-                TextData.auto_backup = data.UserPermissions("auto_backup", "pos_general_settings");
-                TextData.show_graph = data.UserPermissions("show_graphs", "pos_general_settings");
-                TextData.page_size = data.UserPermissions("page_size", "pos_general_settings");
-                TextData.pos_security = data.UserPermissions("pos_security", "pos_general_settings");
-                TextData.auto_expiry = data.UserPermissions("auto_expiry", "pos_general_settings");
-                TextData.box_notifications = data.UserPermissions("show_notifications", "pos_general_settings");
-                TextData.show_discount = data.UserPermissions("show_discount", "pos_general_settings");
-                TextData.box_discount = data.UserPermissions("discount_box", "pos_general_settings");
-                TextData.show_price = data.UserPermissions("price_box", "pos_general_settings");
-                TextData.show_tax = data.UserPermissions("tax_box", "pos_general_settings");
-                TextData.show_hold = data.UserPermissions("show_hold", "pos_general_settings");
-                TextData.show_unhold = data.UserPermissions("show_unhold", "pos_general_settings");
-                TextData.show_order = data.UserPermissions("show_order", "pos_general_settings");
-                TextData.show_last_order = data.UserPermissions("show_last_order", "pos_general_settings");
-                TextData.show_remarks = data.UserPermissions("show_remarks", "pos_general_settings");
-                TextData.show_recovery = data.UserPermissions("show_recovery", "pos_general_settings");
-                TextData.show_print_bill = data.UserPermissions("show_print_receipt", "pos_general_settings");
-                TextData.directly_print = data.UserPermissions("directly_print_receipt", "pos_general_settings");
-                TextData.sale_df_option = data.UserPermissions("sale_default_option", "pos_general_settings");
-                TextData.DiscountPercentage = data.UserPermissions("discountType", "pos_general_settings");
-                TextData.autoPenalties = data.UserPermissions("autoPenalties", "pos_general_settings");
-                TextData.useCapitalAmount = data.UserPermissions("useCapital", "pos_general_settings");
-                TextData.show_guarantors = data.UserPermissions("show_guarantors", "pos_general_settings");
-                TextData.show_installmentPlan = data.UserPermissions("show_installmentPlan", "pos_general_settings");
-                TextData.showNoteInReport = data.UserPermissions("showNoteInReport", "pos_general_settings");
-                TextData.investorProfit = data.UserPermissions("investorProfit", "pos_general_settings");
-                TextData.lessInvestorAmount = data.UserPermissions("lessAmount", "pos_general_settings");
-                TextData.profitDivide = data.UserPermissions("profitDivide", "pos_general_settings");
-                TextData.employeeSalary = data.UserPermissions("employeeSalary", "pos_general_settings");
-                TextData.CompanyProfit = data.UserPermissions("companyProfit", "pos_general_settings");
-                TextData.default_printer = data.UserPermissions("default_printer", "pos_general_settings");
-                TextData.preview_receipt = data.UserPermissions("preview_receipt", "pos_general_settings");
-                TextData.currency = data.UserPermissions("currency", "pos_general_settings");
-                TextData.taxation = data.UserPermissions("taxation", "pos_general_settings");
-                TextData.searchBox = data.UserPermissions("search_box", "pos_general_settings");
-                TextData.printerModel = data.UserPermissions("printer_model", "pos_general_settings");
-                TextData.autoOpenCashDrawer = data.UserPermissions("auto_open_cash_drawer", "pos_general_settings");
-                TextData.strictly_check_expiry = data.UserPermissions("strictly_check_expiry", "pos_general_settings");
+                TextData.backup_path = generalSettings.ReadField("backup_path");
+                TextData.pic_path = generalSettings.ReadField("picture_path");
+                TextData.auto_backup = generalSettings.ReadField("auto_backup");
+                TextData.show_graph = generalSettings.ReadField("show_graphs");
+                TextData.page_size = generalSettings.ReadField("page_size");
+                TextData.pos_security = generalSettings.ReadField("pos_security");
+                TextData.auto_expiry = generalSettings.ReadField("auto_expiry");
+                TextData.box_notifications = generalSettings.ReadField("show_notifications");
+                TextData.show_discount = generalSettings.ReadField("show_discount");
+                TextData.box_discount = generalSettings.ReadField("discount_box");
+                TextData.show_price = generalSettings.ReadField("price_box");
+                TextData.show_tax = generalSettings.ReadField("tax_box");
+                TextData.show_hold = generalSettings.ReadField("show_hold");
+                TextData.show_unhold = generalSettings.ReadField("show_unhold");
+                TextData.show_order = generalSettings.ReadField("show_order");
+                TextData.show_last_order = generalSettings.ReadField("show_last_order");
+                TextData.show_remarks = generalSettings.ReadField("show_remarks");
+                TextData.show_recovery = generalSettings.ReadField("show_recovery");
+                TextData.show_print_bill = generalSettings.ReadField("show_print_receipt");
+                TextData.directly_print = generalSettings.ReadField("directly_print_receipt");
+                TextData.sale_df_option = generalSettings.ReadField("sale_default_option");
+                TextData.DiscountPercentage = generalSettings.ReadField("discountType");
+                TextData.autoPenalties = generalSettings.ReadField("autoPenalties");
+                TextData.useCapitalAmount = generalSettings.ReadField("useCapital");
+                TextData.show_guarantors = generalSettings.ReadField("show_guarantors");
+                TextData.show_installmentPlan = generalSettings.ReadField("show_installmentPlan");
+                TextData.showNoteInReport = generalSettings.ReadField("showNoteInReport");
+                TextData.investorProfit = generalSettings.ReadField("investorProfit");
+                TextData.lessInvestorAmount = generalSettings.ReadField("lessAmount");
+                TextData.profitDivide = generalSettings.ReadField("profitDivide");
+                TextData.employeeSalary = generalSettings.ReadField("employeeSalary");
+                TextData.CompanyProfit = generalSettings.ReadField("companyProfit");
+                TextData.default_printer = generalSettings.ReadField("default_printer");
+                TextData.preview_receipt = generalSettings.ReadField("preview_receipt");
+                TextData.currency = generalSettings.ReadField("currency");
+                TextData.taxation = generalSettings.ReadField("taxation");
+                TextData.searchBox = generalSettings.ReadField("search_box");
+                TextData.printerModel = generalSettings.ReadField("printer_model");
+                TextData.autoOpenCashDrawer = generalSettings.ReadField("auto_open_cash_drawer");
+                TextData.strictly_check_expiry = generalSettings.ReadField("strictly_check_expiry");
 
-                TextData.autoSetPoints = data.UserPermissions("autoSetPoints", "pos_general_settings");
-                TextData.autoRedeemPoints = data.UserPermissions("autoRedeemPoints", "pos_general_settings");
-                TextData.addPointPerAmount = data.UserPermissions("addPointPerAmount", "pos_general_settings");
-                TextData.pointsRedeemLimit = data.UserPermissions("pointsRedeemLimit", "pos_general_settings");
-                TextData.autoPromotions = data.UserPermissions("autoPromotions", "pos_general_settings");
-                TextData.promotionOnItems = data.UserPermissions("promotionOnItems", "pos_general_settings");
-                TextData.promotionDiscount = data.UserPermissions("promotionDiscount", "pos_general_settings");
-                TextData.auto_clear_cart = data.UserPermissions("auto_clear_cart", "pos_general_settings");
-                TextData.split_old_and_new_stock = data.UserPermissions("split_old_and_new_stock", "pos_general_settings");
-                TextData.pointsRedeemDiscount = data.UserPermissions("pointsRedeemDiscount", "pos_general_settings");
-                TextData.allowAverageCost = data.UserPermissions("allowAverageCost", "pos_general_settings");
-                TextData.singleAuthorityClosing = data.UserPermissions("singleAuthorityClosing", "pos_general_settings");
-                TextData.autoZeroCustomerDiscount = data.UserPermissions("autoZeroCustomerDiscount", "pos_general_settings");
-                TextData.batchOpeningAmount = data.UserPermissions("batchOpeningAmount", "pos_general_settings");
-                TextData.setStockLimitToZero = data.UserPermissions("setStockLimitToZero", "pos_general_settings");
-                string pointsDiscountInPercentage = data.UserPermissions("pointsDiscountInPercentage", "pos_general_settings");
-                TextData.isCreditCardConnected = data.UserPermissions("isCreditCardConnected", "pos_general_settings");
-                TextData.notificationSound = data.UserPermissions("notificationSound", "pos_general_settings");
-                TextData.changeAmountPopUp = data.UserPermissions("changeAmountPopUp", "pos_general_settings");
-                TextData.salesmanTips = data.UserPermissions("salesmanTips", "pos_general_settings");
-                TextData.customerAgeLimit = data.UserPermissions("customerAgeLimit", "pos_general_settings");
-                TextData.useSurcharges = data.UserPermissions("useSurcharges", "pos_general_settings");
-                TextData.surchargePercentage = data.UserPermissions("surchargePercentage", "pos_general_settings");
+                TextData.autoSetPoints = generalSettings.ReadField("autoSetPoints");
+                TextData.autoRedeemPoints = generalSettings.ReadField("autoRedeemPoints");
+                TextData.addPointPerAmount = generalSettings.ReadField("addPointPerAmount");
+                TextData.pointsRedeemLimit = generalSettings.ReadField("pointsRedeemLimit");
+                TextData.autoPromotions = generalSettings.ReadField("autoPromotions");
+                TextData.promotionOnItems = generalSettings.ReadField("promotionOnItems");
+                TextData.promotionDiscount = generalSettings.ReadField("promotionDiscount");
+                TextData.auto_clear_cart = generalSettings.ReadField("auto_clear_cart");
+                TextData.split_old_and_new_stock = generalSettings.ReadField("split_old_and_new_stock");
+                TextData.pointsRedeemDiscount = generalSettings.ReadField("pointsRedeemDiscount");
+                TextData.allowAverageCost = generalSettings.ReadField("allowAverageCost");
+                TextData.singleAuthorityClosing = generalSettings.ReadField("singleAuthorityClosing");
+                TextData.autoZeroCustomerDiscount = generalSettings.ReadField("autoZeroCustomerDiscount");
+                TextData.batchOpeningAmount = generalSettings.ReadField("batchOpeningAmount");
+                TextData.setStockLimitToZero = generalSettings.ReadField("setStockLimitToZero");
+                string pointsDiscountInPercentage = generalSettings.ReadField("pointsDiscountInPercentage");
+                TextData.isCreditCardConnected = generalSettings.ReadField("isCreditCardConnected");
+                TextData.notificationSound = generalSettings.ReadField("notificationSound");
+                TextData.changeAmountPopUp = generalSettings.ReadField("changeAmountPopUp");
+                TextData.salesmanTips = generalSettings.ReadField("salesmanTips");
+                TextData.customerAgeLimit = generalSettings.ReadField("customerAgeLimit");
+                TextData.useSurcharges = generalSettings.ReadField("useSurcharges");
+                TextData.surchargePercentage = generalSettings.ReadField("surchargePercentage");
 
 
                 txt_backup_path.Text = TextData.backup_path;
@@ -490,7 +492,7 @@ namespace Settings_info.forms
         {
             //try
             //{
-            //    int kitchen_id = data.UserPermissionsIds("kitchen_id", "pos_kitchen", "title", txtKitchenTitle.Text);
+            //    int kitchen_id = generalSettings.ReadFieldIds("kitchen_id", "pos_kitchen", "title", txtKitchenTitle.Text);
 
             //    GetSetData.query = @"select printer_id from pos_kitchen_printers where (kitchen_id = '" + kitchen_id.ToString() + "');";
             //    int printer_id = data.Select_ID_for_Foreign_Key_from_db_for_Insertion(GetSetData.query);

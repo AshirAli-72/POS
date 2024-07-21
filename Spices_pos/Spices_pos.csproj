@@ -188,6 +188,9 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="OnBarcode.Barcode.WinForms, Version=8.4.0.40320, Culture=neutral, PublicKeyToken=4da8d7f865f70e30, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\POS_LATEST_USA_New_Design - Copy\CounterSales_info\bin\Debug\OnBarcode.Barcode.WinForms.dll</HintPath>
@@ -575,6 +578,14 @@
     <Compile Include="DashboardInfo\forms\Menus.Designer.cs">
       <DependentUpon>Menus.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseInfo\DatalayerInfo\JsonFiles\ButtonPermissions3.cs" />
+    <Compile Include="DatabaseInfo\DatalayerInfo\JsonFiles\ButtonPermissions2.cs" />
+    <Compile Include="DatabaseInfo\DatalayerInfo\JsonFiles\GeneralSettingsManager.cs" />
+    <Compile Include="DatabaseInfo\DatalayerInfo\JsonFiles\ButtonPermissions1.cs" />
+    <Compile Include="DatabaseInfo\DatalayerInfo\JsonFiles\ReportPermissionsManager.cs" />
+    <Compile Include="DatabaseInfo\DatalayerInfo\JsonFiles\DashboardPermissionsManager.cs" />
+    <Compile Include="DatabaseInfo\DatalayerInfo\MigrationClasses\ClassCreateUpdateJsonFile.cs" />
+    <Compile Include="DatabaseInfo\DatalayerInfo\MigrationClasses\ClassRunMigrations.cs" />
     <Compile Include="DatabaseInfo\DatalayerInfo\MigrationClasses\RunMigrations.cs" />
     <Compile Include="DatabaseInfo\DatalayerInfo\ReferenceClasses\CashDrawerData.cs" />
     <Compile Include="DatabaseInfo\DatalayerInfo\ReferenceClasses\ClassDefaultValuesSetInDB.cs" />

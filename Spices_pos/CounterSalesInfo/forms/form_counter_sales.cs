@@ -35,6 +35,7 @@ using CustomerSales_info.CustomerSalesInfo.CustomControls;
 using Spices_pos.CounterSalesInfo.CustomControls;
 using Spices_pos.DashboardInfo.Forms;
 using Spices_pos.LoginInfo.forms;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 
 namespace CounterSales_info.forms
@@ -77,6 +78,7 @@ namespace CounterSales_info.forms
             instanceIsReturn = txt_status;
         }
 
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
@@ -209,7 +211,7 @@ namespace CounterSales_info.forms
             try
             {
                 //GetSetData.addFormCopyrights(lblCopyrights);
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_discount");
+                GetSetData.Data = generalSettings.ReadField("show_discount");
 
                 if (GetSetData.Data == "Enabled")
                 {
@@ -233,14 +235,14 @@ namespace CounterSales_info.forms
                 }
 
 
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "discount_box");
+                GetSetData.Data = generalSettings.ReadField("discount_box");
 
                 if (GetSetData.Data == "No")
                 {
                     chkWholeSale.Visible = false;
                 }
 
-                //GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "search_box");
+                //GetSetData.Data = generalSettings.ReadField("search_box");
 
                 //if (GetSetData.Data == "Yes")
                 //{
@@ -252,7 +254,7 @@ namespace CounterSales_info.forms
                 //}
 
 
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "price_box");
+                GetSetData.Data = generalSettings.ReadField("price_box");
 
                 if (GetSetData.Data == "Yes")
                 {
@@ -260,56 +262,56 @@ namespace CounterSales_info.forms
                     txt_price.Enabled = true;
                 }
 
-                //GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_recovery");
+                //GetSetData.Data = generalSettings.ReadField("show_recovery");
 
                 //if (GetSetData.Data == "Yes")
                 //{
                 //    btn_recovery.Visible = true;
                 //}
 
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_last_order");
+                GetSetData.Data = generalSettings.ReadField("show_last_order");
 
                 if (GetSetData.Data == "Yes")
                 {
                     btn_last_receipt.Visible = true;
                 }
 
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_order");
+                GetSetData.Data = generalSettings.ReadField("show_order");
 
                 if (GetSetData.Data == "Yes")
                 {
                     btn_order.Visible = true;
                 }
 
-                //GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_installmentPlan");
+                //GetSetData.Data = generalSettings.ReadField("show_installmentPlan");
 
                 //if (GetSetData.Data == "Yes")
                 //{
                 //    btnInstallmentPlan.Visible = true;
                 //}
 
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_unhold");
+                GetSetData.Data = generalSettings.ReadField("show_unhold");
 
                 if (GetSetData.Data == "Yes")
                 {
                     btn_unhold.Visible = true;
                 }
 
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_hold");
+                GetSetData.Data = generalSettings.ReadField("show_hold");
 
                 if (GetSetData.Data == "Yes")
                 {
                     btn_hold.Visible = true;
                 }
 
-                //GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_guarantors");
+                //GetSetData.Data = generalSettings.ReadField("show_guarantors");
 
                 //if (GetSetData.Data == "Yes")
                 //{
                 //    btnGuarantors.Visible = true;
                 //}
 
-                //GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "show_remarks");
+                //GetSetData.Data = generalSettings.ReadField("show_remarks");
 
                 //if (GetSetData.Data == "Yes")
                 //{
@@ -323,7 +325,7 @@ namespace CounterSales_info.forms
                 //    btn_print.Visible = true;
                 //}
 
-                GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "discountType");
+                GetSetData.Data = generalSettings.ReadField("discountType");
                 if (discountValue == "Yes")
                 {
                     txtDiscount.PlaceholderText = "Dicount %";
@@ -412,14 +414,14 @@ namespace CounterSales_info.forms
         {
             try
             {
-                string notificationSound = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "notificationSound");
+                string notificationSound = generalSettings.ReadField("notificationSound");
 
                 if (notificationSound == "Yes")
                 {
                     // Play Sound ****************************************************************
 
 
-                    GetSetData.Data = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "picture_path");
+                    GetSetData.Data = generalSettings.ReadField("picture_path");
 
                     GetSetData.Data = @"" + GetSetData.Data + "sound.wav";
                     SoundPlayer player = new SoundPlayer(GetSetData.Data);
@@ -444,7 +446,7 @@ namespace CounterSales_info.forms
             {
                 GetSetData.Permission = "";
                 TextData.barcode = "";
-                TextData.saved_image = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "picture_path");
+                TextData.saved_image = generalSettings.ReadField("picture_path");
 
                 cmd = new SqlCommand(query, conn);
 
@@ -694,7 +696,7 @@ namespace CounterSales_info.forms
 
                 if (cart_item_id_db == 0) // Adding new item in the cart
                 {
-                    string isStockLimitSetToZero = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "setStockLimitToZero");
+                    string isStockLimitSetToZero = generalSettings.ReadField("setStockLimitToZero");
 
                     if (((TextData.quantity) <= quantity_db) || (TextData.category == "Services") || (TextData.category == "MISCELLANEOUS") || (txt_status.Checked == true) || (isStockLimitSetToZero == "No"))
                     {
@@ -946,7 +948,7 @@ namespace CounterSales_info.forms
 
                             TextData.quantity += cart_quantity_db;
 
-                            string isStockLimitSetToZero = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "setStockLimitToZero");
+                            string isStockLimitSetToZero = generalSettings.ReadField("setStockLimitToZero");
 
                             if ((TextData.quantity <= quantity_db) || (TextData.category == "Services") || (TextData.category == "MISCELLANEOUS") || (txt_status.Checked == true) || (isStockLimitSetToZero == "No"))
                             {
@@ -2256,7 +2258,7 @@ namespace CounterSales_info.forms
                             macAddress = GetSetData.GetSystemMacAddress();
 
 
-                            string singleAuthorityClosing = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "singleAuthorityClosing");
+                            string singleAuthorityClosing = generalSettings.ReadField("singleAuthorityClosing");
 
 
                             if (singleAuthorityClosing == "Yes")
@@ -6617,11 +6619,11 @@ namespace CounterSales_info.forms
         {
             try
             {
-                string autoRedeemPoints = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "autoRedeemPoints");
+                string autoRedeemPoints = generalSettings.ReadField("autoRedeemPoints");
 
                 if (autoRedeemPoints == "No")
                 {
-                    string pointsRedeemLimit = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "pointsRedeemLimit");
+                    string pointsRedeemLimit = generalSettings.ReadField("pointsRedeemLimit");
 
                     if (double.Parse(txtCustomerPoints.Text) >= double.Parse(pointsRedeemLimit))
                     {
@@ -7380,7 +7382,7 @@ namespace CounterSales_info.forms
                 refresh_menu();
                 GetSetData.Permission = "";
 
-                TextData.saved_image = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "picture_path");
+                TextData.saved_image = generalSettings.ReadField("picture_path");
 
                 cmd = new SqlCommand(query, conn);
 
