@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\productsinfo\\forms\\product_details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\productsinfo\\forms\\product_details.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\dashboardinfo\\forms\\menus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\dashboardinfo\\forms\\menus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,33 +14,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Menus.cs",
-              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\DashboardInfo\\forms\\Menus.cs",
-              "RelativeDocumentMoniker": "Spices_pos\\DashboardInfo\\forms\\Menus.cs",
-              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\DashboardInfo\\forms\\Menus.cs",
-              "RelativeToolTip": "Spices_pos\\DashboardInfo\\forms\\Menus.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAiwFMAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T22:04:45.807Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "product_details.cs",
-              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\ProductsInfo\\forms\\product_details.cs",
-              "RelativeDocumentMoniker": "Spices_pos\\ProductsInfo\\forms\\product_details.cs",
-              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\ProductsInfo\\forms\\product_details.cs",
-              "RelativeToolTip": "Spices_pos\\ProductsInfo\\forms\\product_details.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAowF0AAABfAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\Program.cs",
+              "RelativeDocumentMoniker": "Spices_pos\\Program.cs",
+              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\Program.cs",
+              "RelativeToolTip": "Spices_pos\\Program.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwDkAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T00:18:47.148Z",
+              "WhenOpened": "2024-07-22T18:43:09.703Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]
