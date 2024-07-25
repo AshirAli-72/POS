@@ -42,10 +42,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button20 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button13 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button14 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
@@ -54,14 +56,12 @@
             this.guna2Button18 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button19 = new Guna.UI2.WinForms.Guna2Button();
             this.txtOtherAmount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button20 = new Guna.UI2.WinForms.Guna2Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.txtDate = new System.Windows.Forms.DateTimePicker();
             this.FormNamelabel = new System.Windows.Forms.Label();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
@@ -250,6 +250,7 @@
             this.label7.TabIndex = 564;
             this.label7.Text = "Total Amount:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label7.Visible = false;
             // 
             // txt_due_amount
             // 
@@ -262,6 +263,7 @@
             this.txt_due_amount.TabIndex = 565;
             this.txt_due_amount.Text = "0.00";
             this.txt_due_amount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txt_due_amount.Visible = false;
             // 
             // btnEnter
             // 
@@ -348,6 +350,14 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(411, 715);
             this.guna2Panel1.TabIndex = 571;
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Separator1.Location = new System.Drawing.Point(59, 419);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(292, 7);
+            this.guna2Separator1.TabIndex = 571;
             // 
             // guna2Button3
             // 
@@ -459,6 +469,34 @@
             this.guna2Button12.TabIndex = 544;
             this.guna2Button12.Text = "8";
             this.guna2Button12.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // guna2Button20
+            // 
+            this.guna2Button20.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Button20.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button20.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button20.BorderRadius = 12;
+            this.guna2Button20.BorderThickness = 1;
+            this.guna2Button20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Button20.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.guna2Button20.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button20.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button20.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button20.FillColor = System.Drawing.Color.White;
+            this.guna2Button20.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.guna2Button20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2Button20.HoverState.BorderColor = System.Drawing.Color.White;
+            this.guna2Button20.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.guna2Button20.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.guna2Button20.HoverState.ForeColor = System.Drawing.Color.White;
+            this.guna2Button20.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2Button20.Location = new System.Drawing.Point(59, 339);
+            this.guna2Button20.Name = "guna2Button20";
+            this.guna2Button20.Size = new System.Drawing.Size(92, 70);
+            this.guna2Button20.TabIndex = 545;
+            this.guna2Button20.Text = ".";
+            this.guna2Button20.Click += new System.EventHandler(this.button13_Click);
             // 
             // guna2Button13
             // 
@@ -689,34 +727,6 @@
             this.txtOtherAmount.Click += new System.EventHandler(this.txtDiscount_Click);
             this.txtOtherAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
-            // guna2Button20
-            // 
-            this.guna2Button20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Button20.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button20.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button20.BorderRadius = 12;
-            this.guna2Button20.BorderThickness = 1;
-            this.guna2Button20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button20.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.guna2Button20.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button20.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button20.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button20.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button20.FillColor = System.Drawing.Color.White;
-            this.guna2Button20.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold);
-            this.guna2Button20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Button20.HoverState.BorderColor = System.Drawing.Color.White;
-            this.guna2Button20.HoverState.CustomBorderColor = System.Drawing.Color.White;
-            this.guna2Button20.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.guna2Button20.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button20.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button20.Location = new System.Drawing.Point(59, 339);
-            this.guna2Button20.Name = "guna2Button20";
-            this.guna2Button20.Size = new System.Drawing.Size(92, 70);
-            this.guna2Button20.TabIndex = 545;
-            this.guna2Button20.Text = ".";
-            this.guna2Button20.Click += new System.EventHandler(this.button13_Click);
-            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.Transparent;
@@ -823,14 +833,6 @@
             this.FormNamelabel.TabIndex = 533;
             this.FormNamelabel.Text = "Salesman Tip";
             this.FormNamelabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2Separator1.Location = new System.Drawing.Point(59, 419);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(292, 7);
-            this.guna2Separator1.TabIndex = 571;
             // 
             // pictureBox1
             // 

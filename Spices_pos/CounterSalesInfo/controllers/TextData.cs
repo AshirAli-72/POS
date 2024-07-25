@@ -63,6 +63,7 @@ namespace Login_info.controllers
         public static string cash_on_hand { get; set; }
         public static string remaining_amount { get; set; }
         public static double advanceAmount { get; set; }
+        public static string tipAmount { get; set; }
         public static double credits { get; set; }
         public static double credit_card_amount { get; set; }
         public static bool showPopUpForm { get; set; }

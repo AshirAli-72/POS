@@ -10,6 +10,8 @@ using Spices_pos.DashboardInfo.Forms;
 using RefereningMaterial;
 using Spices_pos.CustomersInfo.controllers;
 using System.Diagnostics;
+using CounterSales_info.forms;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace Customers_info.forms
 {
@@ -32,6 +34,7 @@ namespace Customers_info.forms
             setFormColorsDynamically();
         }
 
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
@@ -226,6 +229,19 @@ namespace Customers_info.forms
                     break;
             }
         }
+
+        private bool IsFormOpen(Type formType)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == formType)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
 
         private void Closebutton_Click(object sender, EventArgs e)
         {
@@ -444,6 +460,22 @@ namespace Customers_info.forms
                 selected_customer = TextData.full_name;
                 selected_customerCode = TextData.cus_code;
 
+                if (generalSettings.ReadField("salesmanTips") == "Yes")
+                {
+                    if (Screen.AllScreens.Length > 1)
+                    {
+                        if (!IsFormOpen(typeof(form_salesman_tips)))
+                        {
+                            form_salesman_tips secondaryForm = new form_salesman_tips();
+
+                            Screen secondaryScreen = Screen.AllScreens[1];
+                            secondaryForm.StartPosition = FormStartPosition.CenterScreen;
+                            secondaryForm.Location = secondaryScreen.WorkingArea.Location;
+                            secondaryForm.WindowState = FormWindowState.Maximized;
+                            secondaryForm.Show();
+                        }
+                    }
+                }
                 //GetSetData.SaveLogHistoryDetails("Customer Details Form", "Selecting customer [" + TextData.full_name + "  " + TextData.cus_code + "] details", role_id);
             }
             catch (Exception es)

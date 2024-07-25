@@ -76,7 +76,6 @@
             this.txtReturnQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtReturnGrandTotal = new System.Windows.Forms.Label();
             this.txtReturnSubTotal = new System.Windows.Forms.Label();
-            this.btn_print = new Guna.UI2.WinForms.Guna2Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -101,6 +100,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.pnl_list = new System.Windows.Forms.FlowLayoutPanel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.txtTipAmount = new System.Windows.Forms.Label();
             this.txt_date = new System.Windows.Forms.DateTimePicker();
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
@@ -139,9 +139,12 @@
             this.btnMinMaxScreen = new Guna.UI2.WinForms.Guna2Button();
             this.label15 = new System.Windows.Forms.Label();
             this.btn_last_receipt = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_print = new Guna.UI2.WinForms.Guna2Button();
             this.btnReturn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.oneDriveBackgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.txtIsTipInPercentage = new System.Windows.Forms.Label();
+            this.txtTotalTipAmount = new System.Windows.Forms.Label();
             this.pnl_taskbar.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -623,7 +626,6 @@
             this.panel3.Controls.Add(this.btnScrollDown);
             this.panel3.Controls.Add(this.flowLayoutPanel2);
             this.panel3.Controls.Add(this.panel10);
-            this.panel3.Controls.Add(this.txtCustomerPoints);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.txt_amount_due);
             this.panel3.Controls.Add(this.txtTaxation);
@@ -641,13 +643,14 @@
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.btnScrollUp);
             this.panel3.Controls.Add(this.txtReturnDiscount);
-            this.panel3.Controls.Add(this.txtReturnPoints);
             this.panel3.Controls.Add(this.txtReturnTax);
             this.panel3.Controls.Add(this.txtReturnItems);
             this.panel3.Controls.Add(this.txtReturnAmountDue);
             this.panel3.Controls.Add(this.txtReturnQuantity);
             this.panel3.Controls.Add(this.txtReturnGrandTotal);
             this.panel3.Controls.Add(this.txtReturnSubTotal);
+            this.panel3.Controls.Add(this.txtCustomerPoints);
+            this.panel3.Controls.Add(this.txtReturnPoints);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(5, 412);
             this.panel3.Name = "panel3";
@@ -1431,33 +1434,6 @@
             this.txtReturnSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtReturnSubTotal.Visible = false;
             // 
-            // btn_print
-            // 
-            this.btn_print.BackColor = System.Drawing.Color.Transparent;
-            this.btn_print.BorderColor = System.Drawing.Color.LightGray;
-            this.btn_print.BorderRadius = 5;
-            this.btn_print.BorderThickness = 1;
-            this.btn_print.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_print.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_print.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_print.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_print.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_print.FillColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_print.FocusedColor = System.Drawing.Color.LemonChiffon;
-            this.btn_print.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
-            this.btn_print.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_print.HoverState.FillColor = System.Drawing.Color.LemonChiffon;
-            this.btn_print.Image = ((System.Drawing.Image)(resources.GetObject("btn_print.Image")));
-            this.btn_print.ImageSize = new System.Drawing.Size(19, 19);
-            this.btn_print.Location = new System.Drawing.Point(575, 7);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(47, 41);
-            this.btn_print.TabIndex = 526;
-            this.btn_print.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            this.btn_print.Tile = true;
-            this.btn_print.Visible = false;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.Transparent;
@@ -1815,6 +1791,9 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.Transparent;
+            this.panel16.Controls.Add(this.txtTotalTipAmount);
+            this.panel16.Controls.Add(this.txtIsTipInPercentage);
+            this.panel16.Controls.Add(this.txtTipAmount);
             this.panel16.Controls.Add(this.panel12);
             this.panel16.Controls.Add(this.txt_date);
             this.panel16.Controls.Add(this.btnPrevious);
@@ -1844,6 +1823,20 @@
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(720, 36);
             this.panel16.TabIndex = 55;
+            // 
+            // txtTipAmount
+            // 
+            this.txtTipAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTipAmount.AutoSize = true;
+            this.txtTipAmount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTipAmount.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtTipAmount.Location = new System.Drawing.Point(513, 9);
+            this.txtTipAmount.Name = "txtTipAmount";
+            this.txtTipAmount.Size = new System.Drawing.Size(18, 19);
+            this.txtTipAmount.TabIndex = 1016;
+            this.txtTipAmount.Text = "0";
+            this.txtTipAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtTipAmount.Visible = false;
             // 
             // txt_date
             // 
@@ -2689,6 +2682,33 @@
             this.btn_last_receipt.TextOffset = new System.Drawing.Point(13, 0);
             this.btn_last_receipt.Click += new System.EventHandler(this.btn_last_receipt_Click);
             // 
+            // btn_print
+            // 
+            this.btn_print.BackColor = System.Drawing.Color.Transparent;
+            this.btn_print.BorderColor = System.Drawing.Color.LightGray;
+            this.btn_print.BorderRadius = 5;
+            this.btn_print.BorderThickness = 1;
+            this.btn_print.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_print.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_print.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_print.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_print.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_print.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_print.FocusedColor = System.Drawing.Color.LemonChiffon;
+            this.btn_print.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.btn_print.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_print.HoverState.FillColor = System.Drawing.Color.LemonChiffon;
+            this.btn_print.Image = ((System.Drawing.Image)(resources.GetObject("btn_print.Image")));
+            this.btn_print.ImageSize = new System.Drawing.Size(19, 19);
+            this.btn_print.Location = new System.Drawing.Point(575, 7);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(47, 41);
+            this.btn_print.TabIndex = 526;
+            this.btn_print.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.btn_print.Tile = true;
+            this.btn_print.Visible = false;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
             // btnReturn
             // 
             this.btnReturn.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -2726,6 +2746,34 @@
             // 
             this.oneDriveBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.oneDriveBackgroundWorker_DoWork);
             this.oneDriveBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.oneDriveBackgroundWorker_RunWorkerCompleted);
+            // 
+            // txtIsTipInPercentage
+            // 
+            this.txtIsTipInPercentage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIsTipInPercentage.AutoSize = true;
+            this.txtIsTipInPercentage.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtIsTipInPercentage.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtIsTipInPercentage.Location = new System.Drawing.Point(540, 9);
+            this.txtIsTipInPercentage.Name = "txtIsTipInPercentage";
+            this.txtIsTipInPercentage.Size = new System.Drawing.Size(48, 19);
+            this.txtIsTipInPercentage.TabIndex = 1017;
+            this.txtIsTipInPercentage.Text = "False";
+            this.txtIsTipInPercentage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtIsTipInPercentage.Visible = false;
+            // 
+            // txtTotalTipAmount
+            // 
+            this.txtTotalTipAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTotalTipAmount.AutoSize = true;
+            this.txtTotalTipAmount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTotalTipAmount.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtTotalTipAmount.Location = new System.Drawing.Point(487, 9);
+            this.txtTotalTipAmount.Name = "txtTotalTipAmount";
+            this.txtTotalTipAmount.Size = new System.Drawing.Size(18, 19);
+            this.txtTotalTipAmount.TabIndex = 1018;
+            this.txtTotalTipAmount.Text = "0";
+            this.txtTotalTipAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtTotalTipAmount.Visible = false;
             // 
             // form_counter_sales
             // 
@@ -2915,5 +2963,8 @@
         private Guna.UI2.WinForms.Guna2CustomCheckBox chkSearchBy;
         private Guna.UI2.WinForms.Guna2Button btnTicket;
         private Guna.UI2.WinForms.Guna2Button btnTicketHistory;
+        private System.Windows.Forms.Label txtTipAmount;
+        private System.Windows.Forms.Label txtIsTipInPercentage;
+        private System.Windows.Forms.Label txtTotalTipAmount;
     }
 }

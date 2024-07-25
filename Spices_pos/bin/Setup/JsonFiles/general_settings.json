@@ -41,8 +41,8 @@
     "search_box": "Yes",
     "auto_open_cash_drawer": "No",
     "strictly_check_expiry": "No",
-    "autoSetPoints": "No",
-    "autoRedeemPoints": "No",
+    "autoSetPoints": "Yes",
+    "autoRedeemPoints": "Yes",
     "addPointPerAmount": "1",
     "pointsRedeemLimit": "300",
     "autoPromotions": "No",
@@ -61,7 +61,7 @@
     "notificationSound": "No",
     "changeAmountPopUp": "Yes",
     "customerAgeLimit": "0",
-    "salesmanTips": "No",
+    "salesmanTips": "Yes",
     "useSurcharges": "No",
     "surchargePercentage": "0"
   }

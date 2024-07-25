@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\countersalesinfo\\forms\\form_counter_sales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\countersalesinfo\\forms\\form_counter_sales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\countersalesinfo\\forms\\customer_last_receipt\\form_last_receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\countersalesinfo\\forms\\customer_last_receipt\\form_last_receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\countersalesinfo\\forms\\form_payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\countersalesinfo\\forms\\form_payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\countersalesinfo\\forms\\form_add_tips.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\countersalesinfo\\forms\\form_add_tips.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\countersalesinfo\\forms\\form_salesman_tips.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\countersalesinfo\\forms\\form_salesman_tips.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\countersalesinfo\\forms\\customer_last_receipt\\form_last_receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\countersalesinfo\\forms\\customer_last_receipt\\form_last_receipt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|d:\\dot net projects\\pos_latest_usa_new_design\\spices_pos\\countersalesinfo\\forms\\form_counter_sales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE220172-2E08-4C62-AB8C-6E2DE2417853}|Spices_pos\\Spices_pos.csproj|solutionrelative:spices_pos\\countersalesinfo\\forms\\form_counter_sales.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,16 +43,96 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\Program.cs",
-              "RelativeDocumentMoniker": "Spices_pos\\Program.cs",
-              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\Program.cs",
-              "RelativeToolTip": "Spices_pos\\Program.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwDkAAAA6AAAA",
+              "Title": "form_counter_sales.cs [Design]",
+              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_counter_sales.cs",
+              "RelativeDocumentMoniker": "Spices_pos\\CounterSalesInfo\\forms\\form_counter_sales.cs",
+              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_counter_sales.cs [Design]",
+              "RelativeToolTip": "Spices_pos\\CounterSalesInfo\\forms\\form_counter_sales.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-22T18:43:09.703Z",
+              "WhenOpened": "2024-07-25T18:27:03.291Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "form_counter_sales.cs",
+              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_counter_sales.cs",
+              "RelativeDocumentMoniker": "Spices_pos\\CounterSalesInfo\\forms\\form_counter_sales.cs",
+              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_counter_sales.cs",
+              "RelativeToolTip": "Spices_pos\\CounterSalesInfo\\forms\\form_counter_sales.cs",
+              "ViewState": "AQIAAGASAAAAAAAAAAAUwHMSAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T18:34:09.616Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "form_payment.cs",
+              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_payment.cs",
+              "RelativeDocumentMoniker": "Spices_pos\\CounterSalesInfo\\forms\\form_payment.cs",
+              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_payment.cs",
+              "RelativeToolTip": "Spices_pos\\CounterSalesInfo\\forms\\form_payment.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAACUAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T18:33:56.502Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "form_salesman_tips.cs",
+              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_salesman_tips.cs",
+              "RelativeDocumentMoniker": "Spices_pos\\CounterSalesInfo\\forms\\form_salesman_tips.cs",
+              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_salesman_tips.cs",
+              "RelativeToolTip": "Spices_pos\\CounterSalesInfo\\forms\\form_salesman_tips.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwIMAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T18:40:24.569Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "form_add_tips.cs",
+              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_add_tips.cs",
+              "RelativeDocumentMoniker": "Spices_pos\\CounterSalesInfo\\forms\\form_add_tips.cs",
+              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\form_add_tips.cs",
+              "RelativeToolTip": "Spices_pos\\CounterSalesInfo\\forms\\form_add_tips.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T20:55:39.347Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "form_last_receipt.cs",
+              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\Customer_last_receipt\\form_last_receipt.cs",
+              "RelativeDocumentMoniker": "Spices_pos\\CounterSalesInfo\\forms\\Customer_last_receipt\\form_last_receipt.cs",
+              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\Customer_last_receipt\\form_last_receipt.cs",
+              "RelativeToolTip": "Spices_pos\\CounterSalesInfo\\forms\\Customer_last_receipt\\form_last_receipt.cs",
+              "ViewState": "AQIAACMBAAAAAAAAAAAowDUBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T20:56:27.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "form_last_receipt.cs [Design]",
+              "DocumentMoniker": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\Customer_last_receipt\\form_last_receipt.cs",
+              "RelativeDocumentMoniker": "Spices_pos\\CounterSalesInfo\\forms\\Customer_last_receipt\\form_last_receipt.cs",
+              "ToolTip": "D:\\Dot Net Projects\\POS_LATEST_USA_New_Design\\Spices_pos\\CounterSalesInfo\\forms\\Customer_last_receipt\\form_last_receipt.cs [Design]",
+              "RelativeToolTip": "Spices_pos\\CounterSalesInfo\\forms\\Customer_last_receipt\\form_last_receipt.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T20:56:19.085Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

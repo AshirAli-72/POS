@@ -31,7 +31,7 @@ namespace CounterSales_info.forms
         error_form error = new error_form();
         done_form done = new done_form();
         public string invoiceNumber = "";
-        private int countdown = 60;
+        //private int countdown = 60;
 
         private void Closebutton_Click(object sender, EventArgs e)
         {

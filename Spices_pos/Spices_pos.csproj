@@ -456,6 +456,12 @@
     <Compile Include="CounterSalesInfo\forms\form_remarks.Designer.cs">
       <DependentUpon>form_remarks.cs</DependentUpon>
     </Compile>
+    <Compile Include="CounterSalesInfo\forms\form_salesman_tips_copy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CounterSalesInfo\forms\form_salesman_tips_copy.Designer.cs">
+      <DependentUpon>form_salesman_tips_copy.cs</DependentUpon>
+    </Compile>
     <Compile Include="CounterSalesInfo\forms\form_salesman_tips.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1726,6 +1732,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CounterSalesInfo\forms\form_remarks.resx">
       <DependentUpon>form_remarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CounterSalesInfo\forms\form_salesman_tips_copy.resx">
+      <DependentUpon>form_salesman_tips_copy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CounterSalesInfo\forms\form_salesman_tips.resx">
       <DependentUpon>form_salesman_tips.cs</DependentUpon>

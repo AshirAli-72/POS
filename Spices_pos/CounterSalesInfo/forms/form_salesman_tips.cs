@@ -2,8 +2,10 @@
 using System.Windows.Forms;
 using Datalayer;
 using Guna.UI2.WinForms;
+using Login_info.controllers;
 using Message_box_info.forms;
 using RefereningMaterial;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 using Spices_pos.DatabaseInfo.WebConfig;
 
 namespace CounterSales_info.forms
@@ -31,10 +33,10 @@ namespace CounterSales_info.forms
         }
 
 
-        ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
+        //ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
-        done_form done = new done_form();
+        //done_form done = new done_form();
         public string invoiceNumber = "";
         private int countdown = 60;
 
@@ -71,7 +73,7 @@ namespace CounterSales_info.forms
         {
             if (txtOtherAmount.Text != "")
             {
-                setSalesmanCurrentSaleTip(txtOtherAmount.Text);
+                setSalesmanCurrentSaleTip(txtOtherAmount.Text, false);
             }
             else
             {
@@ -91,7 +93,7 @@ namespace CounterSales_info.forms
 
         private void form_salesman_tips_Load(object sender, EventArgs e)
         {
-            txt_due_amount.Text = data.UserPermissions("amount_due", "pos_sales_accounts", "billNo", invoiceNumber);
+            //txt_due_amount.Text = data.UserPermissions("amount_due", "pos_sales_accounts", "billNo", invoiceNumber);
 
             txtOtherAmount.Select();
         }
@@ -114,12 +116,25 @@ namespace CounterSales_info.forms
             }
         }
 
-        private void setSalesmanCurrentSaleTip(string tipAmount)
+        private void setSalesmanCurrentSaleTip(string tipAmount, bool isTipInPercentage)
         {
             try
             {
-                GetSetData.query = "update pos_sales_accounts set employeeTip = '" + Math.Round(double.Parse(tipAmount), 2) + "' where (billNo = '" + invoiceNumber +"');";
-                data.insertUpdateCreateOrDelete(GetSetData.query);
+                //TextData.tipAmount = 0;
+                //TextData.tipAmount = Math.Round(double.Parse(tipAmount), 2);
+
+                if (IsFormOpen(typeof(form_counter_sales)))
+                {
+                    form_counter_sales.instance.BeginInvoke((MethodInvoker)delegate
+                    {
+                        form_counter_sales.instance.instanceTipAmount.Text = Math.Round(double.Parse(tipAmount), 2).ToString();
+                        form_counter_sales.instance.instanceIsTipInPercentage.Text = isTipInPercentage.ToString();
+                        form_counter_sales.instance.calculateAmountDue();
+                    });
+                }
+
+                //GetSetData.query = "update pos_sales_accounts set employeeTip = '" + Math.Round(double.Parse(tipAmount), 2) + "' where (billNo = '" + invoiceNumber +"');";
+                //data.insertUpdateCreateOrDelete(GetSetData.query);
 
                 this.Close();
             }
@@ -130,46 +145,60 @@ namespace CounterSales_info.forms
             }
         }
 
+        private bool IsFormOpen(Type formType)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == formType)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void button11_Click(object sender, EventArgs e)
         {
-            double tipAmount = (5 * double.Parse(txt_due_amount.Text)) / 100;
+            //double tipAmount = (5 * double.Parse(txt_due_amount.Text)) / 100;
 
-            setSalesmanCurrentSaleTip(tipAmount.ToString());
+            setSalesmanCurrentSaleTip("5", true);
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            double tipAmount = (10 * double.Parse(txt_due_amount.Text)) / 100;
+            //double tipAmount = (10 * double.Parse(txt_due_amount.Text)) / 100;
 
-            setSalesmanCurrentSaleTip(tipAmount.ToString());
+            //setSalesmanCurrentSaleTip(tipAmount.ToString());
+
+            setSalesmanCurrentSaleTip("10", true);
         }
 
         private void button13_Click_1(object sender, EventArgs e)
         {
-            double tipAmount = (15 * double.Parse(txt_due_amount.Text)) / 100;
+            //double tipAmount = (15 * double.Parse(txt_due_amount.Text)) / 100;
 
-            setSalesmanCurrentSaleTip(tipAmount.ToString());
+            setSalesmanCurrentSaleTip("15", true);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            double tipAmount = (20 * double.Parse(txt_due_amount.Text)) / 100;
+            //double tipAmount = (20 * double.Parse(txt_due_amount.Text)) / 100;
 
-            setSalesmanCurrentSaleTip(tipAmount.ToString());
+            setSalesmanCurrentSaleTip("20", true);
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             double tipAmount = (25 * double.Parse(txt_due_amount.Text)) / 100;
 
-            setSalesmanCurrentSaleTip(tipAmount.ToString());
+            setSalesmanCurrentSaleTip("25", true);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             double tipAmount = (30 * double.Parse(txt_due_amount.Text)) / 100;
 
-            setSalesmanCurrentSaleTip(tipAmount.ToString());
+            setSalesmanCurrentSaleTip("30", true);
         }
 
     }

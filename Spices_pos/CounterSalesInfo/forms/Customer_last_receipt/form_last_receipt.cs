@@ -17,6 +17,8 @@ using System.IO;
 using OnBarcode.Barcode;
 using System.Diagnostics;
 using Spices_pos.DatabaseInfo.WebConfig;
+using System.Threading;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace CounterSales_info.forms.Customer_last_receipt
 {
@@ -69,11 +71,12 @@ namespace CounterSales_info.forms.Customer_last_receipt
             InitializeComponent(); 
         }
 
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
-        done_form done = new done_form();
-        form_sure_message sure = new form_sure_message();
+        //done_form done = new done_form();
+        //form_sure_message sure = new form_sure_message();
         public static int role_id = 0;
         int isSaleTransactions = 1; //0 for return, 1 for sale, 2 for noSale 
 
@@ -313,6 +316,12 @@ namespace CounterSales_info.forms.Customer_last_receipt
                 {
                     GetSetData.FillDataGridViewUsingPagination(productDetailGridView, GetSetData.query, "");
                     lblPageNo.Text = "Page " + (GetSetData.countPages + 1);
+
+                    //if (generalSettings.ReadField("salesmanTips") == "Yes")
+                    //{
+                    //    createEditTipsButtonInGridView();
+                    //}
+
                     createSelectButtonInGridView();
                 }
                 else
@@ -341,6 +350,24 @@ namespace CounterSales_info.forms.Customer_last_receipt
             btn.DefaultCellStyle.ForeColor = Color.FromArgb(64, 64, 64);
             btn.DefaultCellStyle.Font = new Font("Century Gothic", 8F, FontStyle.Bold);
             btn.DefaultCellStyle.SelectionBackColor = Color.FromArgb(230, 0, 0);
+            btn.DefaultCellStyle.SelectionForeColor = SystemColors.HighlightText;
+            productDetailGridView.Columns.Add(btn);
+        }
+        
+        private void createEditTipsButtonInGridView()
+        {
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            btn.HeaderText = "Edit Tip";
+            btn.Name = "editTip";
+            btn.Text = "Edit Tip";
+            btn.Width = 60;
+            btn.MinimumWidth = 10;
+            btn.UseColumnTextForButtonValue = true;
+            btn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.DefaultCellStyle.ForeColor = Color.FromArgb(64, 64, 64);
+            btn.DefaultCellStyle.Font = new Font("Century Gothic", 8F, FontStyle.Bold);
+            btn.DefaultCellStyle.SelectionBackColor = Color.RoyalBlue;
             btn.DefaultCellStyle.SelectionForeColor = SystemColors.HighlightText;
             productDetailGridView.Columns.Add(btn);
         }
@@ -894,6 +921,27 @@ namespace CounterSales_info.forms.Customer_last_receipt
             if (productDetailGridView.Columns[e.ColumnIndex].Name == "Return")
             {
                 reOrderBill();
+            }
+             
+            if (productDetailGridView.Columns[e.ColumnIndex].Name == "editTip" && generalSettings.ReadField("salesmanTips") == "Yes")
+            {
+                TextData.billNo = productDetailGridView.SelectedRows[0].Cells["Receipt No"].Value.ToString();
+
+                if (TextData.billNo != "")
+                {
+                    Thread thread = new Thread(() =>
+                    {
+                        form_add_tips secondaryForm = new form_add_tips();
+                        secondaryForm.invoiceNumber = TextData.billNo;
+                        Screen secondaryScreen = Screen.PrimaryScreen;
+                        secondaryForm.Location = secondaryScreen.WorkingArea.Location;
+                        secondaryForm.TopMost = true;
+                        secondaryForm.ShowDialog();
+                    });
+
+                    thread.SetApartmentState(ApartmentState.STA);
+                    thread.Start();
+                }
             }
         }
 

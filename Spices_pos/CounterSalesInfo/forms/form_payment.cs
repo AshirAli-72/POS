@@ -12,6 +12,7 @@ using System.IO;
 using System.Threading;
 using System.Diagnostics;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace CounterSales_info.forms
 {
@@ -34,6 +35,7 @@ namespace CounterSales_info.forms
             //setFormColorsDynamically();
         }
 
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
@@ -45,6 +47,7 @@ namespace CounterSales_info.forms
         double cashAmount = 0;
         public static bool isReturned = false;
         public static string advancePaidAmount = "0";
+        public static string tipAmount = "0";
         double CC_SplitedAmount = 0;
 
         private string creditCardLinkedWithAPI()
@@ -63,6 +66,14 @@ namespace CounterSales_info.forms
                     {
                         decimal amountDue = decimal.Parse(creditCardApiAmount); // Example amount, you can set this dynamically
                         decimal amount = amountDue + 0.00m;
+                        decimal salesmanTip = 0;
+
+                        if (txtTipAmount.Text != "")
+                        {
+                            salesmanTip = decimal.Parse(txtTipAmount.Text); // Example amount, you can set this dynamically
+                        }
+                   
+                        decimal totalTip = salesmanTip + 0.00m;
                         string xmlRequest = "";
                        
                         if (isReturned)
@@ -71,7 +82,7 @@ namespace CounterSales_info.forms
                                         <PaymentType>Credit</PaymentType>
                                         <TransType>Return</TransType>
                                         <Amount>{amount}</Amount>
-                                        <Tip>0.00</Tip>
+                                        <Tip>{totalTip}</Tip>
                                         <InvNum>1</InvNum>
                                         <RefId>{TextData.billNo}</RefId>
                                         <RegisterId>{register_id}</RegisterId>
@@ -352,15 +363,7 @@ namespace CounterSales_info.forms
         {
             try
             {
-                GetSetData.query = @"select default_printer from pos_general_settings;";
-                string printer_name = data.SearchStringValuesFromDb(GetSetData.query);
-
-
-                GetSetData.query = @"select printer_model from pos_general_settings;";
-                string printer_model = data.SearchStringValuesFromDb(GetSetData.query);
-
-
-                CashDrawerData.OpenDrawer(printer_name, printer_model);
+                CashDrawerData.OpenDrawer(generalSettings.ReadField("default_printer"), generalSettings.ReadField("printer_model"));
             }
             catch (Exception es)
             {
@@ -383,6 +386,7 @@ namespace CounterSales_info.forms
            
             TextData.aknowledged = "";
             TextData.invoiceAmountDue = "";
+            TextData.tipAmount = "0";
 
             this.Close();
             TextData.showPopUpForm = false;
@@ -417,17 +421,12 @@ namespace CounterSales_info.forms
             {
                 //GetSetData.addFormCopyrights(lblCopyrights);
 
-                TextData.general_options = data.UserPermissions("directly_print_receipt", "pos_general_settings");
-
-                if (TextData.general_options == "Yes")
+                if (generalSettings.ReadField("directly_print_receipt") == "Yes")
                 {
                     chk_print_receipt.Checked = true;
                 }
 
-                GetSetData.query = @"select auto_open_cash_drawer from pos_general_settings;";
-                string auto_open_cash_drawer = data.SearchStringValuesFromDb(GetSetData.query);
-
-                if (auto_open_cash_drawer == "Yes")
+                if (generalSettings.ReadField("auto_open_cash_drawer") == "Yes")
                 {
                     chkCashDrawer.Checked = true;
                 }
@@ -441,11 +440,21 @@ namespace CounterSales_info.forms
 
                 //txt_due_amount.Text = TextData.net_total.ToString();
                 //CC_SplitedAmount = TextData.net_total;
+
                 txtAdvancePaidAmount.Text = advancePaidAmount;
+              
                 txtTotalAmount.Text = Math.Round(TextData.net_total, 2).ToString();
                 txt_due_amount.Text = Math.Round(TextData.net_total - double.Parse(advancePaidAmount), 2).ToString();
                 CC_SplitedAmount = Math.Round(TextData.net_total - double.Parse(advancePaidAmount), 2);
-                
+
+                txtTipAmount.Text = tipAmount;
+
+                if (generalSettings.ReadField("salesmanTips") != "Yes")
+                {
+                    txtTipAmount.ReadOnly = false;
+                    txtTipAmount.Text = "0.00";
+                }
+
 
                 setCurrency();
 
@@ -461,6 +470,11 @@ namespace CounterSales_info.forms
         private void cash_keypress(object sender, KeyPressEventArgs e)
         {
             data.NumericValuesOnly(txt_cash.Text, e);
+        }
+
+        private void txtTipAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            data.NumericValuesOnly(txtTipAmount.Text, e);
         }
 
         private void txt_on_hand_KeyPress(object sender, KeyPressEventArgs e)
@@ -1078,6 +1092,13 @@ namespace CounterSales_info.forms
                                         TextData.remaining_amount = txt_remaining.Text;
                                         TextData.checkAutoOpenCashDrawer = false;
 
+                                        TextData.tipAmount = "0";
+
+                                        if (txtTipAmount.Text != "")
+                                        {
+                                            TextData.tipAmount = txtTipAmount.Text;
+                                        }
+
                                         this.Close();
                                     }
                                     else
@@ -1149,6 +1170,12 @@ namespace CounterSales_info.forms
                                                             TextData.checkAutoOpenCashDrawer = false;
                                                             TextData.credit_card_amount = TextData.totalAmount;
                                                             TextData.send_cash = "0";
+                                                            TextData.tipAmount = "0";
+
+                                                            if (txtTipAmount.Text != "")
+                                                            {
+                                                                TextData.tipAmount = txtTipAmount.Text;
+                                                            }
 
                                                             this.Close();
                                                         }
@@ -1189,6 +1216,12 @@ namespace CounterSales_info.forms
                                             TextData.checkAutoOpenCashDrawer = false;
                                             TextData.credit_card_amount = TextData.totalAmount;
                                             TextData.send_cash = "0";
+                                            TextData.tipAmount = "0";
+
+                                            if (txtTipAmount.Text != "")
+                                            {
+                                                TextData.tipAmount = txtTipAmount.Text;
+                                            }
 
                                             this.Close();
                                         }
@@ -1221,6 +1254,12 @@ namespace CounterSales_info.forms
 
                                 TextData.remaining_amount = txt_remaining.Text;
                                 TextData.checkAutoOpenCashDrawer = false;
+                                TextData.tipAmount = "0";
+
+                                if (txtTipAmount.Text != "")
+                                {
+                                    TextData.tipAmount = txtTipAmount.Text;
+                                }
 
                                 this.Close();
                             }
@@ -1245,6 +1284,12 @@ namespace CounterSales_info.forms
 
                                 TextData.remaining_amount = txt_remaining.Text;
                                 TextData.checkAutoOpenCashDrawer = false;
+                                TextData.tipAmount = "0";
+
+                                if (txtTipAmount.Text != "")
+                                {
+                                    TextData.tipAmount = txtTipAmount.Text;
+                                }
 
                                 this.Close();
                             }
@@ -1321,6 +1366,12 @@ namespace CounterSales_info.forms
                                                 if (message == "Transaction Approved")
                                                 {
                                                     TextData.checkAutoOpenCashDrawer = false;
+                                                    TextData.tipAmount = "0";
+
+                                                    if (txtTipAmount.Text != "")
+                                                    {
+                                                        TextData.tipAmount = txtTipAmount.Text;
+                                                    }
                                                     done.DoneMessage(message);
                                                     done.ShowDialog();
 
@@ -1366,7 +1417,14 @@ namespace CounterSales_info.forms
                                             TextData.remaining_amount = txt_remaining.Text;
 
                                             TextData.checkAutoOpenCashDrawer = false;
- 
+
+                                            TextData.tipAmount = "0";
+
+                                            if (txtTipAmount.Text != "")
+                                            {
+                                                TextData.tipAmount = txtTipAmount.Text;
+                                            }
+
                                             this.Close();
                                         }
                                         else
@@ -1390,6 +1448,13 @@ namespace CounterSales_info.forms
 
                                         TextData.checkAutoOpenCashDrawer = false;
 
+                                        TextData.tipAmount = "0";
+
+                                        if (txtTipAmount.Text != "")
+                                        {
+                                            TextData.tipAmount = txtTipAmount.Text;
+                                        }
+
                                         this.Close();
                                     }
                                     else
@@ -1411,6 +1476,13 @@ namespace CounterSales_info.forms
                                         TextData.remaining_amount = txt_remaining.Text;
 
                                         TextData.checkAutoOpenCashDrawer = false;
+
+                                        TextData.tipAmount = "0";
+
+                                        if (txtTipAmount.Text != "")
+                                        {
+                                            TextData.tipAmount = txtTipAmount.Text;
+                                        }
 
                                         this.Close();
                                     }
@@ -1436,7 +1508,14 @@ namespace CounterSales_info.forms
                                         {
                                             TextData.checkAutoOpenCashDrawer = true;
                                         }
-                                   
+
+                                        TextData.tipAmount = "0";
+
+                                        if (txtTipAmount.Text != "")
+                                        {
+                                            TextData.tipAmount = txtTipAmount.Text;
+                                        }
+
                                         this.Close();
                                     }
                                     else
@@ -1579,6 +1658,13 @@ namespace CounterSales_info.forms
 
                                         btnCreditCard.Enabled = true;
 
+                                        TextData.tipAmount = "0";
+
+                                        if (txtTipAmount.Text != "")
+                                        {
+                                            TextData.tipAmount = txtTipAmount.Text;
+                                        }
+
                                         this.Close();
                                     }
                                     else if (message == "Transaction Canceled")
@@ -1624,6 +1710,13 @@ namespace CounterSales_info.forms
 
                                 TextData.remaining_amount = txt_remaining.Text;
 
+                                TextData.tipAmount = "0";
+
+                                if (txtTipAmount.Text != "")
+                                {
+                                    TextData.tipAmount = txtTipAmount.Text;
+                                }
+
                                 this.Close();
                             }
                             else
@@ -1647,6 +1740,13 @@ namespace CounterSales_info.forms
 
                             TextData.remaining_amount = txt_remaining.Text;
 
+                            TextData.tipAmount = "0";
+
+                            if (txtTipAmount.Text != "")
+                            {
+                                TextData.tipAmount = txtTipAmount.Text;
+                            }
+
                             this.Close();
                         }
                         else
@@ -1668,6 +1768,13 @@ namespace CounterSales_info.forms
                             TextData.checkAutoOpenCashDrawer = false;
 
                             TextData.remaining_amount = txt_remaining.Text;
+
+                            TextData.tipAmount = "0";
+
+                            if (txtTipAmount.Text != "")
+                            {
+                                TextData.tipAmount = txtTipAmount.Text;
+                            }
 
                             this.Close();
                         }
@@ -1691,6 +1798,13 @@ namespace CounterSales_info.forms
                             if (chkCashDrawer.Checked)
                             {
                                 TextData.checkAutoOpenCashDrawer = true;
+                            }
+
+                            TextData.tipAmount = "0";
+
+                            if (txtTipAmount.Text != "")
+                            {
+                                TextData.tipAmount = txtTipAmount.Text;
                             }
 
                             this.Close();
@@ -1797,6 +1911,8 @@ namespace CounterSales_info.forms
             }
             else if (e.KeyCode == Keys.Escape)
             {
+                TextData.tipAmount = "0";
+
                 this.Close();
             }
         }
@@ -1826,7 +1942,13 @@ namespace CounterSales_info.forms
                             TextData.aknowledged = "Credits";
                             TextData.credits = double.Parse(txt_due_amount.Text);
                             TextData.send_cash = "0";
-                            
+                            TextData.tipAmount = "0";
+
+                            if (txtTipAmount.Text != "")
+                            {
+                                TextData.tipAmount = txtTipAmount.Text;
+                            }
+
                             this.Close();
                         }
                         else
@@ -2018,5 +2140,7 @@ namespace CounterSales_info.forms
                 txt_cash.Text = txt_cash.Text.Remove(txt_cash.Text.Length - 1);
             }
         }
+
+      
     }
 }

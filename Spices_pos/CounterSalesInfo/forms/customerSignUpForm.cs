@@ -7,6 +7,7 @@ using Login_info.controllers;
 using CounterSales_info.forms;
 using Guna.UI2.WinForms;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace Products_info.forms
 {
@@ -37,6 +38,7 @@ namespace Products_info.forms
 
 
         public static customerSignUpForm instance;
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         error_form error = new error_form();
@@ -230,6 +232,22 @@ namespace Products_info.forms
                 TextData.invoiceCustomerName = txtFullName.Text;
                 TextData.customerCellNumber = txtContactNumber.Text;
 
+                if (generalSettings.ReadField("salesmanTips") == "Yes")
+                {
+                    if (Screen.AllScreens.Length > 1)
+                    {
+                        if (!IsFormOpen(typeof(form_salesman_tips)))
+                        {
+                            form_salesman_tips secondaryForm = new form_salesman_tips();
+
+                            Screen secondaryScreen = Screen.AllScreens[1];
+                            secondaryForm.StartPosition = FormStartPosition.CenterScreen;
+                            secondaryForm.Location = secondaryScreen.WorkingArea.Location;
+                            secondaryForm.WindowState = FormWindowState.Maximized;
+                            secondaryForm.Show();
+                        }
+                    }
+                }
                 this.Close();
             }
         }

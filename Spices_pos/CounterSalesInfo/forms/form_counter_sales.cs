@@ -61,6 +61,8 @@ namespace CounterSales_info.forms
         public static form_counter_sales instance;
         public Label instanceCustomerName;
         public Label instanceCustomerCode;
+        public Label instanceTipAmount;
+        public Label instanceIsTipInPercentage;
         public Label instanceCustomerPoints;
         public Guna2ToggleSwitch instanceIsReturn;
         private System.Threading.Timer timer;
@@ -75,6 +77,8 @@ namespace CounterSales_info.forms
             instanceCustomerName = lbl_customer;
             instanceCustomerCode = lblCustomerCode;
             instanceCustomerPoints = txtCustomerPoints;
+            instanceTipAmount = txtTipAmount;
+            instanceIsTipInPercentage = txtIsTipInPercentage;
             instanceIsReturn = txt_status;
         }
 
@@ -1005,17 +1009,17 @@ namespace CounterSales_info.forms
             return false;
         } 
 
-        private void IsPopupFormOpen(Type formType)
-        {
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form.GetType() == formType && !form.IsDisposed) // Check if form is not disposed
-                {
-                    form.Invoke(new Action(() => form.Dispose())); // Ensure closing operation is done on UI thread
-                    return;
-                }
-            }
-        }
+        //private void IsPopupFormOpen(Type formType)
+        //{
+        //    foreach (Form form in Application.OpenForms)
+        //    {
+        //        if (form.GetType() == formType && !form.IsDisposed) // Check if form is not disposed
+        //        {
+        //            form.Invoke(new Action(() => form.Dispose())); // Ensure closing operation is done on UI thread
+        //            return;
+        //        }
+        //    }
+        //}
 
         private void CartItemButton_Click(object sender, EventArgs e)
         {
@@ -2756,7 +2760,7 @@ namespace CounterSales_info.forms
                         {
                             //TextData.billNo = auto_generate_sales_code();
 
-                            GetSetData.query = "insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.send_cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation.ToString() + "' , '0' , '0' , '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '0', '0', '" + form_ticket_history.advanceAmount + "');";
+                            GetSetData.query = "insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.send_cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation.ToString() + "' , '0' , '0' , '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '" + TextData.tipAmount +"', '0', '" + form_ticket_history.advanceAmount + "');";
                             data.insertUpdateCreateOrDelete(GetSetData.query);
 
                             int sales_acc_id_db = data.UserPermissionsIds("sales_acc_id", "pos_sales_accounts", "billNo", TextData.billNo);
@@ -3017,22 +3021,22 @@ namespace CounterSales_info.forms
 
                 if (TextData.credit_card_amount != 0)
                 {
-                    GetSetData.query = @"insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "' , '" + TextData.total_taxation.ToString() + "' , '" + TextData.credit_card_amount.ToString() + "' , '0' , '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '0', '"+ Math.Round(surchages,2).ToString() + "', '" + form_ticket_history.advanceAmount + "');";
+                    GetSetData.query = @"insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "' , '" + TextData.total_taxation.ToString() + "' , '" + TextData.credit_card_amount.ToString() + "' , '0' , '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '" + TextData.tipAmount +"', '"+ Math.Round(surchages,2).ToString() + "', '" + form_ticket_history.advanceAmount + "');";
                     data.insertUpdateCreateOrDelete(GetSetData.query);
                 }
                 else if (TextData.paypal_amount != 0)
                 {
-                    GetSetData.query = @"insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "' , '" + TextData.total_taxation.ToString() + "' , '0' , '" + TextData.paypal_amount.ToString() + "', '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '0', '0', '" + form_ticket_history.advanceAmount + "');";
+                    GetSetData.query = @"insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "' , '" + TextData.total_taxation.ToString() + "' , '0' , '" + TextData.paypal_amount.ToString() + "', '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '" + TextData.tipAmount +"', '0', '" + form_ticket_history.advanceAmount + "');";
                     data.insertUpdateCreateOrDelete(GetSetData.query);
                 }
                 else if (TextData.google_pay_amount != 0)
                 {
-                    GetSetData.query = @"insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "' , '" + TextData.total_taxation.ToString() + "' , '0', '0' , '" + TextData.google_pay_amount.ToString() + "' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '0', '0', '" + form_ticket_history.advanceAmount + "');";
+                    GetSetData.query = @"insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "' , '" + TextData.total_taxation.ToString() + "' , '0', '0' , '" + TextData.google_pay_amount.ToString() + "' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '" + TextData.tipAmount +"', '0', '" + form_ticket_history.advanceAmount + "');";
                     data.insertUpdateCreateOrDelete(GetSetData.query);
                 }
                 else
                 {
-                    GetSetData.query = @"insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "' , '" + TextData.total_taxation.ToString() + "' , '0' , '0' , '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '0', '0', '" + form_ticket_history.advanceAmount + "');";
+                    GetSetData.query = @"insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "' , '" + TextData.total_taxation.ToString() + "' , '0' , '0' , '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '" + TextData.tipAmount +"', '0', '" + form_ticket_history.advanceAmount + "');";
                     data.insertUpdateCreateOrDelete(GetSetData.query);
                 }
 
@@ -3403,7 +3407,7 @@ namespace CounterSales_info.forms
                 //*****************************************************************************************
 
 
-                GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '0' , '0' , '0' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '0', '0', '" + form_ticket_history.advanceAmount +"');";
+                GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '0' , '0' , '0' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '" + TextData.tipAmount +"', '0', '" + form_ticket_history.advanceAmount +"');";
                 data.insertUpdateCreateOrDelete(GetSetData.query);
          
                 //*****************************************************************************************
@@ -3421,6 +3425,7 @@ namespace CounterSales_info.forms
 
                 GetSetData.query = "select quantity from pos_cart_items where (product_id = '" + product_id_db + "') and (stock_id = '" + stock_id_db + "') and (mac_address = '" + macAddress + "');";
                 double cartQuantity = data.SearchNumericValuesDb(GetSetData.query);
+
 
                 GetSetData.query = "select total_amount from pos_cart_items where (product_id = '" + product_id_db + "') and (stock_id = '" + stock_id_db + "') and (mac_address = '" + macAddress + "');";
                 double cartTotalAmount = data.SearchNumericValuesDb(GetSetData.query);
@@ -3659,7 +3664,7 @@ namespace CounterSales_info.forms
                 //{
                 //TextData.billNo = auto_generate_sales_code();
 
-                GetSetData.query = "insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation.ToString() + "' , '0' , '0' , '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '0', '" + form_ticket_history.advanceAmount + "');";
+                GetSetData.query = "insert into pos_sales_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '" + TextData.credits.ToString() + "' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments.ToString() + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "' , '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation.ToString() + "' , '0' , '0' , '0' , '" + clock_in_id + "' , 'false', '" + txtCustomerPoints.Text + "', '0', '" + TextData.tipAmount +"', '" + form_ticket_history.advanceAmount + "');";
                 data.insertUpdateCreateOrDelete(GetSetData.query);
 
                 int sales_acc_id_db = data.UserPermissionsIds("sales_acc_id", "pos_sales_accounts", "billNo", TextData.billNo);
@@ -4648,7 +4653,6 @@ namespace CounterSales_info.forms
                 TextData.feedbackChangeAmount = "0";
                 TextData.isCashPayment = false;
                 TextData.paymentType = "";
-                string salesmanTips = "No";
 
                 GetSetData.query = "select customer_id from pos_customers where (full_name = '" + TextData.customer_name + "') and (cus_code = '" + TextData.customerCode + "');";
                 TextData.customerId = data.SearchStringValuesFromDb(GetSetData.query);
@@ -4671,6 +4675,7 @@ namespace CounterSales_info.forms
                     form_payment.isReturned = true;
                 }
 
+                form_payment.tipAmount = txtTotalTipAmount.Text;
                 form_payment.advancePaidAmount = form_ticket_history.advanceAmount;
                 form_payment.role_id = role_id;
                 form_payment add_customer = new form_payment();
@@ -4681,8 +4686,8 @@ namespace CounterSales_info.forms
                 txt_credits.Text = TextData.credits.ToString();
                 txtChangeAmount.Text = TextData.remaining_amount;
 
-                TextData.general_options = data.UserPermissions("directly_print_receipt", "pos_general_settings");
-                string auto_clear_cart = data.UserPermissions("auto_clear_cart", "pos_general_settings");
+                TextData.general_options = generalSettings.ReadField("directly_print_receipt");
+                string auto_clear_cart = generalSettings.ReadField("auto_clear_cart");
                 // ************************
 
                 if (txt_status.Checked == false)
@@ -4710,39 +4715,37 @@ namespace CounterSales_info.forms
                             fun_insert_records_into_sales_as_Credits();
                         }
 
-                        salesmanTips = data.UserPermissions("salesmanTips", "pos_general_settings");
+                        //if (generalSettings.ReadField("salesmanTips") == "Yes")
+                        //{
+                        //    if (TextData.billNo != "" && TextData.credit_card_amount != 0)
+                        //    {
+                        //        Thread thread = new Thread(() =>
+                        //        {
+                        //            form_add_tips secondaryForm = new form_add_tips();
+                        //            secondaryForm.invoiceNumber = TextData.billNo;
+                        //            Screen secondaryScreen = Screen.PrimaryScreen;
+                        //            secondaryForm.Location = secondaryScreen.WorkingArea.Location;
+                        //            secondaryForm.TopMost = true;
+                        //            secondaryForm.ShowDialog();
+                        //        });
 
-                        if (salesmanTips == "Yes")
-                        {
-                            if (TextData.billNo != "" && TextData.credit_card_amount != 0)
-                            {
-                                Thread thread = new Thread(() =>
-                                {
-                                    form_add_tips secondaryForm = new form_add_tips();
-                                    secondaryForm.invoiceNumber = TextData.billNo;
-                                    Screen secondaryScreen = Screen.PrimaryScreen;
-                                    secondaryForm.Location = secondaryScreen.WorkingArea.Location;
-                                    secondaryForm.TopMost = true;
-                                    secondaryForm.ShowDialog();
-                                });
-
-                                thread.SetApartmentState(ApartmentState.STA);
-                                thread.Start();
-                            }
-                        }
+                        //        thread.SetApartmentState(ApartmentState.STA);
+                        //        thread.Start();
+                        //    }
+                        //}
 
                         if (TextData.return_value == true)
                         {
-                            GetSetData.query = @"select default_printer from pos_general_settings;";
-                            string printer_name = data.SearchStringValuesFromDb(GetSetData.query);
+                            //GetSetData.query = @"select default_printer from pos_general_settings;";
+                            //string printer_name = data.SearchStringValuesFromDb(GetSetData.query);
 
 
                             if (TextData.checkAutoOpenCashDrawer == true)
                             {
-                                GetSetData.query = @"select printer_model from pos_general_settings;";
-                                string printer_model = data.SearchStringValuesFromDb(GetSetData.query);
+                                //GetSetData.query = @"select printer_model from pos_general_settings;";
+                                //string printer_model = data.SearchStringValuesFromDb(GetSetData.query);
 
-                                CashDrawerData.OpenDrawer(printer_name, printer_model);
+                                CashDrawerData.OpenDrawer(generalSettings.ReadField("default_printer"), generalSettings.ReadField("printer_model"));
                             }
 
                             if (TextData.checkPrintReport == true)
@@ -4757,9 +4760,9 @@ namespace CounterSales_info.forms
                                 }
                                 else
                                 {
-                                    if (printer_name != "")
+                                    if (generalSettings.ReadField("default_printer") != "")
                                     {
-                                        PrintDirectReceipt(printer_name, TextData.billNo);
+                                        PrintDirectReceipt(generalSettings.ReadField("default_printer"), TextData.billNo);
                                     }
                                     else
                                     {
@@ -4790,8 +4793,8 @@ namespace CounterSales_info.forms
 
                     if (TextData.return_value == true)
                     {
-                        GetSetData.query = @"select default_printer from pos_general_settings;";
-                        string printer_name = data.SearchStringValuesFromDb(GetSetData.query);
+                        //GetSetData.query = @"select default_printer from pos_general_settings;";
+                        //string printer_name = data.SearchStringValuesFromDb(GetSetData.query);
 
                         if (TextData.checkPrintReport == true)
                         {
@@ -4799,15 +4802,15 @@ namespace CounterSales_info.forms
                             //form_cus_returns_report report = new form_cus_returns_report();
                             //report.ShowDialog();
 
-                            PrintReturnSaleDirectReceipt(printer_name, TextData.billNo);
+                            PrintReturnSaleDirectReceipt(generalSettings.ReadField("default_printer"), TextData.billNo);
                         }
 
                         if (TextData.checkAutoOpenCashDrawer)
                         {
-                            GetSetData.query = @"select printer_model from pos_general_settings;";
-                            string printer_model = data.SearchStringValuesFromDb(GetSetData.query);
+                            //GetSetData.query = @"select printer_model from pos_general_settings;";
+                            //string printer_model = data.SearchStringValuesFromDb(GetSetData.query);
 
-                            CashDrawerData.OpenDrawer(printer_name, printer_model);
+                            CashDrawerData.OpenDrawer(generalSettings.ReadField("default_printer"), generalSettings.ReadField("printer_model"));
                         }
 
                         if (auto_clear_cart == "Yes")
@@ -4858,9 +4861,10 @@ namespace CounterSales_info.forms
                 //}
 
 
-                string changeAmountPopup = data.UserPermissions("changeAmountPopUp", "pos_general_settings");
+                //string changeAmountPopup = data.UserPermissions("changeAmountPopUp", "pos_general_settings");
            
-                if ((changeAmountPopup == "Yes") && (TextData.showPopUpForm))
+                //if ((generalSettings.ReadField("changeAmountPopUp") == "Yes") && (TextData.showPopUpForm))
+                if (generalSettings.ReadField("changeAmountPopUp") == "Yes")
                 {
                     if (TextData.feedbackAmountDue != "")
                     {
@@ -5169,22 +5173,22 @@ namespace CounterSales_info.forms
 
                     if (TextData.credit_card_amount != 0)
                     {
-                        GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '" + TextData.credit_card_amount + "', '0' , '0' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '0', '0', '" + form_ticket_history.advanceAmount +"');";
+                        GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '" + TextData.credit_card_amount + "', '0' , '0' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '" + TextData.tipAmount +"', '0', '" + form_ticket_history.advanceAmount +"');";
                         data.insertUpdateCreateOrDelete(GetSetData.query);
                     }
                     else if (TextData.paypal_amount != 0)
                     {
-                        GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '0' , '" + TextData.paypal_amount + "', '0' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '0', '0', '" + form_ticket_history.advanceAmount +"');";
+                        GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '0' , '" + TextData.paypal_amount + "', '0' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '" + TextData.tipAmount +"', '0', '" + form_ticket_history.advanceAmount +"');";
                         data.insertUpdateCreateOrDelete(GetSetData.query);
                     }
                     else if (TextData.google_pay_amount != 0)
                     {
-                        GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '0' , '0' , '" + TextData.google_pay_amount + "' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '0', '0', '" + form_ticket_history.advanceAmount +"');";
+                        GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '0' , '0' , '" + TextData.google_pay_amount + "' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '" + TextData.tipAmount +"', '0', '" + form_ticket_history.advanceAmount +"');";
                         data.insertUpdateCreateOrDelete(GetSetData.query);
                     }
                     else
                     {
-                        GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '0' , '0' , '0' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '0', '0', '" + form_ticket_history.advanceAmount +"');";
+                        GetSetData.query = @"insert into pos_return_accounts values ('" + TextData.billNo.ToString() + "' , '" + TextData.dates.ToString() + "' , '" + lbl_time.Text + "' , '" + TextData.no_of_items.ToString() + "' , '" + TextData.total_qty.ToString() + "' , '" + TextData.net_total.ToString() + "' , '" + TextData.discount.ToString() + "' , '" + TextData.tax.ToString() + "' , '" + TextData.totalAmount.ToString() + "' ,  '" + TextData.cash.ToString() + "' , '0' , '" + TextData.LastCredits_db.ToString() + "' , '" + TextData.status.ToString() + "' , '" + TextData.checkSaleStatus + "' , '" + TextData.comments + "' , '" + customer_id_db.ToString() + "' , '" + employee_id_db.ToString() + "', '" + TextData.cash_on_hand + "' , '" + TextData.remaining_amount + "', '" + TextData.total_taxation + "' , '0' , '0' , '0' , '" + clock_in_id + "', '" + newPoints.ToString() + "', '0', '" + TextData.tipAmount +"', '0', '" + form_ticket_history.advanceAmount +"');";
                         data.insertUpdateCreateOrDelete(GetSetData.query);
                     }
 
@@ -5501,6 +5505,8 @@ namespace CounterSales_info.forms
                 txt_amount_due.Text = "0.00";
                 txtTaxation.Text = "0.00";
                 txtCustomerPoints.Text = "0.00";
+                txtTipAmount.Text = "0";
+                txtIsTipInPercentage.Text = "False";
                 txt_barcode.TabIndex = 0;
                 chkChooseType.SelectedIndex = 0;
 
@@ -6407,6 +6413,7 @@ namespace CounterSales_info.forms
                 FillLastCreditsTextBox();
                 calculateAmountDue();
                 txt_barcode.Focus();
+
             }
             catch (Exception es)
             {
@@ -6619,13 +6626,9 @@ namespace CounterSales_info.forms
         {
             try
             {
-                string autoRedeemPoints = generalSettings.ReadField("autoRedeemPoints");
-
-                if (autoRedeemPoints == "No")
+                if (generalSettings.ReadField("autoRedeemPoints") == "No")
                 {
-                    string pointsRedeemLimit = generalSettings.ReadField("pointsRedeemLimit");
-
-                    if (double.Parse(txtCustomerPoints.Text) >= double.Parse(pointsRedeemLimit))
+                    if (double.Parse(txtCustomerPoints.Text) >= double.Parse(generalSettings.ReadField("pointsRedeemLimit")))
                     {
                         btnRewards.BackColor = Color.Transparent;
                         btnRewards.FillColor = Color.White;
@@ -6878,6 +6881,7 @@ namespace CounterSales_info.forms
                 double taxation = 0;
                 double customer_discount = 0;
                 double redeem_discount = 0;
+                double tipAmount = 0;
                 string totalDiscount = "";
 
                 if (txtGrandTotal.Text != "")
@@ -6888,6 +6892,11 @@ namespace CounterSales_info.forms
                 if (txtTaxation.Text != "")
                 {
                     taxation = double.Parse(txtTaxation.Text);
+                }
+                
+                if (txtTipAmount.Text != "")
+                {
+                    tipAmount = double.Parse(txtTipAmount.Text);
                 }
           
 
@@ -7049,6 +7058,32 @@ namespace CounterSales_info.forms
                     txt_amount_due.Text = txtGrandTotal.Text;
                 }
 
+
+                //Managing Tips
+
+                double amountDue = 0;
+                double totalTips = 0;
+            
+                if (txt_amount_due.Text != "")
+                {
+                    amountDue = double.Parse(txt_amount_due.Text);
+                }
+
+                if (amountDue > 0)
+                {
+                    if (txtIsTipInPercentage.Text == "True")
+                    {
+                        totalTips = (tipAmount * amountDue) / 100;
+
+                        txtTotalTipAmount.Text = Math.Round(totalTips, 2).ToString();
+                    }
+                }
+                else
+                {
+                    txtTotalTipAmount.Text = Math.Round(tipAmount, 2).ToString();
+                }
+             
+
                 #region
                 //***************************************************
                 txtReturnSubTotal.Text = txt_sub_total.Text + "-";
@@ -7083,6 +7118,7 @@ namespace CounterSales_info.forms
                 //    fromSecondScreen.instance.getCartItems();
                 //    fromSecondScreen.instance.isReturn();
                 //}
+
                 if (IsFormOpen(typeof(fromSecondScreen)))
                 {
                     fromSecondScreen.instance.Invoke((MethodInvoker)delegate

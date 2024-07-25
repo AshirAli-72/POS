@@ -93,6 +93,9 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.Closebutton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTipAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -107,11 +110,14 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtTipAmount);
             this.panel2.Controls.Add(this.guna2Button4);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lblChangeAmount);
             this.panel2.Controls.Add(this.lblRemaningAmount);
             this.panel2.Controls.Add(this.guna2Panel4);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtAdvancePaidAmount);
             this.panel2.Controls.Add(this.chk_print_a4_receipt);
             this.panel2.Controls.Add(this.guna2Panel1);
@@ -152,12 +158,12 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(648, 485);
+            this.panel2.Size = new System.Drawing.Size(648, 516);
             this.panel2.TabIndex = 173;
             // 
             // guna2Button4
             // 
-            this.guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.guna2Button4.BackColor = System.Drawing.Color.White;
             this.guna2Button4.BorderColor = System.Drawing.Color.White;
             this.guna2Button4.BorderRadius = 12;
@@ -176,7 +182,7 @@
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.White;
             this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
             this.guna2Button4.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button4.Location = new System.Drawing.Point(589, 101);
+            this.guna2Button4.Location = new System.Drawing.Point(589, 124);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(48, 35);
             this.guna2Button4.TabIndex = 549;
@@ -199,7 +205,7 @@
             this.lblChangeAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblChangeAmount.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.lblChangeAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblChangeAmount.Location = new System.Drawing.Point(369, 71);
+            this.lblChangeAmount.Location = new System.Drawing.Point(369, 94);
             this.lblChangeAmount.Name = "lblChangeAmount";
             this.lblChangeAmount.Size = new System.Drawing.Size(153, 17);
             this.lblChangeAmount.TabIndex = 543;
@@ -211,7 +217,7 @@
             this.lblRemaningAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblRemaningAmount.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
             this.lblRemaningAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblRemaningAmount.Location = new System.Drawing.Point(528, 66);
+            this.lblRemaningAmount.Location = new System.Drawing.Point(528, 89);
             this.lblRemaningAmount.Name = "lblRemaningAmount";
             this.lblRemaningAmount.Size = new System.Drawing.Size(114, 26);
             this.lblRemaningAmount.TabIndex = 535;
@@ -322,7 +328,7 @@
             this.chk_print_a4_receipt.CheckedState.FillColor = System.Drawing.Color.Black;
             this.chk_print_a4_receipt.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
             this.chk_print_a4_receipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.chk_print_a4_receipt.Location = new System.Drawing.Point(312, 392);
+            this.chk_print_a4_receipt.Location = new System.Drawing.Point(312, 410);
             this.chk_print_a4_receipt.Name = "chk_print_a4_receipt";
             this.chk_print_a4_receipt.Size = new System.Drawing.Size(40, 19);
             this.chk_print_a4_receipt.TabIndex = 538;
@@ -342,7 +348,7 @@
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
             this.guna2Panel1.Controls.Add(this.btnByCash);
             this.guna2Panel1.Controls.Add(this.btnByCreditCard);
-            this.guna2Panel1.Location = new System.Drawing.Point(312, 416);
+            this.guna2Panel1.Location = new System.Drawing.Point(312, 439);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(41, 28);
             this.guna2Panel1.TabIndex = 542;
@@ -415,7 +421,7 @@
             this.txt_remaining.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.txt_remaining.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_remaining.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_remaining.Location = new System.Drawing.Point(308, 459);
+            this.txt_remaining.Location = new System.Drawing.Point(308, 482);
             this.txt_remaining.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_remaining.Name = "txt_remaining";
             this.txt_remaining.PasswordChar = '\0';
@@ -434,7 +440,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(307, 451);
+            this.label4.Location = new System.Drawing.Point(307, 474);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 537;
@@ -447,7 +453,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(293, 457);
+            this.label3.Location = new System.Drawing.Point(293, 480);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 15);
             this.label3.TabIndex = 536;
@@ -459,7 +465,7 @@
             this.txt_due_amount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txt_due_amount.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
             this.txt_due_amount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.txt_due_amount.Location = new System.Drawing.Point(528, 37);
+            this.txt_due_amount.Location = new System.Drawing.Point(528, 62);
             this.txt_due_amount.Name = "txt_due_amount";
             this.txt_due_amount.Size = new System.Drawing.Size(114, 26);
             this.txt_due_amount.TabIndex = 533;
@@ -482,7 +488,7 @@
             this.txt_on_hand.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.txt_on_hand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_on_hand.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_on_hand.Location = new System.Drawing.Point(332, 451);
+            this.txt_on_hand.Location = new System.Drawing.Point(332, 474);
             this.txt_on_hand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_on_hand.Name = "txt_on_hand";
             this.txt_on_hand.PasswordChar = '\0';
@@ -502,7 +508,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(369, 42);
+            this.label7.Location = new System.Drawing.Point(369, 67);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(153, 17);
             this.label7.TabIndex = 533;
@@ -526,7 +532,7 @@
             this.button22.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.button22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button22.ImageSize = new System.Drawing.Size(30, 30);
-            this.button22.Location = new System.Drawing.Point(316, 450);
+            this.button22.Location = new System.Drawing.Point(316, 473);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(37, 21);
             this.button22.TabIndex = 529;
@@ -555,7 +561,7 @@
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.guna2Button2.HoverState.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button2.Location = new System.Drawing.Point(9, 427);
+            this.guna2Button2.Location = new System.Drawing.Point(9, 450);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(292, 53);
             this.guna2Button2.TabIndex = 530;
@@ -583,7 +589,7 @@
             this.button20.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button20.HoverState.ForeColor = System.Drawing.Color.White;
             this.button20.ImageSize = new System.Drawing.Size(30, 30);
-            this.button20.Location = new System.Drawing.Point(209, 365);
+            this.button20.Location = new System.Drawing.Point(209, 388);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(92, 53);
             this.button20.TabIndex = 527;
@@ -611,7 +617,7 @@
             this.button19.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button19.HoverState.ForeColor = System.Drawing.Color.White;
             this.button19.ImageSize = new System.Drawing.Size(30, 30);
-            this.button19.Location = new System.Drawing.Point(109, 365);
+            this.button19.Location = new System.Drawing.Point(109, 388);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(92, 53);
             this.button19.TabIndex = 528;
@@ -639,7 +645,7 @@
             this.button18.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button18.HoverState.ForeColor = System.Drawing.Color.White;
             this.button18.ImageSize = new System.Drawing.Size(30, 30);
-            this.button18.Location = new System.Drawing.Point(9, 365);
+            this.button18.Location = new System.Drawing.Point(9, 388);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(92, 53);
             this.button18.TabIndex = 526;
@@ -667,7 +673,7 @@
             this.button17.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button17.HoverState.ForeColor = System.Drawing.Color.White;
             this.button17.ImageSize = new System.Drawing.Size(30, 30);
-            this.button17.Location = new System.Drawing.Point(209, 302);
+            this.button17.Location = new System.Drawing.Point(209, 325);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(92, 53);
             this.button17.TabIndex = 526;
@@ -695,7 +701,7 @@
             this.button16.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button16.HoverState.ForeColor = System.Drawing.Color.White;
             this.button16.ImageSize = new System.Drawing.Size(30, 30);
-            this.button16.Location = new System.Drawing.Point(109, 302);
+            this.button16.Location = new System.Drawing.Point(109, 325);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(92, 53);
             this.button16.TabIndex = 526;
@@ -723,7 +729,7 @@
             this.button15.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button15.HoverState.ForeColor = System.Drawing.Color.White;
             this.button15.ImageSize = new System.Drawing.Size(30, 30);
-            this.button15.Location = new System.Drawing.Point(9, 302);
+            this.button15.Location = new System.Drawing.Point(9, 325);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(92, 53);
             this.button15.TabIndex = 526;
@@ -751,7 +757,7 @@
             this.button14.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button14.HoverState.ForeColor = System.Drawing.Color.White;
             this.button14.ImageSize = new System.Drawing.Size(30, 30);
-            this.button14.Location = new System.Drawing.Point(557, 416);
+            this.button14.Location = new System.Drawing.Point(557, 439);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(83, 64);
             this.button14.TabIndex = 523;
@@ -779,7 +785,7 @@
             this.button13.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button13.HoverState.ForeColor = System.Drawing.Color.White;
             this.button13.ImageSize = new System.Drawing.Size(30, 30);
-            this.button13.Location = new System.Drawing.Point(463, 416);
+            this.button13.Location = new System.Drawing.Point(463, 439);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(83, 64);
             this.button13.TabIndex = 524;
@@ -807,7 +813,7 @@
             this.button12.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button12.HoverState.ForeColor = System.Drawing.Color.White;
             this.button12.ImageSize = new System.Drawing.Size(30, 30);
-            this.button12.Location = new System.Drawing.Point(369, 416);
+            this.button12.Location = new System.Drawing.Point(369, 439);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(83, 64);
             this.button12.TabIndex = 525;
@@ -835,7 +841,7 @@
             this.button11.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button11.HoverState.ForeColor = System.Drawing.Color.White;
             this.button11.ImageSize = new System.Drawing.Size(30, 30);
-            this.button11.Location = new System.Drawing.Point(557, 346);
+            this.button11.Location = new System.Drawing.Point(557, 369);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(83, 64);
             this.button11.TabIndex = 520;
@@ -863,7 +869,7 @@
             this.button10.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button10.HoverState.ForeColor = System.Drawing.Color.White;
             this.button10.ImageSize = new System.Drawing.Size(30, 30);
-            this.button10.Location = new System.Drawing.Point(463, 346);
+            this.button10.Location = new System.Drawing.Point(463, 369);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(83, 64);
             this.button10.TabIndex = 521;
@@ -891,7 +897,7 @@
             this.button9.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button9.HoverState.ForeColor = System.Drawing.Color.White;
             this.button9.ImageSize = new System.Drawing.Size(30, 30);
-            this.button9.Location = new System.Drawing.Point(369, 346);
+            this.button9.Location = new System.Drawing.Point(369, 369);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(83, 64);
             this.button9.TabIndex = 522;
@@ -919,7 +925,7 @@
             this.button8.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button8.HoverState.ForeColor = System.Drawing.Color.White;
             this.button8.ImageSize = new System.Drawing.Size(30, 30);
-            this.button8.Location = new System.Drawing.Point(557, 276);
+            this.button8.Location = new System.Drawing.Point(557, 299);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(83, 64);
             this.button8.TabIndex = 517;
@@ -947,7 +953,7 @@
             this.button7.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button7.HoverState.ForeColor = System.Drawing.Color.White;
             this.button7.ImageSize = new System.Drawing.Size(30, 30);
-            this.button7.Location = new System.Drawing.Point(463, 276);
+            this.button7.Location = new System.Drawing.Point(463, 299);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(83, 64);
             this.button7.TabIndex = 518;
@@ -975,7 +981,7 @@
             this.button5.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button5.HoverState.ForeColor = System.Drawing.Color.White;
             this.button5.ImageSize = new System.Drawing.Size(30, 30);
-            this.button5.Location = new System.Drawing.Point(369, 276);
+            this.button5.Location = new System.Drawing.Point(369, 299);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(83, 64);
             this.button5.TabIndex = 519;
@@ -1003,7 +1009,7 @@
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.White;
             this.guna2Button3.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button3.Location = new System.Drawing.Point(557, 206);
+            this.guna2Button3.Location = new System.Drawing.Point(557, 229);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(83, 64);
             this.guna2Button3.TabIndex = 516;
@@ -1031,7 +1037,7 @@
             this.button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button3.HoverState.ForeColor = System.Drawing.Color.White;
             this.button3.ImageSize = new System.Drawing.Size(30, 30);
-            this.button3.Location = new System.Drawing.Point(463, 206);
+            this.button3.Location = new System.Drawing.Point(463, 229);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(83, 64);
             this.button3.TabIndex = 516;
@@ -1059,7 +1065,7 @@
             this.button6.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.button6.HoverState.ForeColor = System.Drawing.Color.White;
             this.button6.ImageSize = new System.Drawing.Size(30, 30);
-            this.button6.Location = new System.Drawing.Point(369, 206);
+            this.button6.Location = new System.Drawing.Point(369, 229);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(83, 64);
             this.button6.TabIndex = 516;
@@ -1084,7 +1090,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.button2.Location = new System.Drawing.Point(369, 149);
+            this.button2.Location = new System.Drawing.Point(369, 172);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(271, 48);
             this.button2.TabIndex = 511;
@@ -1107,7 +1113,7 @@
             this.txt_cash.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.txt_cash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txt_cash.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_cash.Location = new System.Drawing.Point(369, 97);
+            this.txt_cash.Location = new System.Drawing.Point(369, 120);
             this.txt_cash.Margin = new System.Windows.Forms.Padding(2);
             this.txt_cash.Name = "txt_cash";
             this.txt_cash.Padding = new System.Windows.Forms.Padding(2);
@@ -1141,9 +1147,9 @@
             this.btnCreditCard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCreditCard.ImageOffset = new System.Drawing.Point(7, 0);
             this.btnCreditCard.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnCreditCard.Location = new System.Drawing.Point(9, 73);
+            this.btnCreditCard.Location = new System.Drawing.Point(9, 70);
             this.btnCreditCard.Name = "btnCreditCard";
-            this.btnCreditCard.Size = new System.Drawing.Size(143, 68);
+            this.btnCreditCard.Size = new System.Drawing.Size(143, 78);
             this.btnCreditCard.TabIndex = 502;
             this.btnCreditCard.Text = "Credit Card";
             this.btnCreditCard.TextOffset = new System.Drawing.Point(14, 0);
@@ -1170,7 +1176,7 @@
             this.btnChequeDetails.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnChequeDetails.ImageOffset = new System.Drawing.Point(7, 0);
             this.btnChequeDetails.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnChequeDetails.Location = new System.Drawing.Point(312, 358);
+            this.btnChequeDetails.Location = new System.Drawing.Point(312, 381);
             this.btnChequeDetails.Name = "btnChequeDetails";
             this.btnChequeDetails.Size = new System.Drawing.Size(43, 28);
             this.btnChequeDetails.TabIndex = 502;
@@ -1200,9 +1206,9 @@
             this.btnGooglePay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGooglePay.ImageOffset = new System.Drawing.Point(7, 0);
             this.btnGooglePay.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnGooglePay.Location = new System.Drawing.Point(9, 225);
+            this.btnGooglePay.Location = new System.Drawing.Point(9, 242);
             this.btnGooglePay.Name = "btnGooglePay";
-            this.btnGooglePay.Size = new System.Drawing.Size(292, 68);
+            this.btnGooglePay.Size = new System.Drawing.Size(292, 78);
             this.btnGooglePay.TabIndex = 502;
             this.btnGooglePay.Text = "Zelle / Cashapp / Venmo";
             this.btnGooglePay.TextOffset = new System.Drawing.Point(12, 0);
@@ -1229,9 +1235,9 @@
             this.btnPaypal.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnPaypal.ImageOffset = new System.Drawing.Point(7, 0);
             this.btnPaypal.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnPaypal.Location = new System.Drawing.Point(9, 149);
+            this.btnPaypal.Location = new System.Drawing.Point(9, 156);
             this.btnPaypal.Name = "btnPaypal";
-            this.btnPaypal.Size = new System.Drawing.Size(143, 68);
+            this.btnPaypal.Size = new System.Drawing.Size(143, 78);
             this.btnPaypal.TabIndex = 502;
             this.btnPaypal.Text = "Apple Pay";
             this.btnPaypal.TextOffset = new System.Drawing.Point(8, 0);
@@ -1258,9 +1264,9 @@
             this.btn_Cash.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_Cash.ImageOffset = new System.Drawing.Point(7, 0);
             this.btn_Cash.ImageSize = new System.Drawing.Size(24, 24);
-            this.btn_Cash.Location = new System.Drawing.Point(158, 73);
+            this.btn_Cash.Location = new System.Drawing.Point(158, 70);
             this.btn_Cash.Name = "btn_Cash";
-            this.btn_Cash.Size = new System.Drawing.Size(143, 68);
+            this.btn_Cash.Size = new System.Drawing.Size(143, 78);
             this.btn_Cash.TabIndex = 502;
             this.btn_Cash.Text = "Cash";
             this.btn_Cash.TextOffset = new System.Drawing.Point(5, 0);
@@ -1287,9 +1293,9 @@
             this.btn_credits.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_credits.ImageOffset = new System.Drawing.Point(7, 0);
             this.btn_credits.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_credits.Location = new System.Drawing.Point(158, 149);
+            this.btn_credits.Location = new System.Drawing.Point(158, 156);
             this.btn_credits.Name = "btn_credits";
-            this.btn_credits.Size = new System.Drawing.Size(143, 68);
+            this.btn_credits.Size = new System.Drawing.Size(143, 78);
             this.btn_credits.TabIndex = 502;
             this.btn_credits.Text = "Credit";
             this.btn_credits.TextOffset = new System.Drawing.Point(8, 0);
@@ -1306,7 +1312,7 @@
             this.guna2Panel7.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Padding = new System.Windows.Forms.Padding(8);
-            this.guna2Panel7.Size = new System.Drawing.Size(684, 571);
+            this.guna2Panel7.Size = new System.Drawing.Size(684, 602);
             this.guna2Panel7.TabIndex = 1;
             // 
             // guna2Panel10
@@ -1320,7 +1326,7 @@
             this.guna2Panel10.Location = new System.Drawing.Point(8, 8);
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.Padding = new System.Windows.Forms.Padding(10);
-            this.guna2Panel10.Size = new System.Drawing.Size(668, 555);
+            this.guna2Panel10.Size = new System.Drawing.Size(668, 586);
             this.guna2Panel10.TabIndex = 0;
             // 
             // guna2GradientPanel1
@@ -1330,7 +1336,7 @@
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(10, 60);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(648, 485);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(648, 516);
             this.guna2GradientPanel1.TabIndex = 137;
             // 
             // panel1
@@ -1495,14 +1501,70 @@
             this.guna2Panel5.FillColor = System.Drawing.Color.White;
             this.guna2Panel5.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(684, 571);
+            this.guna2Panel5.Size = new System.Drawing.Size(684, 602);
             this.guna2Panel5.TabIndex = 174;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(528, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 26);
+            this.label1.TabIndex = 535;
+            this.label1.Text = "0.00";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(369, 40);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(153, 17);
+            this.label9.TabIndex = 543;
+            this.label9.Text = "Tip Amount:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtTipAmount
+            // 
+            this.txtTipAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTipAmount.BackColor = System.Drawing.Color.Transparent;
+            this.txtTipAmount.BorderColor = System.Drawing.Color.SeaShell;
+            this.txtTipAmount.BorderRadius = 2;
+            this.txtTipAmount.BorderThickness = 0;
+            this.txtTipAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTipAmount.DefaultText = "0.00";
+            this.txtTipAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTipAmount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTipAmount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTipAmount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTipAmount.FillColor = System.Drawing.Color.SeaShell;
+            this.txtTipAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTipAmount.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold);
+            this.txtTipAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTipAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTipAmount.Location = new System.Drawing.Point(528, 35);
+            this.txtTipAmount.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.txtTipAmount.Name = "txtTipAmount";
+            this.txtTipAmount.PasswordChar = '\0';
+            this.txtTipAmount.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtTipAmount.PlaceholderText = "";
+            this.txtTipAmount.ReadOnly = true;
+            this.txtTipAmount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTipAmount.SelectedText = "";
+            this.txtTipAmount.Size = new System.Drawing.Size(114, 26);
+            this.txtTipAmount.TabIndex = 550;
+            this.txtTipAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtTipAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTipAmount_KeyPress);
             // 
             // form_payment
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(684, 571);
+            this.ClientSize = new System.Drawing.Size(684, 602);
             this.Controls.Add(this.guna2Panel5);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1595,5 +1657,8 @@
         private System.Windows.Forms.Label txtAdvancePaidAmount;
         private System.Windows.Forms.Label txtTotalAmount;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox txtTipAmount;
     }
 }

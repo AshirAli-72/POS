@@ -270,6 +270,57 @@ End
 GO
 
 
+/****** Object:  Table [dbo].[pos_stock_history]    Script Date: 7/20/2024 10:26:53 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_migrations' AND TABLE_SCHEMA = 'dbo')
+BEGIN
+    CREATE TABLE [dbo].[pos_stock_history](
+	    [id] [bigint] IDENTITY(1,1) NOT NULL,
+	    [date] [date] NULL,
+	    [new_quantity] [float] NULL,
+	    [old_quantity] [float] NULL,
+	    [new_cost_price] [float] NULL,
+	    [old_cost_price] [float] NULL,
+	    [new_sale_price] [float] NULL,
+	    [old_sale_price] [float] NULL,
+	    [details] [ntext] NULL,
+	    [user_id] [int] NULL,
+	    [product_id] [int] NULL,
+     CONSTRAINT [PK_pos_stock_history] PRIMARY KEY CLUSTERED 
+    (
+	    [id] ASC
+    )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+    ) ON [PRIMARY]
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_pos_stock_history_pos_products]') AND parent_object_id = OBJECT_ID(N'[dbo].[pos_stock_history]'))
+BEGIN
+    ALTER TABLE [dbo].[pos_stock_history]  WITH CHECK ADD  CONSTRAINT [FK_pos_stock_history_pos_products] FOREIGN KEY([product_id])
+    REFERENCES [dbo].[pos_products] ([product_id])
+END
+GO
+
+ALTER TABLE [dbo].[pos_stock_history] CHECK CONSTRAINT [FK_pos_stock_history_pos_products]
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_pos_stock_history_pos_users]') AND parent_object_id = OBJECT_ID(N'[dbo].[pos_stock_history]'))
+BEGIN
+    ALTER TABLE [dbo].[pos_stock_history]  WITH CHECK ADD  CONSTRAINT [FK_pos_stock_history_pos_users] FOREIGN KEY([user_id])
+    REFERENCES [dbo].[pos_users] ([user_id])
+END
+GO
+
+ALTER TABLE [dbo].[pos_stock_history] CHECK CONSTRAINT [FK_pos_stock_history_pos_users]
+GO
+
+
+
 -- Alter the prod_name data type in pos_products table
 ALTER TABLE [dbo].[pos_products] ALTER COLUMN [prod_name] NVARCHAR(200)
 GO
@@ -306,6 +357,48 @@ ALTER TABLE [dbo].[pos_AllCodes] ALTER COLUMN [guarantorsCodes] float
 ALTER TABLE [dbo].[pos_AllCodes] ALTER COLUMN [holdItemsCodes] float
 ALTER TABLE [dbo].[pos_AllCodes] ALTER COLUMN [investorsCodes] float
 
+GO
+
+
+-- Alter pos_cart_items table to adding Columns
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_cart_items' AND TABLE_SCHEMA = 'dbo')
+BEGIN
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_cart_items' AND COLUMN_NAME = 'category_id')
+    BEGIN
+        ALTER TABLE [dbo].[pos_cart_items] ADD [category_id] [float] NULL
+    END
+    
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_cart_items' AND COLUMN_NAME = 'brand_id')
+    BEGIN
+        ALTER TABLE [dbo].[pos_cart_items] ADD [brand_id] [float] NULL
+    END
+    
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_cart_items' AND COLUMN_NAME = 'mac_address')
+    BEGIN
+        ALTER TABLE [dbo].[pos_cart_items] ADD [mac_address] [nvarchar](50) NULL
+    END
+    
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_cart_items' AND COLUMN_NAME = 'customer_points')
+    BEGIN
+        ALTER TABLE [dbo].[pos_cart_items] ADD [customer_points] [nvarchar](50) NULL
+    END
+    
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_cart_items' AND COLUMN_NAME = 'is_return')
+    BEGIN
+        ALTER TABLE [dbo].[pos_cart_items] ADD [is_return] [nvarchar](20) NULL
+    END
+    
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_cart_items' AND COLUMN_NAME = 'customer_id')
+    BEGIN
+        ALTER TABLE [dbo].[pos_cart_items] ADD [customer_id] [nvarchar](50) NULL
+    END
+    
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_cart_items' AND COLUMN_NAME = 'user_id')
+    BEGIN
+        ALTER TABLE [dbo].[pos_cart_items] ADD [user_id] [nvarchar](50) NULL
+    END
+    
+End
 GO
 
 
@@ -363,6 +456,18 @@ END
 GO
 
 
+-- Alter pos_server_config table to adding Columns
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_server_config' AND TABLE_SCHEMA = 'dbo')
+BEGIN
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_server_config' AND COLUMN_NAME = 'backgroundServicePath')
+    BEGIN
+        ALTER TABLE [dbo].[pos_server_config] ADD [backgroundServicePath] [ntext] NULL
+    END
+
+END
+GO
+
+
 
 -- Alter pos_no_sale table to adding Columns
 IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_no_sale' AND TABLE_SCHEMA = 'dbo')
@@ -388,66 +493,66 @@ END
 GO
 
 
--- Alter pos_sales_account table to adding Columns
-IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_sales_account' AND TABLE_SCHEMA = 'dbo')
+-- Alter pos_sales_accounts table to adding Columns
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_sales_accounts' AND TABLE_SCHEMA = 'dbo')
 BEGIN
-    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_account' AND COLUMN_NAME = 'customerPoints')
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_accounts' AND COLUMN_NAME = 'customerPoints')
     BEGIN
-        ALTER TABLE [dbo].[pos_sales_account] ADD [customerPoints] [nvarchar](20) NULL
+        ALTER TABLE [dbo].[pos_sales_accounts] ADD [customerPoints] [nvarchar](20) NULL
     END
     
     
-    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_account' AND COLUMN_NAME = 'employeeCommission')
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_accounts' AND COLUMN_NAME = 'employeeCommission')
     BEGIN
-        ALTER TABLE [dbo].[pos_sales_account] ADD [employeeCommission] [float] NULL
+        ALTER TABLE [dbo].[pos_sales_accounts] ADD [employeeCommission] [float] NULL
     END 
     
-    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_account' AND COLUMN_NAME = 'employeeTip')
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_accounts' AND COLUMN_NAME = 'employeeTip')
     BEGIN
-        ALTER TABLE [dbo].[pos_sales_account] ADD [employeeTip] [float] NULL
+        ALTER TABLE [dbo].[pos_sales_accounts] ADD [employeeTip] [float] NULL
     END 
     
-     IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_account' AND COLUMN_NAME = 'surcharges')
+     IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_accounts' AND COLUMN_NAME = 'surcharges')
     BEGIN
-        ALTER TABLE [dbo].[pos_sales_account] ADD [surcharges] [float] NULL
+        ALTER TABLE [dbo].[pos_sales_accounts] ADD [surcharges] [float] NULL
     END 
     
-    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_account' AND COLUMN_NAME = 'advance_payment')
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_sales_accounts' AND COLUMN_NAME = 'advance_payment')
     BEGIN
-        ALTER TABLE [dbo].[pos_sales_account] ADD [advance_payment] [float] NULL
+        ALTER TABLE [dbo].[pos_sales_accounts] ADD [advance_payment] [float] NULL
     END 
 
 END
 GO
 
 
--- Alter pos_return_account table to adding Columns
-IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_return_account' AND TABLE_SCHEMA = 'dbo')
+-- Alter pos_return_accounts table to adding Columns
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_return_accounts' AND TABLE_SCHEMA = 'dbo')
 BEGIN
-    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_account' AND COLUMN_NAME = 'customerPoints')
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_accounts' AND COLUMN_NAME = 'customerPoints')
     BEGIN
-        ALTER TABLE [dbo].[pos_return_account] ADD [customerPoints] [nvarchar](20) NULL
+        ALTER TABLE [dbo].[pos_return_accounts] ADD [customerPoints] [nvarchar](20) NULL
     END
     
     
-    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_account' AND COLUMN_NAME = 'employeeCommission')
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_accounts' AND COLUMN_NAME = 'employeeCommission')
     BEGIN
-        ALTER TABLE [dbo].[pos_return_account] ADD [employeeCommission] [float] NULL
+        ALTER TABLE [dbo].[pos_return_accounts] ADD [employeeCommission] [float] NULL
     END 
     
-    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_account' AND COLUMN_NAME = 'employeeTip')
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_accounts' AND COLUMN_NAME = 'employeeTip')
     BEGIN
-        ALTER TABLE [dbo].[pos_return_account] ADD [employeeTip] [float] NULL
+        ALTER TABLE [dbo].[pos_return_accounts] ADD [employeeTip] [float] NULL
     END 
     
-     IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_account' AND COLUMN_NAME = 'surcharges')
+     IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_accounts' AND COLUMN_NAME = 'surcharges')
     BEGIN
-        ALTER TABLE [dbo].[pos_return_account] ADD [surcharges] [float] NULL
+        ALTER TABLE [dbo].[pos_return_accounts] ADD [surcharges] [float] NULL
     END 
     
-    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_account' AND COLUMN_NAME = 'advance_payment')
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_return_accounts' AND COLUMN_NAME = 'advance_payment')
     BEGIN
-        ALTER TABLE [dbo].[pos_return_account] ADD [advance_payment] [float] NULL
+        ALTER TABLE [dbo].[pos_return_accounts] ADD [advance_payment] [float] NULL
     END 
 
 END
@@ -472,6 +577,25 @@ BEGIN
     IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_returns_details' AND COLUMN_NAME = 'per_item_commission')
     BEGIN
         ALTER TABLE [dbo].[pos_returns_details] ADD [per_item_commission] [float] NULL
+    END
+   
+END
+GO
+
+
+
+-- Alter pos_counter table to adding Columns
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_counter' AND TABLE_SCHEMA = 'dbo')
+BEGIN
+    
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_counter' AND COLUMN_NAME = 'opening_amount')
+    BEGIN
+        ALTER TABLE [dbo].[pos_counter] ADD [opening_amount] [float] NULL
+    END
+    
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_counter' AND COLUMN_NAME = 'shift_limit')
+    BEGIN
+        ALTER TABLE [dbo].[pos_counter] ADD [shift_limit] [float] NULL
     END
    
 END
@@ -558,6 +682,66 @@ BEGIN
     IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_clock_in' AND COLUMN_NAME = 'total25c')
     BEGIN
         ALTER TABLE [dbo].[pos_clock_in] ADD [total25c] [int] NULL
+    END
+END
+GO
+
+-- Alter pos_store_day_end table to adding Columns
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'pos_store_day_end' AND TABLE_SCHEMA = 'dbo')
+BEGIN
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total100s')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total100s] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total50s')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total50s] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total20s')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total20s] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total10s')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total10s] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total5s')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total5s] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total2s')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total2s] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total1s')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total1s] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total1c')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total1c] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total5c')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total5c] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total10c')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total10c] [int] NULL
+    END
+
+    IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'pos_store_day_end' AND COLUMN_NAME = 'total25c')
+    BEGIN
+        ALTER TABLE [dbo].[pos_store_day_end] ADD [total25c] [int] NULL
     END
 END
 GO
