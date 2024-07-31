@@ -51,7 +51,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.btn_payment = new Guna.UI2.WinForms.Guna2Button();
             this.btn_void = new Guna.UI2.WinForms.Guna2Button();
-            this.txtCustomerPoints = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txt_amount_due = new System.Windows.Forms.Label();
             this.txtTaxation = new System.Windows.Forms.Label();
@@ -69,13 +68,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnScrollUp = new Guna.UI2.WinForms.Guna2Button();
             this.txtReturnDiscount = new System.Windows.Forms.Label();
-            this.txtReturnPoints = new System.Windows.Forms.Label();
             this.txtReturnTax = new System.Windows.Forms.Label();
             this.txtReturnItems = new System.Windows.Forms.Label();
             this.txtReturnAmountDue = new System.Windows.Forms.Label();
             this.txtReturnQuantity = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtReturnGrandTotal = new System.Windows.Forms.Label();
             this.txtReturnSubTotal = new System.Windows.Forms.Label();
+            this.txtCustomerPoints = new System.Windows.Forms.Label();
+            this.txtReturnPoints = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -100,6 +100,8 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.pnl_list = new System.Windows.Forms.FlowLayoutPanel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.txtTotalTipAmount = new System.Windows.Forms.Label();
+            this.txtIsTipInPercentage = new System.Windows.Forms.Label();
             this.txtTipAmount = new System.Windows.Forms.Label();
             this.txt_date = new System.Windows.Forms.DateTimePicker();
             this.btnPrevious = new Guna.UI2.WinForms.Guna2Button();
@@ -143,8 +145,6 @@
             this.btnReturn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.oneDriveBackgroundWorker = new System.ComponentModel.BackgroundWorker();
-            this.txtIsTipInPercentage = new System.Windows.Forms.Label();
-            this.txtTotalTipAmount = new System.Windows.Forms.Label();
             this.pnl_taskbar.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -1065,20 +1065,6 @@
             this.btn_void.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.btn_void.Click += new System.EventHandler(this.btn_void_Click);
             // 
-            // txtCustomerPoints
-            // 
-            this.txtCustomerPoints.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCustomerPoints.AutoSize = true;
-            this.txtCustomerPoints.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtCustomerPoints.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txtCustomerPoints.Location = new System.Drawing.Point(84, 33);
-            this.txtCustomerPoints.Name = "txtCustomerPoints";
-            this.txtCustomerPoints.Size = new System.Drawing.Size(40, 19);
-            this.txtCustomerPoints.TabIndex = 514;
-            this.txtCustomerPoints.Text = "0.00";
-            this.txtCustomerPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtCustomerPoints.TextChanged += new System.EventHandler(this.txtCustomerPoints_TextChanged);
-            // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1322,20 +1308,6 @@
             this.txtReturnDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtReturnDiscount.Visible = false;
             // 
-            // txtReturnPoints
-            // 
-            this.txtReturnPoints.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtReturnPoints.AutoSize = true;
-            this.txtReturnPoints.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtReturnPoints.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txtReturnPoints.Location = new System.Drawing.Point(82, 33);
-            this.txtReturnPoints.Name = "txtReturnPoints";
-            this.txtReturnPoints.Size = new System.Drawing.Size(47, 19);
-            this.txtReturnPoints.TabIndex = 1018;
-            this.txtReturnPoints.Text = "-0.00";
-            this.txtReturnPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtReturnPoints.Visible = false;
-            // 
             // txtReturnTax
             // 
             this.txtReturnTax.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1433,6 +1405,34 @@
             this.txtReturnSubTotal.Text = "0.00-";
             this.txtReturnSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtReturnSubTotal.Visible = false;
+            // 
+            // txtCustomerPoints
+            // 
+            this.txtCustomerPoints.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCustomerPoints.AutoSize = true;
+            this.txtCustomerPoints.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtCustomerPoints.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtCustomerPoints.Location = new System.Drawing.Point(84, 33);
+            this.txtCustomerPoints.Name = "txtCustomerPoints";
+            this.txtCustomerPoints.Size = new System.Drawing.Size(40, 19);
+            this.txtCustomerPoints.TabIndex = 514;
+            this.txtCustomerPoints.Text = "0.00";
+            this.txtCustomerPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtCustomerPoints.TextChanged += new System.EventHandler(this.txtCustomerPoints_TextChanged);
+            // 
+            // txtReturnPoints
+            // 
+            this.txtReturnPoints.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtReturnPoints.AutoSize = true;
+            this.txtReturnPoints.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtReturnPoints.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txtReturnPoints.Location = new System.Drawing.Point(82, 33);
+            this.txtReturnPoints.Name = "txtReturnPoints";
+            this.txtReturnPoints.Size = new System.Drawing.Size(47, 19);
+            this.txtReturnPoints.TabIndex = 1018;
+            this.txtReturnPoints.Text = "-0.00";
+            this.txtReturnPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtReturnPoints.Visible = false;
             // 
             // panel12
             // 
@@ -1824,6 +1824,34 @@
             this.panel16.Size = new System.Drawing.Size(720, 36);
             this.panel16.TabIndex = 55;
             // 
+            // txtTotalTipAmount
+            // 
+            this.txtTotalTipAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTotalTipAmount.AutoSize = true;
+            this.txtTotalTipAmount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTotalTipAmount.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtTotalTipAmount.Location = new System.Drawing.Point(487, 9);
+            this.txtTotalTipAmount.Name = "txtTotalTipAmount";
+            this.txtTotalTipAmount.Size = new System.Drawing.Size(18, 19);
+            this.txtTotalTipAmount.TabIndex = 1018;
+            this.txtTotalTipAmount.Text = "0";
+            this.txtTotalTipAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtTotalTipAmount.Visible = false;
+            // 
+            // txtIsTipInPercentage
+            // 
+            this.txtIsTipInPercentage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtIsTipInPercentage.AutoSize = true;
+            this.txtIsTipInPercentage.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.txtIsTipInPercentage.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtIsTipInPercentage.Location = new System.Drawing.Point(540, 9);
+            this.txtIsTipInPercentage.Name = "txtIsTipInPercentage";
+            this.txtIsTipInPercentage.Size = new System.Drawing.Size(48, 19);
+            this.txtIsTipInPercentage.TabIndex = 1017;
+            this.txtIsTipInPercentage.Text = "False";
+            this.txtIsTipInPercentage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtIsTipInPercentage.Visible = false;
+            // 
             // txtTipAmount
             // 
             this.txtTipAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -2082,7 +2110,7 @@
             this.txt_barcode.IconLeft = ((System.Drawing.Image)(resources.GetObject("txt_barcode.IconLeft")));
             this.txt_barcode.IconLeftSize = new System.Drawing.Size(15, 15);
             this.txt_barcode.IconRightSize = new System.Drawing.Size(22, 22);
-            this.txt_barcode.Location = new System.Drawing.Point(92, 9);
+            this.txt_barcode.Location = new System.Drawing.Point(91, 9);
             this.txt_barcode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_barcode.Name = "txt_barcode";
             this.txt_barcode.Padding = new System.Windows.Forms.Padding(2);
@@ -2746,34 +2774,6 @@
             // 
             this.oneDriveBackgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.oneDriveBackgroundWorker_DoWork);
             this.oneDriveBackgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.oneDriveBackgroundWorker_RunWorkerCompleted);
-            // 
-            // txtIsTipInPercentage
-            // 
-            this.txtIsTipInPercentage.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtIsTipInPercentage.AutoSize = true;
-            this.txtIsTipInPercentage.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtIsTipInPercentage.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtIsTipInPercentage.Location = new System.Drawing.Point(540, 9);
-            this.txtIsTipInPercentage.Name = "txtIsTipInPercentage";
-            this.txtIsTipInPercentage.Size = new System.Drawing.Size(48, 19);
-            this.txtIsTipInPercentage.TabIndex = 1017;
-            this.txtIsTipInPercentage.Text = "False";
-            this.txtIsTipInPercentage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.txtIsTipInPercentage.Visible = false;
-            // 
-            // txtTotalTipAmount
-            // 
-            this.txtTotalTipAmount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTotalTipAmount.AutoSize = true;
-            this.txtTotalTipAmount.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.txtTotalTipAmount.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtTotalTipAmount.Location = new System.Drawing.Point(487, 9);
-            this.txtTotalTipAmount.Name = "txtTotalTipAmount";
-            this.txtTotalTipAmount.Size = new System.Drawing.Size(18, 19);
-            this.txtTotalTipAmount.TabIndex = 1018;
-            this.txtTotalTipAmount.Text = "0";
-            this.txtTotalTipAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.txtTotalTipAmount.Visible = false;
             // 
             // form_counter_sales
             // 

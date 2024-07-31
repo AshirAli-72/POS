@@ -1285,7 +1285,7 @@ namespace RefereningMaterial
 
             return total_duration;
         }
-        
+
         //public string ProcedureGetEmployeeDuration(string fromDate, string toDate, string employeeName)
         //{
         //    string total_duration = "";
@@ -1304,8 +1304,8 @@ namespace RefereningMaterial
         //                                SELECT SUM(DATEDIFF(SECOND, 0, CONVERT(TIME, pos_clock_out.total_hours))) AS [TotalDurationInSeconds]
         //                                FROM pos_clock_in
         //                                INNER JOIN pos_clock_out ON pos_clock_in.id = pos_clock_out.clock_in_id
-								//		INNER JOIN dbo.pos_users AS to_user ON dbo.pos_clock_in.to_user_id = to_user.user_id INNER JOIN
-								//		 dbo.pos_employees ON dbo.pos_employees.employee_id = to_user.emp_id
+        //		INNER JOIN dbo.pos_users AS to_user ON dbo.pos_clock_in.to_user_id = to_user.user_id INNER JOIN
+        //		 dbo.pos_employees ON dbo.pos_employees.employee_id = to_user.emp_id
         //                                WHERE (pos_clock_out.date >= @FromDate AND pos_clock_out.date <= @ToDate) and (pos_employees.full_name = @employeeName)
         //                            ) AS DurationInSeconds;";
         //            }
@@ -1321,7 +1321,7 @@ namespace RefereningMaterial
         //                                WHERE (pos_clock_out.date >= @FromDate AND pos_clock_out.date <= @ToDate)
         //                            ) AS DurationInSeconds;";
         //            }
-                    
+
 
         //            using (SqlCommand command = new SqlCommand(query, connection))
         //            {
@@ -1336,7 +1336,7 @@ namespace RefereningMaterial
         //                connection.Open();
 
         //                total_duration = command.ExecuteScalar()?.ToString(); // Assuming you expect a single value
-                   
+
 
         //                return total_duration;
         //            }
@@ -1349,67 +1349,71 @@ namespace RefereningMaterial
 
         //    return total_duration;
         //}
-        
-        
+
+
         public string ProcedureGetEmployeeTotalSalary(string fromDate, string toDate, string employeeName, decimal perHourSalary)
         {
-            string total_duration = "";
+            string totalDuration = "";
             string query = "";
 
             try
             {
                 using (SqlConnection connection = new SqlConnection(webConfig.con_string))
                 {
-                    if (employeeName  != "")
+                    if (!string.IsNullOrEmpty(employeeName))
                     {
-                        query = @"SELECT CONVERT(VARCHAR, (TotalDurationInSeconds / 3600)) + ':' +
-                                   RIGHT('0' + CONVERT(VARCHAR, (TotalDurationInSeconds % 3600) / 60), 2) + ':' +
-                                   RIGHT('0' + CONVERT(VARCHAR, TotalDurationInSeconds % 60), 2) AS [FormattedDuration]
-                                   FROM (
-                                        SELECT SUM(ABS(DATEDIFF(SECOND, pos_clock_in.start_time, pos_clock_out.end_time))) AS [TotalDurationInSeconds]
-                                        FROM pos_clock_in
-                                        INNER JOIN pos_clock_out ON pos_clock_in.id = pos_clock_out.clock_in_id
-                                        INNER JOIN dbo.pos_users AS to_user ON pos_clock_in.to_user_id = to_user.user_id
-                                        INNER JOIN dbo.pos_employees ON dbo.pos_employees.employee_id = to_user.emp_id
-                                        WHERE (pos_clock_out.date >= @FromDate AND pos_clock_out.date <= @ToDate) and (pos_employees.full_name = @employeeName)
-                                    ) AS DurationInSeconds;";
+                        query = @"
+                    SELECT 
+                        CONVERT(VARCHAR, (TotalDurationInSeconds / 3600)) + ':' +
+                        RIGHT('0' + CONVERT(VARCHAR, (TotalDurationInSeconds % 3600) / 60), 2) + ':' +
+                        RIGHT('0' + CONVERT(VARCHAR, TotalDurationInSeconds % 60), 2) AS [FormattedDuration]
+                    FROM (
+                        SELECT 
+                            SUM(ABS(DATEDIFF(SECOND, pos_clock_in.start_time, pos_clock_out.end_time))) AS [TotalDurationInSeconds]
+                        FROM pos_clock_in
+                        INNER JOIN pos_clock_out ON pos_clock_in.id = pos_clock_out.clock_in_id
+                        INNER JOIN dbo.pos_users AS to_user ON pos_clock_in.to_user_id = to_user.user_id
+                        INNER JOIN dbo.pos_employees ON dbo.pos_employees.employee_id = to_user.emp_id
+                        WHERE (pos_clock_out.date >= @FromDate AND pos_clock_out.date <= @ToDate) 
+                              AND (dbo.pos_employees.full_name = @employeeName)
+                    ) AS DurationInSeconds;";
                     }
                     else
                     {
-                        query = @"SELECT CONVERT(VARCHAR, (TotalDurationInSeconds / 3600)) + ':' +
-                                   RIGHT('0' + CONVERT(VARCHAR, (TotalDurationInSeconds % 3600) / 60), 2) + ':' +
-                                   RIGHT('0' + CONVERT(VARCHAR, TotalDurationInSeconds % 60), 2) AS [FormattedDuration]
-                                   FROM (
-                                        SELECT SUM(ABS(DATEDIFF(SECOND, pos_clock_in.start_time, pos_clock_out.end_time))) AS [TotalDurationInSeconds]
-                                        FROM pos_clock_in
-                                        INNER JOIN pos_clock_out ON pos_clock_in.id = pos_clock_out.clock_in_id
-                                        INNER JOIN dbo.pos_users AS to_user ON pos_clock_in.to_user_id = to_user.user_id
-                                        INNER JOIN dbo.pos_employees ON dbo.pos_employees.employee_id = to_user.emp_id
-                                        WHERE (pos_clock_out.date >= @FromDate AND pos_clock_out.date <= @ToDate)
-                                    ) AS DurationInSeconds;";
+                        query = @"
+                    SELECT 
+                        CONVERT(VARCHAR, (TotalDurationInSeconds / 3600)) + ':' +
+                        RIGHT('0' + CONVERT(VARCHAR, (TotalDurationInSeconds % 3600) / 60), 2) + ':' +
+                        RIGHT('0' + CONVERT(VARCHAR, TotalDurationInSeconds % 60), 2) AS [FormattedDuration]
+                    FROM (
+                        SELECT 
+                            SUM(ABS(DATEDIFF(SECOND, pos_clock_in.start_time, pos_clock_out.end_time))) AS [TotalDurationInSeconds]
+                        FROM pos_clock_in
+                        INNER JOIN pos_clock_out ON pos_clock_in.id = pos_clock_out.clock_in_id
+                        WHERE (pos_clock_out.date >= @FromDate AND pos_clock_out.date <= @ToDate)
+                    ) AS DurationInSeconds;";
                     }
-                    
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@FromDate", fromDate); // Assuming FromDate.Text is in a valid date format
-                        command.Parameters.AddWithValue("@ToDate", toDate);     // Assuming ToDate.Text is in a valid date format
+                        command.Parameters.AddWithValue("@FromDate", fromDate);
+                        command.Parameters.AddWithValue("@ToDate", toDate);
 
-                        if (employeeName != "")
+                        if (!string.IsNullOrEmpty(employeeName))
                         {
-                            command.Parameters.AddWithValue("@employeeName", employeeName);     // Assuming ToDate.Text is in a valid date format
+                            command.Parameters.AddWithValue("@employeeName", employeeName);
                         }
 
                         connection.Open();
 
-                        total_duration = command.ExecuteScalar()?.ToString(); // Assuming you expect a single value
+                        totalDuration = command.ExecuteScalar()?.ToString();
 
-                        if (total_duration != "")
+                        if (!string.IsNullOrEmpty(totalDuration))
                         {
-                            double totalHours = ConvertToTotalHours(total_duration);
+                            double totalHours = ConvertToTotalHours(totalDuration);
 
                             // Calculate total salary
-                            string totalSalary = ((decimal)totalHours * perHourSalary).ToString();
+                            string totalSalary = ((decimal)totalHours * perHourSalary).ToString("F2");
 
                             return totalSalary;
                         }
@@ -1423,20 +1427,138 @@ namespace RefereningMaterial
                     }
                 }
             }
-            catch (Exception es)
+            catch (Exception ex)
             {
-                error.errorMessage("No Record Found!");
+                error.errorMessage(ex.Message);
                 error.ShowDialog();
+                return ""; // Or handle error appropriately
             }
-
-            return "";
         }
 
+        // Converts a duration string of format HH:MM:SS to total hours
         private double ConvertToTotalHours(string duration)
         {
-            TimeSpan time = TimeSpan.Parse(duration);
-            return time.TotalHours;
+            try
+            {
+                // Split the duration string into components
+                var parts = duration.Split(':');
+
+                // Check if we have exactly 3 parts (HH, MM, SS)
+                if (parts.Length != 3)
+                {
+                    throw new FormatException("Invalid time format.");
+                }
+
+                // Parse hours, minutes, and seconds
+                int hours = int.Parse(parts[0]);
+                int minutes = int.Parse(parts[1]);
+                int seconds = int.Parse(parts[2]);
+
+                // Calculate total hours
+                return hours + minutes / 60.0 + seconds / 3600.0;
+            }
+            catch (FormatException)
+            {
+                throw new FormatException("Invalid time format. Ensure the duration is in HH:MM:SS format.");
+            }
+            catch (Exception ex)
+            {
+                // Log or handle other unexpected exceptions
+                throw new Exception("Error converting time to total hours.", ex);
+            }
         }
+
+
+
+        //public string ProcedureGetEmployeeTotalSalary(string fromDate, string toDate, string employeeName, decimal perHourSalary)
+        //{
+        //    string total_duration = "";
+        //    string query = "";
+
+        //    try
+        //    {
+        //        using (SqlConnection connection = new SqlConnection(webConfig.con_string))
+        //        {
+        //            if (employeeName  != "")
+        //            {
+        //                query = @"SELECT CONVERT(VARCHAR, (TotalDurationInSeconds / 3600)) + ':' +
+        //                           RIGHT('0' + CONVERT(VARCHAR, (TotalDurationInSeconds % 3600) / 60), 2) + ':' +
+        //                           RIGHT('0' + CONVERT(VARCHAR, TotalDurationInSeconds % 60), 2) AS [FormattedDuration]
+        //                           FROM (
+        //                                SELECT SUM(ABS(DATEDIFF(SECOND, pos_clock_in.start_time, pos_clock_out.end_time))) AS [TotalDurationInSeconds]
+        //                                FROM pos_clock_in
+        //                                INNER JOIN pos_clock_out ON pos_clock_in.id = pos_clock_out.clock_in_id
+        //                                INNER JOIN dbo.pos_users AS to_user ON pos_clock_in.to_user_id = to_user.user_id
+        //                                INNER JOIN dbo.pos_employees ON dbo.pos_employees.employee_id = to_user.emp_id
+        //                                WHERE (pos_clock_out.date >= @FromDate AND pos_clock_out.date <= @ToDate) and (pos_employees.full_name = @employeeName)
+        //                            ) AS DurationInSeconds;";
+        //            }
+        //            else
+        //            {
+        //                query = @"SELECT CONVERT(VARCHAR, (TotalDurationInSeconds / 3600)) + ':' +
+        //                           RIGHT('0' + CONVERT(VARCHAR, (TotalDurationInSeconds % 3600) / 60), 2) + ':' +
+        //                           RIGHT('0' + CONVERT(VARCHAR, TotalDurationInSeconds % 60), 2) AS [FormattedDuration]
+        //                           FROM (
+        //                                SELECT SUM(ABS(DATEDIFF(SECOND, pos_clock_in.start_time, pos_clock_out.end_time))) AS [TotalDurationInSeconds]
+        //                                FROM pos_clock_in
+        //                                INNER JOIN pos_clock_out ON pos_clock_in.id = pos_clock_out.clock_in_id
+        //                                INNER JOIN dbo.pos_users AS to_user ON pos_clock_in.to_user_id = to_user.user_id
+        //                                INNER JOIN dbo.pos_employees ON dbo.pos_employees.employee_id = to_user.emp_id
+        //                                WHERE (pos_clock_out.date >= @FromDate AND pos_clock_out.date <= @ToDate)
+        //                            ) AS DurationInSeconds;";
+        //            }
+
+
+        //            using (SqlCommand command = new SqlCommand(query, connection))
+        //            {
+        //                command.Parameters.AddWithValue("@FromDate", fromDate); // Assuming FromDate.Text is in a valid date format
+        //                command.Parameters.AddWithValue("@ToDate", toDate);     // Assuming ToDate.Text is in a valid date format
+
+        //                if (employeeName != "")
+        //                {
+        //                    command.Parameters.AddWithValue("@employeeName", employeeName);     // Assuming ToDate.Text is in a valid date format
+        //                }
+
+        //                connection.Open();
+
+        //                total_duration = command.ExecuteScalar()?.ToString(); // Assuming you expect a single value
+
+        //                MessageBox.Show(total_duration);
+
+        //                if (total_duration != "")
+        //                {
+        //                    double totalHours = ConvertToTotalHours(total_duration);
+
+        //                    // Calculate total salary
+        //                    string totalSalary = ((decimal)totalHours * perHourSalary).ToString();
+
+        //                    return totalSalary;
+        //                }
+        //                else
+        //                {
+        //                    error.errorMessage("No Record Found!");
+        //                    error.ShowDialog();
+        //                }
+
+        //                return "0";
+        //            }
+        //        }
+        //    }
+        //    catch (Exception es)
+        //    {
+        //        MessageBox.Show(es.Message);
+        //        //error.errorMessage("No Record Found!");
+        //        //error.ShowDialog();
+        //    }
+
+        //    return "";
+        //}
+
+        //private double ConvertToTotalHours(string duration)
+        //{
+        //    TimeSpan time = TimeSpan.Parse(duration);
+        //    return time.TotalHours;
+        //}
 
         public static bool OpenDrawer(string PrinterName, string PrinterType)
         {

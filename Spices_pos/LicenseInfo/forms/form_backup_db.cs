@@ -152,7 +152,6 @@ namespace Spices_pos.LicenseInfo.forms
 
         private void btn_browse_Click(object sender, EventArgs e)
         {
-            this.Opacity = .850;
             FolderBrowserDialog dig = new FolderBrowserDialog();
             
             if(dig.ShowDialog() == DialogResult.OK)
@@ -161,9 +160,8 @@ namespace Spices_pos.LicenseInfo.forms
                 btn_backup.Enabled = true;
                 
             }
-            this.Opacity = .999;
 
-            GetSetData.SaveLogHistoryDetails("Backup Form", "click on browse button...", role_id);
+            //GetSetData.SaveLogHistoryDetails("Backup Form", "click on browse button...", role_id);
         }
 
         private void savingDatabaseBackup(string database)

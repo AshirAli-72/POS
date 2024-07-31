@@ -512,5 +512,12 @@ namespace Settings_info.forms
 
             this.Dispose();
         }
+
+        private void btnExportExcelFile_Click(object sender, EventArgs e)
+        {
+            exportWeblinkExcelFiles.role_id = role_id;
+            exportWeblinkExcelFiles reg = new exportWeblinkExcelFiles();
+            reg.ShowDialog();
+        }
     }
 }

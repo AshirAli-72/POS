@@ -469,8 +469,8 @@ namespace Spices_pos.DashboardInfo.controllers
 
         public static void customer_sales_button(int role_id)
         {
-            Datalayers data = new Datalayers(webConfig.con_string);
-            ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
+            //Datalayers data = new Datalayers(webConfig.con_string);
+            //ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
 
             //GetSetData.query = @"select page_size from pos_general_settings;";
             //TextData.general_options = data.SearchStringValuesFromDb(GetSetData.query);

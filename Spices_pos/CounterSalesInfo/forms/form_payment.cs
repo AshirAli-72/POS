@@ -49,6 +49,7 @@ namespace CounterSales_info.forms
         public static string advancePaidAmount = "0";
         public static string tipAmount = "0";
         double CC_SplitedAmount = 0;
+        bool isSplitedInCashAndCreditCard = false;
 
         private string creditCardLinkedWithAPI()
         {
@@ -1104,6 +1105,7 @@ namespace CounterSales_info.forms
                                     else
                                     {
                                         error.errorMessage("transaction failed. Please try again to record sale.");
+                                        error.TopMost = true;
                                         error.ShowDialog();
                                     }
                                 }
@@ -1141,6 +1143,12 @@ namespace CounterSales_info.forms
 
                                             creditCardApiAmount = txt_cash.Text;
 
+                                            if (isSplitedInCashAndCreditCard)
+                                            {
+                                                creditCardApiAmount = lblRemaningAmount.Text;
+                                            }
+                                            
+
                                             btnCreditCard.Enabled = false;
 
                                             form_loading loadingForm = new form_loading();
@@ -1165,11 +1173,33 @@ namespace CounterSales_info.forms
 
                                                         CC_SplitedAmount = (Math.Round(CC_SplitedAmount - double.Parse(txt_cash.Text), 2));
 
-                                                        if (CC_SplitedAmount == 0)
+                                                        if (isSplitedInCashAndCreditCard == false)
+                                                        {
+                                                            if (CC_SplitedAmount == 0)
+                                                            {
+
+                                                                TextData.checkAutoOpenCashDrawer = false;
+                                                                TextData.credit_card_amount = TextData.totalAmount;
+                                                                TextData.send_cash = "0";
+                                                                TextData.tipAmount = "0";
+
+                                                                if (txtTipAmount.Text != "")
+                                                                {
+                                                                    TextData.tipAmount = txtTipAmount.Text;
+                                                                }
+
+                                                                this.Close();
+                                                            }
+                                                            else
+                                                            {
+                                                                btnCreditCard.Enabled = true;
+                                                            }
+                                                        }
+                                                        else
                                                         {
                                                             TextData.checkAutoOpenCashDrawer = false;
-                                                            TextData.credit_card_amount = TextData.totalAmount;
-                                                            TextData.send_cash = "0";
+                                                            TextData.credit_card_amount = double.Parse(lblRemaningAmount.Text);
+                                                            TextData.send_cash = cashAmount.ToString();
                                                             TextData.tipAmount = "0";
 
                                                             if (txtTipAmount.Text != "")
@@ -1178,10 +1208,6 @@ namespace CounterSales_info.forms
                                                             }
 
                                                             this.Close();
-                                                        }
-                                                        else
-                                                        {
-                                                            btnCreditCard.Enabled = true;
                                                         }
                                                     }
                                                     else if (message == "Transaction Canceled")
@@ -1560,6 +1586,7 @@ namespace CounterSales_info.forms
                                 done.ShowDialog();
 
                                 cashAmount = double.Parse(txt_cash.Text);
+                                isSplitedInCashAndCreditCard = true;
                             }
                         }
                         else

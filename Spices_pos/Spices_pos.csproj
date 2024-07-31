@@ -197,9 +197,8 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Reports_info, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\POS_LATEST_USA_New_Design - Copy\Reports_info\bin\Release\Reports_info.dll</HintPath>
+    <Reference Include="Reports_info">
+      <HintPath>..\Reports_info\bin\Debug\Reports_info.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -593,6 +592,7 @@
     <Compile Include="DatabaseInfo\DatalayerInfo\MigrationClasses\ClassCreateUpdateJsonFile.cs" />
     <Compile Include="DatabaseInfo\DatalayerInfo\MigrationClasses\ClassRunMigrations.cs" />
     <Compile Include="DatabaseInfo\DatalayerInfo\MigrationClasses\RunMigrations.cs" />
+    <Compile Include="DatabaseInfo\DatalayerInfo\ReferenceClasses\Auth.cs" />
     <Compile Include="DatabaseInfo\DatalayerInfo\ReferenceClasses\CashDrawerData.cs" />
     <Compile Include="DatabaseInfo\DatalayerInfo\ReferenceClasses\ClassDefaultValuesSetInDB.cs" />
     <Compile Include="DatabaseInfo\DatalayerInfo\ReferenceClasses\ClassShowGridViewData.cs" />
@@ -1479,6 +1479,12 @@
     <Compile Include="SettingsInfo\forms\DefaultShifts\defaultShiftsDetails.Designer.cs">
       <DependentUpon>defaultShiftsDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="SettingsInfo\forms\ExportDataToDrive\exportWeblinkExcelFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsInfo\forms\ExportDataToDrive\exportWeblinkExcelFiles.Designer.cs">
+      <DependentUpon>exportWeblinkExcelFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="SettingsInfo\forms\ExportDataToDrive\exportFileToDrive.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2223,6 +2229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsInfo\forms\DefaultShifts\defaultShiftsDetails.resx">
       <DependentUpon>defaultShiftsDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsInfo\forms\ExportDataToDrive\exportWeblinkExcelFiles.resx">
+      <DependentUpon>exportWeblinkExcelFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsInfo\forms\ExportDataToDrive\exportFileToDrive.resx">
       <DependentUpon>exportFileToDrive.cs</DependentUpon>

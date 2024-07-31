@@ -8,6 +8,7 @@ using RefereningMaterial;
 using ExcelDataReader;
 using System.Globalization;
 using Spices_pos.DatabaseInfo.WebConfig;
+using System.Threading;
 
 namespace Settings_info.forms
 {
@@ -258,7 +259,7 @@ namespace Settings_info.forms
                         if (GetSetData.Ids == 0)
                         {
                             // Insert Data From GridView to pos_stock in Database:
-                            GetSetData.query = @"insert into pos_stock_details values ('" + ProductsDetailGridView.Rows[i].Cells[1].Value.ToString() + "','" + quantity.ToString() + "' , '0' , '0' , '0' , '" + prod_price.ToString() + "' , '" + sale_price.ToString() + "' , '0' , '0' , '" + expiry_date + "' , '" + expiry_date + "' , '0' , '0' , '" + total_pur_price.ToString() + "' , '" + total_sale_price.ToString() + "' , '5' , 'false' , '0' , '0' , '" + prod_id_db.ToString() + "');";
+                            GetSetData.query = @"insert into pos_stock_details values ('" + ProductsDetailGridView.Rows[i].Cells[1].Value.ToString() + "','" + quantity.ToString() + "' , '0' , '0' , '0' , '" + prod_price.ToString() + "' , '" + sale_price.ToString() + "' , '"+ ProductsDetailGridView.Rows[i].Cells[7].Value.ToString() + "' , '0' , '" + expiry_date + "' , '" + expiry_date + "' , '0' , '0' , '" + total_pur_price.ToString() + "' , '" + total_sale_price.ToString() + "' , '5' , 'false' , '0' , '0' , '" + prod_id_db.ToString() + "');";
                             data.insertUpdateCreateOrDelete(GetSetData.query);
 
 
@@ -314,7 +315,7 @@ namespace Settings_info.forms
 
                         if (is_backup_already_exist == "")
                         {
-                            GetSetData.query = @"insert into pos_stock_backup values ('" + txtDate.Text + "','" + ProductsDetailGridView.Rows[i].Cells[1].Value.ToString() + "' , '" + quantity.ToString() + "' , '0' , '0' , '0' , '" + prod_price.ToString() + "' , '" + sale_price.ToString() + "' , '0' , '0' , '" + txtDate.Text + "' , '" + txtDate.Text + "' , '0' , '0' , '" + (prod_price * quantity).ToString() + "' , '" + (sale_price * quantity).ToString() + "' , '5' , 'Active' , '0' , '0' , '" + prod_id_db.ToString() + "');";
+                            GetSetData.query = @"insert into pos_stock_backup values ('" + txtDate.Text + "','" + ProductsDetailGridView.Rows[i].Cells[1].Value.ToString() + "' , '" + quantity.ToString() + "' , '0' , '0' , '0' , '" + prod_price.ToString() + "' , '" + sale_price.ToString() + "' , '"+ ProductsDetailGridView.Rows[i].Cells[7].Value.ToString() + "' , '0' , '" + txtDate.Text + "' , '" + txtDate.Text + "' , '0' , '0' , '" + (prod_price * quantity).ToString() + "' , '" + (sale_price * quantity).ToString() + "' , '5' , 'Active' , '0' , '0' , '" + prod_id_db.ToString() + "');";
                             data.insertUpdateCreateOrDelete(GetSetData.query);
                         }
                         //else
@@ -510,30 +511,71 @@ namespace Settings_info.forms
 
         private void btnImportData_Click(object sender, EventArgs e)
         {
-            if (txtType.Text == "Inventory")
-            {
-                importInventory();
-            }
-            else if (txtType.Text == "Inventory History")
-            {
-                importInventoryHistory();
+            form_loading loadingForm = new form_loading();
+            loadingForm.SetLoadingMessage("Importing Excel File...");
+            Screen secondaryScreen = Screen.PrimaryScreen;
+            loadingForm.Location = secondaryScreen.WorkingArea.Location;
+            loadingForm.TopMost = true;
+            loadingForm.Show();
 
-            }   else if (txtType.Text == "Customers")
+            Thread loading = new Thread(() => LoadThreadMethod((message) =>
             {
-                importCustomers();
-            }  
-            else if (txtType.Text == "Vendors")
+                this.Invoke((MethodInvoker)delegate
+                {
+                    loadingForm.Dispose();
+                });
+            }));
+
+            loading.Start();
+        }
+
+        private void LoadThreadMethod(Action<string> callback)
+        {
+            try
             {
-                importVendors();
-            }  
-            else if (txtType.Text == "Reset Barcode")
-            {
-                importAndResetInventorbyBarcode();
+                this.Invoke((MethodInvoker)delegate
+                {
+                    if (txtType.Text == "Inventory")
+                    {
+                        importInventory();
+                    }
+                    else if (txtType.Text == "Inventory History")
+                    {
+                        importInventoryHistory();
+
+                    }
+                    else if (txtType.Text == "Customers")
+                    {
+                        importCustomers();
+                    }
+                    else if (txtType.Text == "Vendors")
+                    {
+                        importVendors();
+                    }
+                    else if (txtType.Text == "Reset Barcode")
+                    {
+                        importAndResetInventorbyBarcode();
+                    }
+                    else
+                    {
+                        error.errorMessage("Please choose type first!");
+                        error.ShowDialog();
+                    }
+                });
+
+                // Invoke callback on UI thread
+                this.Invoke(new Action(() =>
+                {
+                    callback?.Invoke("Data imported successfully...");
+                }));
             }
-            else
+            catch (Exception ex)
             {
-                error.errorMessage("Please choose type first!");
-                error.ShowDialog();
+                // Invoke callback on UI thread
+                this.Invoke((MethodInvoker)delegate
+                {
+                    callback("An error occurred: " + ex.Message);
+                });
             }
         }
     }

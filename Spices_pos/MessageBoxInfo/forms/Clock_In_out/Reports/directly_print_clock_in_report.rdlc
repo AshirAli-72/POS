@@ -2232,8 +2232,10 @@
       </Body>
       <Width>3.15562in</Width>
       <Page>
-        <PageHeight>8.3in</PageHeight>
-        <PageWidth>3.5in</PageWidth>
+        <PageHeight>6in</PageHeight>
+        <PageWidth>3.15in</PageWidth>
+        <LeftMargin>0.1in</LeftMargin>
+        <BottomMargin>1in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>

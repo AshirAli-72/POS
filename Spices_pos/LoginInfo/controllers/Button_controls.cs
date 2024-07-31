@@ -3,13 +3,13 @@ using System.Data.SqlClient;
 using Datalayer;
 using Spices_pos.LoginInfo.forms;
 using Message_box_info.forms;
-using Spices_pos.DashboardInfo.Forms;
 using RefereningMaterial;
 using CounterSales_info.forms;
 using System.Threading;
 using System.Windows.Forms;
 using Spices_pos.DatabaseInfo.WebConfig;
 using Spices_pos.DatabaseInfo.DatalayerInfo.ReferenceClasses;
+using Spices_pos.DashboardInfo.Forms;
 
 namespace Spices_pos.LoginInfo.controllers
 {
@@ -82,17 +82,24 @@ namespace Spices_pos.LoginInfo.controllers
 
                         if (isSwitchUser)
                         {
-                            form_counter_sales.user_id = GetSetData.Ids;
-                            form_counter_sales.role_id = role_id_db;
+                            //form_counter_sales.user_id = GetSetData.Ids;
+                            //form_counter_sales.role_id = role_id_db;
+
+                            Auth.user_id = GetSetData.Ids;
+                            Auth.role_id = role_id_db;
+                            Auth.user_name = TextData.role_title;
                             makeSaleScreen();
                         }
                         else
                         {
-                            DashboardInfo.Forms.Menus.login_checked = "checked";
+                            Menus.login_checked = "checked";
                             Menus.registrations_id = GetSetData.fks;
-                            Menus.user_id = GetSetData.Ids;
-                            Menus.role_id = role_id_db;
-                            Menus.authorized_person = TextData.role_title;
+                            //Menus.user_id = GetSetData.Ids;
+                            //Menus.role_id = role_id_db;
+                            //Menus.authorized_person = TextData.role_title;
+                            Auth.user_id = GetSetData.Ids;
+                            Auth.role_id = role_id_db;
+                            Auth.user_name = TextData.role_title;
                             MenuScreen();
 
                             if (Screen.AllScreens.Length > 1)

@@ -64,6 +64,7 @@
             this.title_lable = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExportExcelFile = new Guna.UI2.WinForms.Guna2Button();
             this.panel7.SuspendLayout();
             this.panel18.SuspendLayout();
             this.guna2Panel10.SuspendLayout();
@@ -144,6 +145,7 @@
             this.pnl_list.Controls.Add(this.btnDefaultShifts);
             this.pnl_list.Controls.Add(this.btnImportProductsExcel);
             this.pnl_list.Controls.Add(this.btnExportDataToDrive);
+            this.pnl_list.Controls.Add(this.btnExportExcelFile);
             this.pnl_list.Controls.Add(this.expense_btn);
             this.pnl_list.Controls.Add(this.btn_bank);
             this.pnl_list.Controls.Add(this.recover_btn);
@@ -397,7 +399,7 @@
             this.expense_btn.ForeColor = System.Drawing.Color.White;
             this.expense_btn.Image = ((System.Drawing.Image)(resources.GetObject("expense_btn.Image")));
             this.expense_btn.ImageSize = new System.Drawing.Size(25, 25);
-            this.expense_btn.Location = new System.Drawing.Point(675, 120);
+            this.expense_btn.Location = new System.Drawing.Point(43, 220);
             this.expense_btn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.expense_btn.Name = "expense_btn";
             this.expense_btn.Size = new System.Drawing.Size(148, 85);
@@ -421,7 +423,7 @@
             this.btn_bank.ForeColor = System.Drawing.Color.White;
             this.btn_bank.Image = ((System.Drawing.Image)(resources.GetObject("btn_bank.Image")));
             this.btn_bank.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_bank.Location = new System.Drawing.Point(43, 220);
+            this.btn_bank.Location = new System.Drawing.Point(201, 220);
             this.btn_bank.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btn_bank.Name = "btn_bank";
             this.btn_bank.Size = new System.Drawing.Size(148, 85);
@@ -445,7 +447,7 @@
             this.recover_btn.ForeColor = System.Drawing.Color.White;
             this.recover_btn.Image = ((System.Drawing.Image)(resources.GetObject("recover_btn.Image")));
             this.recover_btn.ImageSize = new System.Drawing.Size(25, 25);
-            this.recover_btn.Location = new System.Drawing.Point(201, 220);
+            this.recover_btn.Location = new System.Drawing.Point(359, 220);
             this.recover_btn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.recover_btn.Name = "recover_btn";
             this.recover_btn.Size = new System.Drawing.Size(148, 85);
@@ -469,7 +471,7 @@
             this.btnEmployeeCommission.ForeColor = System.Drawing.Color.White;
             this.btnEmployeeCommission.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployeeCommission.Image")));
             this.btnEmployeeCommission.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnEmployeeCommission.Location = new System.Drawing.Point(359, 220);
+            this.btnEmployeeCommission.Location = new System.Drawing.Point(517, 220);
             this.btnEmployeeCommission.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnEmployeeCommission.Name = "btnEmployeeCommission";
             this.btnEmployeeCommission.Size = new System.Drawing.Size(148, 85);
@@ -493,7 +495,7 @@
             this.btnSalaries.ForeColor = System.Drawing.Color.White;
             this.btnSalaries.Image = ((System.Drawing.Image)(resources.GetObject("btnSalaries.Image")));
             this.btnSalaries.ImageSize = new System.Drawing.Size(26, 26);
-            this.btnSalaries.Location = new System.Drawing.Point(517, 220);
+            this.btnSalaries.Location = new System.Drawing.Point(675, 220);
             this.btnSalaries.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnSalaries.Name = "btnSalaries";
             this.btnSalaries.Size = new System.Drawing.Size(148, 85);
@@ -517,7 +519,7 @@
             this.btnAgeRestrictedItems.ForeColor = System.Drawing.Color.White;
             this.btnAgeRestrictedItems.Image = ((System.Drawing.Image)(resources.GetObject("btnAgeRestrictedItems.Image")));
             this.btnAgeRestrictedItems.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnAgeRestrictedItems.Location = new System.Drawing.Point(675, 220);
+            this.btnAgeRestrictedItems.Location = new System.Drawing.Point(43, 320);
             this.btnAgeRestrictedItems.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnAgeRestrictedItems.Name = "btnAgeRestrictedItems";
             this.btnAgeRestrictedItems.Size = new System.Drawing.Size(148, 85);
@@ -541,7 +543,7 @@
             this.btnBankLoan.ForeColor = System.Drawing.Color.White;
             this.btnBankLoan.Image = ((System.Drawing.Image)(resources.GetObject("btnBankLoan.Image")));
             this.btnBankLoan.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnBankLoan.Location = new System.Drawing.Point(43, 320);
+            this.btnBankLoan.Location = new System.Drawing.Point(201, 320);
             this.btnBankLoan.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnBankLoan.Name = "btnBankLoan";
             this.btnBankLoan.Size = new System.Drawing.Size(148, 85);
@@ -565,7 +567,7 @@
             this.btnLoanPaybook.ForeColor = System.Drawing.Color.White;
             this.btnLoanPaybook.Image = ((System.Drawing.Image)(resources.GetObject("btnLoanPaybook.Image")));
             this.btnLoanPaybook.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLoanPaybook.Location = new System.Drawing.Point(201, 320);
+            this.btnLoanPaybook.Location = new System.Drawing.Point(359, 320);
             this.btnLoanPaybook.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnLoanPaybook.Name = "btnLoanPaybook";
             this.btnLoanPaybook.Size = new System.Drawing.Size(148, 85);
@@ -589,7 +591,7 @@
             this.btnInvestors.ForeColor = System.Drawing.Color.White;
             this.btnInvestors.Image = ((System.Drawing.Image)(resources.GetObject("btnInvestors.Image")));
             this.btnInvestors.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnInvestors.Location = new System.Drawing.Point(359, 320);
+            this.btnInvestors.Location = new System.Drawing.Point(517, 320);
             this.btnInvestors.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnInvestors.Name = "btnInvestors";
             this.btnInvestors.Size = new System.Drawing.Size(148, 85);
@@ -613,7 +615,7 @@
             this.btnInvestorPaybook.ForeColor = System.Drawing.Color.White;
             this.btnInvestorPaybook.Image = ((System.Drawing.Image)(resources.GetObject("btnInvestorPaybook.Image")));
             this.btnInvestorPaybook.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnInvestorPaybook.Location = new System.Drawing.Point(517, 320);
+            this.btnInvestorPaybook.Location = new System.Drawing.Point(675, 320);
             this.btnInvestorPaybook.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnInvestorPaybook.Name = "btnInvestorPaybook";
             this.btnInvestorPaybook.Size = new System.Drawing.Size(148, 85);
@@ -637,7 +639,7 @@
             this.btnSupplierPaybook.ForeColor = System.Drawing.Color.White;
             this.btnSupplierPaybook.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierPaybook.Image")));
             this.btnSupplierPaybook.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSupplierPaybook.Location = new System.Drawing.Point(675, 320);
+            this.btnSupplierPaybook.Location = new System.Drawing.Point(43, 420);
             this.btnSupplierPaybook.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnSupplierPaybook.Name = "btnSupplierPaybook";
             this.btnSupplierPaybook.Size = new System.Drawing.Size(148, 85);
@@ -661,7 +663,7 @@
             this.btn_db_backup.ForeColor = System.Drawing.Color.White;
             this.btn_db_backup.Image = ((System.Drawing.Image)(resources.GetObject("btn_db_backup.Image")));
             this.btn_db_backup.ImageSize = new System.Drawing.Size(25, 25);
-            this.btn_db_backup.Location = new System.Drawing.Point(43, 420);
+            this.btn_db_backup.Location = new System.Drawing.Point(201, 420);
             this.btn_db_backup.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btn_db_backup.Name = "btn_db_backup";
             this.btn_db_backup.Size = new System.Drawing.Size(148, 85);
@@ -685,7 +687,7 @@
             this.btnRestore.ForeColor = System.Drawing.Color.White;
             this.btnRestore.Image = ((System.Drawing.Image)(resources.GetObject("btnRestore.Image")));
             this.btnRestore.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnRestore.Location = new System.Drawing.Point(201, 420);
+            this.btnRestore.Location = new System.Drawing.Point(359, 420);
             this.btnRestore.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnRestore.Name = "btnRestore";
             this.btnRestore.Size = new System.Drawing.Size(148, 85);
@@ -709,7 +711,7 @@
             this.btnAbout.ForeColor = System.Drawing.Color.White;
             this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
             this.btnAbout.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnAbout.Location = new System.Drawing.Point(359, 420);
+            this.btnAbout.Location = new System.Drawing.Point(517, 420);
             this.btnAbout.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(148, 85);
@@ -837,6 +839,30 @@
             this.button8.TabIndex = 522;
             this.button8.Click += new System.EventHandler(this.Closebutton_Click);
             // 
+            // btnExportExcelFile
+            // 
+            this.btnExportExcelFile.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportExcelFile.BorderColor = System.Drawing.Color.MediumBlue;
+            this.btnExportExcelFile.BorderRadius = 7;
+            this.btnExportExcelFile.BorderThickness = 1;
+            this.btnExportExcelFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportExcelFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportExcelFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportExcelFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportExcelFile.FillColor = System.Drawing.Color.MediumBlue;
+            this.btnExportExcelFile.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.btnExportExcelFile.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcelFile.Image = ((System.Drawing.Image)(resources.GetObject("btnExportExcelFile.Image")));
+            this.btnExportExcelFile.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnExportExcelFile.Location = new System.Drawing.Point(675, 120);
+            this.btnExportExcelFile.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
+            this.btnExportExcelFile.Name = "btnExportExcelFile";
+            this.btnExportExcelFile.Size = new System.Drawing.Size(148, 85);
+            this.btnExportExcelFile.TabIndex = 559;
+            this.btnExportExcelFile.Text = "Export Excel File";
+            this.btnExportExcelFile.Tile = true;
+            this.btnExportExcelFile.Click += new System.EventHandler(this.btnExportExcelFile_Click);
+            // 
             // settings
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -901,5 +927,6 @@
         private Guna.UI2.WinForms.Guna2Button btnCreditCardApi;
         private Guna.UI2.WinForms.Guna2Button btnExportDataToDrive;
         private Guna.UI2.WinForms.Guna2Button btnAgeRestrictedItems;
+        private Guna.UI2.WinForms.Guna2Button btnExportExcelFile;
     }
 }

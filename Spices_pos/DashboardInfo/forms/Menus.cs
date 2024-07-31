@@ -79,6 +79,10 @@ namespace Spices_pos.DashboardInfo.Forms
         {
             InitializeComponent();
             spanel2.Width = 0;
+
+            role_id = Auth.role_id;
+            user_id = Auth.user_id;
+            authorized_person = Auth.user_name;
         }
 
         GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
@@ -1573,7 +1577,8 @@ namespace Spices_pos.DashboardInfo.Forms
 
                     dates.Text = DateTime.Now.ToLongDateString();
                     FromDate.Text = DateTime.Now.ToLongDateString();
-                    title_lable.Text = authorized_person;
+                    //title_lable.Text = authorized_person;
+                    title_lable.Text = Auth.user_name;
 
                     notifications();
                     //CheckForAdvancedChequeNotifications();
@@ -2197,10 +2202,10 @@ namespace Spices_pos.DashboardInfo.Forms
 
         private void btnInstallmentSales_Click(object sender, EventArgs e)
         {
-            form_installment_sales.role_id = role_id;
-            form_installment_sales reports = new form_installment_sales();
-            reports.Show();
-            this.Dispose();
+            //form_installment_sales.role_id = role_id;
+            //form_installment_sales reports = new form_installment_sales();
+            //reports.Show();
+            //this.Dispose();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -2361,7 +2366,13 @@ namespace Spices_pos.DashboardInfo.Forms
 
         private void guna2GroupBox2_Click(object sender, EventArgs e)
         {
-           button_controls.customer_sales_button(role_id);
+            //button_controls.customer_sales_button(role_id);
+
+            form_loyal_cus_sales.user_id = user_id;
+            form_loyal_cus_sales.role_id = role_id;
+            form_loyal_cus_sales reports = new form_loyal_cus_sales();
+            reports.Show();
+
             this.Dispose(); 
         }
 

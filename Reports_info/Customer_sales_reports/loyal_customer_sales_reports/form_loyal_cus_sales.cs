@@ -11,6 +11,7 @@ using Customers_info.forms;
 using Products_info.forms;
 using System.Diagnostics;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DashboardInfo.Forms;
 
 namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
 {
@@ -35,6 +36,7 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         error_form error = new error_form();
         done_form done = new done_form();
         public static int role_id = 0;
+        public static int user_id = 0;
         public string product_id_db = "";
         public string stock_id_db = "";
         public int reportType = 0; // 0 for date, 1 for bill, 2 for category, 3 for brand, 4 for customer, 5 for salesman, 6 for product, 7 for void, 8 for summary
@@ -181,6 +183,8 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
 
         private void Closebutton_Click(object sender, EventArgs e)
         {
+            //Menus.user_id = user_id;
+            //Menus.role_id = role_id;
             button_controls.Main_menu();
             this.Dispose();
         }

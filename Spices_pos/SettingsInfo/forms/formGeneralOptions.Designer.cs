@@ -1231,6 +1231,7 @@
             this.txtSingleAuthorityClosing.Size = new System.Drawing.Size(100, 24);
             this.txtSingleAuthorityClosing.StartIndex = 0;
             this.txtSingleAuthorityClosing.TabIndex = 594;
+            this.txtSingleAuthorityClosing.SelectedIndexChanged += new System.EventHandler(this.txtSingleAuthorityClosing_SelectedIndexChanged);
             // 
             // label24
             // 

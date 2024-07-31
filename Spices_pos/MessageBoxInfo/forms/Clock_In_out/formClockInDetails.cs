@@ -40,7 +40,11 @@ namespace Message_box_info.forms.Clock_In
         public formClockInDetails()
         {
             InitializeComponent();
-            setFormColorsDynamically();
+
+            role_id = Auth.role_id;
+            user_id = Auth.user_id;
+
+            //setFormColorsDynamically();
         }
 
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
@@ -51,38 +55,38 @@ namespace Message_box_info.forms.Clock_In
         public static int user_id = 0;
         public static int role_id = 0;
 
-        private void setFormColorsDynamically()
-        {
-            //try
-            //{
-            //    int dark_red = data.UserPermissionsIds("dark_red", "pos_colors_settings");
-            //    int dark_green = data.UserPermissionsIds("dark_green", "pos_colors_settings");
-            //    int dark_blue = data.UserPermissionsIds("dark_blue", "pos_colors_settings");
+        //private void setFormColorsDynamically()
+        //{
+        //    //try
+        //    //{
+        //    //    int dark_red = data.UserPermissionsIds("dark_red", "pos_colors_settings");
+        //    //    int dark_green = data.UserPermissionsIds("dark_green", "pos_colors_settings");
+        //    //    int dark_blue = data.UserPermissionsIds("dark_blue", "pos_colors_settings");
 
-            //    int back_red = data.UserPermissionsIds("back_red", "pos_colors_settings");
-            //    int back_green = data.UserPermissionsIds("back_green", "pos_colors_settings");
-            //    int back_blue = data.UserPermissionsIds("back_blue", "pos_colors_settings");
+        //    //    int back_red = data.UserPermissionsIds("back_red", "pos_colors_settings");
+        //    //    int back_green = data.UserPermissionsIds("back_green", "pos_colors_settings");
+        //    //    int back_blue = data.UserPermissionsIds("back_blue", "pos_colors_settings");
 
-            //    int fore_red = data.UserPermissionsIds("fore_red", "pos_colors_settings");
-            //    int fore_green = data.UserPermissionsIds("fore_green", "pos_colors_settings");
-            //    int fore_blue = data.UserPermissionsIds("fore_blue", "pos_colors_settings");
+        //    //    int fore_red = data.UserPermissionsIds("fore_red", "pos_colors_settings");
+        //    //    int fore_green = data.UserPermissionsIds("fore_green", "pos_colors_settings");
+        //    //    int fore_blue = data.UserPermissionsIds("fore_blue", "pos_colors_settings");
 
-            //    //****************************************************************
+        //    //    //****************************************************************
 
-            //    GetSetData.setFormColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, panel1, FormNamelabel);
-            //    GetSetData.setFormColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, panel4, lblCopyrights);
+        //    //    GetSetData.setFormColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, panel1, FormNamelabel);
+        //    //    GetSetData.setFormColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, panel4, lblCopyrights);
 
-            //    //****************************************************************
+        //    //    //****************************************************************
 
-            //    GetSetData.setGunaUIButonColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, dark_red, dark_green, dark_blue, Closebutton);
-            //    GetSetData.setGunaUIButonColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, dark_red, dark_green, dark_blue, button9);
-            //    GetSetData.setGunaUIButonColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, dark_red, dark_green, dark_blue, show_all);
-            //}
-            //catch (Exception es)
-            //{
-            //    MessageBox.Show(es.Message);
-            //}
-        }
+        //    //    GetSetData.setGunaUIButonColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, dark_red, dark_green, dark_blue, Closebutton);
+        //    //    GetSetData.setGunaUIButonColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, dark_red, dark_green, dark_blue, button9);
+        //    //    GetSetData.setGunaUIButonColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, dark_red, dark_green, dark_blue, show_all);
+        //    //}
+        //    //catch (Exception es)
+        //    //{
+        //    //    MessageBox.Show(es.Message);
+        //    //}
+        //}
         private void system_user_permissions()
         {
             try

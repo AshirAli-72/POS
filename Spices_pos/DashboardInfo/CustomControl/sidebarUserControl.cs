@@ -38,13 +38,14 @@ namespace Spices_pos.DashboardInfo.CustomControls
         public sidebarUserControl()
         {
             InitializeComponent();
+
             setToolTips();
         }
 
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
-        error_form error = new error_form();
-        done_form done = new done_form();
+        //error_form error = new error_form();
+        //done_form done = new done_form();
         form_sure_message sure = new form_sure_message();
 
         public int user_id { get; set; }

@@ -70,6 +70,10 @@ namespace CounterSales_info.forms
         public form_counter_sales()
         {
             InitializeComponent();
+
+            role_id = Spices_pos.DatabaseInfo.DatalayerInfo.ReferenceClasses.Auth.role_id;
+            user_id = Spices_pos.DatabaseInfo.DatalayerInfo.ReferenceClasses.Auth.user_id;
+
             //setFormColorsDynamically();
             setToolTips();
             instance = this;
@@ -347,10 +351,12 @@ namespace CounterSales_info.forms
         {
             try
             {
-                GetSetData.Ids = GetSetData.ProcedureGetIntegerValues("ProcedureGetIntergerValues", "emp_id", "pos_users", "user_id", user_id.ToString());
-                GetSetData.Data = data.UserPermissions("full_name", "pos_employees", "employee_id", GetSetData.Ids.ToString());
-                lbl_username.Text = GetSetData.Data;
+                //GetSetData.Ids = GetSetData.ProcedureGetIntegerValues("ProcedureGetIntergerValues", "emp_id", "pos_users", "user_id", user_id.ToString());
+                //GetSetData.Data = data.UserPermissions("full_name", "pos_employees", "employee_id", GetSetData.Ids.ToString());
+                //lbl_username.Text = GetSetData.Data;
                 //lbl_username.Text = "Welcome " + GetSetData.Data;
+
+                lbl_username.Text = Spices_pos.DatabaseInfo.DatalayerInfo.ReferenceClasses.Auth.user_name;
 
                 btnNext.Enabled = true;
                 btnPrevious.Enabled = false;
@@ -2122,232 +2128,238 @@ namespace CounterSales_info.forms
                     string isClockedOutExist = data.SearchStringValuesFromDb(GetSetData.query);
 
 
-                    if (isClockedOutExist != "")
+                if (isClockedOutExist != "")
+                {
+                    sure.Message_choose("Sorry your shift is closed. Would you like to re-active your shift again!");
+                    sure.ShowDialog();
+
+                    if (form_sure_message.sure == true)
                     {
-                        sure.Message_choose("Sorry your shift is closed. Would you like to re-active your shift again!");
-                        sure.ShowDialog();
-                 
-                        if (form_sure_message.sure == true)
+                        GetSetData.query = @"update pos_clock_in set status  = '-1' where (id = '" + isClockedOutExist + "');";
+                        data.insertUpdateCreateOrDelete(GetSetData.query);
+
+                        GetSetData.query = @"delete from pos_clock_out where (clock_in_id = '" + isClockedOutExist + "');";
+                        data.insertUpdateCreateOrDelete(GetSetData.query);
+
+                        //******************************************
+
+                        int employee_id_db = GetSetData.ProcedureGetIntegerValues("ProcedureGetIntergerValues", "emp_id", "pos_users", "user_id", user_id.ToString());
+
+                        string employee_name = data.UserPermissions("full_name", "pos_employees", "employee_id", employee_id_db.ToString());
+                        lbl_employee.Text = employee_name;
+
+                        pos_permissions();
+                        TextData.return_value = false;
+                        TextData.promotionDiscount = 0;
+                        clock_timer.Start();
+                        //settingDefaultSaleOption();
+                        txt_date.Text = DateTime.Now.ToShortDateString();
+                        dates.Text = DateTime.Now.ToShortDateString();
+                        fun_get_employee_balance();
+                        getCreditCardBalance();
+                        getCreditedBalance();
+                        getCategoies();
+                        TextData.comments = "";
+
+                        login_by_user();
+
+                        macAddress = GetSetData.GetSystemMacAddress();
+
+                        holdItemsBackgroundWorker.RunWorkerAsync();
+
+                        GetSetData.Data = data.UserPermissions("task_schedule", "pos_onedrive_options");
+
+                        if (GetSetData.Data != "")
                         {
-                            GetSetData.query = @"update pos_clock_in set status  = '-1' where (id = '" + isClockedOutExist + "');";
-                            data.insertUpdateCreateOrDelete(GetSetData.query);
-
-                            GetSetData.query = @"delete from pos_clock_out where (clock_in_id = '" + isClockedOutExist + "');";
-                            data.insertUpdateCreateOrDelete(GetSetData.query);
-
-                            //******************************************
-
-                            int employee_id_db = GetSetData.ProcedureGetIntegerValues("ProcedureGetIntergerValues", "emp_id", "pos_users", "user_id", user_id.ToString());
-
-                            string employee_name = data.UserPermissions("full_name", "pos_employees", "employee_id", employee_id_db.ToString());
-                            lbl_employee.Text = employee_name;
-
-                            pos_permissions();
-                            TextData.return_value = false;
-                            TextData.promotionDiscount = 0;
-                            clock_timer.Start();
-                            //settingDefaultSaleOption();
-                            txt_date.Text = DateTime.Now.ToShortDateString();
-                            dates.Text = DateTime.Now.ToShortDateString();
-                            fun_get_employee_balance();
-                            getCreditCardBalance();
-                            getCreditedBalance();
-                            getCategoies();
-                            TextData.comments = "";
-
-                            login_by_user();
-
-                            macAddress = GetSetData.GetSystemMacAddress();
-
-                            holdItemsBackgroundWorker.RunWorkerAsync();
-
-                            GetSetData.Data = data.UserPermissions("task_schedule", "pos_onedrive_options");
-
-                            if (GetSetData.Data != "")
+                            switch (GetSetData.Data)
                             {
-                                switch (GetSetData.Data)
-                                {
-                                    case "30 Minutes":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromMinutes(30));
-                                        break;
+                                case "30 Minutes":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromMinutes(30));
+                                    break;
 
-                                    case "1 Hour":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(1));
-                                        break;
+                                case "1 Hour":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(1));
+                                    break;
 
-                                    case "6 Hours":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(6));
-                                        break;
+                                case "6 Hours":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(6));
+                                    break;
 
-                                    case "12 Hours":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(12));
-                                        break;
+                                case "12 Hours":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(12));
+                                    break;
 
-                                    case "20 Hours":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(20));
-                                        break;
-                                    
-                                    case "1 Day":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(24));
-                                        break;
+                                case "20 Hours":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(20));
+                                    break;
 
-                                    case "Weekly":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(7));
-                                        break;
+                                case "1 Day":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(24));
+                                    break;
 
-                                    case "Quarterly":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(90));
-                                        break;
+                                case "Weekly":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(7));
+                                    break;
 
-                                    case "Yearly":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(365));
-                                        break;
+                                case "Quarterly":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(90));
+                                    break;
 
-                                    default:
+                                case "Yearly":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(365));
+                                    break;
 
-                                        int is_already_exist = data.UserPermissionsIds("id", "pos_onedrive_options");
+                                default:
 
-                                        if (is_already_exist == 0)
-                                        {
-                                            GetSetData.query = @"insert into pos_onedrive_options values ('False', 'False', 'False', 'False', 'False', '', 'OneDrive');";
-                                            data.insertUpdateCreateOrDelete(GetSetData.query);
-                                        }
+                                    int is_already_exist = data.UserPermissionsIds("id", "pos_onedrive_options");
 
-                                        //timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(1));
-                                        break;
+                                    if (is_already_exist == 0)
+                                    {
+                                        GetSetData.query = @"insert into pos_onedrive_options values ('False', 'False', 'False', 'False', 'False', '', 'OneDrive');";
+                                        data.insertUpdateCreateOrDelete(GetSetData.query);
+                                    }
 
-                                }
+                                    //timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(1));
+                                    break;
+
                             }
-
-
-                            txt_barcode.Focus();
                         }
-                        else
-                        {
-                            Menus.authorized_person = lbl_username.Text;
-                            Menus.user_id = user_id;
-                            Menus.role_id = role_id;
 
-                            Login_info.controllers.Button_controls.mainMenu_buttons();
-                            this.Dispose();
-                        }
+
+                        txt_barcode.Focus();
+
+                        fun_clear_cart_records();
                     }
                     else
                     {
-                        GetSetData.query = "SELECT TOP 1 id from pos_clock_in where (to_user_id = '" + user_id.ToString() + "') and (status = '-1' or status = '0') ORDER BY id DESC;";
-                        string is_already_clocked_in = data.SearchStringValuesFromDb(GetSetData.query);
+                        fun_clear_cart_records();
 
-                        if (is_already_clocked_in != "")
-                        {
-                            int employee_id_db = GetSetData.ProcedureGetIntegerValues("ProcedureGetIntergerValues", "emp_id", "pos_users", "user_id", user_id.ToString());
+                        Menus.authorized_person = lbl_username.Text;
+                        Menus.user_id = user_id;
+                        Menus.role_id = role_id;
 
-                            string employee_name = data.UserPermissions("full_name", "pos_employees", "employee_id", employee_id_db.ToString());
-                            lbl_employee.Text = employee_name;
-
-                            pos_permissions();
-                            TextData.return_value = false;
-                            TextData.promotionDiscount = 0;
-                            clock_timer.Start();
-                            //settingDefaultSaleOption();
-                            txt_date.Text = DateTime.Now.ToShortDateString();
-                            dates.Text = DateTime.Now.ToShortDateString();
-                            fun_get_employee_balance();
-                            getCreditCardBalance();
-                            getCreditedBalance();
-                            getCategoies();
-                            TextData.comments = "";
-
-                            login_by_user();
-
-                            macAddress = GetSetData.GetSystemMacAddress();
-
-
-                            string singleAuthorityClosing = generalSettings.ReadField("singleAuthorityClosing");
-
-
-                            if (singleAuthorityClosing == "Yes")
-                            {
-                                batchWiseAutoClockIn();
-                            }
-
-                            holdItemsBackgroundWorker.RunWorkerAsync();
-
-
-                            GetSetData.Data = data.UserPermissions("task_schedule", "pos_onedrive_options");
-
-                            if (GetSetData.Data != "")
-                            {
-                                switch (GetSetData.Data)
-                                {
-                                    case "30 Minutes":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromMinutes(30));
-                                        break;
-
-                                    case "1 Hour":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(1));
-                                        break;
-
-                                    case "6 Hours":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(6));
-                                        break;
-
-                                    case "1 Day":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(24));
-                                        break;
-
-                                    case "12 Hours":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(12));
-                                        break;
-
-                                    case "20 Hours":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(20));
-                                        break;
-
-                                    case "Weekly":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(7));
-                                        break;
-
-                                    case "Quarterly":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(90));
-                                        break;
-
-                                    case "Yearly":
-                                        timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(365));
-                                        break;
-
-                                    default:
-
-                                        int is_already_exist = data.UserPermissionsIds("id", "pos_onedrive_options");
-
-                                        if (is_already_exist == 0)
-                                        {
-                                            GetSetData.query = @"insert into pos_onedrive_options values ('False', 'False', 'False', 'False', 'False', '', 'OneDrive');";
-                                            data.insertUpdateCreateOrDelete(GetSetData.query);
-                                        }
-
-                                        //timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(1));
-                                        break;
-
-                                }
-                            }
-
-
-                            txt_barcode.Focus();
-                        }
-                        else
-                        {
-                            error.errorMessage("Sorry you are not clock-in yet. Please go to clock-in/out and clock-in first.");
-                            error.ShowDialog();
-
-                            formClockInDetails.user_id = user_id;
-                            formClockInDetails.role_id = role_id;
-                            formClockInDetails _obj = new formClockInDetails();
-                            _obj.Show();
-                            this.Dispose();
-                        }
+                        Login_info.controllers.Button_controls.mainMenu_buttons();
+                        this.Dispose();
                     }
+                }
+                else
+                {
+                    GetSetData.query = "SELECT TOP 1 id from pos_clock_in where (to_user_id = '" + user_id.ToString() + "') and (status = '-1' or status = '0') ORDER BY id DESC;";
+                    string is_already_clocked_in = data.SearchStringValuesFromDb(GetSetData.query);
 
-                    fun_clear_cart_records();
+                    if (is_already_clocked_in != "")
+                    {
+                        int employee_id_db = GetSetData.ProcedureGetIntegerValues("ProcedureGetIntergerValues", "emp_id", "pos_users", "user_id", user_id.ToString());
+
+                        string employee_name = data.UserPermissions("full_name", "pos_employees", "employee_id", employee_id_db.ToString());
+                        lbl_employee.Text = employee_name;
+
+                        pos_permissions();
+                        TextData.return_value = false;
+                        TextData.promotionDiscount = 0;
+                        clock_timer.Start();
+                        //settingDefaultSaleOption();
+                        txt_date.Text = DateTime.Now.ToShortDateString();
+                        dates.Text = DateTime.Now.ToShortDateString();
+                        fun_get_employee_balance();
+                        getCreditCardBalance();
+                        getCreditedBalance();
+                        getCategoies();
+                        TextData.comments = "";
+
+                        login_by_user();
+
+                        macAddress = GetSetData.GetSystemMacAddress();
+
+
+                        string singleAuthorityClosing = generalSettings.ReadField("singleAuthorityClosing");
+
+
+                        if (singleAuthorityClosing == "Yes")
+                        {
+                            batchWiseAutoClockIn();
+                        }
+
+                        holdItemsBackgroundWorker.RunWorkerAsync();
+
+
+                        GetSetData.Data = data.UserPermissions("task_schedule", "pos_onedrive_options");
+
+                        if (GetSetData.Data != "")
+                        {
+                            switch (GetSetData.Data)
+                            {
+                                case "30 Minutes":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromMinutes(30));
+                                    break;
+
+                                case "1 Hour":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(1));
+                                    break;
+
+                                case "6 Hours":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(6));
+                                    break;
+
+                                case "1 Day":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(24));
+                                    break;
+
+                                case "12 Hours":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(12));
+                                    break;
+
+                                case "20 Hours":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromHours(20));
+                                    break;
+
+                                case "Weekly":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(7));
+                                    break;
+
+                                case "Quarterly":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(90));
+                                    break;
+
+                                case "Yearly":
+                                    timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(365));
+                                    break;
+
+                                default:
+
+                                    int is_already_exist = data.UserPermissionsIds("id", "pos_onedrive_options");
+
+                                    if (is_already_exist == 0)
+                                    {
+                                        GetSetData.query = @"insert into pos_onedrive_options values ('False', 'False', 'False', 'False', 'False', '', 'OneDrive');";
+                                        data.insertUpdateCreateOrDelete(GetSetData.query);
+                                    }
+
+                                    //timer = new System.Threading.Timer(TimerCallback, null, TimeSpan.Zero, TimeSpan.FromDays(1));
+                                    break;
+
+                            }
+                        }
+
+
+                        txt_barcode.Focus();
+
+                        fun_clear_cart_records();
+                    }
+                    else
+                    {
+                        fun_clear_cart_records();
+
+                        error.errorMessage("Sorry you are not clock-in yet. Please go to clock-in/out and clock-in first.");
+                        error.ShowDialog();
+
+                        formClockInDetails.user_id = user_id;
+                        formClockInDetails.role_id = role_id;
+                        formClockInDetails _obj = new formClockInDetails();
+                        _obj.Show();
+                        this.Dispose();
+                    }
+                }
                 //});
             }
             catch (Exception es)
@@ -7220,65 +7232,72 @@ namespace CounterSales_info.forms
 
                 if (txt_total_discount.Text != "")
                 {
-                    
-                    TextData.discount = (TextData.net_total - double.Parse(totalTax)) - double.Parse(txt_total_discount.Text);
-                   
-
-                    if (TextData.discount <= TextData.net_total)
+                    if (double.Parse(txt_total_discount.Text) <= double.Parse(txtGrandTotal.Text))
                     {
-                        if (double.Parse(totalTax) > 0)
-                        {
-                            newTaxation = ((TextData.discount * double.Parse(taxPercentage)) / 100);
-                        }
+                        TextData.discount = (TextData.net_total - double.Parse(totalTax)) - double.Parse(txt_total_discount.Text);
 
-
-                        txt_amount_due.Text = Math.Round((TextData.discount + newTaxation), 2).ToString();
-                        txtTaxation.Text = Math.Round(newTaxation, 2).ToString();
-
-
-                        if (double.Parse(txt_total_discount.Text) == 0)
-                        {
-                            txt_amount_due.Text = TextData.net_total.ToString();
-                            txtTaxation.Text = Math.Round(double.Parse(totalTax), 2).ToString();
-                        }
-
-                        
-
-                        txtCustomerPoints.Text = Math.Round((customer_points_db - double.Parse(txt_total_discount.Text)), 2).ToString();
-                    }
-                    else
-                    {
-                        TextData.discount = (TextData.net_total - double.Parse(totalTax)) - double.Parse(totalDiscount);
 
                         if (TextData.discount <= TextData.net_total)
                         {
-                            txt_total_discount.Text = totalDiscount;
-
                             if (double.Parse(totalTax) > 0)
                             {
                                 newTaxation = ((TextData.discount * double.Parse(taxPercentage)) / 100);
                             }
-                            
+
 
                             txt_amount_due.Text = Math.Round((TextData.discount + newTaxation), 2).ToString();
                             txtTaxation.Text = Math.Round(newTaxation, 2).ToString();
 
+
                             if (double.Parse(txt_total_discount.Text) == 0)
                             {
-                                txt_amount_due.Text = Math.Round((TextData.discount + double.Parse(totalTax)), 2).ToString();
+                                txt_amount_due.Text = TextData.net_total.ToString();
                                 txtTaxation.Text = Math.Round(double.Parse(totalTax), 2).ToString();
                             }
 
-                            txtCustomerPoints.Text = Math.Round((customer_points_db - double.Parse(totalDiscount)), 2).ToString();
+
+
+                            txtCustomerPoints.Text = Math.Round((customer_points_db - double.Parse(txt_total_discount.Text)), 2).ToString();
                         }
                         else
                         {
-                            txt_total_discount.Text = "0";
-                            txt_amount_due.Text = Math.Round(TextData.net_total, 2).ToString();
+                            TextData.discount = (TextData.net_total - double.Parse(totalTax)) - double.Parse(totalDiscount);
 
-                            txtCustomerPoints.Text = customer_points_db.ToString();
+                            if (TextData.discount <= TextData.net_total)
+                            {
+                                txt_total_discount.Text = totalDiscount;
+
+                                if (double.Parse(totalTax) > 0)
+                                {
+                                    newTaxation = ((TextData.discount * double.Parse(taxPercentage)) / 100);
+                                }
+
+
+                                txt_amount_due.Text = Math.Round((TextData.discount + newTaxation), 2).ToString();
+                                txtTaxation.Text = Math.Round(newTaxation, 2).ToString();
+
+                                if (double.Parse(txt_total_discount.Text) == 0)
+                                {
+                                    txt_amount_due.Text = Math.Round((TextData.discount + double.Parse(totalTax)), 2).ToString();
+                                    txtTaxation.Text = Math.Round(double.Parse(totalTax), 2).ToString();
+                                }
+
+                                txtCustomerPoints.Text = Math.Round((customer_points_db - double.Parse(totalDiscount)), 2).ToString();
+                            }
+                            else
+                            {
+                                txt_total_discount.Text = "0";
+                                txt_amount_due.Text = Math.Round(TextData.net_total, 2).ToString();
+
+                                txtCustomerPoints.Text = customer_points_db.ToString();
+                            }
+
                         }
 
+                    }
+                    else
+                    {
+                        txt_total_discount.Text = "0";
                     }
                 }
                 else
