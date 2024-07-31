@@ -858,7 +858,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -951,7 +951,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -1044,7 +1044,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -1137,7 +1137,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -1230,7 +1230,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -1323,7 +1323,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -1416,7 +1416,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>  $</Value>
+                                  <Value xml:space="preserve">  </Value>
+                                  <Style>
+                                    <FontFamily>verdana</FontFamily>
+                                    <FontSize>7.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -1509,7 +1517,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -1602,7 +1610,15 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>   $</Value>
+                                  <Value xml:space="preserve">   </Value>
+                                  <Style>
+                                    <FontFamily>verdana</FontFamily>
+                                    <FontSize>7.5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -1695,7 +1711,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -1788,7 +1804,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>$</Value>
+                                  <Value>=Parameters!pCurrency.Value</Value>
                                   <Style>
                                     <FontFamily>verdana</FontFamily>
                                     <FontSize>7.5pt</FontSize>
@@ -2312,6 +2328,12 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="pCurrency">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -2357,6 +2379,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>4</RowIndex>
           <ParameterName>pLogo</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>pCurrency</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

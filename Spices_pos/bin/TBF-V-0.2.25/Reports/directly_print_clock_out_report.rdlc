@@ -178,7 +178,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>2.44236in</Top>
-            <Left>0.02813in</Left>
+            <Left>0.02914in</Left>
             <Height>0.2118in</Height>
             <Width>1.52744in</Width>
             <Style>
@@ -215,7 +215,7 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>2.44236in</Top>
-            <Left>1.60013in</Left>
+            <Left>1.60114in</Left>
             <Height>0.2118in</Height>
             <Width>1.53152in</Width>
             <ZIndex>1</ZIndex>
@@ -252,7 +252,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>2.97257in</Top>
-            <Left>0.02813in</Left>
+            <Left>0.02914in</Left>
             <Height>0.18749in</Height>
             <Width>1.52744in</Width>
             <ZIndex>2</ZIndex>
@@ -290,7 +290,7 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>2.97257in</Top>
-            <Left>1.60012in</Left>
+            <Left>1.60113in</Left>
             <Height>0.18749in</Height>
             <Width>1.53153in</Width>
             <ZIndex>3</ZIndex>
@@ -305,58 +305,12 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Line Name="Line5">
-            <Top>9.48958in</Top>
-            <Height>0in</Height>
-            <Width>3.12853in</Width>
-            <ZIndex>4</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-            </Style>
-          </Line>
-          <Textbox Name="Textbox21">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!pCopyrights.Value</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>3.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox5</rd:DefaultName>
-            <Top>9.51319in</Top>
-            <Height>0.13403in</Height>
-            <Width>3.12853in</Width>
-            <ZIndex>5</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Line Name="Line9">
             <Top>3.19062in</Top>
-            <Left>0.02603in</Left>
+            <Left>0.02704in</Left>
             <Height>0in</Height>
             <Width>3.10459in</Width>
-            <ZIndex>6</ZIndex>
+            <ZIndex>4</ZIndex>
             <Style>
               <Border>
                 <Color>Gray</Color>
@@ -386,10 +340,10 @@
           </Line>
           <Line Name="Line4">
             <Top>2.41041in</Top>
-            <Left>0.02814in</Left>
+            <Left>0.02915in</Left>
             <Height>0in</Height>
             <Width>3.11601in</Width>
-            <ZIndex>7</ZIndex>
+            <ZIndex>5</ZIndex>
             <Style>
               <Border>
                 <Style>Dashed</Style>
@@ -418,10 +372,10 @@
           </Line>
           <Line Name="Line16">
             <Top>2.68819in</Top>
-            <Left>0.025in</Left>
+            <Left>0.02601in</Left>
             <Height>0in</Height>
             <Width>3.11812in</Width>
-            <ZIndex>8</ZIndex>
+            <ZIndex>6</ZIndex>
             <Style>
               <Border>
                 <Color>Gray</Color>
@@ -471,10 +425,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.19373in</Top>
-            <Left>0.55973in</Left>
+            <Left>0.56074in</Left>
             <Height>0.17917in</Height>
             <Width>2.56178in</Width>
-            <ZIndex>9</ZIndex>
+            <ZIndex>7</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -507,10 +461,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Left>0.55973in</Left>
+            <Left>0.56074in</Left>
             <Height>0.19095in</Height>
             <Width>2.56178in</Width>
-            <ZIndex>10</ZIndex>
+            <ZIndex>8</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -544,10 +498,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.37568in</Top>
-            <Left>0.55973in</Left>
+            <Left>0.56074in</Left>
             <Height>0.16738in</Height>
             <Width>2.56178in</Width>
-            <ZIndex>11</ZIndex>
+            <ZIndex>9</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -581,10 +535,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>0.8691in</Top>
-            <Left>0.02814in</Left>
+            <Left>0.02915in</Left>
             <Height>0.20972in</Height>
             <Width>0.69723in</Width>
-            <ZIndex>12</ZIndex>
+            <ZIndex>10</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -618,10 +572,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.09688in</Top>
-            <Left>0.02814in</Left>
+            <Left>0.02915in</Left>
             <Height>0.17985in</Height>
             <Width>0.69723in</Width>
-            <ZIndex>13</ZIndex>
+            <ZIndex>11</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -655,10 +609,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>0.8691in</Top>
-            <Left>1.97234in</Left>
+            <Left>1.97335in</Left>
             <Height>0.20972in</Height>
             <Width>1.15751in</Width>
-            <ZIndex>14</ZIndex>
+            <ZIndex>12</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -675,9 +629,10 @@
             <Value>=Parameters!pLogo.Value</Value>
             <Sizing>Fit</Sizing>
             <Top>0.0125in</Top>
+            <Left>0.00101in</Left>
             <Height>0.53056in</Height>
             <Width>0.53056in</Width>
-            <ZIndex>15</ZIndex>
+            <ZIndex>13</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -707,10 +662,10 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>2.71771in</Top>
-            <Left>1.60013in</Left>
+            <Left>1.60114in</Left>
             <Height>0.2118in</Height>
             <Width>1.53388in</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -744,10 +699,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>2.71771in</Top>
-            <Left>0.02813in</Left>
+            <Left>0.02914in</Left>
             <Height>0.2118in</Height>
             <Width>1.52744in</Width>
-            <ZIndex>17</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -761,10 +716,10 @@
           </Textbox>
           <Line Name="Line18">
             <Top>2.95104in</Top>
-            <Left>0.0125in</Left>
+            <Left>0.01351in</Left>
             <Height>0in</Height>
             <Width>3.11812in</Width>
-            <ZIndex>18</ZIndex>
+            <ZIndex>16</ZIndex>
             <Style>
               <Border>
                 <Color>Gray</Color>
@@ -794,9 +749,10 @@
           </Line>
           <Line Name="Line7">
             <Top>0.57292in</Top>
+            <Left>0.00101in</Left>
             <Height>0in</Height>
             <Width>3.13089in</Width>
-            <ZIndex>19</ZIndex>
+            <ZIndex>17</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -845,10 +801,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.27049in</Top>
-            <Left>0.03268in</Left>
+            <Left>0.03369in</Left>
             <Height>0.18103in</Height>
             <Width>0.69269in</Width>
-            <ZIndex>20</ZIndex>
+            <ZIndex>18</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -882,10 +838,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.46435in</Top>
-            <Left>0.03202in</Left>
+            <Left>0.03303in</Left>
             <Height>0.18103in</Height>
             <Width>0.69335in</Width>
-            <ZIndex>21</ZIndex>
+            <ZIndex>19</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -919,10 +875,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>4.20452in</Top>
-            <Left>0.03268in</Left>
+            <Left>0.03369in</Left>
             <Height>0.18749in</Height>
             <Width>1.52744in</Width>
-            <ZIndex>22</ZIndex>
+            <ZIndex>20</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -957,10 +913,10 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>4.20452in</Top>
-            <Left>1.60468in</Left>
+            <Left>1.60569in</Left>
             <Height>0.18749in</Height>
             <Width>1.53153in</Width>
-            <ZIndex>23</ZIndex>
+            <ZIndex>21</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -974,10 +930,10 @@
           </Textbox>
           <Line Name="Line10">
             <Top>4.42257in</Top>
-            <Left>0.03058in</Left>
+            <Left>0.03159in</Left>
             <Height>0in</Height>
             <Width>3.10459in</Width>
-            <ZIndex>24</ZIndex>
+            <ZIndex>22</ZIndex>
             <Style>
               <Border>
                 <Color>Gray</Color>
@@ -1028,10 +984,10 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>3.94966in</Top>
-            <Left>1.60468in</Left>
+            <Left>1.60569in</Left>
             <Height>0.2118in</Height>
             <Width>1.53388in</Width>
-            <ZIndex>25</ZIndex>
+            <ZIndex>23</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1065,10 +1021,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>3.94966in</Top>
-            <Left>0.03268in</Left>
+            <Left>0.03369in</Left>
             <Height>0.2118in</Height>
             <Width>1.52744in</Width>
-            <ZIndex>26</ZIndex>
+            <ZIndex>24</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1082,10 +1038,10 @@
           </Textbox>
           <Line Name="Line19">
             <Top>4.18299in</Top>
-            <Left>0.01705in</Left>
+            <Left>0.01806in</Left>
             <Height>0in</Height>
             <Width>3.11812in</Width>
-            <ZIndex>27</ZIndex>
+            <ZIndex>25</ZIndex>
             <Style>
               <Border>
                 <Color>Gray</Color>
@@ -1136,10 +1092,10 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>4.70591in</Top>
-            <Left>1.60468in</Left>
+            <Left>1.59878in</Left>
             <Height>0.2118in</Height>
             <Width>1.53388in</Width>
-            <ZIndex>28</ZIndex>
+            <ZIndex>26</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1173,10 +1129,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>4.70591in</Top>
-            <Left>0.03268in</Left>
+            <Left>0.03369in</Left>
             <Height>0.2118in</Height>
             <Width>1.52744in</Width>
-            <ZIndex>29</ZIndex>
+            <ZIndex>27</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1210,10 +1166,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>2.06435in</Top>
-            <Left>0.03202in</Left>
+            <Left>0.03303in</Left>
             <Height>0.31365in</Height>
             <Width>0.69335in</Width>
-            <ZIndex>30</ZIndex>
+            <ZIndex>28</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1247,10 +1203,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>0.8691in</Top>
-            <Left>0.74776in</Left>
+            <Left>0.74877in</Left>
             <Height>0.20972in</Height>
             <Width>1.18292in</Width>
-            <ZIndex>31</ZIndex>
+            <ZIndex>29</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1284,10 +1240,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.09688in</Top>
-            <Left>0.74776in</Left>
+            <Left>0.74877in</Left>
             <Height>0.17985in</Height>
             <Width>2.37375in</Width>
-            <ZIndex>32</ZIndex>
+            <ZIndex>30</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1321,10 +1277,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.27049in</Top>
-            <Left>0.74776in</Left>
+            <Left>0.74877in</Left>
             <Height>0.18103in</Height>
             <Width>2.37375in</Width>
-            <ZIndex>33</ZIndex>
+            <ZIndex>31</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1358,10 +1314,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.46435in</Top>
-            <Left>0.74776in</Left>
+            <Left>0.74877in</Left>
             <Height>0.18103in</Height>
             <Width>2.37375in</Width>
-            <ZIndex>34</ZIndex>
+            <ZIndex>32</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1395,10 +1351,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>2.06435in</Top>
-            <Left>0.74776in</Left>
+            <Left>0.74877in</Left>
             <Height>0.31365in</Height>
             <Width>2.37375in</Width>
-            <ZIndex>35</ZIndex>
+            <ZIndex>33</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1433,10 +1389,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>0.59862in</Top>
-            <Left>0.81409in</Left>
+            <Left>0.8151in</Left>
             <Height>0.2118in</Height>
             <Width>1.52744in</Width>
-            <ZIndex>36</ZIndex>
+            <ZIndex>34</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1450,10 +1406,10 @@
           </Textbox>
           <Line Name="Line8">
             <Top>0.84143in</Top>
-            <Left>0.01236in</Left>
+            <Left>0.01337in</Left>
             <Height>0in</Height>
             <Width>3.13089in</Width>
-            <ZIndex>37</ZIndex>
+            <ZIndex>35</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -1502,10 +1458,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>3.21423in</Top>
-            <Left>0.0271in</Left>
+            <Left>0.02811in</Left>
             <Height>0.18749in</Height>
             <Width>1.52744in</Width>
-            <ZIndex>38</ZIndex>
+            <ZIndex>36</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1540,10 +1496,10 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>3.21423in</Top>
-            <Left>1.59909in</Left>
+            <Left>1.6001in</Left>
             <Height>0.18749in</Height>
             <Width>1.53153in</Width>
-            <ZIndex>39</ZIndex>
+            <ZIndex>37</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1557,10 +1513,10 @@
           </Textbox>
           <Line Name="Line11">
             <Top>3.43228in</Top>
-            <Left>0.025in</Left>
+            <Left>0.02601in</Left>
             <Height>0in</Height>
             <Width>3.10459in</Width>
-            <ZIndex>40</ZIndex>
+            <ZIndex>38</ZIndex>
             <Style>
               <Border>
                 <Color>Gray</Color>
@@ -1618,10 +1574,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.67038in</Top>
-            <Left>1.71185in</Left>
+            <Left>1.71286in</Left>
             <Height>0.17985in</Height>
             <Width>1.40966in</Width>
-            <ZIndex>41</ZIndex>
+            <ZIndex>39</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1655,10 +1611,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.8706in</Top>
-            <Left>0.03268in</Left>
+            <Left>0.03369in</Left>
             <Height>0.18103in</Height>
             <Width>0.69269in</Width>
-            <ZIndex>42</ZIndex>
+            <ZIndex>40</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1692,10 +1648,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.8706in</Top>
-            <Left>0.74776in</Left>
+            <Left>0.74877in</Left>
             <Height>0.18103in</Height>
             <Width>2.37375in</Width>
-            <ZIndex>43</ZIndex>
+            <ZIndex>41</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1729,10 +1685,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.65927in</Top>
-            <Left>0.7523in</Left>
+            <Left>0.75331in</Left>
             <Height>0.20972in</Height>
             <Width>0.93177in</Width>
-            <ZIndex>44</ZIndex>
+            <ZIndex>42</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1766,10 +1722,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>1.65927in</Top>
-            <Left>0.03268in</Left>
+            <Left>0.03369in</Left>
             <Height>0.20972in</Height>
             <Width>0.69269in</Width>
-            <ZIndex>45</ZIndex>
+            <ZIndex>43</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1803,10 +1759,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>4.45209in</Top>
-            <Left>0.02709in</Left>
+            <Left>0.0281in</Left>
             <Height>0.18749in</Height>
             <Width>1.52744in</Width>
-            <ZIndex>46</ZIndex>
+            <ZIndex>44</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1841,10 +1797,10 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>4.45209in</Top>
-            <Left>1.5991in</Left>
+            <Left>1.60011in</Left>
             <Height>0.18749in</Height>
             <Width>1.53153in</Width>
-            <ZIndex>47</ZIndex>
+            <ZIndex>45</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1858,10 +1814,10 @@
           </Textbox>
           <Line Name="Line12">
             <Top>4.67014in</Top>
-            <Left>0.02499in</Left>
+            <Left>0.026in</Left>
             <Height>0in</Height>
             <Width>3.10459in</Width>
-            <ZIndex>48</ZIndex>
+            <ZIndex>46</ZIndex>
             <Style>
               <Border>
                 <Color>Gray</Color>
@@ -1911,10 +1867,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>3.45975in</Top>
-            <Left>0.0271in</Left>
+            <Left>0.02811in</Left>
             <Height>0.18749in</Height>
             <Width>1.52744in</Width>
-            <ZIndex>49</ZIndex>
+            <ZIndex>47</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1949,10 +1905,10 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>3.45975in</Top>
-            <Left>1.59909in</Left>
+            <Left>1.6001in</Left>
             <Height>0.18749in</Height>
             <Width>1.53153in</Width>
-            <ZIndex>50</ZIndex>
+            <ZIndex>48</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1966,10 +1922,10 @@
           </Textbox>
           <Line Name="Line13">
             <Top>3.6778in</Top>
-            <Left>0.025in</Left>
+            <Left>0.02601in</Left>
             <Height>0in</Height>
             <Width>3.10459in</Width>
-            <ZIndex>51</ZIndex>
+            <ZIndex>49</ZIndex>
             <Style>
               <Border>
                 <Color>Gray</Color>
@@ -2019,10 +1975,10 @@
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
             <Top>3.70975in</Top>
-            <Left>0.0271in</Left>
+            <Left>0.02811in</Left>
             <Height>0.18749in</Height>
             <Width>1.52744in</Width>
-            <ZIndex>52</ZIndex>
+            <ZIndex>50</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2057,10 +2013,10 @@
             </Paragraphs>
             <rd:DefaultName>ExecutionTime</rd:DefaultName>
             <Top>3.70975in</Top>
-            <Left>1.59909in</Left>
+            <Left>1.6001in</Left>
             <Height>0.18749in</Height>
             <Width>1.53153in</Width>
-            <ZIndex>53</ZIndex>
+            <ZIndex>51</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2074,1289 +2030,1445 @@
           </Textbox>
           <Line Name="Line14">
             <Top>3.9278in</Top>
-            <Left>0.025in</Left>
+            <Left>0.02601in</Left>
             <Height>0in</Height>
             <Width>3.10459in</Width>
+            <ZIndex>52</ZIndex>
+            <Style>
+              <Border>
+                <Color>Gray</Color>
+                <Style>Dotted</Style>
+              </Border>
+              <TopBorder>
+                <Color>Gray</Color>
+                <Style>Dotted</Style>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Gray</Color>
+                <Style>Dotted</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Gray</Color>
+                <Style>Dotted</Style>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Gray</Color>
+                <Style>Dotted</Style>
+                <Width>1pt</Width>
+              </RightBorder>
+            </Style>
+          </Line>
+          <Tablix Name="Tablix3">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.12932in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>2.34284in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle1">
+                          <ReportItems>
+                            <Line Name="Line5">
+                              <Top>2.32687in</Top>
+                              <Height>0in</Height>
+                              <Width>3.12853in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                              </Style>
+                            </Line>
+                            <Line Name="Line15">
+                              <Top>1.66453in</Top>
+                              <Left>0.03152in</Left>
+                              <Height>0in</Height>
+                              <Width>3.0835in</Width>
+                              <ZIndex>1</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </LeftBorder>
+                                <RightBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </RightBorder>
+                              </Style>
+                            </Line>
+                            <Line Name="Line29">
+                              <Top>0.02511in</Top>
+                              <Left>0.02871in</Left>
+                              <Height>0in</Height>
+                              <Width>3.0835in</Width>
+                              <ZIndex>2</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </LeftBorder>
+                                <RightBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </RightBorder>
+                              </Style>
+                            </Line>
+                            <Textbox Name="Textbox49">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>10C</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>0.63844in</Top>
+                              <Left>0.04453in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>0.56827in</Width>
+                              <ZIndex>3</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime28">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total10c.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>0.63844in</Top>
+                              <Left>0.66005in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>2.43921in</Width>
+                              <ZIndex>4</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime29">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total25c.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>0.39608in</Top>
+                              <Left>0.66005in</Left>
+                              <Height>0.2118in</Height>
+                              <Width>2.44156in</Width>
+                              <ZIndex>5</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox50">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>25C</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>0.39608in</Top>
+                              <Left>0.04453in</Left>
+                              <Height>0.2118in</Height>
+                              <Width>0.56827in</Width>
+                              <ZIndex>6</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox51">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>5C</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>0.86101in</Top>
+                              <Left>0.03894in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>0.57386in</Width>
+                              <ZIndex>7</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime30">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total5c.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>0.86101in</Top>
+                              <Left>0.65447in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>2.44714in</Width>
+                              <ZIndex>8</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox52">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>COINS COUNTS</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>7pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>0.04802in</Top>
+                              <Left>0.04223in</Left>
+                              <Height>0.2606in</Height>
+                              <Width>3.06684in</Width>
+                              <ZIndex>9</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Line Name="Line31">
+                              <Top>0.35307in</Top>
+                              <Left>0.02908in</Left>
+                              <Height>0in</Height>
+                              <Width>3.0835in</Width>
+                              <ZIndex>10</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </LeftBorder>
+                                <RightBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </RightBorder>
+                              </Style>
+                            </Line>
+                            <Textbox Name="ExecutionTime32">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total1c.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>1.07767in</Top>
+                              <Left>0.65736in</Left>
+                              <Height>0.2118in</Height>
+                              <Width>2.44156in</Width>
+                              <ZIndex>11</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox54">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>1C</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>1.07767in</Top>
+                              <Left>0.04184in</Left>
+                              <Height>0.2118in</Height>
+                              <Width>0.56827in</Width>
+                              <ZIndex>12</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Line Name="Line32">
+                              <Top>1.33722in</Top>
+                              <Left>0.03708in</Left>
+                              <Height>0in</Height>
+                              <Width>3.0835in</Width>
+                              <ZIndex>13</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </LeftBorder>
+                                <RightBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </RightBorder>
+                              </Style>
+                            </Line>
+                            <Textbox Name="Textbox53">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>TOTAL DOLLARS: </Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>7pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=((First(Fields!total100s.Value, "clock_out_details") * 100) + (First(Fields!total50s.Value, "clock_out_details") * 50) + (First(Fields!total20s.Value, "clock_out_details") * 20) + (First(Fields!total10s.Value, "clock_out_details") * 10) + (First(Fields!total5s.Value, "clock_out_details") * 5) + (First(Fields!total2s.Value, "clock_out_details") * 2) + (First(Fields!total1s.Value, "clock_out_details") * 1) + (First(Fields!total1c.Value, "clock_out_details") * 1) + (First(Fields!total5c.Value, "clock_out_details") * 5) + (First(Fields!total10c.Value, "clock_out_details") * 10) + (First(Fields!total25c.Value, "clock_out_details") * 25)) * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>1.37263in</Top>
+                              <Left>0.0506in</Left>
+                              <Height>0.2606in</Height>
+                              <Width>3.06684in</Width>
+                              <ZIndex>14</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox55">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>TOTAL COINS: </Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>7pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=((First(Fields!total1c.Value, "clock_out_details") * 1) + (First(Fields!total5c.Value, "clock_out_details") * 5) + (First(Fields!total10c.Value, "clock_out_details") * 10) + (First(Fields!total25c.Value, "clock_out_details") * 25)) / 100</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>1.69275in</Top>
+                              <Left>0.05514in</Left>
+                              <Height>0.2606in</Height>
+                              <Width>3.06684in</Width>
+                              <ZIndex>15</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Line Name="Line17">
+                              <Top>1.98804in</Top>
+                              <Left>0.03379in</Left>
+                              <Height>0in</Height>
+                              <Width>3.0835in</Width>
+                              <ZIndex>16</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </LeftBorder>
+                                <RightBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </RightBorder>
+                              </Style>
+                            </Line>
+                            <Textbox Name="Textbox56">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>NET DOLLARS: </Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>7pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=((First(Fields!total100s.Value, "clock_out_details") * 100) + (First(Fields!total50s.Value, "clock_out_details") * 50) + (First(Fields!total20s.Value, "clock_out_details") * 20) + (First(Fields!total10s.Value, "clock_out_details") * 10) + (First(Fields!total5s.Value, "clock_out_details") * 5) + (First(Fields!total2s.Value, "clock_out_details") * 2) + (First(Fields!total1s.Value, "clock_out_details") * 1) + (First(Fields!total1c.Value, "clock_out_details") * 1) + (First(Fields!total5c.Value, "clock_out_details") * 5) + (First(Fields!total10c.Value, "clock_out_details") * 10) + (First(Fields!total25c.Value, "clock_out_details") * 25)) + (((First(Fields!total1c.Value, "clock_out_details") * 1) + (First(Fields!total5c.Value, "clock_out_details") * 5) + (First(Fields!total10c.Value, "clock_out_details") * 10) + (First(Fields!total25c.Value, "clock_out_details") * 25)) / 100) * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>2.02876in</Top>
+                              <Left>0.05741in</Left>
+                              <Height>0.2606in</Height>
+                              <Width>3.06684in</Width>
+                              <ZIndex>17</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details" />
+                  <Visibility>
+                    <Hidden>=iif(Parameters!pShowShiftCurrency.Value = "No", True, False)</Hidden>
+                  </Visibility>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>clock_out_details</DataSetName>
+            <Top>7.04588in</Top>
+            <Left>0.01351in</Left>
+            <Height>2.34284in</Height>
+            <Width>3.12932in</Width>
+            <ZIndex>53</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Line Name="Line27">
+            <Top>4.95836in</Top>
+            <Left>0.03795in</Left>
+            <Height>0in</Height>
+            <Width>3.0835in</Width>
             <ZIndex>54</ZIndex>
             <Style>
               <Border>
-                <Color>Gray</Color>
-                <Style>Dotted</Style>
+                <Style>Solid</Style>
               </Border>
               <TopBorder>
-                <Color>Gray</Color>
-                <Style>Dotted</Style>
+                <Color>Black</Color>
+                <Style>Solid</Style>
                 <Width>1pt</Width>
               </TopBorder>
               <BottomBorder>
-                <Color>Gray</Color>
-                <Style>Dotted</Style>
+                <Color>Black</Color>
+                <Style>Solid</Style>
                 <Width>1pt</Width>
               </BottomBorder>
               <LeftBorder>
-                <Color>Gray</Color>
-                <Style>Dotted</Style>
+                <Color>Black</Color>
+                <Style>Solid</Style>
                 <Width>1pt</Width>
               </LeftBorder>
               <RightBorder>
-                <Color>Gray</Color>
-                <Style>Dotted</Style>
+                <Color>Black</Color>
+                <Style>Solid</Style>
                 <Width>1pt</Width>
               </RightBorder>
             </Style>
           </Line>
-          <Line Name="Line27">
-            <Top>4.97016in</Top>
-            <Left>0.02629in</Left>
-            <Height>0in</Height>
-            <Width>3.0835in</Width>
+          <Textbox Name="Textbox21">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!pCopyrights.Value</Value>
+                    <Style>
+                      <FontFamily>Arial Rounded MT Bold</FontFamily>
+                      <FontSize>3.5pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox5</rd:DefaultName>
+            <Top>9.41088in</Top>
+            <Height>0.13403in</Height>
+            <Width>3.12853in</Width>
             <ZIndex>55</ZIndex>
             <Style>
               <Border>
-                <Style>Solid</Style>
+                <Style>None</Style>
               </Border>
-              <TopBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </TopBorder>
-              <BottomBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </BottomBorder>
-              <LeftBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </LeftBorder>
-              <RightBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </RightBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
             </Style>
-          </Line>
-          <Line Name="Line15">
-            <Top>8.80224in</Top>
-            <Left>0.03152in</Left>
-            <Height>0in</Height>
-            <Width>3.0835in</Width>
+          </Textbox>
+          <Tablix Name="Tablix4">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.12932in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>2.00338in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle2">
+                          <ReportItems>
+                            <Textbox Name="Textbox40">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>50's</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>0.63328in</Top>
+                              <Left>0.04211in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>0.56827in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime18">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total50s.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>0.63328in</Top>
+                              <Left>0.65763in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>2.44667in</Width>
+                              <ZIndex>1</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime31">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total100s.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>0.39092in</Top>
+                              <Left>0.65763in</Left>
+                              <Height>0.2118in</Height>
+                              <Width>2.44902in</Width>
+                              <ZIndex>2</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox47">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>100's</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>0.39092in</Top>
+                              <Left>0.04211in</Left>
+                              <Height>0.2118in</Height>
+                              <Width>0.56827in</Width>
+                              <ZIndex>3</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox48">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>20's</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>0.85585in</Top>
+                              <Left>0.03652in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>0.57386in</Width>
+                              <ZIndex>4</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime33">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total20s.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>0.85585in</Top>
+                              <Left>0.65205in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>2.4546in</Width>
+                              <ZIndex>5</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox57">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>CURRENCY COUNTS</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>7pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Center</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>0.04286in</Top>
+                              <Left>0.03981in</Left>
+                              <Height>0.2606in</Height>
+                              <Width>3.06684in</Width>
+                              <ZIndex>6</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Line Name="Line33">
+                              <Top>0.34791in</Top>
+                              <Left>0.02666in</Left>
+                              <Height>0in</Height>
+                              <Width>3.0835in</Width>
+                              <ZIndex>7</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <TopBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </TopBorder>
+                                <BottomBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </BottomBorder>
+                                <LeftBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </LeftBorder>
+                                <RightBorder>
+                                  <Color>Black</Color>
+                                  <Style>Solid</Style>
+                                  <Width>1pt</Width>
+                                </RightBorder>
+                              </Style>
+                            </Line>
+                            <Textbox Name="Textbox58">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>5's</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>1.31487in</Top>
+                              <Left>0.03942in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>0.56827in</Width>
+                              <ZIndex>8</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime34">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total5s.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>1.31487in</Top>
+                              <Left>0.65494in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>2.44667in</Width>
+                              <ZIndex>9</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime35">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total10s.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>1.07251in</Top>
+                              <Left>0.65494in</Left>
+                              <Height>0.2118in</Height>
+                              <Width>2.44902in</Width>
+                              <ZIndex>10</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox59">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>10's</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>1.07251in</Top>
+                              <Left>0.03942in</Left>
+                              <Height>0.2118in</Height>
+                              <Width>0.56827in</Width>
+                              <ZIndex>11</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox60">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>2's</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>1.53744in</Top>
+                              <Left>0.03383in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>0.57386in</Width>
+                              <ZIndex>12</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime36">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total2s.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>1.53744in</Top>
+                              <Left>0.64936in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>2.4546in</Width>
+                              <ZIndex>13</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox61">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>1's</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox3</rd:DefaultName>
+                              <Top>1.78048in</Top>
+                              <Left>0.03383in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>0.57386in</Width>
+                              <ZIndex>14</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="ExecutionTime37">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=First(Fields!total1s.Value, "clock_out_details") * 1</Value>
+                                      <Style>
+                                        <FontFamily>Arial Rounded MT Bold</FontFamily>
+                                        <FontSize>6.5pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+                              <Top>1.78048in</Top>
+                              <Left>0.64936in</Left>
+                              <Height>0.18749in</Height>
+                              <Width>2.4546in</Width>
+                              <ZIndex>15</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <VerticalAlign>Middle</VerticalAlign>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details2" />
+                  <Visibility>
+                    <Hidden>=iif(Parameters!pShowShiftCurrency.Value = "No", True, False)</Hidden>
+                  </Visibility>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>clock_out_details</DataSetName>
+            <Top>5.00219in</Top>
+            <Left>0.01454in</Left>
+            <Height>2.00338in</Height>
+            <Width>3.12932in</Width>
             <ZIndex>56</ZIndex>
             <Style>
               <Border>
-                <Style>Solid</Style>
-              </Border>
-              <TopBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </TopBorder>
-              <BottomBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </BottomBorder>
-              <LeftBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </LeftBorder>
-              <RightBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </RightBorder>
-            </Style>
-          </Line>
-          <Textbox Name="Textbox38">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>50's</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>5.62099in</Top>
-            <Left>0.04211in</Left>
-            <Height>0.18749in</Height>
-            <Width>0.56827in</Width>
-            <ZIndex>57</ZIndex>
-            <Style>
-              <Border>
                 <Style>None</Style>
               </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
             </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime17">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total50s.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>5.62099in</Top>
-            <Left>0.65763in</Left>
-            <Height>0.18749in</Height>
-            <Width>2.46692in</Width>
-            <ZIndex>58</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime22">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total100s.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>5.37863in</Top>
-            <Left>0.65763in</Left>
-            <Height>0.2118in</Height>
-            <Width>2.46927in</Width>
-            <ZIndex>59</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox39">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>100's</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>5.37863in</Top>
-            <Left>0.04211in</Left>
-            <Height>0.2118in</Height>
-            <Width>0.56827in</Width>
-            <ZIndex>60</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox41">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>20's</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>5.84356in</Top>
-            <Left>0.03652in</Left>
-            <Height>0.18749in</Height>
-            <Width>0.57386in</Width>
-            <ZIndex>61</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime23">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total20s.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>5.84356in</Top>
-            <Left>0.65205in</Left>
-            <Height>0.18749in</Height>
-            <Width>2.47485in</Width>
-            <ZIndex>62</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox42">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>CURRENCY COUNTS</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>7pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>5.01807in</Top>
-            <Left>0.03981in</Left>
-            <Height>0.2606in</Height>
-            <Width>3.06684in</Width>
-            <ZIndex>63</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Line Name="Line30">
-            <Top>5.32312in</Top>
-            <Left>0.02666in</Left>
-            <Height>0in</Height>
-            <Width>3.0835in</Width>
-            <ZIndex>64</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-              <TopBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </TopBorder>
-              <BottomBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </BottomBorder>
-              <LeftBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </LeftBorder>
-              <RightBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </RightBorder>
-            </Style>
-          </Line>
-          <Textbox Name="Textbox43">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>5's</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>6.30258in</Top>
-            <Left>0.03942in</Left>
-            <Height>0.18749in</Height>
-            <Width>0.56827in</Width>
-            <ZIndex>65</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime24">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total5s.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>6.30258in</Top>
-            <Left>0.65494in</Left>
-            <Height>0.18749in</Height>
-            <Width>2.46692in</Width>
-            <ZIndex>66</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime25">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total10s.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>6.06022in</Top>
-            <Left>0.65494in</Left>
-            <Height>0.2118in</Height>
-            <Width>2.46927in</Width>
-            <ZIndex>67</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox44">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>10's</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>6.06022in</Top>
-            <Left>0.03942in</Left>
-            <Height>0.2118in</Height>
-            <Width>0.56827in</Width>
-            <ZIndex>68</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox45">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>2's</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>6.52515in</Top>
-            <Left>0.03383in</Left>
-            <Height>0.18749in</Height>
-            <Width>0.57386in</Width>
-            <ZIndex>69</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime26">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total2s.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>6.52515in</Top>
-            <Left>0.64936in</Left>
-            <Height>0.18749in</Height>
-            <Width>2.47485in</Width>
-            <ZIndex>70</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox46">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>1's</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>6.76819in</Top>
-            <Left>0.03383in</Left>
-            <Height>0.18749in</Height>
-            <Width>0.57386in</Width>
-            <ZIndex>71</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime27">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total1s.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>6.76819in</Top>
-            <Left>0.64936in</Left>
-            <Height>0.18749in</Height>
-            <Width>2.47485in</Width>
-            <ZIndex>72</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Line Name="Line29">
-            <Top>7.07532in</Top>
-            <Left>0.02871in</Left>
-            <Height>0in</Height>
-            <Width>3.0835in</Width>
-            <ZIndex>73</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-              <TopBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </TopBorder>
-              <BottomBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </BottomBorder>
-              <LeftBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </LeftBorder>
-              <RightBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </RightBorder>
-            </Style>
-          </Line>
-          <Textbox Name="Textbox49">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>10C</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>7.72615in</Top>
-            <Left>0.04453in</Left>
-            <Height>0.18749in</Height>
-            <Width>0.56827in</Width>
-            <ZIndex>74</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime28">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total10c.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>7.72615in</Top>
-            <Left>0.66005in</Left>
-            <Height>0.18749in</Height>
-            <Width>2.46692in</Width>
-            <ZIndex>75</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime29">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total25c.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>7.48379in</Top>
-            <Left>0.66005in</Left>
-            <Height>0.2118in</Height>
-            <Width>2.46927in</Width>
-            <ZIndex>76</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox50">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>25C</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>7.48379in</Top>
-            <Left>0.04453in</Left>
-            <Height>0.2118in</Height>
-            <Width>0.56827in</Width>
-            <ZIndex>77</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox51">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>5C</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>7.94872in</Top>
-            <Left>0.03894in</Left>
-            <Height>0.18749in</Height>
-            <Width>0.57386in</Width>
-            <ZIndex>78</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="ExecutionTime30">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total5c.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>7.94872in</Top>
-            <Left>0.65447in</Left>
-            <Height>0.18749in</Height>
-            <Width>2.47485in</Width>
-            <ZIndex>79</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox52">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>COINS COUNTS</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>7pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>7.12323in</Top>
-            <Left>0.04223in</Left>
-            <Height>0.2606in</Height>
-            <Width>3.06684in</Width>
-            <ZIndex>80</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Line Name="Line31">
-            <Top>7.42828in</Top>
-            <Left>0.02908in</Left>
-            <Height>0in</Height>
-            <Width>3.0835in</Width>
-            <ZIndex>81</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-              <TopBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </TopBorder>
-              <BottomBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </BottomBorder>
-              <LeftBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </LeftBorder>
-              <RightBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </RightBorder>
-            </Style>
-          </Line>
-          <Textbox Name="ExecutionTime32">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=First(Fields!total1c.Value, "clock_out_details") * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>ExecutionTime</rd:DefaultName>
-            <Top>8.16538in</Top>
-            <Left>0.65736in</Left>
-            <Height>0.2118in</Height>
-            <Width>2.46927in</Width>
-            <ZIndex>82</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox54">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>1C</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>8.16538in</Top>
-            <Left>0.04184in</Left>
-            <Height>0.2118in</Height>
-            <Width>0.56827in</Width>
-            <ZIndex>83</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Line Name="Line32">
-            <Top>8.44993in</Top>
-            <Left>0.03708in</Left>
-            <Height>0in</Height>
-            <Width>3.0835in</Width>
-            <ZIndex>84</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-              <TopBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </TopBorder>
-              <BottomBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </BottomBorder>
-              <LeftBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </LeftBorder>
-              <RightBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </RightBorder>
-            </Style>
-          </Line>
-          <Textbox Name="Textbox53">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>TOTAL DOLLARS: </Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>7pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=((First(Fields!total100s.Value, "clock_out_details") * 100) + (First(Fields!total50s.Value, "clock_out_details") * 50) + (First(Fields!total20s.Value, "clock_out_details") * 20) + (First(Fields!total10s.Value, "clock_out_details") * 10) + (First(Fields!total5s.Value, "clock_out_details") * 5) + (First(Fields!total2s.Value, "clock_out_details") * 2) + (First(Fields!total1s.Value, "clock_out_details") * 1) + (First(Fields!total1c.Value, "clock_out_details") * 1) + (First(Fields!total5c.Value, "clock_out_details") * 5) + (First(Fields!total10c.Value, "clock_out_details") * 10) + (First(Fields!total25c.Value, "clock_out_details") * 25)) * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>8.49784in</Top>
-            <Left>0.0506in</Left>
-            <Height>0.2606in</Height>
-            <Width>3.06684in</Width>
-            <ZIndex>85</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox55">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>TOTAL COINS: </Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>7pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=((First(Fields!total1c.Value, "clock_out_details") * 1) + (First(Fields!total5c.Value, "clock_out_details") * 5) + (First(Fields!total10c.Value, "clock_out_details") * 10) + (First(Fields!total25c.Value, "clock_out_details") * 25)) / 100</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>8.84296in</Top>
-            <Left>0.05514in</Left>
-            <Height>0.2606in</Height>
-            <Width>3.06684in</Width>
-            <ZIndex>86</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Line Name="Line17">
-            <Top>9.13825in</Top>
-            <Left>0.03379in</Left>
-            <Height>0in</Height>
-            <Width>3.0835in</Width>
-            <ZIndex>87</ZIndex>
-            <Style>
-              <Border>
-                <Style>Solid</Style>
-              </Border>
-              <TopBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </TopBorder>
-              <BottomBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </BottomBorder>
-              <LeftBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </LeftBorder>
-              <RightBorder>
-                <Color>Black</Color>
-                <Style>Solid</Style>
-                <Width>1pt</Width>
-              </RightBorder>
-            </Style>
-          </Line>
-          <Textbox Name="Textbox56">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>NET DOLLARS: </Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>7pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=((First(Fields!total100s.Value, "clock_out_details") * 100) + (First(Fields!total50s.Value, "clock_out_details") * 50) + (First(Fields!total20s.Value, "clock_out_details") * 20) + (First(Fields!total10s.Value, "clock_out_details") * 10) + (First(Fields!total5s.Value, "clock_out_details") * 5) + (First(Fields!total2s.Value, "clock_out_details") * 2) + (First(Fields!total1s.Value, "clock_out_details") * 1) + (First(Fields!total1c.Value, "clock_out_details") * 1) + (First(Fields!total5c.Value, "clock_out_details") * 5) + (First(Fields!total10c.Value, "clock_out_details") * 10) + (First(Fields!total25c.Value, "clock_out_details") * 25)) + (((First(Fields!total1c.Value, "clock_out_details") * 1) + (First(Fields!total5c.Value, "clock_out_details") * 5) + (First(Fields!total10c.Value, "clock_out_details") * 10) + (First(Fields!total25c.Value, "clock_out_details") * 25)) / 100) * 1</Value>
-                    <Style>
-                      <FontFamily>Arial Rounded MT Bold</FontFamily>
-                      <FontSize>6.5pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>9.17897in</Top>
-            <Left>0.05741in</Left>
-            <Height>0.2606in</Height>
-            <Width>3.06684in</Width>
-            <ZIndex>88</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
+          </Tablix>
         </ReportItems>
-        <Height>9.64879in</Height>
+        <Height>9.54491in</Height>
         <Style />
       </Body>
-      <Width>3.15562in</Width>
+      <Width>3.1584in</Width>
       <Page>
         <PageHeight>6in</PageHeight>
         <PageWidth>3.15in</PageWidth>
@@ -3384,6 +3496,12 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="pLogo">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pShowShiftCurrency">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
@@ -3419,6 +3537,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>4</RowIndex>
           <ParameterName>pLogo</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>pShowShiftCurrency</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

@@ -8395,6 +8395,9 @@ namespace CounterSales_info.forms
                 Microsoft.Reporting.WinForms.ReportParameter showNote = new Microsoft.Reporting.WinForms.ReportParameter("showNote", TextData.general_options);
                 report.SetParameters(showNote);
 
+
+                Microsoft.Reporting.WinForms.ReportParameter pCurrency = new Microsoft.Reporting.WinForms.ReportParameter("pCurrency", generalSettings.ReadField("currency"));
+                report.SetParameters(pCurrency);
                 //*******************************************************************************************
 
                 PrintToPrinter(report, printer_name);
@@ -8502,6 +8505,10 @@ namespace CounterSales_info.forms
                 TextData.general_options = data.UserPermissions("showNoteInReport", "pos_general_settings");
                 Microsoft.Reporting.WinForms.ReportParameter showNote = new Microsoft.Reporting.WinForms.ReportParameter("showNote", TextData.general_options);
                 report.SetParameters(showNote);
+                
+                
+                Microsoft.Reporting.WinForms.ReportParameter pCurrency = new Microsoft.Reporting.WinForms.ReportParameter("pCurrency", generalSettings.ReadField("currency"));
+                report.SetParameters(pCurrency);
 
                 //*******************************************************************************************
 
@@ -8587,6 +8594,10 @@ namespace CounterSales_info.forms
                 TextData.general_options = data.UserPermissions("showNoteInReport", "pos_general_settings");
                 Microsoft.Reporting.WinForms.ReportParameter showNote = new Microsoft.Reporting.WinForms.ReportParameter("showNote", TextData.general_options);
                 report.SetParameters(showNote);
+
+
+                Microsoft.Reporting.WinForms.ReportParameter pCurrency = new Microsoft.Reporting.WinForms.ReportParameter("pCurrency", generalSettings.ReadField("currency"));
+                report.SetParameters(pCurrency);
                 //*******************************************************************************************
 
                 PrintToPrinter(report, printer_name);

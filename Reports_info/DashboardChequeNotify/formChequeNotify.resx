@@ -117,51 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ReportProcedureChequeNotificationsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
-  <metadata name="chequeDetails_ds.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>782, 17</value>
-  </metadata>
-  <metadata name="ReportProcedureReportsTitlesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>679, 56</value>
-  </metadata>
-  <metadata name="ReportProcedureStatusWiseChequeDetailsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>366, 212</value>
-  </metadata>
-  <metadata name="ReportProcedureBankWiseChequeDetailsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>699, 173</value>
-  </metadata>
-  <metadata name="ReportProcedureBillWiseChequeDetailsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 173</value>
-  </metadata>
-  <metadata name="ReportProcedureCustomerWiseChequeDetailsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
-  </metadata>
-  <metadata name="reportProcedureBouncedChequeNotificationsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>305, 95</value>
-  </metadata>
-  <metadata name="ReportProcedureChequeNotificationsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>351, 56</value>
-  </metadata>
-  <metadata name="ReportProcedureReportsTitlesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
-  </metadata>
-  <metadata name="reportProcedureBouncedChequeNotificationsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>684, 95</value>
-  </metadata>
-  <metadata name="ReportProcedureCustomerWiseChequeDetailsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>398, 134</value>
-  </metadata>
-  <metadata name="ReportProcedureBillWiseChequeDetailsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>361, 173</value>
-  </metadata>
-  <metadata name="ReportProcedureBankWiseChequeDetailsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 212</value>
-  </metadata>
-  <metadata name="ReportProcedureStatusWiseChequeDetailsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 251</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="resource.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -312,18 +267,6 @@
         5Cro2kqye7kKlvkAaSrZlVwFnSeSPBi5CpZqItmlXAXdG0kenFwFi32CBcObz+sW/x0xcyvUFuwQbqF+
         kJ2q+QdncFYuHSbj8XgfFr2A3Ef+RsL95EVkv1ziHuyyCzmNhA+ZDj+1wk+mLyD3PbmEEEIIIYQQQggh
         hBBCCCGEEEIIIYQQQohLZmb+AyUhiXimxPl6AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="logo_img2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAYhJREFUaEPt
-        k8tNA1EQBDcNIoEASAnSwEIiFUiAA+JzIRrji7GhxzxaPTxo8GiNXkklYVbTLqRlGgwG/5zF/cv14nF1
-        jI87Lu9WJ5tnN/t+jo8+m5H1u8vbi4fl6dbtzx+/3+9zZPh8/pJ6keGjRitFho8arRQZPmq0UmT4qNFK
-        keGjRitFho8aDY/On/9EtR0iw0eNhirGUW2HyPBRo6GKcVTbITJ81GioYhzVdogMHzVaKTJ81GilyPBR
-        o5Uiw0eNVooMHzUaqn/Ir8zu2k0WGT5qNOSQntldu8kiw0eNVooMHzVaKTJ81GjIr0LP7K7dZJHho0ZD
-        DumZ3bWbLDJ81GilyPBRo5Uiw0eNhvwq9Mzu2k0WGd/n6uxp3apGQw7pmd21myz3IDOHD9RopdyDzBw+
-        UKOVcg8yc/hAjf7Wg3+FDv4P+Incg8wcPlCjlXIPMnP4QI1Wyj3IzOEDNVop9yAzhw/UaKXcg8wcPpib
-        yMxRR3MSmTnqaE4iM0cdzUlkDgaDN6bpFTiqRKHvTGqeAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

@@ -109,6 +109,7 @@ namespace Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles
                         ["salesmanTips"] = reader["salesmanTips"] != DBNull.Value ? reader["salesmanTips"].ToString() : string.Empty,
                         ["useSurcharges"] = reader["useSurcharges"] != DBNull.Value ? reader["useSurcharges"].ToString() : string.Empty,
                         ["surchargePercentage"] = reader["surchargePercentage"] != DBNull.Value ? reader["surchargePercentage"].ToString() : string.Empty,
+                        ["showShiftCurrency"] = reader["showShiftCurrency"] != DBNull.Value ? reader["showShiftCurrency"].ToString() : string.Empty,
                     };
                     result.Add(item);
                 }

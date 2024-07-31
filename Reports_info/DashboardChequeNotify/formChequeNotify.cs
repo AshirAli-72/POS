@@ -6,6 +6,8 @@ using Message_box_info.forms;
 using RefereningMaterial;
 using Customers_info.forms;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Reports_info.Customer_sales_reports.loyal_customer_sales_reports;
+using System.Data.SqlClient;
 
 namespace Reports_info.DashboardChequeNotify
 {
@@ -53,27 +55,12 @@ namespace Reports_info.DashboardChequeNotify
                 ToDate.Text = DateTime.Now.ToLongDateString();
 
                 viewerCheques.Visible = true;
-                viewerBounced.Visible = false;
-                viewerCustomer.Visible = false;
-                viewerInvoice.Visible = false;
-                viewerBank.Visible = false;
-                viewerStatus.Visible = false;
-
-                lblTitle.Visible = false;
-                lblCode.Visible = false;
-                txtTitle.Visible = false;
-                txtCode.Visible = false;
                 lblFromDate.Visible = true;
                 lblToDate.Visible = true;
                 FromDate.Visible = true;
                 ToDate.Visible = true;
 
                 this.viewerCheques.Clear();
-                this.viewerBounced.Clear();
-                this.viewerCustomer.Clear();
-                this.viewerInvoice.Clear();
-                this.viewerBank.Clear();
-                this.viewerStatus.Clear();
 
                 this.viewerCheques.Dock = DockStyle.Fill;
                     
@@ -84,226 +71,7 @@ namespace Reports_info.DashboardChequeNotify
             }
         }
 
-        private void btn_low_inventory_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                lblReportTitle.Text = "Cheque Wise Report";
-                reportType = 0;
-
-                viewerCheques.Visible = true;
-
-                this.viewerCheques.Dock = DockStyle.Fill;
-                
-                viewerBounced.Visible = false;
-                viewerCustomer.Visible = false;
-                viewerInvoice.Visible = false;
-                viewerBank.Visible = false;
-                viewerStatus.Visible = false;
-
-                lblTitle.Visible = false;
-                lblCode.Visible = false;
-                txtTitle.Visible = false;
-                txtCode.Visible = false;
-                lblFromDate.Visible = true;
-                lblToDate.Visible = true;
-                FromDate.Visible = true;
-                ToDate.Visible = true;
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
-
-        private void btn_expiry_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                lblReportTitle.Text = "Bounced Cheques Report";
-                reportType = 1;
-
-                viewerBounced.Visible = true;
-
-                this.viewerBounced.Dock = DockStyle.Fill;
-                
-
-                viewerCheques.Visible = false;
-                viewerCustomer.Visible = false;
-                viewerInvoice.Visible = false;
-                viewerBank.Visible = false;
-                viewerStatus.Visible = false;
-
-                lblTitle.Visible = false;
-                lblCode.Visible = false;
-                txtTitle.Visible = false;
-                txtCode.Visible = false;
-                lblFromDate.Visible = true;
-                lblToDate.Visible = true;
-                FromDate.Visible = true;
-                ToDate.Visible = true;
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
-
-        private void btnCustomer_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                lblReportTitle.Text = "Customer Wise Cheque Report";
-                reportType = 2;
-
-                viewerCustomer.Visible = true;
-
-                this.viewerCustomer.Dock = DockStyle.Fill;
-                
-
-                viewerCheques.Visible = false;
-                viewerBounced.Visible = false;
-                viewerInvoice.Visible = false;
-                viewerBank.Visible = false;
-                viewerStatus.Visible = false;
-
-                lblTitle.Visible = true;
-                lblCode.Visible = true;
-                txtTitle.Visible = true;
-                txtCode.Visible = true;
-                lblFromDate.Visible = true;
-                lblToDate.Visible = true;
-                FromDate.Visible = true;
-                ToDate.Visible = true;
-
-                lblTitle.Text = "Name:";
-                txtTitle.Text = null;
-                txtTitle.Items.Clear();
-                txtCode.Text = null;
-                txtCode.Items.Clear();
-                GetSetData.FillComboBoxWithValues("select * from pos_customers;", "full_name", txtTitle);
-                GetSetData.FillComboBoxWithValues("select * from pos_customers;", "cus_code", txtCode);
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
-
-        private void btnInvoice_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                lblReportTitle.Text = "Invoice No Wise Cheque Report";
-                reportType = 3;
-
-                viewerInvoice.Visible = true;
-
-                this.viewerInvoice.Dock = DockStyle.Fill;
-                
-
-                viewerCheques.Visible = false;
-                viewerBounced.Visible = false;
-                viewerCustomer.Visible = false;
-                viewerBank.Visible = false;
-                viewerStatus.Visible = false;
-
-                lblTitle.Visible = true;
-                lblCode.Visible = false;
-                txtTitle.Visible = true;
-                txtCode.Visible = false;
-                lblFromDate.Visible = false;
-                lblToDate.Visible = false;
-                FromDate.Visible = false;
-                ToDate.Visible = false;
-
-                lblTitle.Text = "Invoice #";
-                txtTitle.Text = null;
-                txtTitle.Items.Clear();
-                GetSetData.FillComboBoxWithValues("select distinct(billNo) from pos_customerChequeDetails;", "billNo", txtTitle);
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
-
-        private void btnBank_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                lblReportTitle.Text = "Bank Wise Cheque Report";
-                reportType = 4;
-
-                viewerBank.Visible = true;
-
-                this.viewerBank.Dock = DockStyle.Fill;
-               
-
-                viewerCheques.Visible = false;
-                viewerBounced.Visible = false;
-                viewerCustomer.Visible = false;
-                viewerInvoice.Visible = false;
-                viewerStatus.Visible = false;
-
-                lblTitle.Visible = true;
-                lblCode.Visible = false;
-                txtTitle.Visible = true;
-                txtCode.Visible = false;
-                lblFromDate.Visible = true;
-                lblToDate.Visible = true;
-                FromDate.Visible = true;
-                ToDate.Visible = true;
-
-                lblTitle.Text = "Bank:";
-                txtTitle.Text = null;
-                txtTitle.Items.Clear();
-                GetSetData.FillComboBoxWithValues("select * from pos_bank;", "bank_title", txtTitle);
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
-
-        private void btnStatus_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                lblReportTitle.Text = "Status Wise Cheque Report";
-                reportType = 5;
-
-                viewerStatus.Visible = true;
-
-                this.viewerStatus.Dock = DockStyle.Fill;
-                
-
-                viewerCheques.Visible = false;
-                viewerBounced.Visible = false;
-                viewerCustomer.Visible = false;
-                viewerInvoice.Visible = false;
-                viewerBank.Visible = false;
-
-                lblTitle.Visible = true;
-                lblCode.Visible = false;
-                txtTitle.Visible = true;
-                txtCode.Visible = false;
-                lblFromDate.Visible = true;
-                lblToDate.Visible = true;
-                FromDate.Visible = true;
-                ToDate.Visible = true;
-
-                lblTitle.Text = "Status:";
-                txtTitle.Text = null;
-                txtTitle.Items.Clear();
-                GetSetData.FillComboBoxWithValues("select distinct(status) from pos_customerChequeDetails;", "status", txtTitle);
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
-
+      
         private void reportParamenters(ReportViewer viewer)
         {
             try
@@ -339,136 +107,192 @@ namespace Reports_info.DashboardChequeNotify
         {
             try
             {
-                this.ReportProcedureChequeNotificationsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureChequeNotifications, FromDate.Text, ToDate.Text);
-                this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
-                viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+                chequeDetails_ds report = new chequeDetails_ds();
+                GetSetData.query = @"SELECT pos_bank.bank_title, pos_customerChequeDetails.billNo, pos_customerChequeDetails.date, pos_customerChequeDetails.bounceDate, pos_customerChequeDetails.accountNo, pos_customerChequeDetails.remarks, 
+                                    pos_customerChequeDetails.amount, pos_customerChequeDetails.status, pos_customerChequeDetails.chequeNo
+                                    FROM pos_bank INNER JOIN pos_customerChequeDetails ON pos_bank.bank_id = pos_customerChequeDetails.bank_id
+                                    where (pos_customerChequeDetails.date between  '" + FromDate.Text + "' AND '" + ToDate.Text + "') and (pos_customerChequeDetails.status != 'Complete')";
+
+                SqlConnection conn = new SqlConnection(webConfig.con_string);
+                SqlDataAdapter da = new SqlDataAdapter(GetSetData.query, conn);
+                da.Fill(report, report.Tables[0].TableName);
+
+                ReportDataSource rds = new ReportDataSource("low_inventory", report.Tables[0]);
+                viewer.LocalReport.DataSources.Clear();
+                viewer.SetDisplayMode(DisplayMode.PrintLayout);
+                viewer.LocalReport.DataSources.Add(rds);
+                viewer.LocalReport.Refresh();
                 viewer.ZoomMode = ZoomMode.Percent;
                 viewer.ZoomPercent = 100;
-                reportParamenters(viewer);
+                viewer.LocalReport.EnableExternalImages = true;
+
+                //*******************************************************************************************
+                GetSetData.Data = data.UserPermissions("picture_path", "pos_general_settings");
+                GetSetData.query = data.UserPermissions("logo_path", "pos_configurations");
+                //*******************************************************************************************
+
+                if (GetSetData.query != "nill" && GetSetData.query != "")
+                {
+                    GetSetData.query = GetSetData.Data + GetSetData.query;
+                    ReportParameter logo = new ReportParameter("pLogo", new Uri(GetSetData.query).AbsoluteUri);
+                    viewer.LocalReport.SetParameters(logo);
+                }
+                else
+                {
+
+                    ReportParameter logo = new ReportParameter("pLogo", "");
+                    viewer.LocalReport.SetParameters(logo);
+                }
+
+                GetSetData.Data = data.UserPermissions("title", "pos_report_settings");
+                ReportParameter title = new ReportParameter("pTitle", GetSetData.Data);
+                viewer.LocalReport.SetParameters(title);
+
+                GetSetData.Data = data.UserPermissions("address", "pos_report_settings");
+                ReportParameter address = new ReportParameter("pAddress", GetSetData.Data);
+                viewer.LocalReport.SetParameters(address);
+
+                GetSetData.Data = data.UserPermissions("phone_no", "pos_report_settings");
+                ReportParameter phone = new ReportParameter("pPhone", GetSetData.Data);
+                viewer.LocalReport.SetParameters(phone);
+
+
+                GetSetData.Data = data.UserPermissions("copyrights", "pos_report_settings");
+                ReportParameter copyrights = new ReportParameter("pCopyrights", GetSetData.Data);
+                viewer.LocalReport.SetParameters(copyrights);
+
+
+                ReportParameter fromDate = new ReportParameter("pFromDate", FromDate.Text);
+                viewer.LocalReport.SetParameters(fromDate);
+
+                ReportParameter toDate = new ReportParameter("pToDate", ToDate.Text);
+                viewer.LocalReport.SetParameters(toDate);
+
                 viewer.RefreshReport();
             }
             catch (Exception es)
             {
-                MessageBox.Show(es.Message);
+                error.errorMessage(es.Message);
+                error.ShowDialog();
             }
         }
 
-        private void DisplayBouncedChequesReportInReportViewer(ReportViewer viewer)
-        {
-            try
-            {
-                this.reportProcedureBouncedChequeNotificationsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureBouncedChequeNotifications, FromDate.Text, ToDate.Text);
-                this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
-                viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-                viewer.ZoomMode = ZoomMode.Percent;
-                viewer.ZoomPercent = 100;
-                reportParamenters(viewer);
-                viewer.RefreshReport();
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
+        //private void DisplayBouncedChequesReportInReportViewer(ReportViewer viewer)
+        //{
+        //    try
+        //    {
+        //        this.reportProcedureBouncedChequeNotificationsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureBouncedChequeNotifications, FromDate.Text, ToDate.Text);
+        //        this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
+        //        viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+        //        viewer.ZoomMode = ZoomMode.Percent;
+        //        viewer.ZoomPercent = 100;
+        //        reportParamenters(viewer);
+        //        viewer.RefreshReport();
+        //    }
+        //    catch (Exception es)
+        //    {
+        //        MessageBox.Show(es.Message);
+        //    }
+        //}
 
-        private void DisplayCustomerWiseChequesReportInReportViewer(ReportViewer viewer)
-        {
-            try
-            {
-                this.ReportProcedureCustomerWiseChequeDetailsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureCustomerWiseChequeDetails, FromDate.Text, ToDate.Text,txtTitle.Text, txtCode.Text);
-                this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
-                viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-                viewer.ZoomMode = ZoomMode.Percent;
-                viewer.ZoomPercent = 100;
-                reportParamenters(viewer);
-                viewer.RefreshReport();
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
+        //private void DisplayCustomerWiseChequesReportInReportViewer(ReportViewer viewer)
+        //{
+        //    try
+        //    {
+        //        this.ReportProcedureCustomerWiseChequeDetailsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureCustomerWiseChequeDetails, FromDate.Text, ToDate.Text,txtTitle.Text, txtCode.Text);
+        //        this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
+        //        viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+        //        viewer.ZoomMode = ZoomMode.Percent;
+        //        viewer.ZoomPercent = 100;
+        //        reportParamenters(viewer);
+        //        viewer.RefreshReport();
+        //    }
+        //    catch (Exception es)
+        //    {
+        //        MessageBox.Show(es.Message);
+        //    }
+        //}
 
-        private void DisplayBillWiseChequesReportInReportViewer(ReportViewer viewer)
-        {
-            try
-            {
-                this.ReportProcedureBillWiseChequeDetailsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureBillWiseChequeDetails, txtTitle.Text);
-                this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
-                viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-                viewer.ZoomMode = ZoomMode.Percent;
-                viewer.ZoomPercent = 100;
-                reportParamenters(viewer);
-                viewer.RefreshReport();
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
+        //private void DisplayBillWiseChequesReportInReportViewer(ReportViewer viewer)
+        //{
+        //    try
+        //    {
+        //        this.ReportProcedureBillWiseChequeDetailsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureBillWiseChequeDetails, txtTitle.Text);
+        //        this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
+        //        viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+        //        viewer.ZoomMode = ZoomMode.Percent;
+        //        viewer.ZoomPercent = 100;
+        //        reportParamenters(viewer);
+        //        viewer.RefreshReport();
+        //    }
+        //    catch (Exception es)
+        //    {
+        //        MessageBox.Show(es.Message);
+        //    }
+        //}
 
-        private void DisplayBankWiseChequesReportInReportViewer(ReportViewer viewer)
-        {
-            try
-            {
-                this.ReportProcedureBankWiseChequeDetailsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureBankWiseChequeDetails, FromDate.Text, ToDate.Text, txtTitle.Text);
-                this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
-                viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-                viewer.ZoomMode = ZoomMode.Percent;
-                viewer.ZoomPercent = 100;
-                reportParamenters(viewer);
-                viewer.RefreshReport();
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
+        //private void DisplayBankWiseChequesReportInReportViewer(ReportViewer viewer)
+        //{
+        //    try
+        //    {
+        //        this.ReportProcedureBankWiseChequeDetailsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureBankWiseChequeDetails, FromDate.Text, ToDate.Text, txtTitle.Text);
+        //        this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
+        //        viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+        //        viewer.ZoomMode = ZoomMode.Percent;
+        //        viewer.ZoomPercent = 100;
+        //        reportParamenters(viewer);
+        //        viewer.RefreshReport();
+        //    }
+        //    catch (Exception es)
+        //    {
+        //        MessageBox.Show(es.Message);
+        //    }
+        //}
 
-        private void DisplayStatusWiseChequesReportInReportViewer(ReportViewer viewer)
-        {
-            try
-            {
-                this.ReportProcedureStatusWiseChequeDetailsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureStatusWiseChequeDetails, FromDate.Text, ToDate.Text, txtTitle.Text);
-                this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
-                viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-                viewer.ZoomMode = ZoomMode.Percent;
-                viewer.ZoomPercent = 100;
-                reportParamenters(viewer);
-                viewer.RefreshReport();
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
-        }
+        //private void DisplayStatusWiseChequesReportInReportViewer(ReportViewer viewer)
+        //{
+        //    try
+        //    {
+        //        this.ReportProcedureStatusWiseChequeDetailsTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureStatusWiseChequeDetails, FromDate.Text, ToDate.Text, txtTitle.Text);
+        //        this.ReportProcedureReportsTitlesTableAdapter.Fill(this.chequeDetails_ds.ReportProcedureReportsTitles);
+        //        viewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
+        //        viewer.ZoomMode = ZoomMode.Percent;
+        //        viewer.ZoomPercent = 100;
+        //        reportParamenters(viewer);
+        //        viewer.RefreshReport();
+        //    }
+        //    catch (Exception es)
+        //    {
+        //        MessageBox.Show(es.Message);
+        //    }
+        //}
 
         private void view_button_Click(object sender, EventArgs e)
         {
-            if (reportType == 0)
-            {
+            //if (reportType == 0)
+            //{
                 DisplayChequeWiseReportInReportViewer(this.viewerCheques);
-            }
-            else if (reportType == 1)
-            {
-                DisplayBouncedChequesReportInReportViewer(this.viewerBounced);
-            }
-            else if (reportType == 2)
-            {
-                DisplayCustomerWiseChequesReportInReportViewer(this.viewerCustomer);
-            }
-            else if (reportType == 3)
-            {
-                DisplayBillWiseChequesReportInReportViewer(this.viewerInvoice);
-            }
-            else if (reportType == 4)
-            {
-                DisplayBankWiseChequesReportInReportViewer(this.viewerBank);
-            }
-            else if (reportType == 5)
-            {
-                DisplayStatusWiseChequesReportInReportViewer(this.viewerStatus);
-            }
+            //}
+            //else if (reportType == 1)
+            //{
+            //    DisplayBouncedChequesReportInReportViewer(this.viewerBounced);
+            //}
+            //else if (reportType == 2)
+            //{
+            //    DisplayCustomerWiseChequesReportInReportViewer(this.viewerCustomer);
+            //}
+            //else if (reportType == 3)
+            //{
+            //    DisplayBillWiseChequesReportInReportViewer(this.viewerInvoice);
+            //}
+            //else if (reportType == 4)
+            //{
+            //    DisplayBankWiseChequesReportInReportViewer(this.viewerBank);
+            //}
+            //else if (reportType == 5)
+            //{
+            //    DisplayStatusWiseChequesReportInReportViewer(this.viewerStatus);
+            //}
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -481,43 +305,6 @@ namespace Reports_info.DashboardChequeNotify
         private void refresh_button_Click(object sender, EventArgs e)
         {
             refresh();
-        }
-
-        private void FillComboBoxCustomerName()
-        {
-            txtTitle.Text = data.UserPermissions("full_name", "pos_customers", "cus_code", txtCode.Text);
-        }
-
-        private void FillComboBoxCustomeCodes()
-        {
-            txtCode.Text = data.UserPermissions("cus_code", "pos_customers", "full_name", txtTitle.Text);
-        }
-
-        private void txtTitle_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FillComboBoxCustomeCodes();
-        }
-
-        private void txtCode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FillComboBoxCustomerName();
-        }
-
-        private void txtTitle_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (btnCustomer.Checked == true)
-                {
-                    Customer_details.selected_customer = txtTitle.Text;
-
-                    Customer_details customer_detail = new Customer_details();
-                    customer_detail.ShowDialog();
-
-                    txtTitle.Text = Customer_details.selected_customer;
-                    txtCode.Text = Customer_details.selected_customerCode;
-                }
-            }
         }
     }
 }

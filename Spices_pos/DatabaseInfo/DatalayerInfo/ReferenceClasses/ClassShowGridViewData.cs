@@ -13,6 +13,7 @@ using System.Drawing.Printing;
 using DataModel.Cash_Drawer_Data_Classes;
 using System.IO;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace RefereningMaterial
 {
@@ -32,6 +33,8 @@ namespace RefereningMaterial
         public int nextCount = 0;
         public int countPages = 0;
 
+
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
         done_form done = new done_form();
@@ -46,7 +49,7 @@ namespace RefereningMaterial
 
         public string currency()
         {
-            return ProcedureGeneralSettings("ProcedureGeneralSettings", "currency");
+            return generalSettings.ReadField("currency");
         }
 
         public void runBackgroundServices()

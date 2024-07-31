@@ -76,6 +76,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txtUseSurcharges = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label32 = new System.Windows.Forms.Label();
+            this.txtShowShiftCurrency = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.txtSalesmanTips = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.txtChangeAmountPopup = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -933,6 +935,8 @@
             this.panel15.Controls.Add(this.label26);
             this.panel15.Controls.Add(this.txtUseSurcharges);
             this.panel15.Controls.Add(this.label32);
+            this.panel15.Controls.Add(this.txtShowShiftCurrency);
+            this.panel15.Controls.Add(this.label34);
             this.panel15.Controls.Add(this.txtSalesmanTips);
             this.panel15.Controls.Add(this.label31);
             this.panel15.Controls.Add(this.txtChangeAmountPopup);
@@ -1137,6 +1141,41 @@
             this.label32.Size = new System.Drawing.Size(127, 15);
             this.label32.TabIndex = 595;
             this.label32.Text = "Non-Cash Adjustment:";
+            // 
+            // txtShowShiftCurrency
+            // 
+            this.txtShowShiftCurrency.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txtShowShiftCurrency.BackColor = System.Drawing.Color.Transparent;
+            this.txtShowShiftCurrency.BorderColor = System.Drawing.Color.LightGray;
+            this.txtShowShiftCurrency.BorderRadius = 5;
+            this.txtShowShiftCurrency.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtShowShiftCurrency.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtShowShiftCurrency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtShowShiftCurrency.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtShowShiftCurrency.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtShowShiftCurrency.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtShowShiftCurrency.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtShowShiftCurrency.IntegralHeight = false;
+            this.txtShowShiftCurrency.ItemHeight = 18;
+            this.txtShowShiftCurrency.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.txtShowShiftCurrency.Location = new System.Drawing.Point(400, 350);
+            this.txtShowShiftCurrency.Name = "txtShowShiftCurrency";
+            this.txtShowShiftCurrency.Size = new System.Drawing.Size(100, 24);
+            this.txtShowShiftCurrency.StartIndex = 0;
+            this.txtShowShiftCurrency.TabIndex = 594;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label34.Location = new System.Drawing.Point(274, 355);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(120, 15);
+            this.label34.TabIndex = 595;
+            this.label34.Text = "Show Shift Currency: ";
             // 
             // txtSalesmanTips
             // 
@@ -1464,7 +1503,7 @@
             this.txtCurrency.IntegralHeight = false;
             this.txtCurrency.ItemHeight = 18;
             this.txtCurrency.Items.AddRange(new object[] {
-            "Rs.",
+            "Rs",
             "$",
             "€",
             "£",
@@ -1476,7 +1515,7 @@
             this.txtCurrency.Location = new System.Drawing.Point(870, 29);
             this.txtCurrency.Name = "txtCurrency";
             this.txtCurrency.Size = new System.Drawing.Size(91, 24);
-            this.txtCurrency.StartIndex = 0;
+            this.txtCurrency.StartIndex = 1;
             this.txtCurrency.TabIndex = 138;
             // 
             // txtCashDrawerAutoOpen
@@ -3125,5 +3164,7 @@
         private System.Windows.Forms.Label label33;
         private Guna.UI2.WinForms.Guna2ComboBox txtUseSurcharges;
         private System.Windows.Forms.Label label32;
+        private Guna.UI2.WinForms.Guna2ComboBox txtShowShiftCurrency;
+        private System.Windows.Forms.Label label34;
     }
 }

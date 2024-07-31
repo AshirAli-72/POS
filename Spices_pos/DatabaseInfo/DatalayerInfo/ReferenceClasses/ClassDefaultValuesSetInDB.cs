@@ -150,7 +150,7 @@ namespace RefereningMaterial.ReferenceClasses
 
                     if (GetSetData.fks == 0)
                     {
-                        GetSetData.query = @"insert into pos_general_settings values ('E:\The Big Fat POS\Backup\', 'E:\The Big Fat POS\images\', 'Yes', 'Yes', 'A6', 'Disabled', 'No', 'Enabled', 'Disabled', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Piece', 'No', 'No', 'No', 'No', 'No', 'No', 'W_Sale - Pur', '1', '1', '0', 'Sale - W_Sale', '$', '0', 'Microsoft Print to PDF', 'No', '', 'Yes', 'Yes', 'Yes', 'No', 'No', '100', '1000', 'No', '0', '0', 'Yes', 'No', '0', 'false', 'No', 'No', 'No', '0', 'No', 'No', 'No', 'No', '0', 'No', 'No', '0');";
+                        GetSetData.query = @"insert into pos_general_settings values ('E:\The Big Fat POS\Backup\', 'E:\The Big Fat POS\images\', 'Yes', 'Yes', 'A6', 'Disabled', 'No', 'Enabled', 'Disabled', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'Piece', 'No', 'No', 'No', 'No', 'No', 'No', 'W_Sale - Pur', '1', '1', '0', 'Sale - W_Sale', '$', '0', 'Microsoft Print to PDF', 'No', '', 'Yes', 'Yes', 'Yes', 'No', 'No', '100', '1000', 'No', '0', '0', 'Yes', 'No', '0', 'false', 'No', 'No', 'No', '0', 'No', 'No', 'No', 'No', '0', 'No', 'No', '0', 'No');";
                         data.insertUpdateCreateOrDelete(GetSetData.query);
                     }
                     // **********************************************************************

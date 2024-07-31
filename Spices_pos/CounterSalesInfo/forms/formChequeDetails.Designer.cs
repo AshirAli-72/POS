@@ -267,7 +267,7 @@
             this.txtStatus.Location = new System.Drawing.Point(398, 182);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(221, 26);
-            this.txtStatus.StartIndex = 0;
+            this.txtStatus.StartIndex = 1;
             this.txtStatus.TabIndex = 6;
             // 
             // label5

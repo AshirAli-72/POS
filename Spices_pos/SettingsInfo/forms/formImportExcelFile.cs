@@ -515,7 +515,7 @@ namespace Settings_info.forms
             loadingForm.SetLoadingMessage("Importing Excel File...");
             Screen secondaryScreen = Screen.PrimaryScreen;
             loadingForm.Location = secondaryScreen.WorkingArea.Location;
-            loadingForm.TopMost = true;
+            //loadingForm.TopMost = true;
             loadingForm.Show();
 
             Thread loading = new Thread(() => LoadThreadMethod((message) =>

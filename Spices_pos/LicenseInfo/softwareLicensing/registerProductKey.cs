@@ -43,11 +43,11 @@ namespace Spices_pos.LicenseInfo.softwareLicensing
                 ClassRunMigrations.migrationScripts();
 
                 //Run ReadWriteJson Files Functions
+        
+                ClassDefaultValuesSetInDB.InsertValuesInTableRegistrationAndPermissions();
+
                 ClassCreateUpdateJsonFile.readWritePermissionsJsonFile();
                 ClassCreateUpdateJsonFile.readWriteGeneralSettingsJsonFile();
-
-
-                ClassDefaultValuesSetInDB.InsertValuesInTableRegistrationAndPermissions();
             }
             catch (Exception es)
             {

@@ -14,6 +14,7 @@ using Products_info.forms;
 using System.Diagnostics;
 using Spices_pos.DatabaseInfo.WebConfig;
 using Spices_pos.PurchasingInfo.controllers;
+using CounterSales_info.forms;
 
 namespace Purchase_info.forms
 {
@@ -156,6 +157,8 @@ namespace Purchase_info.forms
                 txt_no_of_items.Text = GetSetData.numericValue.ToString();
 
                 txt_employee.Text = data.UserPermissions("full_name", "pos_employees", "employee_id", GetSetData.fks.ToString());
+
+                txt_remarks.Text = data.UserPermissions("remarks", "pos_purchase", "purchase_id", GetSetData.Ids.ToString());
 
                 
                 GetSetData.query = "select total_quantity from pos_purchase where purchase_id = '" + GetSetData.Ids.ToString() + "';";
@@ -364,7 +367,7 @@ namespace Purchase_info.forms
                 LoginEmployee();
                 refresh();
 
-                panel3.Size = new Size(1028, 216);
+                panel3.Size = new Size(1028, 260);
             }
             else if (saveEnable == true)
             {
@@ -403,7 +406,7 @@ namespace Purchase_info.forms
                 }
 
                 calculateTotals();
-                panel3.Size = new Size(1028, 254);
+                panel3.Size = new Size(1028, 308);
             }
         }
 
@@ -568,7 +571,7 @@ namespace Purchase_info.forms
                         GetSetData.fks = data.UserPermissionsIds("color_id", "pos_products", "product_id", txtPID.Text);
                         txt_color.Text = data.UserPermissions("title", "pos_color", "color_id", GetSetData.fks.ToString());
 
-                        if (txt_prod_state.Text == "carton" || txt_prod_state.Text == "bag" || txt_prod_state.Text == "Tablets")
+                        if (txt_prod_state.Text == "carton" || txt_prod_state.Text == "bag" || txt_prod_state.Text == "Tablets" || txt_prod_state.Text == "pack")
                         {
                             double total_pieces = double.Parse(paking_db) * double.Parse(tab_pieces_db);
                             double per_pack_pur_price = double.Parse(purchase_price_db) * total_pieces;
@@ -1455,7 +1458,7 @@ namespace Purchase_info.forms
                                 {
                                     if (txtDiscount.Text != "")
                                     {
-                                        if (txt_prod_state.Text == "carton" || txt_prod_state.Text == "bag" || txt_prod_state.Text == "Tablets")
+                                        if (txt_prod_state.Text == "carton" || txt_prod_state.Text == "bag" || txt_prod_state.Text == "Tablets" || txt_prod_state.Text == "pack")
                                         {
                                             //Calculating the total quantity **********************************************************
                                             TextData.full_pak = (TextData.quantity * TextData.pkg) * TextData.tab_pieces; // calculating total quantity
@@ -2351,7 +2354,13 @@ namespace Purchase_info.forms
                 TextData.sub_total = double.Parse(txt_sub_total.Text);
                 TextData.lastCredits = double.Parse(txt_last_credits.Text);
                 TextData.credits = double.Parse(txt_credits.Text);
+                TextData.remarks = txt_remarks.Text;
 
+
+                if (txt_remarks.Text == "")
+                {
+                    TextData.remarks = "nill";
+                }
 
                 GetSetData.Ids = data.UserPermissionsIds("supplier_id", "pos_suppliers", "full_name", TextData.supplier);
                 GetSetData.fks = data.UserPermissionsIds("employee_id", "pos_employees", "full_name", TextData.employee);
@@ -2399,7 +2408,7 @@ namespace Purchase_info.forms
                                                     double previousCredits = data.SearchNumericValuesDb(GetSetData.query);
 
 
-                                                    GetSetData.query = @"update pos_purchase set date = '" + TextData.dates.ToString() + "' ,  invoice_no = '" + TextData.invoiceNo.ToString() + "' , no_of_items = '" + TextData.no_of_items.ToString() + "' , total_quantity = '" + TextData.quantity.ToString() + "' ,  net_trade_off = '" + TextData.trade_off.ToString() + "', net_carry_exp = '" + TextData.carry_exp.ToString() + "', net_total = '" + TextData.sub_total.ToString() + "' , paid = '" + txt_paid_amount.Text + "' , credits = '" + TextData.credits.ToString() + "' , freight = '" + TextData.freight.ToString() + "' , supplier_id = '" + GetSetData.Ids.ToString() + "' , employee_id = '" + GetSetData.fks.ToString() + "', discount_percentage = '" + TextData.discountPercentage.ToString() + "', discount_amount = '" + TextData.discount.ToString() + "', fee_amount = '" + TextData.fee.ToString() + "' where (bill_no = '" + TextData.send_billNo + "');";
+                                                    GetSetData.query = @"update pos_purchase set date = '" + TextData.dates.ToString() + "' ,  invoice_no = '" + TextData.invoiceNo.ToString() + "' , no_of_items = '" + TextData.no_of_items.ToString() + "' , remarks = '" + TextData.remarks + "' , total_quantity = '" + TextData.quantity.ToString() + "' ,  net_trade_off = '" + TextData.trade_off.ToString() + "', net_carry_exp = '" + TextData.carry_exp.ToString() + "', net_total = '" + TextData.sub_total.ToString() + "' , paid = '" + txt_paid_amount.Text + "' , credits = '" + TextData.credits.ToString() + "' , freight = '" + TextData.freight.ToString() + "' , supplier_id = '" + GetSetData.Ids.ToString() + "' , employee_id = '" + GetSetData.fks.ToString() + "', discount_percentage = '" + TextData.discountPercentage.ToString() + "', discount_amount = '" + TextData.discount.ToString() + "', fee_amount = '" + TextData.fee.ToString() + "' where (bill_no = '" + TextData.send_billNo + "');";
                                                     data.insertUpdateCreateOrDelete(GetSetData.query);
                                                     
                                                 
@@ -3416,7 +3425,7 @@ namespace Purchase_info.forms
                     TextData.tab_pieces = 1;
                 }
 
-                if (txt_prod_state.Text == "carton" || txt_prod_state.Text == "bag" || txt_prod_state.Text == "Tablets")
+                if (txt_prod_state.Text == "carton" || txt_prod_state.Text == "bag" || txt_prod_state.Text == "Tablets" || txt_prod_state.Text == "pack")
                 {
                     TextData.full_pak = (TextData.quantity / TextData.pkg) / TextData.tab_pieces;
                     TextData.prod_price = TextData.prod_price * TextData.full_pak;
@@ -3870,6 +3879,13 @@ namespace Purchase_info.forms
         private void invoice_no_text_Click(object sender, EventArgs e)
         {
             Process.Start("tabtip.exe");
+        }
+
+        private void btnAddCheque_Click(object sender, EventArgs e)
+        {
+            formChequeDetails add_customer = new formChequeDetails();
+            add_customer.ShowDialog();
+            
         }
     }
 }

@@ -480,6 +480,7 @@ namespace Message_box_info.forms.Clock_In
                 GetSetData.Data = data.UserPermissions("copyrights", "pos_report_settings");
                 Microsoft.Reporting.WinForms.ReportParameter pCopyrights = new Microsoft.Reporting.WinForms.ReportParameter("pCopyrights", GetSetData.Data);
                 report.SetParameters(pCopyrights);
+
                 //*******************************************************************************************
 
 

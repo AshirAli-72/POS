@@ -164,6 +164,7 @@ namespace Settings_info.forms
                 TextData.customerAgeLimit = generalSettings.ReadField("customerAgeLimit");
                 TextData.useSurcharges = generalSettings.ReadField("useSurcharges");
                 TextData.surchargePercentage = generalSettings.ReadField("surchargePercentage");
+                TextData.showShiftCurrency = generalSettings.ReadField("showShiftCurrency");
 
 
                 txt_backup_path.Text = TextData.backup_path;
@@ -227,6 +228,7 @@ namespace Settings_info.forms
                 txtCustomerAgeLimit.Text = TextData.customerAgeLimit;
                 txtUseSurcharges.Text = TextData.useSurcharges;
                 txtSurchargePercentage.Text = TextData.surchargePercentage;
+                txtShowShiftCurrency.Text = TextData.showShiftCurrency;
 
                 if (pointsDiscountInPercentage != "")
                 {
@@ -307,6 +309,7 @@ namespace Settings_info.forms
                 txtChangeAmountPopup.Text = "No";
                 txtSalesmanTips.Text = "No";
                 txtUseSurcharges.Text = "No";
+                txtShowShiftCurrency.Text = "No";
                 txtCustomerAgeLimit.Text = "0";
                 txtSurchargePercentage.Text = "0";
 
@@ -385,6 +388,7 @@ namespace Settings_info.forms
             TextData.useSurcharges = txtUseSurcharges.Text;
             TextData.surchargePercentage = txtSurchargePercentage.Text;
             TextData.customerAgeLimit = txtCustomerAgeLimit.Text;
+            TextData.showShiftCurrency = txtShowShiftCurrency.Text;
 
 
             if (chkPointsDiscountInPercentage.Checked)

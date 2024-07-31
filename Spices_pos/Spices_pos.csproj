@@ -197,8 +197,13 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Reports_info">
+    <Reference Include="Reports_info, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Reports_info\bin\Debug\Reports_info.dll</HintPath>
+    </Reference>
+    <Reference Include="Settings_info, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Reports_info\bin\Debug\Settings_info.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -2756,6 +2761,7 @@
     <Content Include="Capture.ico" />
     <Content Include="DatabaseInfo\DatalayerInfo\Migrations\alter_views_procedures_script_version_0.2.23.sql" />
     <Content Include="DatabaseInfo\DatalayerInfo\Migrations\tables_script_version_0.2.23.sql" />
+    <Content Include="DatabaseInfo\DatalayerInfo\Migrations\tables_script_version_0.2.25.sql" />
     <Content Include="DatabaseInfo\DatalayerInfo\Migrations\create_views_procedures_script_version_0.2.23.sql" />
     <Content Include="DatabaseInfo\DatalayerInfo\Migrations\indexes_script_version_0.2.23.sql" />
     <Content Include="icons8_estimate.ico" />

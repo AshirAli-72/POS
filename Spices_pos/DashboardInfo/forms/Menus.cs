@@ -412,9 +412,7 @@ namespace Spices_pos.DashboardInfo.Forms
         {
             try
             {
-                string notificationSound = generalSettings.ReadField("notificationSound");
-
-                if (notificationSound == "Yes")
+                if (generalSettings.ReadField("notificationSound") == "Yes")
                 {
                     GetSetData.Data = generalSettings.ReadField("picture_path");
 
@@ -451,7 +449,7 @@ namespace Spices_pos.DashboardInfo.Forms
         {
             try
             {
-                if (GetSetData.ProcedureGetSingleValues1("DashboardProcedureGetCountForExpiredInventory", FromDate.Text) != 0)
+                if (GetSetData.ProcedureGetSingleValues1("DashboardProcedureGetCountForExpiredInventory", DateTime.Now.ToShortDateString()) != 0)
                 {
                     pnlLowInventory.Visible = true;
                 }
@@ -465,29 +463,18 @@ namespace Spices_pos.DashboardInfo.Forms
 
         private void notifications()
         {
-
-            //GetSetData.query = "select show_notifications from pos_general_settings";
-            //TextData.server = data.SearchStringValuesFromDb(GetSetData.query);
-
-            //GetSetData.query = "select show_graphs from pos_general_settings;";
-            //TextData.general_options = data.SearchStringValuesFromDb(GetSetData.query);
-            
-            
-            TextData.server = generalSettings.ReadField("show_notifications");
-            TextData.general_options = generalSettings.ReadField("show_graphs");
-
-
-            if (TextData.server == "Enabled")
+            if (generalSettings.ReadField("show_notifications") == "Enabled")
             {
                 CheckForLowInventory();
                 CheckForExpiredInventory();
+                CheckForAdvancedChequeNotifications();
             }
             else
             {
                 //btn_notifications.Visible = false;
             }
 
-            if (TextData.general_options == "Yes")
+            if (generalSettings.ReadField("show_graphs") == "Yes")
             {
                 graph_stock.Visible = true;
                 graph_sales.Visible = true;
@@ -500,26 +487,22 @@ namespace Spices_pos.DashboardInfo.Forms
         }
 
         #region
-        //private void CheckForAdvancedChequeNotifications()
-        //{
-        //    try
-        //    {
-        //        FromDate.Text = DateTime.Now.ToLongDateString();
-        //        GetSetData.query = "select show_notifications from pos_general_settings";
-        //        TextData.server = data.SearchStringValuesFromDb(GetSetData.query);
-
-        //        if (GetSetData.ProcedureGetSingleValues2("DashboardProcedureGetCountForAvailableCheques", FromDate.Text, FromDate.Text) != 0 && TextData.server == "Enabled")
-        //        {
-        //            pnlChequeNotification.Visible = true;
-        //            btnCheckNotification.Text = "Alert " + GetSetData.ProcedureGetSingleValues2("DashboardProcedureGetCountForAvailableCheques", FromDate.Text, FromDate.Text).ToString() + " Cheques Available!";
-        //        }
-        //    }
-        //    catch (Exception es)
-        //    {
-        //        error.errorMessage(es.Message);
-        //        error.ShowDialog();
-        //    }
-        //}
+        private void CheckForAdvancedChequeNotifications()
+        {
+            try
+            {
+                if (GetSetData.ProcedureGetSingleValues2("DashboardProcedureGetCountForAvailableCheques", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortDateString()) != 0 && generalSettings.ReadField("show_notifications") == "Enabled")
+                {
+                    pnlChequeNotification.Visible = true;
+                    btnCheckNotification.Text = "Alert " + GetSetData.ProcedureGetSingleValues2("DashboardProcedureGetCountForAvailableCheques", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortDateString()).ToString() + " Cheques Available!";
+                }
+            }
+            catch (Exception es)
+            {
+                error.errorMessage(es.Message);
+                error.ShowDialog();
+            }
+        }
 
         //private void CheckForDefaultersNotifications()
         //{

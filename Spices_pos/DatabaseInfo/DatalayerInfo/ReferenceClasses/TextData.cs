@@ -355,6 +355,7 @@
         public static string customerAgeLimit { get; set; }
         public static string useSurcharges { get; set; }
         public static string surchargePercentage { get; set; }
+        public static string showShiftCurrency { get; set; }
 
         //Configuration Settings
         public static string shop_name { get; set; }

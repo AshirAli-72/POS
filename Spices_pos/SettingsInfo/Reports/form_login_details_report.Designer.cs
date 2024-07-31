@@ -34,7 +34,7 @@ namespace Settings_info.Reports
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_login_details_report));
             this.LoginDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.login_details_ds = new Spices_pos.SettingsInfo.Reports.login_details_ds();
+            this.login_details_ds = new login_details_ds();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();

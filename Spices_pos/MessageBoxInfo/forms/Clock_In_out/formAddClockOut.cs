@@ -14,6 +14,7 @@ using System.Drawing.Imaging;
 using System.Drawing.Printing;
 using System.Diagnostics;
 using Spices_pos.DatabaseInfo.WebConfig;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 
 namespace Message_box_info.forms.Clock_In
 {
@@ -37,9 +38,18 @@ namespace Message_box_info.forms.Clock_In
         public formAddClockOut()
         {
             InitializeComponent();
-            setFormColorsDynamically();
+
+            if (generalSettings.ReadField("showShiftCurrency") == "Yes")
+            {
+                this.Width = 899;
+            }
+            else
+            {
+                this.Width = 678;
+            }
         }
 
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
@@ -49,40 +59,6 @@ namespace Message_box_info.forms.Clock_In
         public static int role_id = 0;
         public static string  clock_id_id = "";
         public static bool saveEnable;
-
-        private void setFormColorsDynamically()
-        {
-            //try
-            //{
-            //    int dark_red = data.UserPermissionsIds("dark_red", "pos_colors_settings");
-            //    int dark_green = data.UserPermissionsIds("dark_green", "pos_colors_settings");
-            //    int dark_blue = data.UserPermissionsIds("dark_blue", "pos_colors_settings");
-
-            //    int back_red = data.UserPermissionsIds("back_red", "pos_colors_settings");
-            //    int back_green = data.UserPermissionsIds("back_green", "pos_colors_settings");
-            //    int back_blue = data.UserPermissionsIds("back_blue", "pos_colors_settings");
-
-            //    int fore_red = data.UserPermissionsIds("fore_red", "pos_colors_settings");
-            //    int fore_green = data.UserPermissionsIds("fore_green", "pos_colors_settings");
-            //    int fore_blue = data.UserPermissionsIds("fore_blue", "pos_colors_settings");
-
-            //    //****************************************************************
-
-            //    GetSetData.setFormColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, panel1, FormNamelabel);
-            //    GetSetData.setFormColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, panel4, lblCopyrights);
-            //    GetSetData.setFormColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, panel3, lblCopyrights);
-            //    GetSetData.setFormColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, panel2, lblCopyrights);
-
-            //    //****************************************************************
-
-            //    GetSetData.setGunaUIButonColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, dark_red, dark_green, dark_blue, Closebutton);
-            //    GetSetData.setGunaUIButonColors(back_red, back_green, back_blue, fore_red, fore_green, fore_blue, dark_red, dark_green, dark_blue, refresh_button);
-            //}
-            //catch (Exception es)
-            //{
-            //    MessageBox.Show(es.Message);
-            //}
-        }
 
         private void system_user_permissions()
         {
@@ -701,6 +677,12 @@ namespace Message_box_info.forms.Clock_In
                 GetSetData.Data = data.UserPermissions("copyrights", "pos_report_settings");
                 Microsoft.Reporting.WinForms.ReportParameter pCopyrights = new Microsoft.Reporting.WinForms.ReportParameter("pCopyrights", GetSetData.Data);
                 report.SetParameters(pCopyrights);
+
+
+                GetSetData.Data = data.UserPermissions("showShiftCurrency", "pos_general_settings");
+                Microsoft.Reporting.WinForms.ReportParameter pShowShiftCurrency = new Microsoft.Reporting.WinForms.ReportParameter("pShowShiftCurrency", GetSetData.Data);
+                report.SetParameters(pShowShiftCurrency);
+
                 //*******************************************************************************************
 
 
