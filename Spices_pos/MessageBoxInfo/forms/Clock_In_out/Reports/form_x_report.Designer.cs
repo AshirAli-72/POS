@@ -68,7 +68,7 @@
             // reportviewer1
             // 
             this.reportviewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportviewer1.LocalReport.ReportEmbeddedResource = "Message_box_info.forms.Clock_In_out.Reports.date_wise_x_report.rdlc";
+            this.reportviewer1.LocalReport.ReportEmbeddedResource = "Spices_pos.MessageBoxInfo.forms.Clock_In_out.Reports.date_wise_x_report.rdlc";
             this.reportviewer1.Location = new System.Drawing.Point(0, 0);
             this.reportviewer1.Name = "reportviewer1";
             this.reportviewer1.ServerReport.BearerToken = null;

@@ -23,6 +23,9 @@ ALTER TABLE [dbo].[pos_customerChequeDetails] ALTER COLUMN [chequeNo] [nvarchar]
 GO
 
 
+ALTER TABLE [dbo].[pos_products] ALTER COLUMN [prod_name] NVARCHAR(300)
+GO
+
 
 /****** Object:  StoredProcedure [dbo].[ReportProcedureChequeNotifications]    Script Date: 7/31/2024 6:34:15 PM ******/
 SET ANSI_NULLS ON

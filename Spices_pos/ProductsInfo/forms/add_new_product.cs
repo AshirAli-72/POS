@@ -351,7 +351,7 @@ namespace Products_info.forms
             this.Close();
         }
 
-        private void FillValuesFromTextFieldsToVariables()
+        private bool FillValuesFromTextFieldsToVariables()
         {
             try
             {
@@ -360,28 +360,125 @@ namespace Products_info.forms
                 TextData.barcode = prod_code_text.Text;
                 TextData.mfg_date = txt_mfg_date.Text;
                 TextData.exp_date = txt_expire_date.Text;
-                TextData.quantity = double.Parse(txt_qty.Text);
-                TextData.pkg = double.Parse(txt_pkg.Text);
-                TextData.full_pak = double.Parse(txt_full_pag.Text);
-                TextData.tab_pieces = double.Parse(txt_tab_pieces.Text);
+                TextData.tab_pieces = 0;
+                TextData.full_pak = 0;
                 TextData.prod_unit = unit_text.Text;
                 TextData.prod_state = state_text.Text;
                 TextData.color = txt_color.Text;
-                TextData.size = txt_wholeSale.Text;
+                TextData.size = "0";
+                TextData.qty_alert = "0";
                 TextData.status = txt_status.Text;
                 TextData.item_type = txt_item_type.Text;
-                TextData.qty_alert = txt_qty_alert.Text;
                 TextData.category = cate_text.Text;
                 TextData.sub_category = sub_cat_text.Text;
                 TextData.brand = brand_text.Text;
                 TextData.saved_image_path = fun_saved_image();
                 TextData.remarks = txt_remarks.Text;
-                TextData.discount = double.Parse(txtDiscount.Text);
-                TextData.disLimit = double.Parse(txtDiscountLimit.Text);
+            
 
-                TextData.market_value = double.Parse(txtTaxation.Text);
-                TextData.prod_price = double.Parse(pur_price_text.Text);
-                TextData.sale_price = double.Parse(sale_price_text.Text);
+                if (txt_qty.Text != "")
+                {
+                    TextData.quantity = double.Parse(txt_qty.Text);
+                }
+                else
+                {
+                    error.errorMessage("Please enter quantity!");
+                    error.ShowDialog();
+                    return false;
+                }
+                
+                if (txt_pkg.Text != "")
+                {
+                    TextData.pkg = double.Parse(txt_pkg.Text);
+                }
+                else
+                {
+                    error.errorMessage("Please enter item per pack!");
+                    error.ShowDialog();
+
+                    return false;
+                }
+                
+                if (txt_full_pag.Text != "")
+                {
+                    TextData.full_pak = double.Parse(txt_full_pag.Text);
+                }
+                
+                
+                if (txt_full_pag.Text != "")
+                {
+                    TextData.qty_alert = txt_qty_alert.Text;
+                }
+                
+                
+                if (txt_tab_pieces.Text != "")
+                {
+                    TextData.tab_pieces = double.Parse(txt_tab_pieces.Text);
+                } 
+                
+                if (txtTaxation.Text != "")
+                {
+                    TextData.market_value = double.Parse(txtTaxation.Text);
+                }
+                else
+                {
+                    error.errorMessage("Please enter tax %!");
+                    error.ShowDialog();
+
+                    return false;
+                }   
+                
+                if (pur_price_text.Text != "")
+                {
+                    TextData.prod_price = double.Parse(pur_price_text.Text);
+                }
+                else
+                {
+                    error.errorMessage("Please enter item cost!");
+                    error.ShowDialog();
+
+                    return false;
+                }
+
+                     
+                if (sale_price_text.Text != "")
+                {
+                    TextData.sale_price = double.Parse(sale_price_text.Text);
+                }
+                else
+                {
+                    error.errorMessage("Please enter item price!");
+                    error.ShowDialog();
+
+                    return false;
+                }
+                
+                if (txtDiscount.Text != "")
+                {
+                   
+                    TextData.discount = double.Parse(txtDiscount.Text);
+                }
+                else
+                {
+                    error.errorMessage("Please enter discount!");
+                    error.ShowDialog();
+
+                    return false;
+                }
+                
+                
+                if (txtDiscountLimit.Text != "")
+                {
+                    TextData.disLimit = double.Parse(txtDiscountLimit.Text);
+                }
+                else
+                {
+                    error.errorMessage("Please enter discount limit!");
+                    error.ShowDialog();
+
+                    return false;
+                }
+
 
                 if (chk_active_alert.Checked == true)
                 {
@@ -401,11 +498,20 @@ namespace Products_info.forms
                 {
                     TextData.switchPromotion = "false";
                 }
+
+                if (txt_wholeSale.Text != "")
+                {
+                    TextData.size = txt_wholeSale.Text;
+                }
+
+                return true;
             }
             catch (Exception es)
             {
                 error.errorMessage(es.Message);
                 error.ShowDialog();
+
+                return false;
             }
         }
 
@@ -413,207 +519,215 @@ namespace Products_info.forms
         {
             try
             {
-                FillValuesFromTextFieldsToVariables();
-
-                if (TextData.category == "")
+                if (FillValuesFromTextFieldsToVariables())
                 {
-                    TextData.category = "others";
-                }
-
-                if (TextData.sub_category == "")
-                {
-                    TextData.sub_category = "others";
-                }
-
-                if (TextData.brand == "")
-                {
-                    TextData.brand = "others";
-                }
-
-                if (TextData.remarks == "")
-                {
-                    TextData.remarks = "nill";
-                }
-
-                if (TextData.color == "-select-" || TextData.color == "")
-                {
-                    TextData.color = "none";
-                }
-
-                if (TextData.quantity == 0)
-                {
-                    TextData.quantity = 1;   
-                }
-
-
-                if (discountValue == "Yes")
-                {
-                    TextData.discount = (TextData.sale_price * TextData.discount) / 100;
-                    TextData.disLimit = (TextData.sale_price * TextData.disLimit) / 100;
-                }
-
-
-                int subcategory_id_db = data.UserPermissionsIds("sub_cate_id", "pos_subcategory", "title", TextData.sub_category);
-                //========================================================================================================
-                int brand_id_db = data.UserPermissionsIds("brand_id", "pos_brand", "brand_title", TextData.brand);
-                //========================================================================================================
-
-                //GetSetData.query = @"select barcode from pos_stock_details inner join pos_products on pos_stock_details.prod_id = pos_products.product_id where (pos_products.barcode = '" + TextData.barcode.ToString() + "') and (pos_products.sub_cate_id = '" + subcategory_id_db.ToString() + "') and (pos_products.brand_id = '" + brand_id_db.ToString() + "') and (pos_stock_details.quantity != 0);";
-                //string product_code_db = data.SearchStringValuesFromDb(GetSetData.query);
-
-
-                GetSetData.query = @"select barcode from pos_products where (barcode = '" + TextData.barcode.ToString() + "');";
-                string product_code_db = data.SearchStringValuesFromDb(GetSetData.query);
-
-
-                GetSetData.query = @"select pos_products.product_id from pos_stock_details inner join pos_products on pos_stock_details.prod_id = pos_products.product_id where (prod_name = '" + TextData.prod_name.ToString() + "') and (pos_products.barcode = '" + TextData.barcode.ToString() + "')  and (pos_products.sub_cate_id = '" + subcategory_id_db.ToString() + "') and (pos_products.brand_id = '" + brand_id_db.ToString() + "') and (pos_stock_details.quantity != 0)";
-                int product_id_db = data.Select_ID_for_Foreign_Key_from_db_for_Insertion(GetSetData.query);
-
-
-                if (img_pic_box.Image == null)
-                {
-                    TextData.saved_image_path = "nill";
-                }
-
-
-                if (prod_code_text.Text == "")
-                {
-                    generate_barcode();
-                }
-
-                string temp_name = "";
-                string temp_barcode = "";
-                string temp_brand = "";
-                string temp_sub_category = "";
-
-                for (int i = 0; i < productListGridView.Rows.Count; i++)
-                {
-                    temp_name = productListGridView.Rows[i].Cells[1].Value.ToString();
-                    temp_barcode = productListGridView.Rows[i].Cells[2].Value.ToString();
-                    temp_brand = productListGridView.Rows[i].Cells[4].Value.ToString();
-                    temp_sub_category = productListGridView.Rows[i].Cells[5].Value.ToString();
-
-                    if (TextData.prod_name == temp_name && TextData.barcode == temp_barcode && TextData.brand == temp_brand && TextData.sub_category == temp_sub_category )
+                    if (TextData.category == "")
                     {
-                        temp_name = TextData.prod_name;
-                        temp_barcode = TextData.barcode;
-                        temp_brand = TextData.brand;
-                        temp_sub_category = TextData.sub_category;
-
-                        break;
+                        TextData.category = "others";
                     }
-                }
 
-
-                string get_image_path_db = @"select picture_path from pos_general_settings;";
-                string image_path_db = data.SearchStringValuesFromDb(get_image_path_db);
-
-                if (TextData.saved_image_path != "" && TextData.saved_image_path != image_path_db && TextData.saved_image_path != null)
-                {
-                    if (product_id_db == 0)
+                    if (TextData.sub_category == "")
                     {
-                        if (product_code_db != TextData.barcode)
+                        TextData.sub_category = "others";
+                    }
+
+                    if (TextData.brand == "")
+                    {
+                        TextData.brand = "others";
+                    }
+
+                    if (TextData.remarks == "")
+                    {
+                        TextData.remarks = "nill";
+                    }
+
+                    if (TextData.color == "-select-" || TextData.color == "")
+                    {
+                        TextData.color = "none";
+                    }
+
+                    if (TextData.quantity == 0)
+                    {
+                        TextData.quantity = 1;
+                    }
+
+
+                    if (discountValue == "Yes")
+                    {
+                        TextData.discount = (TextData.sale_price * TextData.discount) / 100;
+                        TextData.disLimit = (TextData.sale_price * TextData.disLimit) / 100;
+                    }
+
+
+                    int subcategory_id_db = data.UserPermissionsIds("sub_cate_id", "pos_subcategory", "title", TextData.sub_category);
+                    //========================================================================================================
+                    int brand_id_db = data.UserPermissionsIds("brand_id", "pos_brand", "brand_title", TextData.brand);
+                    //========================================================================================================
+
+                    //GetSetData.query = @"select barcode from pos_stock_details inner join pos_products on pos_stock_details.prod_id = pos_products.product_id where (pos_products.barcode = '" + TextData.barcode.ToString() + "') and (pos_products.sub_cate_id = '" + subcategory_id_db.ToString() + "') and (pos_products.brand_id = '" + brand_id_db.ToString() + "') and (pos_stock_details.quantity != 0);";
+                    //string product_code_db = data.SearchStringValuesFromDb(GetSetData.query);
+
+
+                    GetSetData.query = @"select barcode from pos_products where (barcode = '" + TextData.barcode.ToString() + "');";
+                    string product_code_db = data.SearchStringValuesFromDb(GetSetData.query);
+
+
+                    GetSetData.query = @"select pos_products.product_id from pos_stock_details inner join pos_products on pos_stock_details.prod_id = pos_products.product_id where (prod_name = '" + TextData.prod_name.ToString() + "') and (pos_products.barcode = '" + TextData.barcode.ToString() + "')  and (pos_products.sub_cate_id = '" + subcategory_id_db.ToString() + "') and (pos_products.brand_id = '" + brand_id_db.ToString() + "') and (pos_stock_details.quantity != 0)";
+                    int product_id_db = data.Select_ID_for_Foreign_Key_from_db_for_Insertion(GetSetData.query);
+
+
+                    if (img_pic_box.Image == null)
+                    {
+                        TextData.saved_image_path = "nill";
+                    }
+
+
+                    if (prod_code_text.Text == "")
+                    {
+                        generate_barcode();
+                    }
+
+                    string temp_name = "";
+                    string temp_barcode = "";
+                    string temp_brand = "";
+                    string temp_sub_category = "";
+
+                    for (int i = 0; i < productListGridView.Rows.Count; i++)
+                    {
+                        temp_name = productListGridView.Rows[i].Cells[1].Value.ToString();
+                        temp_barcode = productListGridView.Rows[i].Cells[2].Value.ToString();
+                        temp_brand = productListGridView.Rows[i].Cells[4].Value.ToString();
+                        temp_sub_category = productListGridView.Rows[i].Cells[5].Value.ToString();
+
+                        if (TextData.prod_name == temp_name && TextData.barcode == temp_barcode && TextData.brand == temp_brand && TextData.sub_category == temp_sub_category)
                         {
-                            if (prod_name_text.Text != "" && TextData.prod_name != "")
+                            temp_name = TextData.prod_name;
+                            temp_barcode = TextData.barcode;
+                            temp_brand = TextData.brand;
+                            temp_sub_category = TextData.sub_category;
+
+                            break;
+                        }
+                    }
+
+
+                    string get_image_path_db = @"select picture_path from pos_general_settings;";
+                    string image_path_db = data.SearchStringValuesFromDb(get_image_path_db);
+
+                    if (TextData.saved_image_path != "" && TextData.saved_image_path != image_path_db && TextData.saved_image_path != null)
+                    {
+                        if (product_id_db == 0)
+                        {
+                            if (product_code_db != TextData.barcode)
                             {
-                                if (prod_code_text.Text != "" && TextData.barcode != "")
+                                if (prod_name_text.Text != "" && TextData.prod_name != "")
                                 {
-                                    if (pur_price_text.Text != "")
+                                    if (prod_code_text.Text != "" && TextData.barcode != "")
                                     {
-                                        if (sale_price_text.Text != "")
+                                        if (pur_price_text.Text != "")
                                         {
-                                            if (txtDiscount.Text != "")
+                                            if (sale_price_text.Text != "")
                                             {
-                                                if (state_text.Text == "carton" || state_text.Text == "bag" || state_text.Text == "Tablets" || state_text.Text == "pack")
+                                                if (txtDiscount.Text != "")
                                                 {
-                                                    if (state_text.Text == "carton" || state_text.Text == "bag" || state_text.Text == "pack")
+                                                    if (state_text.Text == "carton" || state_text.Text == "bag" || state_text.Text == "Tablets" || state_text.Text == "pack")
                                                     {
-                                                        TextData.tab_pieces = 1;
+                                                        if (state_text.Text == "carton" || state_text.Text == "bag" || state_text.Text == "pack")
+                                                        {
+                                                            TextData.tab_pieces = 1;
+                                                        }
+
+                                                        // Calculating the total quantity
+                                                        TextData.full_pak = (TextData.quantity * TextData.pkg) * TextData.tab_pieces;
+                                                        TextData.tab_pieces = double.Parse(txt_qty.Text);
+                                                        TextData.total_pur_price = TextData.prod_price * TextData.quantity;
+                                                        TextData.prod_price = TextData.total_pur_price / TextData.full_pak; // calculating the purchase price of per piece
+
+                                                        TextData.total_sale_price = TextData.sale_price * TextData.quantity;
+                                                        TextData.sale_price = TextData.total_sale_price / TextData.full_pak; // calculating the sale price of per piece
+
+                                                        TextData.totalWholeSale = double.Parse(TextData.size) * TextData.quantity;
+                                                        TextData.totalWholeSale = TextData.totalWholeSale / TextData.full_pak; // calculating the sale price of per piece
+                                                        TextData.size = TextData.totalWholeSale.ToString();
+                                                        //TextData.market_value = TextData.market_value * TextData.quantity;
+                                                        //TextData.market_value = TextData.market_value / TextData.full_pak;
+                                                        TextData.discount = TextData.discount * TextData.quantity;
+                                                        TextData.discount = TextData.discount / TextData.full_pak;
+                                                        TextData.disLimit = TextData.disLimit * TextData.quantity;
+                                                        TextData.disLimit = TextData.disLimit / TextData.full_pak;
+                                                        TextData.quantity = double.Parse(txt_qty.Text);
+                                                    }
+                                                    else
+                                                    {
+                                                        TextData.quantity = double.Parse(txt_qty.Text);
+                                                        TextData.pkg = 0;
+                                                        TextData.full_pak = 0;
+                                                        TextData.tab_pieces = 0;
+
+                                                        TextData.prod_price = double.Parse(pur_price_text.Text);
+                                                        TextData.total_pur_price = TextData.prod_price * TextData.quantity;
+                                                        TextData.sale_price = double.Parse(sale_price_text.Text);
+                                                        TextData.total_sale_price = TextData.sale_price * TextData.quantity;
+                                                        TextData.quantity = double.Parse(txt_qty.Text);
+                                                        //TextData.discount = double.Parse(txtDiscount.Text);
+                                                        //TextData.disLimit = double.Parse(txtDiscountLimit.Text);
                                                     }
 
-                                                    // Calculating the total quantity
-                                                    TextData.full_pak = (TextData.quantity * TextData.pkg) * TextData.tab_pieces;
-                                                    TextData.tab_pieces = double.Parse(txt_qty.Text);
-                                                    TextData.total_pur_price = TextData.prod_price * TextData.quantity;
-                                                    TextData.prod_price = TextData.total_pur_price / TextData.full_pak; // calculating the purchase price of per piece
 
-                                                    TextData.total_sale_price = TextData.sale_price * TextData.quantity;
-                                                    TextData.sale_price = TextData.total_sale_price / TextData.full_pak; // calculating the sale price of per piece
+                                                    if ((temp_name != TextData.prod_name) || (temp_barcode != TextData.barcode) || (temp_brand != TextData.brand) || (temp_sub_category != TextData.sub_category))
+                                                    {
+                                                        int is_category_exist = data.UserPermissionsIds("category_id", "pos_category", "title", TextData.category);
+                                                        //========================================================================================================
+                                                        int is_brand_exist = data.UserPermissionsIds("brand_id", "pos_brand", "brand_title", TextData.brand);
+                                                        //========================================================================================================
 
-                                                    TextData.totalWholeSale = double.Parse(TextData.size) * TextData.quantity;
-                                                    TextData.totalWholeSale = TextData.totalWholeSale / TextData.full_pak; // calculating the sale price of per piece
-                                                    TextData.size = TextData.totalWholeSale.ToString();
-                                                    //TextData.market_value = TextData.market_value * TextData.quantity;
-                                                    //TextData.market_value = TextData.market_value / TextData.full_pak;
-                                                    TextData.discount = TextData.discount * TextData.quantity;
-                                                    TextData.discount = TextData.discount / TextData.full_pak;
-                                                    TextData.disLimit = TextData.disLimit * TextData.quantity;
-                                                    TextData.disLimit = TextData.disLimit / TextData.full_pak;
-                                                    TextData.quantity = double.Parse(txt_qty.Text);
-                                                }
-                                                else
-                                                {
-                                                    TextData.quantity = double.Parse(txt_qty.Text);
-                                                    TextData.pkg = 0;
-                                                    TextData.full_pak = 0;
-                                                    TextData.tab_pieces = 0;
-
-                                                    TextData.prod_price = double.Parse(pur_price_text.Text);
-                                                    TextData.total_pur_price = TextData.prod_price * TextData.quantity;
-                                                    TextData.sale_price = double.Parse(sale_price_text.Text);
-                                                    TextData.total_sale_price = TextData.sale_price * TextData.quantity;
-                                                    TextData.quantity = double.Parse(txt_qty.Text);
-                                                    //TextData.discount = double.Parse(txtDiscount.Text);
-                                                    //TextData.disLimit = double.Parse(txtDiscountLimit.Text);
-                                                }
-
-
-                                                if ((temp_name != TextData.prod_name) || (temp_barcode != TextData.barcode) || (temp_brand != TextData.brand) || (temp_sub_category != TextData.sub_category))
-                                                {
-                                                    int is_category_exist = data.UserPermissionsIds("category_id", "pos_category", "title", TextData.category);
-                                                    //========================================================================================================
-                                                    int is_brand_exist = data.UserPermissionsIds("brand_id", "pos_brand", "brand_title", TextData.brand);
-                                                    //========================================================================================================
-
-                                                    if (is_category_exist != 0)
-                                                    { 
-                                                        if (is_brand_exist != 0)
+                                                        if (is_category_exist != 0)
                                                         {
-                                                            int n = productListGridView.Rows.Add();
+                                                            if (is_brand_exist != 0)
+                                                            {
+                                                                int n = productListGridView.Rows.Add();
 
-                                                            productListGridView.Rows[n].Cells[1].Value = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(TextData.prod_name);
-                                                            productListGridView.Rows[n].Cells[2].Value = TextData.barcode.ToString();
-                                                            productListGridView.Rows[n].Cells[3].Value = TextData.category.ToString();
-                                                            productListGridView.Rows[n].Cells[4].Value = TextData.brand.ToString();
-                                                            productListGridView.Rows[n].Cells[5].Value = TextData.sub_category.ToString();
-                                                            productListGridView.Rows[n].Cells[6].Value = TextData.mfg_date.ToString();
-                                                            productListGridView.Rows[n].Cells[7].Value = TextData.exp_date.ToString();
-                                                            productListGridView.Rows[n].Cells[8].Value = TextData.quantity.ToString();
-                                                            productListGridView.Rows[n].Cells[9].Value = TextData.pkg.ToString();
-                                                            productListGridView.Rows[n].Cells[10].Value = txt_tab_pieces.Text;
-                                                            productListGridView.Rows[n].Cells[11].Value = TextData.tab_pieces.ToString();
-                                                            productListGridView.Rows[n].Cells[12].Value = TextData.prod_state.ToString();
-                                                            productListGridView.Rows[n].Cells[13].Value = TextData.prod_unit.ToString();
-                                                            productListGridView.Rows[n].Cells[14].Value = TextData.color.ToString();
-                                                            productListGridView.Rows[n].Cells[15].Value = TextData.size.ToString();
-                                                            productListGridView.Rows[n].Cells[16].Value = TextData.item_type.ToString();
-                                                            productListGridView.Rows[n].Cells[17].Value = TextData.status.ToString();
-                                                            productListGridView.Rows[n].Cells[18].Value = TextData.qty_alert.ToString();
-                                                            productListGridView.Rows[n].Cells[19].Value = TextData.chk_qty_alert.ToString();
-                                                            productListGridView.Rows[n].Cells[20].Value = TextData.market_value.ToString();
-                                                            productListGridView.Rows[n].Cells[21].Value = TextData.prod_price.ToString();
-                                                            productListGridView.Rows[n].Cells[22].Value = TextData.sale_price.ToString();
-                                                            productListGridView.Rows[n].Cells[23].Value = TextData.discount.ToString();
-                                                            productListGridView.Rows[n].Cells[24].Value = TextData.disLimit.ToString();
-                                                            productListGridView.Rows[n].Cells[25].Value = TextData.saved_image_path.ToString();
-                                                            productListGridView.Rows[n].Cells[26].Value = TextData.remarks.ToString();
-                                                            productListGridView.Rows[n].Cells[27].Value = TextData.switchPromotion.ToString();
+                                                                productListGridView.Rows[n].Cells[1].Value = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(TextData.prod_name);
+                                                                productListGridView.Rows[n].Cells[2].Value = TextData.barcode.ToString();
+                                                                productListGridView.Rows[n].Cells[3].Value = TextData.category.ToString();
+                                                                productListGridView.Rows[n].Cells[4].Value = TextData.brand.ToString();
+                                                                productListGridView.Rows[n].Cells[5].Value = TextData.sub_category.ToString();
+                                                                productListGridView.Rows[n].Cells[6].Value = TextData.mfg_date.ToString();
+                                                                productListGridView.Rows[n].Cells[7].Value = TextData.exp_date.ToString();
+                                                                productListGridView.Rows[n].Cells[8].Value = TextData.quantity.ToString();
+                                                                productListGridView.Rows[n].Cells[9].Value = TextData.pkg.ToString();
+                                                                productListGridView.Rows[n].Cells[10].Value = txt_tab_pieces.Text;
+                                                                productListGridView.Rows[n].Cells[11].Value = TextData.tab_pieces.ToString();
+                                                                productListGridView.Rows[n].Cells[12].Value = TextData.prod_state.ToString();
+                                                                productListGridView.Rows[n].Cells[13].Value = TextData.prod_unit.ToString();
+                                                                productListGridView.Rows[n].Cells[14].Value = TextData.color.ToString();
+                                                                productListGridView.Rows[n].Cells[15].Value = TextData.size.ToString();
+                                                                productListGridView.Rows[n].Cells[16].Value = TextData.item_type.ToString();
+                                                                productListGridView.Rows[n].Cells[17].Value = TextData.status.ToString();
+                                                                productListGridView.Rows[n].Cells[18].Value = TextData.qty_alert.ToString();
+                                                                productListGridView.Rows[n].Cells[19].Value = TextData.chk_qty_alert.ToString();
+                                                                productListGridView.Rows[n].Cells[20].Value = TextData.market_value.ToString();
+                                                                productListGridView.Rows[n].Cells[21].Value = TextData.prod_price.ToString();
+                                                                productListGridView.Rows[n].Cells[22].Value = TextData.sale_price.ToString();
+                                                                productListGridView.Rows[n].Cells[23].Value = TextData.discount.ToString();
+                                                                productListGridView.Rows[n].Cells[24].Value = TextData.disLimit.ToString();
+                                                                productListGridView.Rows[n].Cells[25].Value = TextData.saved_image_path.ToString();
+                                                                productListGridView.Rows[n].Cells[26].Value = TextData.remarks.ToString();
+                                                                productListGridView.Rows[n].Cells[27].Value = TextData.switchPromotion.ToString();
 
-                                                            return true;
+                                                                return true;
+                                                            }
+                                                            else
+                                                            {
+                                                                error.errorMessage("Brand (" + TextData.brand + ") is not found! Please select the brand first.");
+                                                                error.ShowDialog();
+
+                                                                return false;
+                                                            }
                                                         }
                                                         else
                                                         {
-                                                            error.errorMessage("Brand (" + TextData.brand + ") is not found! Please select the brand first.");
+                                                            error.errorMessage("Category (" + TextData.category + ") is not found! Please select the category first.");
                                                             error.ShowDialog();
 
                                                             return false;
@@ -621,58 +735,51 @@ namespace Products_info.forms
                                                     }
                                                     else
                                                     {
-                                                        error.errorMessage("Category (" + TextData.category + ") is not found! Please select the category first.");
+                                                        error.errorMessage("'" + TextData.prod_name + "' is already exist!");
                                                         error.ShowDialog();
-
-                                                        return false;
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    error.errorMessage("'" + TextData.prod_name + "' is already exist!");
+                                                    error.errorMessage("Please enter Discount!");
                                                     error.ShowDialog();
                                                 }
                                             }
                                             else
                                             {
-                                                error.errorMessage("Please enter Discount!");
+                                                error.errorMessage("Please enter Sale Price!");
                                                 error.ShowDialog();
                                             }
                                         }
                                         else
                                         {
-                                            error.errorMessage("Please enter Sale Price!");
+                                            error.errorMessage("Please enter Purchase Price!");
                                             error.ShowDialog();
                                         }
                                     }
                                     else
                                     {
-                                        error.errorMessage("Please enter Purchase Price!");
+                                        error.errorMessage("Please enter Barcode!");
                                         error.ShowDialog();
                                     }
                                 }
                                 else
                                 {
-                                    error.errorMessage("Please enter Barcode!");
+                                    error.errorMessage("Please enter Product Name!");
                                     error.ShowDialog();
                                 }
                             }
                             else
                             {
-                                error.errorMessage("Please enter Product Name!");
+                                error.errorMessage(TextData.barcode.ToString() + " is already exist!");
                                 error.ShowDialog();
                             }
                         }
                         else
                         {
-                            error.errorMessage(TextData.barcode.ToString() + " is already exist!");
+                            error.errorMessage(TextData.prod_name.ToString() + " is already exist!");
                             error.ShowDialog();
                         }
-                    }
-                    else
-                    {
-                        error.errorMessage(TextData.prod_name.ToString() + " is already exist!");
-                        error.ShowDialog();
                     }
                 }
 
@@ -797,183 +904,200 @@ namespace Products_info.forms
         {
             try
             {
-                FillValuesFromTextFieldsToVariables();
-
-                if (TextData.discount == 0)
+                if (FillValuesFromTextFieldsToVariables())
                 {
-                    TextData.discount = 1;
-                }
+                    if (TextData.discount == 0)
+                    {
+                        TextData.discount = 1;
+                    }
 
-                if (TextData.disLimit == 0)
-                {
-                    TextData.disLimit = 1;
-                }
+                    if (TextData.disLimit == 0)
+                    {
+                        TextData.disLimit = 1;
+                    }
 
-                if (discountValue == "Yes")
-                {
-                    TextData.discount = (TextData.sale_price * TextData.discount) / 100;
-                    TextData.disLimit = (TextData.sale_price * TextData.disLimit) / 100;
-                }
+                    if (discountValue == "Yes")
+                    {
+                        TextData.discount = (TextData.sale_price * TextData.discount) / 100;
+                        TextData.disLimit = (TextData.sale_price * TextData.disLimit) / 100;
+                    }
 
-                if (img_pic_box.Image == null)
-                {
-                    TextData.saved_image_path = "nill";
-                }
-
-
-                GetSetData.Data = data.UserPermissions("picture_path", "pos_general_settings");
-
-                if (TextData.saved_image_path == GetSetData.Data || TextData.saved_image_path == null || TextData.saved_image_path == "")
-                {
-                    GetSetData.query = @"select image_path from pos_products where prod_name = '" + TextData.prod_name_key.ToString() + "' and barcode = '" + TextData.barcode_key.ToString() + "';";
-                    TextData.saved_image_path = data.SearchStringValuesFromDb(GetSetData.query);
-
-                    if (TextData.saved_image_path == "")
+                    if (img_pic_box.Image == null)
                     {
                         TextData.saved_image_path = "nill";
                     }
-                }
 
-                if (prod_name_text.Text != "" && TextData.prod_name != "")
-                {
-                    if (prod_code_text.Text != "" && TextData.barcode != "")
+
+                    GetSetData.Data = data.UserPermissions("picture_path", "pos_general_settings");
+
+                    if (TextData.saved_image_path == GetSetData.Data || TextData.saved_image_path == null || TextData.saved_image_path == "")
                     {
-                        if (pur_price_text.Text != "")
+                        GetSetData.query = @"select image_path from pos_products where prod_name = '" + TextData.prod_name_key.ToString() + "' and barcode = '" + TextData.barcode_key.ToString() + "';";
+                        TextData.saved_image_path = data.SearchStringValuesFromDb(GetSetData.query);
+
+                        if (TextData.saved_image_path == "")
                         {
-                            if (sale_price_text.Text != "")
+                            TextData.saved_image_path = "nill";
+                        }
+                    }
+
+                    if (prod_name_text.Text != "" && TextData.prod_name != "")
+                    {
+                        if (prod_code_text.Text != "" && TextData.barcode != "")
+                        {
+                            if (pur_price_text.Text != "")
                             {
-                                if (txt_qty.Text != "")
+                                if (sale_price_text.Text != "")
                                 {
-                                    int category_id_db = data.UserPermissionsIds("category_id", "pos_category", "title", TextData.category);
-                                    //========================================================
-                                    int brand_id_db = data.UserPermissionsIds("brand_id", "pos_brand", "brand_title", TextData.brand);
-                                    //========================================================
-                                    int sub_category_id_db = data.UserPermissionsIds("sub_cate_id", "pos_subcategory", "title", TextData.sub_category);
-                                    //========================================================
-                                    int color_id_db = data.UserPermissionsIds("color_id", "pos_color", "title", TextData.color);
-                                    //========================================================
-
-
-                                    if (state_text.Text == "carton" || state_text.Text == "bag" || state_text.Text == "Tablets" || state_text.Text == "pack")
+                                    if (txt_qty.Text != "")
                                     {
-                                        if (TextData.pkg == 0)
+                                        if (txt_pkg.Text != "")
                                         {
-                                            TextData.pkg = 1;
-                                        }
+                                            if (txt_qty_alert.Text != "")
+                                            {
+                                                int category_id_db = data.UserPermissionsIds("category_id", "pos_category", "title", TextData.category);
+                                                //========================================================
+                                                int brand_id_db = data.UserPermissionsIds("brand_id", "pos_brand", "brand_title", TextData.brand);
+                                                //========================================================
+                                                int sub_category_id_db = data.UserPermissionsIds("sub_cate_id", "pos_subcategory", "title", TextData.sub_category);
+                                                //========================================================
+                                                int color_id_db = data.UserPermissionsIds("color_id", "pos_color", "title", TextData.color);
+                                                //========================================================
 
-                                        if (TextData.tab_pieces == 0)
+
+                                                if (state_text.Text == "carton" || state_text.Text == "bag" || state_text.Text == "Tablets" || state_text.Text == "pack")
+                                                {
+                                                    if (TextData.pkg == 0)
+                                                    {
+                                                        TextData.pkg = 1;
+                                                    }
+
+                                                    if (TextData.tab_pieces == 0)
+                                                    {
+                                                        TextData.tab_pieces = 1;
+                                                    }
+
+                                                    if (TextData.quantity == 0)
+                                                    {
+                                                        TextData.quantity = 1;
+                                                    }
+
+                                                    // Calculating the total quantity
+                                                    TextData.full_pak = (TextData.quantity * TextData.pkg) * TextData.tab_pieces; // total quantity
+                                                    TextData.total_pur_price = TextData.prod_price * TextData.quantity; // total purchase price
+                                                    TextData.total_sale_price = TextData.sale_price * TextData.quantity; // total sale price
+                                                    TextData.totalMarketPrice = TextData.market_value * TextData.quantity; // total Market price
+                                                    TextData.totalWholeSale = double.Parse(TextData.size) * TextData.quantity; // total whole sale price
+                                                    TextData.discount = TextData.discount * TextData.quantity; // total discount
+                                                    TextData.disLimit = TextData.disLimit * TextData.quantity; // total discount Limit
+
+                                                    if (TextData.full_pak == 0)
+                                                    {
+                                                        TextData.full_pak = 1;
+                                                    }
+
+                                                    TextData.prod_price = TextData.total_pur_price / TextData.full_pak; // calculating the purchase price of per piece
+                                                    TextData.sale_price = TextData.total_sale_price / TextData.full_pak; // calculating the sale price of per piece
+                                                    TextData.market_value = TextData.totalMarketPrice / TextData.full_pak; // calculating the sale price of per piece
+                                                    TextData.totalWholeSale = TextData.totalWholeSale / TextData.full_pak; // calculating the sale price of per piece
+                                                    TextData.size = TextData.totalWholeSale.ToString();
+                                                    TextData.discount = TextData.discount / TextData.full_pak;
+                                                    TextData.disLimit = TextData.disLimit / TextData.full_pak;
+                                                    TextData.quantity = double.Parse(txt_qty.Text);
+                                                    TextData.quantity = (TextData.quantity * TextData.pkg) * TextData.tab_pieces; // total quantity // store the total quantity in quantity variable
+                                                    txt_full_pag.Text = txt_qty.Text; // full paking 
+                                                    TextData.pkg = double.Parse(txt_pkg.Text);
+                                                    TextData.tab_pieces = double.Parse(txt_tab_pieces.Text);
+                                                    TextData.total_pur_price = TextData.prod_price * TextData.quantity; // total purchase price
+                                                    TextData.total_sale_price = TextData.sale_price * TextData.quantity; // total sale price
+                                                                                                                         //TextData.totalMarketPrice = TextData.market_value * TextData.quantity; // total sale price
+                                                }
+                                                else
+                                                {
+                                                    txt_pkg.Text = "0";
+                                                    TextData.quantity = double.Parse(txt_qty.Text);
+                                                    TextData.pkg = 0;
+                                                    TextData.full_pak = 0;
+                                                    TextData.tab_pieces = 0;
+                                                    txt_full_pag.Text = "0";
+
+                                                    TextData.market_value = double.Parse(txtTaxation.Text);
+                                                    TextData.prod_price = double.Parse(pur_price_text.Text);
+                                                    TextData.total_pur_price = TextData.prod_price * TextData.quantity;
+                                                    TextData.sale_price = double.Parse(sale_price_text.Text);
+                                                    TextData.total_sale_price = TextData.sale_price * TextData.quantity;
+                                                }
+
+                                                if (txtDiscount.Text == "0")
+                                                {
+                                                    TextData.discount = double.Parse(txtDiscount.Text);
+                                                }
+
+                                                if (txtDiscountLimit.Text == "0")
+                                                {
+                                                    TextData.disLimit = double.Parse(txtDiscountLimit.Text);
+                                                }
+
+                                                GetSetData.query = @"update pos_products set prod_name = '" + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(prod_name_text.Text) + "', barcode = '" + prod_code_text.Text + "', expiry_date = '" + TextData.exp_date.ToString() + "', prod_state = '" + TextData.prod_state.ToString() + "', unit = '" + TextData.prod_unit.ToString() + "', item_type = '" + TextData.item_type.ToString() + "' , size  = '" + TextData.size.ToString() + "', image_path = '" + TextData.saved_image_path.ToString() + "', status = '" + TextData.status.ToString() + "', remarks = '" + TextData.remarks.ToString() + "', allow_promotion = '" + TextData.switchPromotion.ToString() + "', category_id = '" + category_id_db.ToString() + "', brand_id = '" + brand_id_db.ToString() + "', sub_cate_id = '" + sub_category_id_db.ToString() + "' where (product_id = '" + TextData.product_id.ToString() + "');";
+                                                data.insertUpdateCreateOrDelete(GetSetData.query);
+                                                //========================================================
+
+                                                string oldQuantityDB = data.UserPermissions("quantity", "pos_stock_details", "stock_id", TextData.stock_id.ToString());
+                                                string oldCostPriceDB = data.UserPermissions("pur_price", "pos_stock_details", "stock_id", TextData.stock_id.ToString());
+                                                string oldSalePriceDB = data.UserPermissions("sale_price", "pos_stock_details", "stock_id", TextData.stock_id.ToString());
+
+
+                                                GetSetData.query = @"update pos_stock_details set item_barcode = '" + prod_code_text.Text + "', quantity = '" + TextData.quantity.ToString() + "', pkg = '" + TextData.pkg.ToString() + "' , tab_pieces = '" + TextData.tab_pieces + "' , full_pak = '" + txt_full_pag.Text + "' , pur_price = '" + TextData.prod_price.ToString() + "', sale_price = '" + TextData.sale_price.ToString() + "', market_value = '" + TextData.market_value.ToString() + "' , whole_sale_price  = '" + TextData.size.ToString() + "', date_of_manufacture = '" + TextData.mfg_date.ToString() + "' , date_of_expiry = '" + TextData.exp_date.ToString() + "', total_pur_price  = '" + TextData.total_pur_price.ToString() + "', total_sale_price = '" + TextData.total_sale_price.ToString() + "', discount = '" + TextData.discount.ToString() + "', discount_limit = '" + TextData.disLimit.ToString() + "',  qty_alert = '" + TextData.qty_alert.ToString() + "', alert_status = '" + TextData.chk_qty_alert.ToString() + "'   where (stock_id = '" + TextData.stock_id.ToString() + "');";
+                                                data.insertUpdateCreateOrDelete(GetSetData.query);
+
+
+                                                GetSetData.query = @"insert into pos_stock_history values ('" + DateTime.Now.ToShortDateString() + "' , '" + TextData.quantity.ToString() + "' , '" + oldQuantityDB + "' , '" + TextData.prod_price.ToString() + "' , '" + oldCostPriceDB + "' , '" + TextData.sale_price.ToString() + "' , '" + oldSalePriceDB + "' , 'Adjustment of Inventory' , '" + user_id.ToString() + "' , '" + TextData.product_id.ToString() + "');";
+                                                data.insertUpdateCreateOrDelete(GetSetData.query);
+
+
+                                                return true;
+                                            }
+                                            else
+                                            {
+                                                error.errorMessage("Please enter quantity alert!");
+                                                error.ShowDialog();
+                                            }
+                                        }
+                                        else
                                         {
-                                            TextData.tab_pieces = 1;
+                                            error.errorMessage("Please enter item per pack!");
+                                            error.ShowDialog();
                                         }
-
-                                        if (TextData.quantity == 0)
-                                        {
-                                            TextData.quantity = 1;
-                                        }
-
-                                        // Calculating the total quantity
-                                        TextData.full_pak = (TextData.quantity * TextData.pkg) * TextData.tab_pieces; // total quantity
-                                        TextData.total_pur_price = TextData.prod_price * TextData.quantity; // total purchase price
-                                        TextData.total_sale_price = TextData.sale_price * TextData.quantity; // total sale price
-                                        TextData.totalMarketPrice = TextData.market_value * TextData.quantity; // total Market price
-                                        TextData.totalWholeSale = double.Parse(TextData.size) * TextData.quantity; // total whole sale price
-                                        TextData.discount = TextData.discount * TextData.quantity; // total discount
-                                        TextData.disLimit = TextData.disLimit * TextData.quantity; // total discount Limit
-
-                                        if (TextData.full_pak == 0)
-                                        {
-                                            TextData.full_pak = 1;
-                                        }
-
-                                        TextData.prod_price = TextData.total_pur_price / TextData.full_pak; // calculating the purchase price of per piece
-                                        TextData.sale_price = TextData.total_sale_price / TextData.full_pak; // calculating the sale price of per piece
-                                        TextData.market_value = TextData.totalMarketPrice / TextData.full_pak; // calculating the sale price of per piece
-                                        TextData.totalWholeSale = TextData.totalWholeSale / TextData.full_pak; // calculating the sale price of per piece
-                                        TextData.size = TextData.totalWholeSale.ToString();
-                                        TextData.discount = TextData.discount / TextData.full_pak;
-                                        TextData.disLimit = TextData.disLimit / TextData.full_pak; 
-                                        TextData.quantity = double.Parse(txt_qty.Text);
-                                        TextData.quantity = (TextData.quantity * TextData.pkg) * TextData.tab_pieces; // total quantity // store the total quantity in quantity variable
-                                        txt_full_pag.Text = txt_qty.Text; // full paking 
-                                        TextData.pkg = double.Parse(txt_pkg.Text);
-                                        TextData.tab_pieces = double.Parse(txt_tab_pieces.Text);
-                                        TextData.total_pur_price = TextData.prod_price * TextData.quantity; // total purchase price
-                                        TextData.total_sale_price = TextData.sale_price * TextData.quantity; // total sale price
-                                        //TextData.totalMarketPrice = TextData.market_value * TextData.quantity; // total sale price
                                     }
                                     else
                                     {
-                                        txt_pkg.Text = "0";
-                                        TextData.quantity = double.Parse(txt_qty.Text);
-                                        TextData.pkg = 0;
-                                        TextData.full_pak = 0;
-                                        TextData.tab_pieces = 0;
-                                        txt_full_pag.Text = "0";
-
-                                        TextData.market_value = double.Parse(txtTaxation.Text);
-                                        TextData.prod_price = double.Parse(pur_price_text.Text);
-                                        TextData.total_pur_price = TextData.prod_price * TextData.quantity;
-                                        TextData.sale_price = double.Parse(sale_price_text.Text);
-                                        TextData.total_sale_price = TextData.sale_price * TextData.quantity;
+                                        error.errorMessage("Please enter Quantity!");
+                                        error.ShowDialog();
                                     }
-
-                                    if (txtDiscount.Text == "0")
-                                    {
-                                        TextData.discount = double.Parse(txtDiscount.Text);
-                                    }
-
-                                    if (txtDiscountLimit.Text == "0")
-                                    {
-                                        TextData.disLimit = double.Parse(txtDiscountLimit.Text);
-                                    }
-
-                                    GetSetData.query = @"update pos_products set prod_name = '" + CultureInfo.CurrentCulture.TextInfo.ToTitleCase(prod_name_text.Text) + "', barcode = '" + prod_code_text.Text + "', expiry_date = '" + TextData.exp_date.ToString() + "', prod_state = '" + TextData.prod_state.ToString() + "', unit = '" + TextData.prod_unit.ToString() + "', item_type = '" + TextData.item_type.ToString() + "' , size  = '" + TextData.size.ToString() + "', image_path = '" + TextData.saved_image_path.ToString() + "', status = '" + TextData.status.ToString() + "', remarks = '" + TextData.remarks.ToString() + "', allow_promotion = '" + TextData.switchPromotion.ToString() + "', category_id = '" + category_id_db.ToString() + "', brand_id = '" + brand_id_db.ToString() + "', sub_cate_id = '" + sub_category_id_db.ToString() + "' where (product_id = '" + TextData.product_id.ToString() + "');";
-                                    data.insertUpdateCreateOrDelete(GetSetData.query);
-                                    //========================================================
-
-                                    string oldQuantityDB = data.UserPermissions("quantity", "pos_stock_details", "stock_id", TextData.stock_id.ToString());
-                                    string oldCostPriceDB = data.UserPermissions("pur_price", "pos_stock_details", "stock_id", TextData.stock_id.ToString());
-                                    string oldSalePriceDB = data.UserPermissions("sale_price", "pos_stock_details", "stock_id", TextData.stock_id.ToString());
-
-
-                                    GetSetData.query = @"update pos_stock_details set item_barcode = '" + prod_code_text.Text + "', quantity = '" + TextData.quantity.ToString() + "', pkg = '" + TextData.pkg.ToString() + "' , tab_pieces = '" + TextData.tab_pieces + "' , full_pak = '" + txt_full_pag.Text + "' , pur_price = '" + TextData.prod_price.ToString() + "', sale_price = '" + TextData.sale_price.ToString() + "', market_value = '" + TextData.market_value.ToString() + "' , whole_sale_price  = '" + TextData.size.ToString() + "', date_of_manufacture = '" + TextData.mfg_date.ToString() + "' , date_of_expiry = '" + TextData.exp_date.ToString() + "', total_pur_price  = '" + TextData.total_pur_price.ToString() + "', total_sale_price = '" + TextData.total_sale_price.ToString() + "', discount = '" + TextData.discount.ToString() + "', discount_limit = '" + TextData.disLimit.ToString() + "',  qty_alert = '" + TextData.qty_alert.ToString() + "', alert_status = '" + TextData.chk_qty_alert.ToString() + "'   where (stock_id = '" + TextData.stock_id.ToString() + "');";
-                                    data.insertUpdateCreateOrDelete(GetSetData.query);
-
-
-                                    GetSetData.query = @"insert into pos_stock_history values ('" + DateTime.Now.ToShortDateString() + "' , '" + TextData.quantity.ToString() + "' , '" + oldQuantityDB + "' , '" + TextData.prod_price.ToString() + "' , '" + oldCostPriceDB + "' , '" + TextData.sale_price.ToString() + "' , '" + oldSalePriceDB + "' , 'Adjustment of Inventory' , '" + user_id.ToString() +"' , '" + TextData.product_id.ToString() +"');";
-                                    data.insertUpdateCreateOrDelete(GetSetData.query);
-
-
-                                    return true;
                                 }
                                 else
                                 {
-                                    error.errorMessage("Please enter Quantity!");
+                                    error.errorMessage("Please enter Sale Price!");
                                     error.ShowDialog();
                                 }
                             }
                             else
                             {
-                                error.errorMessage("Please enter Sale Price!");
+                                error.errorMessage("Please enter Purchase Price!");
                                 error.ShowDialog();
                             }
                         }
                         else
                         {
-                            error.errorMessage("Please enter Purchase Price!");
+                            error.errorMessage("Please enter Barcode!");
                             error.ShowDialog();
                         }
                     }
                     else
                     {
-                        error.errorMessage("Please enter Barcode!");
+                        error.errorMessage("Please enter Product Name!");
                         error.ShowDialog();
                     }
-                }
-                else
-                {
-                    error.errorMessage("Please enter Product Name!");
-                    error.ShowDialog();
                 }
 
                 return false;

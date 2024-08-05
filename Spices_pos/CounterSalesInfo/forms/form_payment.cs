@@ -41,7 +41,7 @@ namespace CounterSales_info.forms
         error_form error = new error_form();
         done_form done = new done_form();
         public static int role_id = 0;
-        private SerialPort serialPort;
+        //private SerialPort serialPort;
         int selectTextBox = 0; // 0 for cash received, 1 for cash on hand
         string creditCardApiAmount = "0";
         double cashAmount = 0;
@@ -73,6 +73,7 @@ namespace CounterSales_info.forms
                         {
                             salesmanTip = decimal.Parse(txtTipAmount.Text); // Example amount, you can set this dynamically
                         }
+
                    
                         decimal totalTip = salesmanTip + 0.00m;
                         string xmlRequest = "";

@@ -533,7 +533,7 @@ namespace Settings_info.forms
 
         private void txtSingleAuthorityClosing_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GetSetData.query = "SELECT TOP 1 id FROM pos_clock_in where (status = '0' or status = '-1' or status = '-2');";
+            GetSetData.query = "SELECT TOP 1 id FROM pos_clock_in where (status = '0' or status = '-1');";
             string clock_in_id = data.SearchStringValuesFromDb(GetSetData.query);
 
             if ((clock_in_id != "") && (txtSingleAuthorityClosing.Text != generalSettings.ReadField("singleAuthorityClosing")))

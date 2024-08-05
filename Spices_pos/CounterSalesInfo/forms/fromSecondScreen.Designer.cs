@@ -274,6 +274,7 @@
             this.label13.TabIndex = 536;
             this.label13.Text = "www.thebigfatpos.com";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Visible = false;
             // 
             // label12
             // 
@@ -287,6 +288,7 @@
             this.label12.TabIndex = 536;
             this.label12.Text = "+1(346) 288-6360";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Visible = false;
             // 
             // label11
             // 
@@ -300,6 +302,7 @@
             this.label11.TabIndex = 536;
             this.label11.Text = "sales@thebigfatpos.com";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.Visible = false;
             // 
             // label10
             // 
@@ -313,6 +316,7 @@
             this.label10.TabIndex = 535;
             this.label10.Text = "The Big Fat POS";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Visible = false;
             // 
             // txtStoreCellNo
             // 
@@ -320,7 +324,7 @@
             this.txtStoreCellNo.BackColor = System.Drawing.Color.Transparent;
             this.txtStoreCellNo.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.txtStoreCellNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtStoreCellNo.Location = new System.Drawing.Point(12, 238);
+            this.txtStoreCellNo.Location = new System.Drawing.Point(12, 240);
             this.txtStoreCellNo.Name = "txtStoreCellNo";
             this.txtStoreCellNo.Size = new System.Drawing.Size(217, 23);
             this.txtStoreCellNo.TabIndex = 533;
@@ -358,6 +362,7 @@
             this.guna2PictureBox1.TabIndex = 505;
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
+            this.guna2PictureBox1.Visible = false;
             // 
             // logo_img
             // 

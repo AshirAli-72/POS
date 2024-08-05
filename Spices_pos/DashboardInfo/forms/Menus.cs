@@ -755,7 +755,7 @@ namespace Spices_pos.DashboardInfo.Forms
             try
             {
                 TextData.backup_path = generalSettings.ReadField("picture_path");
-                TextData.image_path = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "logo_path");
+                TextData.image_path = data.UserPermissions("logo_path", "pos_report_settings");
 
                 if (TextData.backup_path != "nill" && TextData.backup_path != "")
                 {

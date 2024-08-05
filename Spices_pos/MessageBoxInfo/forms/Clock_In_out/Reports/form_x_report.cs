@@ -57,21 +57,21 @@ namespace Reports_info.Income_statement
 
                     // ************************************************************************************************************************************************
                     GetSetData.query = @"SELECT  pos_store_day_end.date, from_user_employee.full_name as full_name,
-                                    pos_clock_out.opening_cash, pos_clock_out.total_sales, pos_clock_out.total_return_amount, pos_clock_out.expected_amount, pos_clock_out.cash_amount_received, 
-                                    pos_clock_out.total_void_orders, pos_clock_out.total_hours, pos_clock_out.shortage_amount, pos_clock_out.no_sales, pos_clock_out.payout,
-                                    pos_store_day_end.opening_cash as totalOpeningCash, pos_store_day_end.total_return_amount as totalReturns, pos_store_day_end.total_void_orders as totalVoid,
-                                    pos_store_day_end.expected_amount as totalExpectedAmount, pos_store_day_end.cash_amount_received as totalReceivedAmount, pos_store_day_end.balance as totalBalance,
-                                    pos_store_day_end.shortage_amount as totalShortageAmount, pos_store_day_end.no_sales as totalNoSaleAmount, pos_store_day_end.payout as totalPayoutAmount, 
-                                    pos_store_day_end.credit_card_amount as totalCreditCardAmount, pos_store_day_end.paypal_amount as totalPaypalAmount, pos_store_day_end.google_pay_amount as totalGooglePayAmount, 
-                                    pos_store_day_end.misc_items_amount as totalMiscItemsAmount, pos_store_day_end.total_discount as totalDiscount, pos_store_day_end.total_taxation as totalTaxation, 
-                                    pos_store_day_end.total_tickets as totalTickets, pos_store_day_end.total_sales as totalSales,
-                                    pos_store_day_end.total100s, pos_store_day_end.total50s, pos_store_day_end.total20s, pos_store_day_end.total10s, pos_store_day_end.total5s, pos_store_day_end.total2s, pos_store_day_end.total1s,
-                                    pos_store_day_end.total1c, pos_store_day_end.total5c, pos_store_day_end.total10c, pos_store_day_end.total25c
-                                    FROM pos_store_day_end INNER JOIN pos_clock_out ON pos_store_day_end.id = pos_clock_out.store_day_end_id  INNER JOIN 
-                                    pos_users ON pos_store_day_end.user_id = pos_users.user_id
-                                    INNER JOIN pos_employees as to_user_employee ON to_user_employee.employee_id = pos_users.emp_id
-                                    INNER JOIN pos_employees as from_user_employee ON from_user_employee.employee_id = pos_users.emp_id
-                                    Where (pos_store_day_end.date between '" + FromDate.Text + "' AND '" + ToDate.Text + "');";
+                                        pos_clock_out.opening_cash, pos_clock_out.total_sales, pos_clock_out.total_return_amount, pos_clock_out.expected_amount, pos_clock_out.cash_amount_received, 
+                                        pos_clock_out.total_void_orders, pos_clock_out.total_hours, pos_clock_out.shortage_amount, pos_clock_out.no_sales, pos_clock_out.payout,
+                                        pos_store_day_end.opening_cash as totalOpeningCash, pos_store_day_end.total_return_amount as totalReturns, pos_store_day_end.total_void_orders as totalVoid,
+                                        pos_store_day_end.expected_amount as totalExpectedAmount, pos_store_day_end.cash_amount_received as totalReceivedAmount, pos_store_day_end.balance as totalBalance,
+                                        pos_store_day_end.shortage_amount as totalShortageAmount, pos_store_day_end.no_sales as totalNoSaleAmount, pos_store_day_end.payout as totalPayoutAmount, 
+                                        pos_store_day_end.credit_card_amount as totalCreditCardAmount, pos_store_day_end.paypal_amount as totalPaypalAmount, pos_store_day_end.google_pay_amount as totalGooglePayAmount, 
+                                        pos_store_day_end.misc_items_amount as totalMiscItemsAmount, pos_store_day_end.total_discount as totalDiscount, pos_store_day_end.total_taxation as totalTaxation, 
+                                        pos_store_day_end.total_tickets as totalTickets, pos_store_day_end.total_sales as totalSales,
+                                        pos_store_day_end.total100s, pos_store_day_end.total50s, pos_store_day_end.total20s, pos_store_day_end.total10s, pos_store_day_end.total5s, pos_store_day_end.total2s, pos_store_day_end.total1s,
+                                        pos_store_day_end.total1c, pos_store_day_end.total5c, pos_store_day_end.total10c, pos_store_day_end.total25c
+                                        FROM pos_store_day_end INNER JOIN pos_clock_out ON pos_store_day_end.id = pos_clock_out.store_day_end_id  INNER JOIN 
+                                        pos_users ON pos_store_day_end.user_id = pos_users.user_id
+                                        INNER JOIN pos_employees as to_user_employee ON to_user_employee.employee_id = pos_users.emp_id
+                                        INNER JOIN pos_employees as from_user_employee ON from_user_employee.employee_id = pos_users.emp_id
+                                        Where (pos_store_day_end.date between '" + FromDate.Text + "' AND '" + ToDate.Text + "');";
 
 
                     // Script for Purchases ********************************

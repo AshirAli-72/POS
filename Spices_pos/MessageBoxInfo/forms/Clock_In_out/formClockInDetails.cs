@@ -775,7 +775,7 @@ namespace Message_box_info.forms.Clock_In
             {
                 GetSetData.query = "SELECT TOP 1 id FROM pos_clock_in where (to_user_id = '" + user_id.ToString() + "') and (status = '0' or status = '-1') ORDER BY id DESC;";
                 string is_already_clockedIn = data.SearchStringValuesFromDb(GetSetData.query);
-
+          
                 if (is_already_clockedIn == "")
                 {
                     string start_time = "";
@@ -785,10 +785,10 @@ namespace Message_box_info.forms.Clock_In
                     int shift_id = data.UserPermissionsIds("id", "pos_shift", "title", "default");
 
                     // status -1 = clock in only, 0 = shift, shift close -2 = , 1 = store day close  
-
+       
                     GetSetData.query = @"insert into pos_clock_in values ('" + txtDate.Text + "','" + start_time.ToString() + "' , '0', 'nill', '-1', '" + shift_id.ToString() + "', '" + user_id.ToString() + "', '" + user_id.ToString() + "', '" + counter_id.ToString() + "', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0');";
                     data.insertUpdateCreateOrDelete(GetSetData.query);
-
+                  
                     return true;
                 }
                 else

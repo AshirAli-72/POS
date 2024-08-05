@@ -50,7 +50,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(171, 18);
+            this.pictureBox2.Location = new System.Drawing.Point(169, 18);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(91, 89);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -63,7 +63,7 @@
             this.message.BackColor = System.Drawing.Color.Transparent;
             this.message.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.message.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(46)))), ((int)(((byte)(51)))));
-            this.message.Location = new System.Drawing.Point(20, 170);
+            this.message.Location = new System.Drawing.Point(18, 170);
             this.message.Name = "message";
             this.message.Size = new System.Drawing.Size(393, 100);
             this.message.TabIndex = 1;
@@ -85,7 +85,7 @@
             this.errorbutton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(46)))), ((int)(((byte)(51)))));
             this.errorbutton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.errorbutton.ForeColor = System.Drawing.Color.White;
-            this.errorbutton.Location = new System.Drawing.Point(23, 293);
+            this.errorbutton.Location = new System.Drawing.Point(19, 293);
             this.errorbutton.Name = "errorbutton";
             this.errorbutton.Size = new System.Drawing.Size(390, 53);
             this.errorbutton.TabIndex = 0;
@@ -115,11 +115,11 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(46)))), ((int)(((byte)(51)))));
-            this.label5.Location = new System.Drawing.Point(165, 131);
+            this.label5.Location = new System.Drawing.Point(168, 131);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 32);
+            this.label5.Size = new System.Drawing.Size(92, 32);
             this.label5.TabIndex = 531;
-            this.label5.Text = "Oh no!";
+            this.label5.Text = "Oops!";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel5

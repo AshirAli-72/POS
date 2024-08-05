@@ -71,8 +71,8 @@ namespace CounterSales_info.forms
         {
             InitializeComponent();
 
-            role_id = Spices_pos.DatabaseInfo.DatalayerInfo.ReferenceClasses.Auth.role_id;
-            user_id = Spices_pos.DatabaseInfo.DatalayerInfo.ReferenceClasses.Auth.user_id;
+            //role_id = Spices_pos.DatabaseInfo.DatalayerInfo.ReferenceClasses.Auth.role_id;
+            //user_id = Spices_pos.DatabaseInfo.DatalayerInfo.ReferenceClasses.Auth.user_id;
 
             //setFormColorsDynamically();
             setToolTips();
@@ -737,7 +737,6 @@ namespace CounterSales_info.forms
 
                         int number_of_quantity_in_cart = 0;
 
-
                         //*************************************************************
 
                         //string queryCheckPromoItems = "select promo_group_id from pos_promo_group_items where (prod_id = '" + product_id.ToString() + "') and (stock_id = '" + stock_id.ToString() + "');";
@@ -756,7 +755,6 @@ namespace CounterSales_info.forms
 
                         connCheckPromo.Open();
                         readerCheckPromo = cmdCheckPromo.ExecuteReader();
-
 
                         int promo_group_id = 0;
 
@@ -926,8 +924,8 @@ namespace CounterSales_info.forms
                         int totalCartItems = CartFlowLayout.Controls.OfType<btnCart>().Count();
 
                         int totalItemsInCartDB = data.UserPermissionsIds("count(mac_address)", "pos_cart_items", "mac_address", macAddress);
-
-                 
+    
+                        
                         if (totalCartItems != totalItemsInCartDB)
                         {
                             GetSetData.query = "insert into pos_cart_items values ('" + cartItem.ItemsName + "' , '" + cartItem.barcode + "' , '" + cartItem.Quantity + "' , '" + Math.Round(cartItem.price, 2).ToString() + "' , '" + Math.Round(cartItem.tax, 2).ToString() + "' , '" + Math.Round(cartItem.discount, 2).ToString() + "' , '" + Math.Round(TextData.rate, 2).ToString() + "' , '" + cartItem.availableStock.ToString() + "' ,  '" + cartItem.note + "' , '" + cartItem.productID + "' , '" + cartItem.stockID + "' , '' , '' , '" + macAddress + "' , '" + txtCustomerPoints.Text + "' , '" + isReturn.ToString() + "' , '" + customer_id + "' , '" + user_id.ToString() + "');";

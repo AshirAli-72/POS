@@ -20,44 +20,6 @@
   },
   {
     "reports_id": 2,
-    "company_ledger": "True",
-    "company_statement": "True",
-    "customer_ledger": "True",
-    "customer_statement": "True",
-    "day_book": "True",
-    "stock": "True",
-    "sales_report": "True",
-    "returns_report": "True",
-    "receivables": "True",
-    "payables": "True",
-    "recoveries": "True",
-    "balance_in_out": "True",
-    "income_statement": "True",
-    "generateInvoices": "False",
-    "chequeDetails": "True",
-    "role_id": 10
-  },
-  {
-    "reports_id": 6,
-    "company_ledger": "False",
-    "company_statement": "False",
-    "customer_ledger": "False",
-    "customer_statement": "True",
-    "day_book": "False",
-    "stock": "False",
-    "sales_report": "True",
-    "returns_report": "False",
-    "receivables": "False",
-    "payables": "False",
-    "recoveries": "False",
-    "balance_in_out": "False",
-    "income_statement": "False",
-    "generateInvoices": "False",
-    "chequeDetails": "False",
-    "role_id": 29
-  },
-  {
-    "reports_id": 7,
     "company_ledger": "False",
     "company_statement": "False",
     "customer_ledger": "True",
@@ -73,6 +35,6 @@
     "income_statement": "False",
     "generateInvoices": "True",
     "chequeDetails": "False",
-    "role_id": 30
+    "role_id": 2
   }
 ]

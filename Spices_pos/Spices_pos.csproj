@@ -2762,6 +2762,7 @@
     <Content Include="DatabaseInfo\DatalayerInfo\Migrations\alter_views_procedures_script_version_0.2.23.sql" />
     <Content Include="DatabaseInfo\DatalayerInfo\Migrations\tables_script_version_0.2.23.sql" />
     <Content Include="DatabaseInfo\DatalayerInfo\Migrations\tables_script_version_0.2.25.sql" />
+    <Content Include="DatabaseInfo\DatalayerInfo\Migrations\tables_script_version_0.2.26.sql" />
     <Content Include="DatabaseInfo\DatalayerInfo\Migrations\create_views_procedures_script_version_0.2.23.sql" />
     <Content Include="DatabaseInfo\DatalayerInfo\Migrations\indexes_script_version_0.2.23.sql" />
     <Content Include="icons8_estimate.ico" />

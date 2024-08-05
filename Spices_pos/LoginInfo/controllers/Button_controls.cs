@@ -82,8 +82,8 @@ namespace Spices_pos.LoginInfo.controllers
 
                         if (isSwitchUser)
                         {
-                            //form_counter_sales.user_id = GetSetData.Ids;
-                            //form_counter_sales.role_id = role_id_db;
+                            form_counter_sales.user_id = GetSetData.Ids;
+                            form_counter_sales.role_id = role_id_db;
 
                             Auth.user_id = GetSetData.Ids;
                             Auth.role_id = role_id_db;

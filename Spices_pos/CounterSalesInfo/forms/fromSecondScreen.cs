@@ -4,6 +4,7 @@ using Login_info.controllers;
 using Message_box_info.forms;
 using Products_info.forms;
 using RefereningMaterial;
+using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
 using Spices_pos.DatabaseInfo.WebConfig;
 using System;
 using System.Data.SqlClient;
@@ -28,6 +29,7 @@ namespace CounterSales_info.forms
         public static fromSecondScreen instance;
         public Label lblCustomer;
 
+        GeneralSettingsManager generalSettings = new GeneralSettingsManager(webConfig.con_string);
         ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
         Datalayers data = new Datalayers(webConfig.con_string);
         error_form error = new error_form();
@@ -54,8 +56,8 @@ namespace CounterSales_info.forms
         {
             try
             {
-                string folderPath = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "picture_path");
-                TextData.image_path = GetSetData.ProcedureGeneralSettings("ProcedureGeneralSettings", "logo_path");
+                string folderPath = generalSettings.ReadField("picture_path");
+                TextData.image_path = data.UserPermissions("logo_path", "pos_report_settings");
 
                 if (folderPath != "nill" && folderPath != "")
                 {
