@@ -552,7 +552,7 @@
             this.btnSlideMenu.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnSlideMenu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(120)))));
             this.btnSlideMenu.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnSlideMenu.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnSlideMenu.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnSlideMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnSlideMenu.Image")));
             this.btnSlideMenu.ImageSize = new System.Drawing.Size(17, 17);
             this.btnSlideMenu.Location = new System.Drawing.Point(142, 4);
@@ -823,7 +823,7 @@
             this.btnCustomerDues.Name = "btnCustomerDues";
             this.btnCustomerDues.Size = new System.Drawing.Size(165, 39);
             this.btnCustomerDues.TabIndex = 536;
-            this.btnCustomerDues.Text = "Customer Dues";
+            this.btnCustomerDues.Text = "Customer Duess";
             this.btnCustomerDues.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomerDues.TextOffset = new System.Drawing.Point(15, 0);
             this.btnCustomerDues.Click += new System.EventHandler(this.btnSalaries_Click);
