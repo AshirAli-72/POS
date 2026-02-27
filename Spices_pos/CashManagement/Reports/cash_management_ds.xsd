@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="installment_dbDataSet1" targetNamespace="http://tempuri.org/installment_dbDataSet1.xsd" xmlns:mstns="http://tempuri.org/installment_dbDataSet1.xsd" xmlns="http://tempuri.org/installment_dbDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="installment_dbConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="installment_dbConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Spices_pos.Properties.Settings.GlobalReference.Default.installment_dbConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pos_personsTableAdapter" GeneratorDataComponentClassName="pos_personsTableAdapter" Name="pos_persons" UserDataComponentName="pos_personsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="installment_dbConnectionString1 (Settings)" DbObjectName="installment_db.dbo.pos_persons" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+    p.id,
+    p.name, 
+    p.mobile_number, 
+    p.cnic_number, 
+    p.address, 
+    p.status, 
+    COALESCE(cm.amount, 0) AS amount,
+    ISNULL(pt.payment_title, 'Cash') AS payment_type
+FROM dbo.pos_persons AS p
+LEFT JOIN dbo.pos_cash_management AS cm 
+    ON cm.person_id = p.id
+LEFT JOIN dbo.pos_payment_type AS pt 
+    ON cm.payment_id = pt.id;
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+              <Mapping SourceColumn="mobile_number" DataSetColumn="mobile_number" />
+              <Mapping SourceColumn="cnic_number" DataSetColumn="cnic_number" />
+              <Mapping SourceColumn="address" DataSetColumn="address" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="amount" DataSetColumn="amount" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="payment_type" DataSetColumn="payment_type" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="installment_dbDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="installment_dbDataSet1" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="installment_dbDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="pos_persons" msprop:Generator_RowEvHandlerName="pos_personsRowChangeEventHandler" msprop:Generator_RowDeletedName="pos_personsRowDeleted" msprop:Generator_RowDeletingName="pos_personsRowDeleting" msprop:Generator_RowEvArgName="pos_personsRowChangeEvent" msprop:Generator_TablePropName="pos_persons" msprop:Generator_RowChangedName="pos_personsRowChanged" msprop:Generator_UserTableName="pos_persons" msprop:Generator_RowChangingName="pos_personsRowChanging" msprop:Generator_RowClassName="pos_personsRow" msprop:Generator_TableClassName="pos_personsDataTable" msprop:Generator_TableVarName="tablepos_persons">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnVarNameInTable="columnname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mobile_number" msprop:Generator_ColumnPropNameInTable="mobile_numberColumn" msprop:Generator_ColumnPropNameInRow="mobile_number" msprop:Generator_UserColumnName="mobile_number" msprop:Generator_ColumnVarNameInTable="columnmobile_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cnic_number" msprop:Generator_ColumnPropNameInTable="cnic_numberColumn" msprop:Generator_ColumnPropNameInRow="cnic_number" msprop:Generator_UserColumnName="cnic_number" msprop:Generator_ColumnVarNameInTable="columncnic_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="address" msprop:Generator_ColumnPropNameInTable="addressColumn" msprop:Generator_ColumnPropNameInRow="address" msprop:Generator_UserColumnName="address" msprop:Generator_ColumnVarNameInTable="columnaddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnVarNameInTable="columnstatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="amount" msdata:ReadOnly="true" msprop:Generator_UserColumnName="amount" msprop:Generator_ColumnPropNameInTable="amountColumn" msprop:Generator_ColumnPropNameInRow="amount" msprop:Generator_ColumnVarNameInTable="columnamount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="payment_type" msprop:Generator_ColumnPropNameInRow="payment_type" msprop:Generator_ColumnPropNameInTable="payment_typeColumn" msprop:Generator_ColumnVarNameInTable="columnpayment_type" msprop:Generator_UserColumnName="payment_type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:pos_persons" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

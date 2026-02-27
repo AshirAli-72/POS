@@ -634,10 +634,10 @@
             this.logo_img2.Image = ((System.Drawing.Image)(resources.GetObject("logo_img2.Image")));
             this.logo_img2.ImageRotate = 0F;
             this.logo_img2.InitialImage = null;
-            this.logo_img2.Location = new System.Drawing.Point(9, 55);
+            this.logo_img2.Location = new System.Drawing.Point(0, 54);
             this.logo_img2.Name = "logo_img2";
             this.logo_img2.ShadowDecoration.BorderRadius = 0;
-            this.logo_img2.Size = new System.Drawing.Size(52, 52);
+            this.logo_img2.Size = new System.Drawing.Size(68, 72);
             this.logo_img2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo_img2.TabIndex = 7;
             this.logo_img2.TabStop = false;

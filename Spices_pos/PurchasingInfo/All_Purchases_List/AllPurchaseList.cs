@@ -7,6 +7,7 @@ using Datalayer;
 using RefereningMaterial;
 using Spices_pos.DatabaseInfo.WebConfig;
 using Spices_pos.PurchasingInfo.All_Purchases_List;
+using Microsoft.SqlServer.Management.Smo;
 
 namespace Purchase_info.All_Purchases_List
 {
@@ -241,7 +242,8 @@ namespace Purchase_info.All_Purchases_List
 
                 GetSetData.query = @"SELECT pos_purchased_items.quantity, pos_purchased_items.pkg, pos_purchased_items.full_pak, pos_purchased_items.pur_price, pos_purchased_items.sale_price, pos_purchased_items.trade_off, pos_purchased_items.carry_exp, 
                                     pos_purchased_items.total_pur_price, pos_purchased_items.total_sale_price, pos_products.prod_name, pos_products.barcode, pos_products.expiry_date, pos_purchase.date, pos_purchase.bill_no, pos_purchase.invoice_no, 
-                                    pos_purchase.no_of_items, pos_purchase.total_quantity, pos_purchase.net_trade_off, pos_purchase.net_carry_exp, pos_purchase.net_total, pos_purchase.paid, pos_purchase.credits, pos_purchase.freight, pos_suppliers.full_name, pos_suppliers.code, pos_purchased_items.new_purchase_price, pos_purchase.discount_percentage, pos_purchase.discount_amount, pos_purchase.fee_amount
+                                    pos_purchase.no_of_items, pos_purchase.total_quantity, pos_purchase.net_trade_off, pos_purchase.net_carry_exp, pos_purchase.net_total, pos_purchase.paid, pos_purchase.credits, pos_purchase.freight, pos_suppliers.full_name, pos_suppliers.code,
+                                    pos_purchased_items.new_purchase_price, pos_purchase.discount_percentage, pos_purchase.discount_amount, pos_purchase.fee_amount, pos_purchase.remarks
                                     FROM pos_purchase INNER JOIN pos_purchased_items ON pos_purchase.purchase_id = pos_purchased_items.purchase_id INNER JOIN 
                                     pos_products ON pos_purchased_items.prod_id = pos_products.product_id INNER JOIN pos_suppliers ON pos_purchase.supplier_id = pos_suppliers.supplier_id";
 
@@ -264,18 +266,6 @@ namespace Purchase_info.All_Purchases_List
                 viewer.ZoomMode = ZoomMode.Percent;
                 viewer.ZoomPercent = 100;
                 viewer.LocalReport.DataSources.Add(rds);
-
-
-                // **********************************************************************************************************
-                all_purchase_list_ds report_setting = new all_purchase_list_ds();
-                GetSetData.query = @"SELECT title, address, phone_no, note, copyrights FROM pos_report_settings";
-
-                SqlDataAdapter report_da = new SqlDataAdapter(GetSetData.query, conn);
-                report_da.Fill(report_setting, report_setting.Tables[0].TableName);
-
-                ReportDataSource report_rds = new Microsoft.Reporting.WinForms.ReportDataSource("report_setting_ds", report_setting.Tables[0]);
-                viewer.LocalReport.DataSources.Add(report_rds);
-
                 viewer.LocalReport.Refresh();
                 viewer.LocalReport.EnableExternalImages = true;
 
@@ -308,6 +298,22 @@ namespace Purchase_info.All_Purchases_List
                     viewer.LocalReport.SetParameters(logo);
                 }
 
+                GetSetData.Data = data.UserPermissions("title", "pos_report_settings");
+                ReportParameter pTitle = new ReportParameter("pTitle", GetSetData.Data);
+                viewer.LocalReport.SetParameters(pTitle);
+                
+                GetSetData.Data = data.UserPermissions("address", "pos_report_settings");
+                ReportParameter pAddress = new ReportParameter("pAddress", GetSetData.Data);
+                viewer.LocalReport.SetParameters(pAddress);
+                
+                GetSetData.Data = data.UserPermissions("phone_no", "pos_report_settings");
+                ReportParameter pPhoneNo = new ReportParameter("pPhoneNo", GetSetData.Data);
+                viewer.LocalReport.SetParameters(pPhoneNo);
+                
+                GetSetData.Data = data.UserPermissions("copyrights", "pos_report_settings");
+                ReportParameter pCopyrights = new ReportParameter("pCopyrights", GetSetData.Data);
+                viewer.LocalReport.SetParameters(pCopyrights);
+
                 viewer.RefreshReport();
             }
             catch (Exception es)
@@ -324,7 +330,8 @@ namespace Purchase_info.All_Purchases_List
                 all_purchase_list_ds report = new all_purchase_list_ds();
                 GetSetData.query = @"SELECT pos_purchased_items.quantity, pos_purchased_items.pkg, pos_purchased_items.full_pak, pos_purchased_items.pur_price, pos_purchased_items.sale_price, pos_purchased_items.trade_off, pos_purchased_items.carry_exp, 
                                     pos_purchased_items.total_pur_price, pos_purchased_items.total_sale_price, pos_products.prod_name, pos_products.barcode, pos_products.expiry_date, pos_purchase.date, pos_purchase.bill_no, pos_purchase.invoice_no, 
-                                    pos_purchase.no_of_items, pos_purchase.total_quantity, pos_purchase.net_trade_off, pos_purchase.net_carry_exp, pos_purchase.net_total, pos_purchase.paid, pos_purchase.credits, pos_purchase.freight, pos_suppliers.full_name, pos_suppliers.code, pos_purchased_items.new_purchase_price, pos_purchase.discount_percentage, pos_purchase.discount_amount, pos_purchase.fee_amount
+                                    pos_purchase.no_of_items, pos_purchase.total_quantity, pos_purchase.net_trade_off, pos_purchase.net_carry_exp, pos_purchase.net_total, pos_purchase.paid, pos_purchase.credits, pos_purchase.freight, pos_suppliers.full_name, pos_suppliers.code, 
+                                    pos_purchased_items.new_purchase_price, pos_purchase.discount_percentage, pos_purchase.discount_amount, pos_purchase.fee_amount, pos_purchase.remarks
                                     FROM pos_purchase INNER JOIN pos_purchased_items ON pos_purchase.purchase_id = pos_purchased_items.purchase_id INNER JOIN 
                                     pos_products ON pos_purchased_items.prod_id = pos_products.product_id INNER JOIN pos_suppliers ON pos_purchase.supplier_id = pos_suppliers.supplier_id
                                     WHERE (pos_purchase.date BETWEEN '" + FromDate.Text + "' AND '" + ToDate.Text + "') and (pos_suppliers.full_name = '"+txt_company.Text+"') order by pos_purchase.date";
@@ -339,18 +346,6 @@ namespace Purchase_info.All_Purchases_List
                 viewer.ZoomMode = ZoomMode.Percent;
                 viewer.ZoomPercent = 100;
                 viewer.LocalReport.DataSources.Add(rds);
-
-
-                // **********************************************************************************************************
-                all_purchase_list_ds report_setting = new all_purchase_list_ds();
-                GetSetData.query = @"SELECT title, address, phone_no, note, copyrights FROM pos_report_settings";
-
-                SqlDataAdapter report_da = new SqlDataAdapter(GetSetData.query, conn);
-                report_da.Fill(report_setting, report_setting.Tables[0].TableName);
-
-                ReportDataSource report_rds = new Microsoft.Reporting.WinForms.ReportDataSource("report_setting_ds", report_setting.Tables[0]);
-                viewer.LocalReport.DataSources.Add(report_rds);
-
                 viewer.LocalReport.Refresh();
                 viewer.LocalReport.EnableExternalImages = true;
                 
@@ -378,6 +373,23 @@ namespace Purchase_info.All_Purchases_List
                     viewer.LocalReport.SetParameters(logo);
                 }
 
+
+                GetSetData.Data = data.UserPermissions("title", "pos_report_settings");
+                ReportParameter pTitle = new ReportParameter("pTitle", GetSetData.Data);
+                viewer.LocalReport.SetParameters(pTitle);
+
+                GetSetData.Data = data.UserPermissions("address", "pos_report_settings");
+                ReportParameter pAddress = new ReportParameter("pAddress", GetSetData.Data);
+                viewer.LocalReport.SetParameters(pAddress);
+
+                GetSetData.Data = data.UserPermissions("phone_no", "pos_report_settings");
+                ReportParameter pPhoneNo = new ReportParameter("pPhoneNo", GetSetData.Data);
+                viewer.LocalReport.SetParameters(pPhoneNo);
+
+                GetSetData.Data = data.UserPermissions("copyrights", "pos_report_settings");
+                ReportParameter pCopyrights = new ReportParameter("pCopyrights", GetSetData.Data);
+                viewer.LocalReport.SetParameters(pCopyrights);
+
                 viewer.RefreshReport();
             }
             catch (Exception es)
@@ -396,7 +408,8 @@ namespace Purchase_info.All_Purchases_List
                                     pos_products.unit, pos_products.item_type, pos_products.size, pos_suppliers.full_name AS Expr1, pos_suppliers.code, pos_purchased_items.quantity, pos_purchased_items.pkg, pos_purchased_items.full_pak, 
                                     pos_purchased_items.pur_price, pos_purchased_items.sale_price, pos_purchased_items.trade_off, pos_purchased_items.carry_exp, pos_purchased_items.total_pur_price, pos_purchased_items.total_sale_price, 
                                     pos_purchase.date, pos_purchase.bill_no, pos_purchase.invoice_no, pos_purchase.no_of_items, pos_purchase.net_trade_off, pos_purchase.net_carry_exp, pos_purchase.net_total, pos_purchase.paid, pos_purchase.credits, 
-                                    pos_purchase.pCredits, pos_purchase.freight, pos_supplier_payables.previous_payables, pos_supplier_payables.due_days, pos_stock_details.market_value, pos_purchased_items.new_purchase_price, pos_purchase.discount_percentage, pos_purchase.discount_amount, pos_purchase.fee_amount
+                                    pos_purchase.pCredits, pos_purchase.freight, pos_supplier_payables.previous_payables, pos_supplier_payables.due_days, pos_stock_details.market_value, pos_purchased_items.new_purchase_price,
+                                    pos_purchase.discount_percentage, pos_purchase.discount_amount, pos_purchase.fee_amount, pos_purchase.remarks
                                     FROM pos_purchase INNER JOIN pos_employees ON pos_purchase.employee_id = pos_employees.employee_id INNER JOIN
                                     pos_purchased_items ON pos_purchase.purchase_id = pos_purchased_items.purchase_id INNER JOIN pos_category INNER JOIN
                                     pos_products ON pos_category.category_id = pos_products.category_id ON pos_purchased_items.prod_id = pos_products.product_id INNER JOIN
@@ -413,18 +426,6 @@ namespace Purchase_info.All_Purchases_List
                 this.viewer_bill_wise.ZoomMode = ZoomMode.Percent;
                 this.viewer_bill_wise.ZoomPercent = 100;
                 this.viewer_bill_wise.LocalReport.DataSources.Add(rds);
-
-
-                // **********************************************************************************************************
-                all_purchase_list_ds report_setting = new all_purchase_list_ds();
-                GetSetData.query = @"SELECT title, address, phone_no, note, copyrights FROM pos_report_settings";
-
-                SqlDataAdapter report_da = new SqlDataAdapter(GetSetData.query, conn);
-                report_da.Fill(report_setting, report_setting.Tables[0].TableName);
-
-                ReportDataSource report_rds = new Microsoft.Reporting.WinForms.ReportDataSource("report_setting_ds", report_setting.Tables[0]);
-                this.viewer_bill_wise.LocalReport.DataSources.Add(report_rds);
-
                 this.viewer_bill_wise.LocalReport.Refresh();
                 this.viewer_bill_wise.LocalReport.EnableExternalImages = true;
 
@@ -445,6 +446,23 @@ namespace Purchase_info.All_Purchases_List
                     ReportParameter logo = new ReportParameter("pLogo", "");
                     this.viewer_bill_wise.LocalReport.SetParameters(logo);
                 }
+
+                GetSetData.Data = data.UserPermissions("title", "pos_report_settings");
+                ReportParameter pTitle = new ReportParameter("pTitle", GetSetData.Data);
+                viewer_bill_wise.LocalReport.SetParameters(pTitle);
+
+                GetSetData.Data = data.UserPermissions("address", "pos_report_settings");
+                ReportParameter pAddress = new ReportParameter("pAddress", GetSetData.Data);
+                viewer_bill_wise.LocalReport.SetParameters(pAddress);
+
+                GetSetData.Data = data.UserPermissions("phone_no", "pos_report_settings");
+                ReportParameter pPhoneNo = new ReportParameter("pPhoneNo", GetSetData.Data);
+                viewer_bill_wise.LocalReport.SetParameters(pPhoneNo);
+
+                GetSetData.Data = data.UserPermissions("copyrights", "pos_report_settings");
+                ReportParameter pCopyrights = new ReportParameter("pCopyrights", GetSetData.Data);
+                viewer_bill_wise.LocalReport.SetParameters(pCopyrights);
+
                 this.viewer_bill_wise.RefreshReport();
 
             }

@@ -17,6 +17,7 @@ using Products_info.forms;
 using Spices_pos.DatabaseInfo.WebConfig;
 using Spices_pos.LicenseInfo.forms;
 using Spices_pos.LicenseInfo.softwareLicensing;
+using Spices_pos.CashManagement.Forms;
 
 namespace Settings_info.forms
 {
@@ -518,6 +519,18 @@ namespace Settings_info.forms
             exportWeblinkExcelFiles.role_id = role_id;
             exportWeblinkExcelFiles reg = new exportWeblinkExcelFiles();
             reg.ShowDialog();
+        }
+
+        private void btnManagement_Click(object sender, EventArgs e)
+        {
+
+          /*  Cash_Management_Details.role_id = role_id;
+           Cash_Management_Details.user_id = user_id;
+           Cash_Management_Details cash = new Cash_Management_Details();
+            cash.Show();
+
+            this.Dispose();*/
+
         }
     }
 }

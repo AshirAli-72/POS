@@ -49,9 +49,9 @@ namespace Spices_pos
                     }
                 }
 
-                if ((txtLicenseType != "" && days > 0) || txtLicenseType == "Full")
+               if ((txtLicenseType != "" && days > 0) || txtLicenseType == "Full")
                 {
-                    Application.Run(new login_form());
+                   Application.Run(new login_form());
                 }
                 else
                 {

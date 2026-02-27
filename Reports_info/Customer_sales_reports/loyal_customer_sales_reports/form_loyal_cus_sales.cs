@@ -1,17 +1,18 @@
-﻿using System;
-using System.Windows.Forms;
-using Message_box_info.forms;
+﻿using Customers_info.forms;
 using Datalayer;
-using Microsoft.Reporting.WinForms;
-using System.Data.SqlClient;
-using Reports_info.controllers;
 using Login_info.controllers;
-using RefereningMaterial;
-using Customers_info.forms;
+using Message_box_info.forms;
+using Microsoft.Reporting.WinForms;
 using Products_info.forms;
-using System.Diagnostics;
-using Spices_pos.DatabaseInfo.WebConfig;
+using RefereningMaterial;
+using Reports_info.controllers;
 using Spices_pos.DashboardInfo.Forms;
+using Spices_pos.DatabaseInfo.WebConfig;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
 {
@@ -790,55 +791,64 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
 
         private void DisplayReportInReportViewer(ReportViewer viewer)
         {
+            // ReportViewer setup
             viewer.ZoomMode = ZoomMode.Percent;
             viewer.ZoomPercent = 100;
             viewer.LocalReport.EnableExternalImages = true;
 
-            //*******************************************************************************************
+            // Collect parameters
+            var parameters = new List<ReportParameter>();
+
+            // ------------------ Logo ------------------
             GetSetData.Data = data.UserPermissions("picture_path", "pos_general_settings");
             GetSetData.query = data.UserPermissions("logo_path", "pos_configurations");
-            //*******************************************************************************************
 
-            if (GetSetData.query != "nill" && GetSetData.query != "")
+            if (!string.IsNullOrEmpty(GetSetData.query) && GetSetData.query != "nill")
             {
                 GetSetData.query = GetSetData.Data + GetSetData.query;
-                ReportParameter logo = new ReportParameter("pLogo", new Uri(GetSetData.query).AbsoluteUri);
-                viewer.LocalReport.SetParameters(logo);
+                parameters.Add(new ReportParameter("pLogo", new Uri(GetSetData.query).AbsoluteUri));
             }
             else
             {
-
-                ReportParameter logo = new ReportParameter("pLogo", "");
-                viewer.LocalReport.SetParameters(logo);
+                parameters.Add(new ReportParameter("pLogo", ""));
             }
 
+            // ------------------ Title, Address, Phone ------------------
             GetSetData.Data = data.UserPermissions("title", "pos_report_settings");
-            ReportParameter title = new ReportParameter("pTitle", GetSetData.Data);
-            viewer.LocalReport.SetParameters(title);
+            parameters.Add(new ReportParameter("pTitle", string.IsNullOrEmpty(GetSetData.Data) ? "" : GetSetData.Data));
 
             GetSetData.Data = data.UserPermissions("address", "pos_report_settings");
-            ReportParameter address = new ReportParameter("pAddress", GetSetData.Data);
-            viewer.LocalReport.SetParameters(address);
+            parameters.Add(new ReportParameter("pAddress", string.IsNullOrEmpty(GetSetData.Data) ? "" : GetSetData.Data));
 
             GetSetData.Data = data.UserPermissions("phone_no", "pos_report_settings");
-            ReportParameter phone = new ReportParameter("pPhone", GetSetData.Data);
-            viewer.LocalReport.SetParameters(phone);
+            parameters.Add(new ReportParameter("pPhone", string.IsNullOrEmpty(GetSetData.Data) ? "" : GetSetData.Data));
 
+            // ------------------ Note ------------------
             GetSetData.Data = data.UserPermissions("note", "pos_report_settings");
-            ReportParameter note = new ReportParameter("pNote", GetSetData.Data);
-            viewer.LocalReport.SetParameters(note);
+            parameters.Add(new ReportParameter("pNote", string.IsNullOrEmpty(GetSetData.Data) || GetSetData.Data == "nill" ? "" : GetSetData.Data));
 
+            // ------------------ Copyrights ------------------
             GetSetData.Data = data.UserPermissions("copyrights", "pos_report_settings");
-            ReportParameter copyrights = new ReportParameter("pCopyrights", GetSetData.Data);
-            viewer.LocalReport.SetParameters(copyrights);
+            parameters.Add(new ReportParameter("pCopyrights", string.IsNullOrEmpty(GetSetData.Data) ? "" : GetSetData.Data));
 
-            GetSetData.Data = "";
+            // ------------------ showNote ------------------
             GetSetData.Data = data.UserPermissions("showNoteInReport", "pos_general_settings");
-            ReportParameter showNote = new ReportParameter("showNote", GetSetData.Data);
-            viewer.LocalReport.SetParameters(showNote);
-            
-            ReportParameter pCurrency = new ReportParameter("pCurrency", GetSetData.currency());
-            viewer.LocalReport.SetParameters(pCurrency);
+
+            // Pass "Yes" or "No" as string to match RDLC
+            string showNoteValue = string.IsNullOrEmpty(GetSetData.Data) || GetSetData.Data == "nill"
+                                   ? "Yes"   // default: show
+                                   : GetSetData.Data;
+            parameters.Add(new ReportParameter("showNote", showNoteValue));
+
+
+            // ------------------ Currency ------------------
+            parameters.Add(new ReportParameter("pCurrency", GetSetData.currency()));
+
+            // ------------------ Set all parameters ------------------
+            viewer.LocalReport.SetParameters(parameters.ToArray());
+
+            // Refresh report
+            viewer.RefreshReport();
         }
 
         //private void date_wise_sales()
@@ -952,8 +962,8 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        // *******************************************************************************************
 
         //        GetSetData.query = @"SELECT sum(pos_returns_details.discount) FROM pos_customers INNER JOIN pos_return_accounts ON pos_customers.customer_id = pos_return_accounts.customer_id 
-								//	INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	INNER JOIN pos_employees ON pos_return_accounts.employee_id = pos_employees.employee_id INNER JOIN pos_returns_details ON pos_return_accounts.return_acc_id = pos_returns_details.return_acc_id INNER JOIN
+        //	INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
+        //	INNER JOIN pos_employees ON pos_return_accounts.employee_id = pos_employees.employee_id INNER JOIN pos_returns_details ON pos_return_accounts.return_acc_id = pos_returns_details.return_acc_id INNER JOIN
         //                            pos_products ON pos_returns_details.prod_id = pos_products.product_id INNER JOIN pos_stock_details ON pos_products.product_id = pos_stock_details.prod_id
         //                            where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
 
@@ -966,8 +976,8 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        // *******************************************************************************************
 
         //        GetSetData.query = @"SELECT sum(pos_returns_details.total_purchase) FROM pos_customers INNER JOIN pos_return_accounts ON pos_customers.customer_id = pos_return_accounts.customer_id 
-								//	INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	INNER JOIN pos_employees ON pos_return_accounts.employee_id = pos_employees.employee_id INNER JOIN pos_returns_details ON pos_return_accounts.return_acc_id = pos_returns_details.return_acc_id INNER JOIN
+        //	INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
+        //	INNER JOIN pos_employees ON pos_return_accounts.employee_id = pos_employees.employee_id INNER JOIN pos_returns_details ON pos_return_accounts.return_acc_id = pos_returns_details.return_acc_id INNER JOIN
         //                            pos_products ON pos_returns_details.prod_id = pos_products.product_id INNER JOIN pos_stock_details ON pos_products.product_id = pos_stock_details.prod_id
         //                            where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
 
@@ -1023,8 +1033,8 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
 
         //        // ************************************************************
         //        GetSetData.query = @"SELECT sum(distinct(pos_return_accounts.credits)) FROM pos_customers INNER JOIN pos_return_accounts ON pos_customers.customer_id = pos_return_accounts.customer_id 
-								//	INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	INNER JOIN pos_employees ON pos_return_accounts.employee_id = pos_employees.employee_id INNER JOIN pos_returns_details ON pos_return_accounts.return_acc_id = pos_returns_details.return_acc_id INNER JOIN
+        //	INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
+        //	INNER JOIN pos_employees ON pos_return_accounts.employee_id = pos_employees.employee_id INNER JOIN pos_returns_details ON pos_return_accounts.return_acc_id = pos_returns_details.return_acc_id INNER JOIN
         //                            pos_products ON pos_returns_details.prod_id = pos_products.product_id INNER JOIN pos_stock_details ON pos_products.product_id = pos_stock_details.prod_id
         //                            where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
         //        string total_credits_return = data.SearchStringValuesFromDb(GetSetData.query);
@@ -1046,8 +1056,8 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        // *********************************************************************************
 
         //        GetSetData.query = @"SELECT sum(pos_returns_details.total_marketPrice) as totalMarketPrice FROM pos_customers INNER JOIN pos_return_accounts ON pos_customers.customer_id = pos_return_accounts.customer_id 
-								//	INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	INNER JOIN pos_employees ON pos_return_accounts.employee_id = pos_employees.employee_id INNER JOIN pos_returns_details ON pos_return_accounts.return_acc_id = pos_returns_details.return_acc_id INNER JOIN
+        //	INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
+        //	INNER JOIN pos_employees ON pos_return_accounts.employee_id = pos_employees.employee_id INNER JOIN pos_returns_details ON pos_return_accounts.return_acc_id = pos_returns_details.return_acc_id INNER JOIN
         //                            pos_products ON pos_returns_details.prod_id = pos_products.product_id INNER JOIN pos_stock_details ON pos_products.product_id = pos_stock_details.prod_id
         //                            where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
 
@@ -1059,7 +1069,7 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        }
         //        //*****************************************************************************************
         //        GetSetData.query = @"select sum(pos_return_accounts.tax) from pos_return_accounts INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
+        //	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
         //        string total_discount_taxReturn = data.SearchStringValuesFromDb(GetSetData.query);
 
         //        if (total_discount_taxReturn == "" || total_discount_taxReturn == "NULL")
@@ -1069,7 +1079,7 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        // *********************************************************************************
 
         //        GetSetData.query = @"select sum(paid) from pos_return_accounts INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
+        //	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
         //        string total_paid_return = data.SearchStringValuesFromDb(GetSetData.query);
 
         //        if (total_paid_return == "" || total_paid_return == "NULL")
@@ -1079,14 +1089,14 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        // *******************************************************************************************
 
         //        GetSetData.query = @"select sum(discount) from pos_return_accounts INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
+        //	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
         //        string total_discount_Return = data.SearchStringValuesFromDb(GetSetData.query);
 
         //        if (total_discount_Return == "" || total_discount_Return == "NULL")
         //        {
         //            total_discount_Return = "0";
         //        }
-               
+
         //        // *******************************************************************************************
 
         //        GetSetData.query = @"select sum(credit_card_amount) from pos_sales_accounts INNER JOIN pos_clock_in ON pos_sales_accounts.clock_in_id = pos_clock_in.id 
@@ -1099,16 +1109,16 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        }
 
         //        // *************************************
-                
+
         //        GetSetData.query = @"select sum(credit_card_amount) from pos_return_accounts INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
+        //	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
         //        string total_creditCard_return = data.SearchStringValuesFromDb(GetSetData.query);
 
         //        if (total_creditCard_return == "" || total_creditCard_return == "NULL")
         //        {
         //            total_creditCard_return = "0";
         //        }
-               
+
         //        // *******************************************************************************************
 
         //        GetSetData.query = @"select sum(paypal_amount) from pos_sales_accounts INNER JOIN pos_clock_in ON pos_sales_accounts.clock_in_id = pos_clock_in.id 
@@ -1121,9 +1131,9 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        }
 
         //        // *************************************
-                
+
         //        GetSetData.query = @"select sum(paypal_amount) from pos_return_accounts INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
+        //	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
         //        string total_paypal_return = data.SearchStringValuesFromDb(GetSetData.query);
 
         //        if (total_paypal_return == "" || total_paypal_return == "NULL")
@@ -1131,7 +1141,7 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //            total_paypal_return = "0";
         //        }
         //        // *******************************************************************************************
-               
+
         //        GetSetData.query = @"select sum(google_pay_amount) from pos_sales_accounts INNER JOIN pos_clock_in ON pos_sales_accounts.clock_in_id = pos_clock_in.id 
         //                             WHERE (pos_clock_in.date BETWEEN '" + FromDate.Text + "' AND '" + ToDate.Text + "') and (pos_sales_accounts.status != 'Installment'); ";
         //        string total_googlePay_aomunt = data.SearchStringValuesFromDb(GetSetData.query);
@@ -1142,9 +1152,9 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        }
 
         //        // *************************************
-                
+
         //        GetSetData.query = @"select sum(google_pay_amount) from pos_return_accounts INNER JOIN pos_clock_in ON pos_return_accounts.clock_in_id = pos_clock_in.id
-								//	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
+        //	where (pos_clock_in.date between '" + FromDate.Text + "' and '" + ToDate.Text + "');";
         //        string total_googlePay_return = data.SearchStringValuesFromDb(GetSetData.query);
 
         //        if (total_googlePay_return == "" || total_googlePay_return == "NULL")
@@ -1163,8 +1173,8 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        {
         //            totalNoSaleAmount = "0";
         //        }
-                
-                
+
+
         //        // *******************************************************************************************
 
         //        GetSetData.query = @"select sum(pos_payout.amount) from pos_payout INNER JOIN pos_clock_in ON pos_payout.clock_in_id = pos_clock_in.id
@@ -1176,36 +1186,36 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //            totalPayoutAmount = "0";
         //        }
 
-                
+
 
         //        // *******************************************************************************************
 
         //        ReportParameter pCreditCardAmount = new ReportParameter("pCreditCardAmount", total_creditCard_aomunt);
         //        this.Viewer_dateWise.LocalReport.SetParameters(pCreditCardAmount);
-                
+
         //        ReportParameter pCreditCardReturn = new ReportParameter("pCreditCardReturn", total_creditCard_return);
         //        this.Viewer_dateWise.LocalReport.SetParameters(pCreditCardReturn);
-               
+
         //        ReportParameter pGooglePayAmount = new ReportParameter("pGooglePayAmount", total_googlePay_aomunt);
         //        this.Viewer_dateWise.LocalReport.SetParameters(pGooglePayAmount);
-                
+
         //        ReportParameter pGooglePayReturn = new ReportParameter("pGooglePayReturn", total_googlePay_return);
         //        this.Viewer_dateWise.LocalReport.SetParameters(pGooglePayReturn);
-               
+
         //        ReportParameter pPaypalAmount = new ReportParameter("pPaypalAmount", total_paypal_aomunt);
         //        this.Viewer_dateWise.LocalReport.SetParameters(pPaypalAmount);
-                
+
         //        ReportParameter pPaypalReturn = new ReportParameter("pPaypalReturn", total_paypal_return);
         //        this.Viewer_dateWise.LocalReport.SetParameters(pPaypalReturn);
-                
+
 
         //        ReportParameter pNoSaleAmount = new ReportParameter("pNoSaleAmount", totalNoSaleAmount);
         //        this.Viewer_dateWise.LocalReport.SetParameters(pNoSaleAmount);
-               
+
 
         //        ReportParameter pPayoutAmount = new ReportParameter("pPayoutAmount", totalPayoutAmount);
         //        this.Viewer_dateWise.LocalReport.SetParameters(pPayoutAmount);
-               
+
         //        // *******************************************************************************************
 
         //        ReportParameter total_discount_Return1 = new ReportParameter("pDiscountReturn", total_discount_Return);
@@ -1247,7 +1257,7 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
 
         //        ReportParameter return_perItem_discount1 = new ReportParameter("pTotalReturnPerItemDiscount", return_perItem_discount);
         //        this.Viewer_dateWise.LocalReport.SetParameters(return_perItem_discount1);
-                
+
 
         //        ReportParameter fromDate = new ReportParameter("pFromDate", FromDate.Text);
         //        this.Viewer_dateWise.LocalReport.SetParameters(fromDate);
@@ -1263,7 +1273,7 @@ namespace Reports_info.Customer_sales_reports.loyal_customer_sales_reports
         //        error.ShowDialog();
         //    }
         //}  
-        
+
         private void date_wise_sales()
         {
             try

@@ -4642,144 +4642,185 @@ namespace CounterSales_info.forms
             //}
         }
 
-        private void paymentDetails()
-        {
-            try
+            private void paymentDetails()
             {
-                txt_date.Text = DateTime.Now.ToShortDateString();
-                TextData.customer_name = "";
-                TextData.customerCode = "";
-                TextData.cash_on_hand = "";
-                TextData.remaining_amount = "";
-                TextData.customer_name = lbl_customer.Text;
-                TextData.customerCode = lblCustomerCode.Text;
-                TextData.cash = 0;
-                TextData.net_total = double.Parse(txt_amount_due.Text);
-                TextData.total_taxation = double.Parse(txtTaxation.Text);
-                TextData.billNo = "";
-                TextData.macAddress = macAddress;
-                TextData.feedbackAmountDue = "0";
-                TextData.feedbackCashAmount = "0";
-                TextData.feedbackChangeAmount = "0";
-                TextData.isCashPayment = false;
-                TextData.paymentType = "";
+                try
+                {
+                    txt_date.Text = DateTime.Now.ToShortDateString();
+                    TextData.customer_name = "";
+                    TextData.customerCode = "";
+                    TextData.cash_on_hand = "";
+                    TextData.remaining_amount = "";
+                    TextData.customer_name = lbl_customer.Text;
+                    TextData.customerCode = lblCustomerCode.Text;
+                    TextData.cash = 0;
+                    TextData.net_total = double.Parse(txt_amount_due.Text);
+                    TextData.total_taxation = double.Parse(txtTaxation.Text);
+                    TextData.billNo = "";
+                    TextData.macAddress = macAddress;
+                    TextData.feedbackAmountDue = "0";
+                    TextData.feedbackCashAmount = "0";
+                    TextData.feedbackChangeAmount = "0";
+                    TextData.isCashPayment = false;
+                    TextData.paymentType = "";
 
-                GetSetData.query = "select customer_id from pos_customers where (full_name = '" + TextData.customer_name + "') and (cus_code = '" + TextData.customerCode + "');";
-                TextData.customerId = data.SearchStringValuesFromDb(GetSetData.query);
-                //*****************************************************************************************
+                    GetSetData.query = "select customer_id from pos_customers where (full_name = '" + TextData.customer_name + "') and (cus_code = '" + TextData.customerCode + "');";
+                    TextData.customerId = data.SearchStringValuesFromDb(GetSetData.query);
+                    //*****************************************************************************************
 
-                GetSetData.query = "SELECT TOP 1 id FROM pos_clock_in where (to_user_id = '" + user_id.ToString() + "') and (status = '0' or status = '-1') ORDER BY id DESC;";
-                TextData.clockInId = data.SearchStringValuesFromDb(GetSetData.query);
+                    GetSetData.query = "SELECT TOP 1 id FROM pos_clock_in where (to_user_id = '" + user_id.ToString() + "') and (status = '0' or status = '-1') ORDER BY id DESC;";
+                    TextData.clockInId = data.SearchStringValuesFromDb(GetSetData.query);
                
-                //*****************************************************************************************
+                    //*****************************************************************************************
 
-                TextData.employeeId = data.UserPermissions("employee_id", "pos_employees", "full_name", TextData.employee);
-                // ****************************************************
+                    TextData.employeeId = data.UserPermissions("employee_id", "pos_employees", "full_name", TextData.employee);
+                    // ****************************************************
 
-                if (txt_status.Checked == false)
-                {
-                    form_payment.isReturned = false;
-                }
-                else
-                {
-                    form_payment.isReturned = true;
-                }
+                    if (txt_status.Checked == false)
+                    {
+                        form_payment.isReturned = false;
+                    }
+                    else
+                    {
+                        form_payment.isReturned = true;
+                    }
 
-                form_payment.tipAmount = txtTotalTipAmount.Text;
-                form_payment.advancePaidAmount = form_ticket_history.advanceAmount;
-                form_payment.role_id = role_id;
-                form_payment add_customer = new form_payment();
-                add_customer.ShowDialog();
+                    form_payment.tipAmount = txtTotalTipAmount.Text;
+                    form_payment.advancePaidAmount = form_ticket_history.advanceAmount;
+                    form_payment.role_id = role_id;
+                    form_payment add_customer = new form_payment();
+                    add_customer.ShowDialog();
                 
-                lbl_customer.Text = TextData.customer_name;
-                lblCustomerCode.Text = TextData.customerCode;
-                txt_credits.Text = TextData.credits.ToString();
-                txtChangeAmount.Text = TextData.remaining_amount;
+                    lbl_customer.Text = TextData.customer_name;
+                    lblCustomerCode.Text = TextData.customerCode;
+                    txt_credits.Text = TextData.credits.ToString();
+                    txtChangeAmount.Text = TextData.remaining_amount;
 
-                TextData.general_options = generalSettings.ReadField("directly_print_receipt");
-                string auto_clear_cart = generalSettings.ReadField("auto_clear_cart");
-                // ************************
+                    TextData.general_options = generalSettings.ReadField("directly_print_receipt");
+                    string auto_clear_cart = generalSettings.ReadField("auto_clear_cart");
+                    // ************************
 
-                if (txt_status.Checked == false)
-                {
-                    TextData.status = "Sale";
-                    TextData.returnStatus = "Sale";
-                }
-                else
-                {
-                    TextData.status = "Return";
-                    TextData.returnStatus = "Return";
-                }
+                    if (txt_status.Checked == false)
+                    {
+                        TextData.status = "Sale";
+                        TextData.returnStatus = "Sale";
+                    }
+                    else
+                    {
+                        TextData.status = "Return";
+                        TextData.returnStatus = "Return";
+                    }
 
        
-                if (TextData.status == "Sale")
-                {
-                    if (TextData.aknowledged != "")
+                    if (TextData.status == "Sale")
                     {
-                        if (TextData.aknowledged == "Cash")
+                        if (TextData.aknowledged != "")
                         {
-                            fun_insert_records_into_sales_as_cash();
-                        }
-                        else if (TextData.aknowledged == "Credits")
-                        {
-                            fun_insert_records_into_sales_as_Credits();
-                        }
+                            if (TextData.aknowledged == "Cash")
+                            {
+                                fun_insert_records_into_sales_as_cash();
+                            }
+                            else if (TextData.aknowledged == "Credits")
+                            {
+                                fun_insert_records_into_sales_as_Credits();
+                            }
 
-                        //if (generalSettings.ReadField("salesmanTips") == "Yes")
-                        //{
-                        //    if (TextData.billNo != "" && TextData.credit_card_amount != 0)
-                        //    {
-                        //        Thread thread = new Thread(() =>
-                        //        {
-                        //            form_add_tips secondaryForm = new form_add_tips();
-                        //            secondaryForm.invoiceNumber = TextData.billNo;
-                        //            Screen secondaryScreen = Screen.PrimaryScreen;
-                        //            secondaryForm.Location = secondaryScreen.WorkingArea.Location;
-                        //            secondaryForm.TopMost = true;
-                        //            secondaryForm.ShowDialog();
-                        //        });
+                            //if (generalSettings.ReadField("salesmanTips") == "Yes")
+                            //{
+                            //    if (TextData.billNo != "" && TextData.credit_card_amount != 0)
+                            //    {
+                            //        Thread thread = new Thread(() =>
+                            //        {
+                            //            form_add_tips secondaryForm = new form_add_tips();
+                            //            secondaryForm.invoiceNumber = TextData.billNo;
+                            //            Screen secondaryScreen = Screen.PrimaryScreen;
+                            //            secondaryForm.Location = secondaryScreen.WorkingArea.Location;
+                            //            secondaryForm.TopMost = true;
+                            //            secondaryForm.ShowDialog();
+                            //        });
 
-                        //        thread.SetApartmentState(ApartmentState.STA);
-                        //        thread.Start();
-                        //    }
-                        //}
+                            //        thread.SetApartmentState(ApartmentState.STA);
+                            //        thread.Start();
+                            //    }
+                            //}
+
+                            if (TextData.return_value == true)
+                            {
+                                //GetSetData.query = @"select default_printer from pos_general_settings;";
+                                //string printer_name = data.SearchStringValuesFromDb(GetSetData.query);
+
+
+                                if (TextData.checkAutoOpenCashDrawer == true)
+                                {
+                                    //GetSetData.query = @"select printer_model from pos_general_settings;";
+                                    //string printer_model = data.SearchStringValuesFromDb(GetSetData.query);
+
+                                    CashDrawerData.OpenDrawer(generalSettings.ReadField("default_printer"), generalSettings.ReadField("printer_model"));
+                                }
+
+                                if (TextData.checkPrintReport == true)
+                                {
+                                    GetSetData.query = @"select preview_receipt from pos_general_settings;";
+                                    string preview_receipt = data.SearchStringValuesFromDb(GetSetData.query);
+
+                                    if (preview_receipt == "Yes")
+                                    {
+                                        form_cus_sales_report report = new form_cus_sales_report();
+                                        report.ShowDialog();
+                                    }
+                                    else
+                                    {
+                                        if (generalSettings.ReadField("default_printer") != "")
+                                        {
+                                            PrintDirectReceipt(generalSettings.ReadField("default_printer"), TextData.billNo);
+                                        }
+                                        else
+                                        {
+                                            error.errorMessage("Printer not found!");
+                                            error.ShowDialog();
+                                        }
+                                    }
+                                }
+
+                                if (auto_clear_cart == "Yes")
+                                {
+                                    fun_clear_cart_records();
+                                }
+
+                                lbl_customer.Text = "";
+                                lblCustomerCode.Text = "";
+                                txt_status.Checked = false;
+                                btnReturn.FillColor = Color.DodgerBlue;
+
+
+                                clearDataGridView();
+                            }
+                        }
+                    }
+                    else if (TextData.status == "Return" && TextData.aknowledged != "")
+                    {
+                        fun_insert_records_into_returns_db();
 
                         if (TextData.return_value == true)
                         {
                             //GetSetData.query = @"select default_printer from pos_general_settings;";
                             //string printer_name = data.SearchStringValuesFromDb(GetSetData.query);
 
+                            if (TextData.checkPrintReport == true)
+                            {
+                                //GetSetData.SaveLogHistoryDetails("Counter Cash (POS) Form", "Sale Return Invoice [" + TextData.billNo + "] payment details", role_id);
+                                //form_cus_returns_report report = new form_cus_returns_report();
+                                //report.ShowDialog();
 
-                            if (TextData.checkAutoOpenCashDrawer == true)
+                                PrintReturnSaleDirectReceipt(generalSettings.ReadField("default_printer"), TextData.billNo);
+                            }
+
+                            if (TextData.checkAutoOpenCashDrawer)
                             {
                                 //GetSetData.query = @"select printer_model from pos_general_settings;";
                                 //string printer_model = data.SearchStringValuesFromDb(GetSetData.query);
 
                                 CashDrawerData.OpenDrawer(generalSettings.ReadField("default_printer"), generalSettings.ReadField("printer_model"));
-                            }
-
-                            if (TextData.checkPrintReport == true)
-                            {
-                                GetSetData.query = @"select preview_receipt from pos_general_settings;";
-                                string preview_receipt = data.SearchStringValuesFromDb(GetSetData.query);
-
-                                if (preview_receipt == "Yes")
-                                {
-                                    form_cus_sales_report report = new form_cus_sales_report();
-                                    report.ShowDialog();
-                                }
-                                else
-                                {
-                                    if (generalSettings.ReadField("default_printer") != "")
-                                    {
-                                        PrintDirectReceipt(generalSettings.ReadField("default_printer"), TextData.billNo);
-                                    }
-                                    else
-                                    {
-                                        error.errorMessage("Printer not found!");
-                                        error.ShowDialog();
-                                    }
-                                }
                             }
 
                             if (auto_clear_cart == "Yes")
@@ -4791,50 +4832,9 @@ namespace CounterSales_info.forms
                             lblCustomerCode.Text = "";
                             txt_status.Checked = false;
                             btnReturn.FillColor = Color.DodgerBlue;
-
-
                             clearDataGridView();
                         }
                     }
-                }
-                else if (TextData.status == "Return" && TextData.aknowledged != "")
-                {
-                    fun_insert_records_into_returns_db();
-
-                    if (TextData.return_value == true)
-                    {
-                        //GetSetData.query = @"select default_printer from pos_general_settings;";
-                        //string printer_name = data.SearchStringValuesFromDb(GetSetData.query);
-
-                        if (TextData.checkPrintReport == true)
-                        {
-                            //GetSetData.SaveLogHistoryDetails("Counter Cash (POS) Form", "Sale Return Invoice [" + TextData.billNo + "] payment details", role_id);
-                            //form_cus_returns_report report = new form_cus_returns_report();
-                            //report.ShowDialog();
-
-                            PrintReturnSaleDirectReceipt(generalSettings.ReadField("default_printer"), TextData.billNo);
-                        }
-
-                        if (TextData.checkAutoOpenCashDrawer)
-                        {
-                            //GetSetData.query = @"select printer_model from pos_general_settings;";
-                            //string printer_model = data.SearchStringValuesFromDb(GetSetData.query);
-
-                            CashDrawerData.OpenDrawer(generalSettings.ReadField("default_printer"), generalSettings.ReadField("printer_model"));
-                        }
-
-                        if (auto_clear_cart == "Yes")
-                        {
-                            fun_clear_cart_records();
-                        }
-
-                        lbl_customer.Text = "";
-                        lblCustomerCode.Text = "";
-                        txt_status.Checked = false;
-                        btnReturn.FillColor = Color.DodgerBlue;
-                        clearDataGridView();
-                    }
-                }
                 //else if (TextData.status == "Installment")
                 //{
                 //    if (TextData.aknowledged != "" && TextData.aknowledged == "Cash")

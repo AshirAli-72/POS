@@ -70,7 +70,7 @@ namespace Recoverier_info.Customer_Dues_Report
             {
                 refresh();
                 //DisplayOverAllReportInReportViewer(this.viewer_over_all);
-                DisplayDefaultersWiseReportInReportViewer(this.viewerDefaulter);
+                DisplayDefaultersWiseReportInReportViewer(this.viewerAllDefaulters);
             }
             catch (Exception es)
             {

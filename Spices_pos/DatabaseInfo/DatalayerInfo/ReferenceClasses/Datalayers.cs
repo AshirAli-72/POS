@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using RefereningMaterial;
@@ -66,9 +62,7 @@ namespace Datalayer
             {
                 getmessage = "error while Closing connection (Datalayer=>Disconnect()) : " + exp.Message;
                 return false;
-
             }
-
         }
 
         public string insertUpdateCreateOrDelete(string query)
@@ -85,11 +79,9 @@ namespace Datalayer
 
                     cmd_.ExecuteNonQuery();
 
-
                     if (allqueries.Contains("insert into "))
                     {
                         ret = getmessage = "inserted Successfully!";
-
                     }
                     else if (allqueries.Contains("delete from "))
                     {
@@ -99,7 +91,7 @@ namespace Datalayer
                     {
                         ret = getmessage = "Table Created Successfully!";
                     }
-                    else if (allqueries.Contains("update  ") && allqueries.Contains("set="))
+                    else if (allqueries.Contains("update ") && allqueries.Contains("set="))
                     {
                         ret = getmessage = "Updated Successfully";
                     }
@@ -107,14 +99,12 @@ namespace Datalayer
             }
             catch (Exception exp)
             {
-                //ret = getmessage = "'" + TextData.CusName + "' is already exist!";
                 return ret = exp.Message;
             }
             finally
             {
                 Disconnect();
             }
-
             return ret;
         }
 
@@ -144,20 +134,17 @@ namespace Datalayer
             }
             catch (Exception ex)
             {
-                //ret = ex.Message;
                 return 0;
             }
             finally
             {
                 Disconnect();
             }
-
         }
 
         public double SearchNumericValuesDb(string query)
         {
             string temp_Name = "0";
-           
             try
             {
                 if (query != "")
@@ -175,7 +162,6 @@ namespace Datalayer
                     {
                         return double.Parse(temp_Name);
                     }
-
                     reader_.Close();
                 }
                 return double.Parse(temp_Name);
@@ -194,7 +180,6 @@ namespace Datalayer
         public string SearchStringValuesFromDb(string query)
         {
             string temp_Name = "";
-
             try
             {
                 if (query != "")
@@ -212,10 +197,8 @@ namespace Datalayer
                     {
                         return temp_Name;
                     }
-
                     reader_.Close();
                 }
-
                 return temp_Name;
             }
             catch (Exception ex)
@@ -228,21 +211,18 @@ namespace Datalayer
                 Disconnect();
             }
         }
-        
+
         public string SearchAPIStringValuesFromDb(string query)
         {
             string temp_Name = "";
             SqlConnection conn = new SqlConnection(webConfig.con_string);
-
             try
             {
                 if (query != "")
                 {
                     SqlCommand cmd;
                     SqlDataReader reader;
-                    
                     conn.Open();
-
                     cmd = new SqlCommand(query, conn);
                     reader = cmd.ExecuteReader();
 
@@ -255,10 +235,8 @@ namespace Datalayer
                     {
                         return temp_Name;
                     }
-
                     reader.Close();
                 }
-
                 return temp_Name;
             }
             catch (Exception ex)
@@ -277,13 +255,11 @@ namespace Datalayer
             try
             {
                 Char chr = e.KeyChar;
-
                 if (chr == 46)
                 {
                     e.Handled = true;
                     return;
                 }
-
                 if (!Char.IsDigit(chr) && chr != 8 && chr != 46)
                 {
                     e.Handled = true;
@@ -291,7 +267,7 @@ namespace Datalayer
             }
             catch (Exception es)
             {
-                System.Windows.Forms.MessageBox.Show(es.Message);
+                MessageBox.Show(es.Message);
             }
         }
 
@@ -300,13 +276,11 @@ namespace Datalayer
             try
             {
                 Char chr = e.KeyChar;
-
                 if (chr == 46 && textvalue.IndexOf('.') != -1)
                 {
                     e.Handled = true;
                     return;
                 }
-
                 if (!Char.IsDigit(chr) && chr != 8 && chr != 46)
                 {
                     e.Handled = true;
@@ -314,7 +288,7 @@ namespace Datalayer
             }
             catch (Exception es)
             {
-                System.Windows.Forms.MessageBox.Show(es.Message);
+                MessageBox.Show(es.Message);
             }
         }
 
@@ -324,15 +298,12 @@ namespace Datalayer
             {
                 ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
                 GetSetData.Permission = "";
-
-                GetSetData.query = "select " +selectItem +" from " + tableName + " where role_id = '" + key.ToString() + "';";
+                GetSetData.query = "select " + selectItem + " from " + tableName + " where role_id = '" + key.ToString() + "';";
                 GetSetData.Permission = SearchStringValuesFromDb(GetSetData.query);
-
                 return GetSetData.Permission;
             }
             catch (Exception es)
             {
-                //MessageBox.Show(es.Message);
                 return "";
             }
         }
@@ -343,34 +314,30 @@ namespace Datalayer
             {
                 ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
                 GetSetData.Permission = "";
-
                 GetSetData.query = "select " + selectItem + " from " + tableName + ";";
                 GetSetData.Permission = SearchStringValuesFromDb(GetSetData.query);
-
                 return GetSetData.Permission;
             }
             catch (Exception es)
             {
-                System.Windows.Forms.MessageBox.Show(es.Message);
+                MessageBox.Show(es.Message);
                 return "";
             }
         }
-        
+
         public string getApiRequestDB(string selectItem, string tableName)
         {
             try
             {
                 ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
                 GetSetData.Permission = "";
-
                 GetSetData.query = "select " + selectItem + " from " + tableName + ";";
                 GetSetData.Permission = SearchAPIStringValuesFromDb(GetSetData.query);
-
                 return GetSetData.Permission;
             }
             catch (Exception es)
             {
-                System.Windows.Forms.MessageBox.Show(es.Message);
+                MessageBox.Show(es.Message);
                 return "";
             }
         }
@@ -381,15 +348,12 @@ namespace Datalayer
             {
                 ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
                 GetSetData.Data = "";
-
-                GetSetData.query = "select " + selectItem + " from " + tableName + " where " + keyAttribute + " = '" + key +"';";
+                GetSetData.query = "select " + selectItem + " from " + tableName + " where " + keyAttribute + " = '" + key + "';";
                 GetSetData.Data = SearchStringValuesFromDb(GetSetData.query);
-
                 return GetSetData.Data;
             }
             catch (Exception es)
             {
-                //System.Windows.Forms.MessageBox.Show(es.Message);
                 return "";
             }
         }
@@ -400,15 +364,12 @@ namespace Datalayer
             {
                 ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
                 GetSetData.Ids = 0;
-
-                GetSetData.query = "select " + selectItem + " from " + tableName + " where " + keyAttribute + " = '" + key +"';";
+                GetSetData.query = "select " + selectItem + " from " + tableName + " where " + keyAttribute + " = '" + key + "';";
                 GetSetData.Ids = Select_ID_for_Foreign_Key_from_db_for_Insertion(GetSetData.query);
-
                 return GetSetData.Ids;
             }
             catch (Exception es)
             {
-                //System.Windows.Forms.MessageBox.Show(es.Message);
                 return 0;
             }
         }
@@ -417,17 +378,12 @@ namespace Datalayer
         {
             try
             {
-                ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
-                GetSetData.Ids = 0;
-
-                GetSetData.query = "select " + selectItem + " from " + tableName + ";";
-                GetSetData.Ids = Select_ID_for_Foreign_Key_from_db_for_Insertion(GetSetData.query);
-
-                return GetSetData.Ids;
+                string query = $"SELECT TOP 1 {selectItem} FROM {tableName}";
+                int result = Select_ID_for_Foreign_Key_from_db_for_Insertion(query);
+                return result;
             }
-            catch (Exception es)
+            catch
             {
-                //System.Windows.Forms.MessageBox.Show(es.Message);
                 return 0;
             }
         }
@@ -438,15 +394,12 @@ namespace Datalayer
             {
                 ClassShowGridViewData GetSetData = new ClassShowGridViewData(webConfig.con_string);
                 GetSetData.numericValue = 0;
-
                 GetSetData.query = "select " + selectItem + " from " + tableName + " where " + keyAttribute + " = '" + key + "';";
                 GetSetData.numericValue = SearchNumericValuesDb(GetSetData.query);
-
                 return GetSetData.numericValue;
             }
             catch (Exception es)
             {
-                //System.Windows.Forms.MessageBox.Show(es.Message);
                 return 0;
             }
         }
@@ -454,20 +407,17 @@ namespace Datalayer
         public void EnableDisableButtonControls(string tableName, string attribute, Button button)
         {
             string temp_Name = "";
-
             try
             {
                 Connect();
                 cmd_ = new SqlCommand("select " + attribute + " from " + tableName + ";", conn_);
                 reader_ = cmd_.ExecuteReader();
-
                 if (reader_.Read())
                 {
                     temp_Name = reader_[attribute].ToString();
                     reader_.Close();
                 }
                 reader_.Close();
-
                 if (temp_Name != "Enabled")
                 {
                     button.Visible = true;
@@ -486,20 +436,17 @@ namespace Datalayer
         public void YesNoButtonControls(string tableName, string attribute, Button button)
         {
             string temp_Name = "";
-
             try
             {
                 Connect();
                 cmd_ = new SqlCommand("select " + attribute + " from " + tableName + ";", conn_);
                 reader_ = cmd_.ExecuteReader();
-
                 if (reader_.Read())
                 {
                     temp_Name = reader_[attribute].ToString();
                     reader_.Close();
                 }
                 reader_.Close();
-
                 if (temp_Name != "Enabled")
                 {
                     button.Visible = true;
@@ -515,36 +462,90 @@ namespace Datalayer
             }
         }
 
-        public void YesNoTextBoxControls(string tableName, string attribute, RichTextBox text)
+        public DataTable GetDataTable(string query)
         {
-            string temp_Name = "";
-
+            DataTable dt = new DataTable();
             try
             {
-                Connect();
-                cmd_ = new SqlCommand("select " + attribute + " from " + tableName + ";", conn_);
-                reader_ = cmd_.ExecuteReader();
-
-                if (reader_.Read())
+                if (!string.IsNullOrWhiteSpace(query))
                 {
-                    temp_Name = reader_[attribute].ToString();
-                    reader_.Close();
-                }
-                reader_.Close();
-
-                if (temp_Name != "Yes")
-                {
-                    text.ReadOnly = false;
+                    Connect();
+                    using (SqlCommand cmd = new SqlCommand(query, conn_))
+                    {
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            da.Fill(dt);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error fetching data: " + ex.Message);
             }
             finally
             {
                 Disconnect();
             }
+            return dt;
+        }
+        public DataTable SelectData(string query, SqlParameter[] parameters)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(query))
+                {
+                    Connect();
+                    using (SqlCommand cmd = new SqlCommand(query, conn_))
+                    {
+                        if (parameters != null && parameters.Length > 0)
+                        {
+                            cmd.Parameters.AddRange(parameters);
+                        }
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            da.Fill(dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching data: " + ex.Message, "DataLayer Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Disconnect();
+            }
+            return dt;
+        }
+
+        public DataTable GetDataTable(SqlCommand cmd)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                if (cmd != null)
+                {
+                    Connect();
+                    cmd.Connection = conn_;
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        da.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching data: " + ex.Message);
+            }
+            finally
+            {
+                Disconnect();
+            }
+            return dt;
         }
     }
 }

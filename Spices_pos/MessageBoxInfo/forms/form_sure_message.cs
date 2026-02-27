@@ -32,6 +32,8 @@ namespace Message_box_info.forms
         {
             Customer_sales_recovery.message_choose = true;
             sure = true;
+
+            this.DialogResult = DialogResult.Yes;   // ✅ Important
             this.Close();
         }
 
@@ -40,8 +42,10 @@ namespace Message_box_info.forms
             Customer_sales_recovery.message_choose = false;
             sure = false;
 
+            this.DialogResult = DialogResult.No;    // ✅ Important
             this.Close();
         }
+
 
         private void form_sure_message_Load(object sender, EventArgs e)
         {

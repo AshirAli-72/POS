@@ -133,47 +133,15 @@
           <DataField>fee_amount</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="remarks">
+          <DataField>remarks</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>all_purchase_list_ds</rd:DataSetName>
         <rd:SchemaPath>D:\Dot Net Projects\POS_LATEST_USA_New_Design\Spices_pos\PurchasingInfo\All_Purchases_List\all_purchase_list_ds.xsd</rd:SchemaPath>
         <rd:TableName>purchases</rd:TableName>
-        <rd:TableAdapterFillMethod />
-        <rd:TableAdapterGetDataMethod />
-        <rd:TableAdapterName />
-      </rd:DataSetInfo>
-    </DataSet>
-    <DataSet Name="report_setting_ds">
-      <Query>
-        <DataSourceName>all_purchase_list_ds</DataSourceName>
-        <CommandText>/* Local Query */</CommandText>
-      </Query>
-      <Fields>
-        <Field Name="title">
-          <DataField>title</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="address">
-          <DataField>address</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="phone_no">
-          <DataField>phone_no</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="note">
-          <DataField>note</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="copyrights">
-          <DataField>copyrights</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-      </Fields>
-      <rd:DataSetInfo>
-        <rd:DataSetName>all_purchase_list_ds</rd:DataSetName>
-        <rd:SchemaPath>H:\POS On working\POS_Soft\Purchase_info\All_Purchases_List\all_purchase_list_ds.xsd</rd:SchemaPath>
-        <rd:TableName>pos_report_settings</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -1661,7 +1629,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!phone_no.Value, "report_setting_ds")</Value>
+                      <Value>=Parameters!pPhoneNo.Value</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>7.5pt</FontSize>
@@ -1713,7 +1681,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!address.Value, "report_setting_ds")</Value>
+                      <Value>=Parameters!pAddress.Value</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>8pt</FontSize>
@@ -1750,7 +1718,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!title.Value, "report_setting_ds")</Value>
+                      <Value>=Parameters!pTitle.Value</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>9pt</FontSize>
@@ -1799,7 +1767,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!copyrights.Value, "report_setting_ds")</Value>
+                      <Value>=Parameters!pCopyrights.Value</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>5.5pt</FontSize>
@@ -1862,16 +1830,52 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="pTitle">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pAddress">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pPhoneNo">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pCopyrights">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>1</NumberOfColumns>
-      <NumberOfRows>1</NumberOfRows>
+      <NumberOfRows>5</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>pLogo</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>pTitle</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>pAddress</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>pPhoneNo</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>pCopyrights</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

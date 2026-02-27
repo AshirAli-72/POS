@@ -2169,6 +2169,9 @@ namespace CounterSales_info.forms
             }
         }
 
-      
+        private void chk_print_receipt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

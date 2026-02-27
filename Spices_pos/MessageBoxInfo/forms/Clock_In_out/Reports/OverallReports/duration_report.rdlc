@@ -76,7 +76,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>duration_ds</rd:DataSetName>
-        <rd:SchemaPath>D:\Dot Net Projects\POS_LATEST USA New Design - Copy\Message_box_info\forms\Clock_In_out\Reports\OverallReports\duration_ds.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\POS_LATEST_USA_New_Design\Spices_pos\MessageBoxInfo\forms\Clock_In_out\Reports\OverallReports\duration_ds.xsd</rd:SchemaPath>
         <rd:TableName>DataTable1</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

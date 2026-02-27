@@ -1,0 +1,1 @@
+Data Source=DESKTOP-N9QMTPG\SQLEXPRESS;Initial Catalog=installment_db;User ID=sa;Password=rootsguruadmin@123;Connect Timeout=3;

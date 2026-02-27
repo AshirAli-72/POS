@@ -31,13 +31,13 @@ namespace Banking_info.Reports
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource10 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource11 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bank_detail_reports));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.banking_ds = new Spices_pos.BankingInfo.Reports.banking_ds();
             this.lbl_title = new System.Windows.Forms.Label();
@@ -47,8 +47,6 @@ namespace Banking_info.Reports
             this.lbl_to_date = new System.Windows.Forms.Label();
             this.lbl_from_date = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnl_bank_wise = new System.Windows.Forms.Panel();
-            this.viewer_bank = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pnl_employee = new System.Windows.Forms.Panel();
             this.viewer_employee = new Microsoft.Reporting.WinForms.ReportViewer();
             this.pnl_account_wise = new System.Windows.Forms.Panel();
@@ -83,10 +81,11 @@ namespace Banking_info.Reports
             this.panel8 = new System.Windows.Forms.Panel();
             this.lbl_shop_title = new System.Windows.Forms.Label();
             this.logo_img2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pnl_bank_wise = new System.Windows.Forms.Panel();
+            this.viewer_bank = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.banking_ds)).BeginInit();
             this.panel2.SuspendLayout();
-            this.pnl_bank_wise.SuspendLayout();
             this.pnl_employee.SuspendLayout();
             this.pnl_account_wise.SuspendLayout();
             this.pnl_overall.SuspendLayout();
@@ -102,6 +101,7 @@ namespace Banking_info.Reports
             this.sidePanel.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_img2)).BeginInit();
+            this.pnl_bank_wise.SuspendLayout();
             this.SuspendLayout();
             // 
             // DataTable1BindingSource
@@ -203,28 +203,6 @@ namespace Banking_info.Reports
             this.panel2.Size = new System.Drawing.Size(847, 590);
             this.panel2.TabIndex = 31;
             // 
-            // pnl_bank_wise
-            // 
-            this.pnl_bank_wise.Controls.Add(this.viewer_bank);
-            this.pnl_bank_wise.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_bank_wise.Location = new System.Drawing.Point(0, 0);
-            this.pnl_bank_wise.Name = "pnl_bank_wise";
-            this.pnl_bank_wise.Size = new System.Drawing.Size(847, 590);
-            this.pnl_bank_wise.TabIndex = 0;
-            // 
-            // viewer_bank
-            // 
-            this.viewer_bank.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "new_purchase";
-            reportDataSource1.Value = this.DataTable1BindingSource;
-            this.viewer_bank.LocalReport.DataSources.Add(reportDataSource1);
-            this.viewer_bank.LocalReport.ReportEmbeddedResource = "Spices_pos.BankingInfo.Reports.bank_wise_report.rdlc";
-            this.viewer_bank.Location = new System.Drawing.Point(0, 0);
-            this.viewer_bank.Name = "viewer_bank";
-            this.viewer_bank.ServerReport.BearerToken = null;
-            this.viewer_bank.Size = new System.Drawing.Size(847, 590);
-            this.viewer_bank.TabIndex = 0;
-            // 
             // pnl_employee
             // 
             this.pnl_employee.Controls.Add(this.viewer_employee);
@@ -236,9 +214,9 @@ namespace Banking_info.Reports
             // viewer_employee
             // 
             this.viewer_employee.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "new_purchase";
-            reportDataSource2.Value = this.DataTable1BindingSource;
-            this.viewer_employee.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource7.Name = "new_purchase";
+            reportDataSource7.Value = this.DataTable1BindingSource;
+            this.viewer_employee.LocalReport.DataSources.Add(reportDataSource7);
             this.viewer_employee.LocalReport.ReportEmbeddedResource = "Spices_pos.BankingInfo.Reports.employee_wise_report.rdlc";
             this.viewer_employee.Location = new System.Drawing.Point(0, 0);
             this.viewer_employee.Name = "viewer_employee";
@@ -257,9 +235,9 @@ namespace Banking_info.Reports
             // viewer_accounts
             // 
             this.viewer_accounts.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "new_purchase";
-            reportDataSource3.Value = this.DataTable1BindingSource;
-            this.viewer_accounts.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource8.Name = "new_purchase";
+            reportDataSource8.Value = this.DataTable1BindingSource;
+            this.viewer_accounts.LocalReport.DataSources.Add(reportDataSource8);
             this.viewer_accounts.LocalReport.ReportEmbeddedResource = "Spices_pos.BankingInfo.Reports.accountNo_wise_report.rdlc";
             this.viewer_accounts.Location = new System.Drawing.Point(0, 0);
             this.viewer_accounts.Name = "viewer_accounts";
@@ -278,9 +256,9 @@ namespace Banking_info.Reports
             // viewer_overall
             // 
             this.viewer_overall.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource4.Name = "new_purchase";
-            reportDataSource4.Value = this.DataTable1BindingSource;
-            this.viewer_overall.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource9.Name = "new_purchase";
+            reportDataSource9.Value = this.DataTable1BindingSource;
+            this.viewer_overall.LocalReport.DataSources.Add(reportDataSource9);
             this.viewer_overall.LocalReport.ReportEmbeddedResource = "Spices_pos.BankingInfo.Reports.overall_report.rdlc";
             this.viewer_overall.Location = new System.Drawing.Point(0, 0);
             this.viewer_overall.Name = "viewer_overall";
@@ -299,9 +277,9 @@ namespace Banking_info.Reports
             // viewer_branch
             // 
             this.viewer_branch.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource5.Name = "new_purchase";
-            reportDataSource5.Value = this.DataTable1BindingSource;
-            this.viewer_branch.LocalReport.DataSources.Add(reportDataSource5);
+            reportDataSource10.Name = "new_purchase";
+            reportDataSource10.Value = this.DataTable1BindingSource;
+            this.viewer_branch.LocalReport.DataSources.Add(reportDataSource10);
             this.viewer_branch.LocalReport.ReportEmbeddedResource = "Spices_pos.BankingInfo.Reports.branch_wise_report.rdlc";
             this.viewer_branch.Location = new System.Drawing.Point(0, 0);
             this.viewer_branch.Name = "viewer_branch";
@@ -320,9 +298,9 @@ namespace Banking_info.Reports
             // viewer_status
             // 
             this.viewer_status.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource6.Name = "new_purchase";
-            reportDataSource6.Value = this.DataTable1BindingSource;
-            this.viewer_status.LocalReport.DataSources.Add(reportDataSource6);
+            reportDataSource11.Name = "new_purchase";
+            reportDataSource11.Value = this.DataTable1BindingSource;
+            this.viewer_status.LocalReport.DataSources.Add(reportDataSource11);
             this.viewer_status.LocalReport.ReportEmbeddedResource = "Spices_pos.BankingInfo.Reports.status_wise_report.rdlc";
             this.viewer_status.Location = new System.Drawing.Point(0, 0);
             this.viewer_status.Name = "viewer_status";
@@ -795,6 +773,28 @@ namespace Banking_info.Reports
             this.logo_img2.TabStop = false;
             this.logo_img2.UseTransparentBackground = true;
             // 
+            // pnl_bank_wise
+            // 
+            this.pnl_bank_wise.Controls.Add(this.viewer_bank);
+            this.pnl_bank_wise.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_bank_wise.Location = new System.Drawing.Point(0, 0);
+            this.pnl_bank_wise.Name = "pnl_bank_wise";
+            this.pnl_bank_wise.Size = new System.Drawing.Size(847, 590);
+            this.pnl_bank_wise.TabIndex = 0;
+            // 
+            // viewer_bank
+            // 
+            this.viewer_bank.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource6.Name = "new_purchase";
+            reportDataSource6.Value = this.DataTable1BindingSource;
+            this.viewer_bank.LocalReport.DataSources.Add(reportDataSource6);
+            this.viewer_bank.LocalReport.ReportEmbeddedResource = "Spices_pos.BankingInfo.Reports.bank_wise_report.rdlc";
+            this.viewer_bank.Location = new System.Drawing.Point(0, 0);
+            this.viewer_bank.Name = "viewer_bank";
+            this.viewer_bank.ServerReport.BearerToken = null;
+            this.viewer_bank.Size = new System.Drawing.Size(847, 590);
+            this.viewer_bank.TabIndex = 0;
+            // 
             // bank_detail_reports
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -810,7 +810,6 @@ namespace Banking_info.Reports
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.banking_ds)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.pnl_bank_wise.ResumeLayout(false);
             this.pnl_employee.ResumeLayout(false);
             this.pnl_account_wise.ResumeLayout(false);
             this.pnl_overall.ResumeLayout(false);
@@ -828,6 +827,7 @@ namespace Banking_info.Reports
             this.sidePanel.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo_img2)).EndInit();
+            this.pnl_bank_wise.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -835,7 +835,6 @@ namespace Banking_info.Reports
         #endregion
         private System.Windows.Forms.Panel panel2;
         private Microsoft.Reporting.WinForms.ReportViewer viewer_status;
-        private Microsoft.Reporting.WinForms.ReportViewer viewer_bank;
         private Microsoft.Reporting.WinForms.ReportViewer viewer_branch;
         private Microsoft.Reporting.WinForms.ReportViewer viewer_accounts;
         private Microsoft.Reporting.WinForms.ReportViewer viewer_overall;
@@ -872,11 +871,12 @@ namespace Banking_info.Reports
         private Guna.UI2.WinForms.Guna2PictureBox logo_img2;
         private Guna.UI2.WinForms.Guna2Button btn_overall;
         private Guna.UI2.WinForms.Guna2Button btn_employee;
-        private System.Windows.Forms.Panel pnl_bank_wise;
         private System.Windows.Forms.Panel pnl_employee;
         private System.Windows.Forms.Panel pnl_account_wise;
         private System.Windows.Forms.Panel pnl_overall;
         private System.Windows.Forms.Panel pnl_branch_wise;
         private System.Windows.Forms.Panel pnl_status_wise;
+        private System.Windows.Forms.Panel pnl_bank_wise;
+        private Microsoft.Reporting.WinForms.ReportViewer viewer_bank;
     }
 }

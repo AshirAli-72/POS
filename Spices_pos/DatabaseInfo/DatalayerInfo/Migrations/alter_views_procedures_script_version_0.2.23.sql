@@ -139,17 +139,6 @@ FROM            dbo.pos_account_no INNER JOIN
                          dbo.pos_transaction_status ON dbo.pos_banking_details.status_id = dbo.pos_transaction_status.status_id INNER JOIN
                          dbo.pos_transaction_type ON dbo.pos_banking_details.t_type_id = dbo.pos_transaction_type.transaction_id
 
-
-
-
-
-
-
-
-
-
-
-
 GO
 /****** Object:  View [dbo].[ViewBankLoanDetails]    Script Date: 7/21/2024 1:34:15 AM ******/
 SET ANSI_NULLS ON
@@ -218,17 +207,6 @@ as
 
 SELECT        date AS Date, time, amount, total_capital AS [Total Capital], total_investment AS [Total Investment], remarks AS Note, status
 FROM            dbo.pos_capital_history
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2756,7 +2734,18 @@ select status_title from pos_transaction_status where status_title != 'others'
 
 
 
+GO
+/****** Object:  StoredProcedure [dbo].[fillComboBoxTransactionStatus]    Script Date: 7/21/2024 1:34:15 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 
+
+ALTER procedure [dbo].[fillComboBoxPaymentStatus]
+as
+
+select status_title from pos_payment_status where status_title != 'others' 
 
 
 
@@ -4110,7 +4099,6 @@ as
 
 
 
-
 GO
 /****** Object:  StoredProcedure [dbo].[ProcedureUserPermissionsDashboard]    Script Date: 7/21/2024 1:34:15 AM ******/
 SET ANSI_NULLS ON
@@ -4175,6 +4163,19 @@ as
 
 
 
+	GO
+/****** Object:  StoredProcedure [dbo].[ProcedureViewCashTransactions] ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[ProcedureViewCashTransactions]
+AS
+BEGIN
+    SELECT * FROM ViewCashTransactions;
+END
+GO
 
 
 

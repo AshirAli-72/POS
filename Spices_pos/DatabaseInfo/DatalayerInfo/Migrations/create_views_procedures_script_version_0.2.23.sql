@@ -21,7 +21,7 @@ dbo.pos_products ON dbo.pos_deal_items.prod_id = dbo.pos_products.product_id INN
 dbo.pos_stock_details ON dbo.pos_deal_items.stock_id = dbo.pos_stock_details.stock_id
 
 
-
+	
 
 GO
 /****** Object:  View [dbo].[ReportViewBillWiseCounterReturns]    Script Date: 7/21/2024 1:34:15 AM ******/
@@ -139,18 +139,38 @@ FROM            dbo.pos_account_no INNER JOIN
                          dbo.pos_transaction_status ON dbo.pos_banking_details.status_id = dbo.pos_transaction_status.status_id INNER JOIN
                          dbo.pos_transaction_type ON dbo.pos_banking_details.t_type_id = dbo.pos_transaction_type.transaction_id
 
-
-
-
-
-
-
-
-
-
-
-
 GO
+/****** Object:  View [dbo].[ViewCashTransactions] ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[ViewCashTransactions]
+AS
+SELECT 
+    cm.id AS TransactionID,
+    p.name AS Person_Name,
+    p.mobile_number AS Mobile_Number,
+    p.cnic_number AS CNIC_Number,
+    p.address AS Address,
+    ps.status_title AS [Status],
+    pt.payment_title AS [Payment],
+    cm.date AS [Date],
+    cm.time AS [Time],
+    cm.amount AS Amount,
+    cm.remarks AS Remarks
+FROM dbo.pos_cash_management cm
+INNER JOIN dbo.pos_persons p 
+    ON cm.person_id = p.id
+LEFT JOIN dbo.pos_payment_status ps 
+    ON cm.status_id = ps.id
+LEFT JOIN dbo.pos_payment_type pt 
+    ON cm.payment_id = pt.id;
+GO
+
+
+
 /****** Object:  View [dbo].[ViewBankLoanDetails]    Script Date: 7/21/2024 1:34:15 AM ******/
 SET ANSI_NULLS ON
 GO
@@ -2766,6 +2786,7 @@ select status_title from pos_transaction_status where status_title != 'others'
 
 
 
+
 GO
 /****** Object:  StoredProcedure [dbo].[fillComboBoxTransactionType]    Script Date: 7/21/2024 1:34:15 AM ******/
 SET ANSI_NULLS ON
@@ -4093,7 +4114,6 @@ CREATE procedure [dbo].[ProcedureUserPermissions2]
 as 
 --pos_tbl_authorities_button_controls2
 	select @SearchItem from pos_tbl_authorities_button_controls2 where role_id = @role_id;
-
 
 
 

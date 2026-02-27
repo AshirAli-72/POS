@@ -41,6 +41,20 @@
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_database = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnconnect = new Guna.UI2.WinForms.Guna2Button();
+            this.txtpass = new System.Windows.Forms.TextBox();
+            this.txtuser = new System.Windows.Forms.TextBox();
+            this.cmbAuth = new System.Windows.Forms.ComboBox();
+            this.server_name = new System.Windows.Forms.ComboBox();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.lblpass = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbluser = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnScan = new Guna.UI2.WinForms.Guna2Button();
             this.btnPassword = new Guna.UI2.WinForms.Guna2Button();
             this.btnPin = new Guna.UI2.WinForms.Guna2Button();
@@ -48,15 +62,6 @@
             this.logo1 = new System.Windows.Forms.PictureBox();
             this.logo = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pnlLogin = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.pass_text = new Guna.UI2.WinForms.Guna2TextBox();
-            this.username_text = new Guna.UI2.WinForms.Guna2TextBox();
-            this.login_btn = new Guna.UI2.WinForms.Guna2Button();
             this.pnlPinCode = new Guna.UI2.WinForms.Guna2Panel();
             this.btnEnter = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -81,6 +86,15 @@
             this.chkLoginType1 = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_barcode = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pnlLogin = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pass_text = new Guna.UI2.WinForms.Guna2TextBox();
+            this.username_text = new Guna.UI2.WinForms.Guna2TextBox();
+            this.login_btn = new Guna.UI2.WinForms.Guna2Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.title_lable = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -90,18 +104,19 @@
             this.guna2Panel10.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.pnlLogin.SuspendLayout();
-            this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.pnlPinCode.SuspendLayout();
             this.pnlLoginByScanner.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            this.pnlLogin.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +124,7 @@
             // 
             this.lbl_time.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_time.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_time.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.lbl_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lbl_time.ForeColor = System.Drawing.Color.Gray;
             this.lbl_time.Location = new System.Drawing.Point(452, 16);
             this.lbl_time.Name = "lbl_time";
@@ -127,11 +142,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
             this.label1.Location = new System.Drawing.Point(793, 591);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 19);
+            this.label1.Size = new System.Drawing.Size(324, 20);
             this.label1.TabIndex = 25;
             this.label1.Text = "Smart Installment Management System";
             this.label1.Visible = false;
@@ -141,11 +156,11 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(845, 615);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(204, 16);
+            this.label4.Size = new System.Drawing.Size(225, 16);
             this.label4.TabIndex = 25;
             this.label4.Text = "Powered By Sata Technologies";
             this.label4.Visible = false;
@@ -154,11 +169,11 @@
             // 
             this.lblCopyrights.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCopyrights.AutoSize = true;
-            this.lblCopyrights.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Bold);
+            this.lblCopyrights.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
             this.lblCopyrights.ForeColor = System.Drawing.Color.Gray;
             this.lblCopyrights.Location = new System.Drawing.Point(4, 617);
             this.lblCopyrights.Name = "lblCopyrights";
-            this.lblCopyrights.Size = new System.Drawing.Size(288, 14);
+            this.lblCopyrights.Size = new System.Drawing.Size(345, 13);
             this.lblCopyrights.TabIndex = 25;
             this.lblCopyrights.Text = "Copy rights 2023, Powered By SATA Technologies (Pvt) Ltd.";
             // 
@@ -172,18 +187,18 @@
             this.forgotten.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.forgotten.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.forgotten.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.forgotten.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.forgotten.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.forgotten.ForeColor = System.Drawing.Color.Gray;
             this.forgotten.Location = new System.Drawing.Point(129, 406);
             this.forgotten.Name = "forgotten";
-            this.forgotten.Size = new System.Drawing.Size(119, 26);
+            this.forgotten.Size = new System.Drawing.Size(132, 26);
             this.forgotten.TabIndex = 5;
             this.forgotten.Text = "Forgot Password?";
             this.forgotten.UseVisualStyleBackColor = false;
             // 
             // chkLoginType
             // 
-            this.chkLoginType.Font = new System.Drawing.Font("Century Gothic", 7.5F, System.Drawing.FontStyle.Bold);
+            this.chkLoginType.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold);
             this.chkLoginType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
             this.chkLoginType.Location = new System.Drawing.Point(360, 459);
             this.chkLoginType.Name = "chkLoginType";
@@ -234,6 +249,8 @@
             // 
             this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.guna2Panel6.BorderRadius = 20;
+            this.guna2Panel6.Controls.Add(this.btn_database);
+            this.guna2Panel6.Controls.Add(this.guna2Panel3);
             this.guna2Panel6.Controls.Add(this.btnScan);
             this.guna2Panel6.Controls.Add(this.btnPassword);
             this.guna2Panel6.Controls.Add(this.btnPin);
@@ -256,6 +273,213 @@
             this.guna2Panel6.Size = new System.Drawing.Size(1166, 635);
             this.guna2Panel6.TabIndex = 141;
             // 
+            // btn_database
+            // 
+            this.btn_database.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_database.BackColor = System.Drawing.Color.Transparent;
+            this.btn_database.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_database.BorderRadius = 12;
+            this.btn_database.BorderThickness = 1;
+            this.btn_database.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_database.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_database.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_database.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_database.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_database.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_database.FillColor = System.Drawing.Color.White;
+            this.btn_database.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.btn_database.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_database.HoverState.BorderColor = System.Drawing.Color.White;
+            this.btn_database.HoverState.CustomBorderColor = System.Drawing.Color.White;
+            this.btn_database.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_database.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_database.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btn_database.Image = ((System.Drawing.Image)(resources.GetObject("btn_database.Image")));
+            this.btn_database.ImageSize = new System.Drawing.Size(26, 26);
+            this.btn_database.Location = new System.Drawing.Point(670, 568);
+            this.btn_database.Name = "btn_database";
+            this.btn_database.Size = new System.Drawing.Size(74, 61);
+            this.btn_database.TabIndex = 566;
+            this.btn_database.Click += new System.EventHandler(this.btn_database_Click);
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel3.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel3.BorderRadius = 15;
+            this.guna2Panel3.Controls.Add(this.guna2Button6);
+            this.guna2Panel3.Controls.Add(this.btnconnect);
+            this.guna2Panel3.Controls.Add(this.txtpass);
+            this.guna2Panel3.Controls.Add(this.txtuser);
+            this.guna2Panel3.Controls.Add(this.cmbAuth);
+            this.guna2Panel3.Controls.Add(this.server_name);
+            this.guna2Panel3.Controls.Add(this.guna2Separator1);
+            this.guna2Panel3.Controls.Add(this.lblpass);
+            this.guna2Panel3.Controls.Add(this.label10);
+            this.guna2Panel3.Controls.Add(this.lbluser);
+            this.guna2Panel3.Controls.Add(this.label7);
+            this.guna2Panel3.Controls.Add(this.label9);
+            this.guna2Panel3.FillColor = System.Drawing.Color.White;
+            this.guna2Panel3.Location = new System.Drawing.Point(382, 158);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(401, 292);
+            this.guna2Panel3.TabIndex = 565;
+            this.guna2Panel3.Visible = false;
+            this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
+            // 
+            // guna2Button6
+            // 
+            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button6.FillColor = System.Drawing.Color.DarkGray;
+            this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button6.ForeColor = System.Drawing.Color.White;
+            this.guna2Button6.Location = new System.Drawing.Point(310, 246);
+            this.guna2Button6.Name = "guna2Button6";
+            this.guna2Button6.Size = new System.Drawing.Size(78, 27);
+            this.guna2Button6.TabIndex = 572;
+            this.guna2Button6.Text = "Cancle";
+            this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
+            // 
+            // btnconnect
+            // 
+            this.btnconnect.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnconnect.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnconnect.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnconnect.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnconnect.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btnconnect.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnconnect.ForeColor = System.Drawing.Color.White;
+            this.btnconnect.Location = new System.Drawing.Point(226, 246);
+            this.btnconnect.Name = "btnconnect";
+            this.btnconnect.Size = new System.Drawing.Size(78, 27);
+            this.btnconnect.TabIndex = 571;
+            this.btnconnect.Text = "Connect";
+            this.btnconnect.Click += new System.EventHandler(this.btnconnect_Click);
+            // 
+            // txtpass
+            // 
+            this.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtpass.Location = new System.Drawing.Point(113, 204);
+            this.txtpass.Multiline = false;            // ❌ important: false
+            this.txtpass.Name = "txtpass";
+            this.txtpass.Size = new System.Drawing.Size(275, 20);
+            this.txtpass.TabIndex = 570;
+            this.txtpass.UseSystemPasswordChar = true; // ✅ dots show karenge
+            this.txtpass.Visible = false;
+            this.txtpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpass_KeyPress);
+
+            // 
+            // txtuser
+            // 
+            this.txtuser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtuser.Location = new System.Drawing.Point(113, 160);
+            this.txtuser.Multiline = true;
+            this.txtuser.Name = "txtuser";
+            this.txtuser.Size = new System.Drawing.Size(275, 20);
+            this.txtuser.TabIndex = 569;
+            this.txtuser.Visible = false;
+            // 
+            // cmbAuth
+            // 
+            this.cmbAuth.FormattingEnabled = true;
+            this.cmbAuth.Location = new System.Drawing.Point(113, 118);
+            this.cmbAuth.Name = "cmbAuth";
+            this.cmbAuth.Size = new System.Drawing.Size(275, 21);
+            this.cmbAuth.TabIndex = 568;
+            this.cmbAuth.SelectedIndexChanged += new System.EventHandler(this.cmbAuth_SelectedIndexChanged);
+            // 
+            // server_name
+            // 
+            this.server_name.FormattingEnabled = true;
+            this.server_name.Location = new System.Drawing.Point(113, 78);
+            this.server_name.Name = "server_name";
+            this.server_name.Size = new System.Drawing.Size(275, 21);
+            this.server_name.TabIndex = 567;
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.guna2Separator1.Location = new System.Drawing.Point(10, 52);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(381, 10);
+            this.guna2Separator1.TabIndex = 566;
+            // 
+            // lblpass
+            // 
+            this.lblpass.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblpass.AutoSize = true;
+            this.lblpass.BackColor = System.Drawing.Color.Transparent;
+            this.lblpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpass.ForeColor = System.Drawing.Color.Gray;
+            this.lblpass.Location = new System.Drawing.Point(7, 206);
+            this.lblpass.Name = "lblpass";
+            this.lblpass.Size = new System.Drawing.Size(73, 15);
+            this.lblpass.TabIndex = 565;
+            this.lblpass.Text = "Password:";
+            this.lblpass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblpass.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Gray;
+            this.label10.Location = new System.Drawing.Point(7, 121);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(102, 15);
+            this.label10.TabIndex = 565;
+            this.label10.Text = "Authentication:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lbluser
+            // 
+            this.lbluser.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbluser.AutoSize = true;
+            this.lbluser.BackColor = System.Drawing.Color.Transparent;
+            this.lbluser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluser.ForeColor = System.Drawing.Color.Gray;
+            this.lbluser.Location = new System.Drawing.Point(7, 165);
+            this.lbluser.Name = "lbluser";
+            this.lbluser.Size = new System.Drawing.Size(83, 15);
+            this.lbluser.TabIndex = 565;
+            this.lbluser.Text = "User Name:";
+            this.lbluser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbluser.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Gray;
+            this.label7.Location = new System.Drawing.Point(7, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 15);
+            this.label7.TabIndex = 565;
+            this.label7.Text = "Server Name:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(25, 18);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(203, 24);
+            this.label9.TabIndex = 565;
+            this.label9.Text = "Connect to Database";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // btnScan
             // 
             this.btnScan.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -270,16 +494,16 @@
             this.btnScan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnScan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnScan.FillColor = System.Drawing.Color.White;
-            this.btnScan.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.btnScan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.btnScan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnScan.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnScan.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnScan.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.btnScan.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnScan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnScan.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnScan.Image = ((System.Drawing.Image)(resources.GetObject("btnScan.Image")));
             this.btnScan.ImageSize = new System.Drawing.Size(26, 26);
-            this.btnScan.Location = new System.Drawing.Point(626, 568);
+            this.btnScan.Location = new System.Drawing.Point(590, 568);
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(74, 61);
             this.btnScan.TabIndex = 564;
@@ -299,16 +523,16 @@
             this.btnPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPassword.FillColor = System.Drawing.Color.White;
-            this.btnPassword.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.btnPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.btnPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPassword.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnPassword.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnPassword.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.btnPassword.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnPassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnPassword.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnPassword.Image = ((System.Drawing.Image)(resources.GetObject("btnPassword.Image")));
             this.btnPassword.ImageSize = new System.Drawing.Size(26, 26);
-            this.btnPassword.Location = new System.Drawing.Point(546, 568);
+            this.btnPassword.Location = new System.Drawing.Point(510, 568);
             this.btnPassword.Name = "btnPassword";
             this.btnPassword.Size = new System.Drawing.Size(74, 61);
             this.btnPassword.TabIndex = 564;
@@ -328,16 +552,16 @@
             this.btnPin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnPin.FillColor = System.Drawing.Color.White;
-            this.btnPin.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.btnPin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.btnPin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPin.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnPin.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnPin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.btnPin.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnPin.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnPin.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnPin.Image = ((System.Drawing.Image)(resources.GetObject("btnPin.Image")));
             this.btnPin.ImageSize = new System.Drawing.Size(26, 26);
-            this.btnPin.Location = new System.Drawing.Point(466, 568);
+            this.btnPin.Location = new System.Drawing.Point(430, 568);
             this.btnPin.Name = "btnPin";
             this.btnPin.Size = new System.Drawing.Size(74, 61);
             this.btnPin.TabIndex = 564;
@@ -402,177 +626,6 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Visible = false;
             // 
-            // pnlLogin
-            // 
-            this.pnlLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pnlLogin.BackColor = System.Drawing.Color.Transparent;
-            this.pnlLogin.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlLogin.BorderRadius = 15;
-            this.pnlLogin.Controls.Add(this.guna2Panel2);
-            this.pnlLogin.Controls.Add(this.guna2CirclePictureBox2);
-            this.pnlLogin.Controls.Add(this.label2);
-            this.pnlLogin.Controls.Add(this.label14);
-            this.pnlLogin.Controls.Add(this.chkLoginType);
-            this.pnlLogin.Controls.Add(this.pass_text);
-            this.pnlLogin.Controls.Add(this.forgotten);
-            this.pnlLogin.Controls.Add(this.username_text);
-            this.pnlLogin.Controls.Add(this.login_btn);
-            this.pnlLogin.FillColor = System.Drawing.Color.White;
-            this.pnlLogin.Location = new System.Drawing.Point(395, 81);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(377, 481);
-            this.pnlLogin.TabIndex = 506;
-            this.pnlLogin.Visible = false;
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BorderRadius = 35;
-            this.guna2Panel2.Controls.Add(this.pictureBox2);
-            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.guna2Panel2.Location = new System.Drawing.Point(151, 49);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(75, 75);
-            this.guna2Panel2.TabIndex = 535;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 534;
-            this.pictureBox2.TabStop = false;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(153, 49);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(70, 70);
-            this.guna2CirclePictureBox2.TabIndex = 534;
-            this.guna2CirclePictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.5F);
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(93, 163);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 17);
-            this.label2.TabIndex = 531;
-            this.label2.Text = "Enter your credentials to sign in";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label14.ForeColor = System.Drawing.Color.Gray;
-            this.label14.Location = new System.Drawing.Point(160, 138);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 19);
-            this.label14.TabIndex = 531;
-            this.label14.Text = "Sign In";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pass_text
-            // 
-            this.pass_text.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pass_text.BackColor = System.Drawing.Color.Transparent;
-            this.pass_text.BorderColor = System.Drawing.Color.LightGray;
-            this.pass_text.BorderRadius = 8;
-            this.pass_text.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pass_text.DefaultText = "";
-            this.pass_text.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.pass_text.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.pass_text.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.pass_text.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.pass_text.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.pass_text.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.pass_text.ForeColor = System.Drawing.Color.Black;
-            this.pass_text.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.pass_text.IconLeftOffset = new System.Drawing.Point(3, 0);
-            this.pass_text.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.pass_text.IconRight = ((System.Drawing.Image)(resources.GetObject("pass_text.IconRight")));
-            this.pass_text.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.pass_text.IconRightSize = new System.Drawing.Size(22, 22);
-            this.pass_text.Location = new System.Drawing.Point(46, 273);
-            this.pass_text.Name = "pass_text";
-            this.pass_text.PasswordChar = '●';
-            this.pass_text.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.pass_text.PlaceholderText = "Password";
-            this.pass_text.SelectedText = "";
-            this.pass_text.Size = new System.Drawing.Size(285, 50);
-            this.pass_text.TabIndex = 1;
-            this.pass_text.TextOffset = new System.Drawing.Point(7, 0);
-            this.pass_text.UseSystemPasswordChar = true;
-            this.pass_text.Click += new System.EventHandler(this.username_text_Click);
-            this.pass_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.login_with_enter_key);
-            // 
-            // username_text
-            // 
-            this.username_text.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.username_text.BackColor = System.Drawing.Color.Transparent;
-            this.username_text.BorderColor = System.Drawing.Color.LightGray;
-            this.username_text.BorderRadius = 8;
-            this.username_text.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.username_text.DefaultText = "";
-            this.username_text.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.username_text.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.username_text.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.username_text.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.username_text.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.username_text.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.username_text.ForeColor = System.Drawing.Color.Black;
-            this.username_text.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.username_text.IconLeftOffset = new System.Drawing.Point(3, 0);
-            this.username_text.IconLeftSize = new System.Drawing.Size(25, 25);
-            this.username_text.IconRight = ((System.Drawing.Image)(resources.GetObject("username_text.IconRight")));
-            this.username_text.IconRightOffset = new System.Drawing.Point(5, 0);
-            this.username_text.Location = new System.Drawing.Point(46, 202);
-            this.username_text.Name = "username_text";
-            this.username_text.PasswordChar = '\0';
-            this.username_text.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.username_text.PlaceholderText = "User Name";
-            this.username_text.SelectedText = "";
-            this.username_text.Size = new System.Drawing.Size(285, 50);
-            this.username_text.TabIndex = 0;
-            this.username_text.TextOffset = new System.Drawing.Point(7, 0);
-            this.username_text.Click += new System.EventHandler(this.username_text_Click);
-            this.username_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.login_with_enter_key);
-            // 
-            // login_btn
-            // 
-            this.login_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.login_btn.BackColor = System.Drawing.Color.Transparent;
-            this.login_btn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.login_btn.BorderRadius = 8;
-            this.login_btn.BorderThickness = 1;
-            this.login_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.login_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.login_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.login_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.login_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.login_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.login_btn.ForeColor = System.Drawing.Color.White;
-            this.login_btn.ImageSize = new System.Drawing.Size(16, 16);
-            this.login_btn.Location = new System.Drawing.Point(46, 343);
-            this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(285, 50);
-            this.login_btn.TabIndex = 2;
-            this.login_btn.Text = "Login";
-            this.login_btn.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
-            this.login_btn.Click += new System.EventHandler(this.login_btn_Click_1);
-            // 
             // pnlPinCode
             // 
             this.pnlPinCode.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -595,7 +648,7 @@
             this.pnlPinCode.Controls.Add(this.button6);
             this.pnlPinCode.Controls.Add(this.txtPinCode);
             this.pnlPinCode.FillColor = System.Drawing.Color.White;
-            this.pnlPinCode.Location = new System.Drawing.Point(395, 81);
+            this.pnlPinCode.Location = new System.Drawing.Point(395, 84);
             this.pnlPinCode.Name = "pnlPinCode";
             this.pnlPinCode.Size = new System.Drawing.Size(377, 481);
             this.pnlPinCode.TabIndex = 508;
@@ -614,13 +667,13 @@
             this.btnEnter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEnter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEnter.FillColor = System.Drawing.Color.White;
-            this.btnEnter.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.btnEnter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEnter.HoverState.BorderColor = System.Drawing.Color.White;
             this.btnEnter.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnEnter.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.btnEnter.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnEnter.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnEnter.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnEnter.Image = ((System.Drawing.Image)(resources.GetObject("btnEnter.Image")));
             this.btnEnter.ImageSize = new System.Drawing.Size(30, 30);
             this.btnEnter.Location = new System.Drawing.Point(242, 386);
@@ -634,11 +687,11 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(92, 53);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(193, 20);
+            this.label6.Size = new System.Drawing.Size(176, 18);
             this.label6.TabIndex = 564;
             this.label6.Text = "Please enter pin to sign in";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -648,11 +701,11 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.Gray;
             this.label8.Location = new System.Drawing.Point(153, 25);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 23);
+            this.label8.Size = new System.Drawing.Size(75, 24);
             this.label8.TabIndex = 565;
             this.label8.Text = "Sign In";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -671,13 +724,13 @@
             this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button4.FillColor = System.Drawing.Color.White;
-            this.guna2Button4.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.guna2Button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.guna2Button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2Button4.HoverState.BorderColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.guna2Button4.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.guna2Button4.HoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.guna2Button4.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
             this.guna2Button4.ImageSize = new System.Drawing.Size(26, 26);
             this.guna2Button4.Location = new System.Drawing.Point(42, 386);
@@ -700,7 +753,7 @@
             this.button13.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button13.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button13.FillColor = System.Drawing.Color.White;
-            this.button13.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.button13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button13.HoverState.BorderColor = System.Drawing.Color.White;
             this.button13.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -728,7 +781,7 @@
             this.button11.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button11.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button11.FillColor = System.Drawing.Color.White;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button11.HoverState.BorderColor = System.Drawing.Color.White;
             this.button11.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -756,7 +809,7 @@
             this.button10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button10.FillColor = System.Drawing.Color.White;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button10.HoverState.BorderColor = System.Drawing.Color.White;
             this.button10.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -784,7 +837,7 @@
             this.button9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button9.FillColor = System.Drawing.Color.White;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button9.HoverState.BorderColor = System.Drawing.Color.White;
             this.button9.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -812,7 +865,7 @@
             this.button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button8.FillColor = System.Drawing.Color.White;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button8.HoverState.BorderColor = System.Drawing.Color.White;
             this.button8.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -840,7 +893,7 @@
             this.button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button7.FillColor = System.Drawing.Color.White;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button7.HoverState.BorderColor = System.Drawing.Color.White;
             this.button7.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -868,7 +921,7 @@
             this.button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button5.FillColor = System.Drawing.Color.White;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button5.HoverState.BorderColor = System.Drawing.Color.White;
             this.button5.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -896,7 +949,7 @@
             this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.FillColor = System.Drawing.Color.White;
-            this.guna2Button1.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -924,7 +977,7 @@
             this.button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button3.FillColor = System.Drawing.Color.White;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button3.HoverState.BorderColor = System.Drawing.Color.White;
             this.button3.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -952,7 +1005,7 @@
             this.button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button6.FillColor = System.Drawing.Color.White;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button6.HoverState.BorderColor = System.Drawing.Color.White;
             this.button6.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -979,7 +1032,7 @@
             this.txtPinCode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPinCode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPinCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPinCode.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtPinCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtPinCode.ForeColor = System.Drawing.Color.Black;
             this.txtPinCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPinCode.IconLeftOffset = new System.Drawing.Point(3, 0);
@@ -1055,11 +1108,11 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.5F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(104, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 17);
+            this.label3.Size = new System.Drawing.Size(157, 15);
             this.label3.TabIndex = 531;
             this.label3.Text = "Scan your ID Card to sign in";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1067,7 +1120,7 @@
             // chkLoginType1
             // 
             this.chkLoginType1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkLoginType1.Font = new System.Drawing.Font("Century Gothic", 7.5F, System.Drawing.FontStyle.Bold);
+            this.chkLoginType1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold);
             this.chkLoginType1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
             this.chkLoginType1.Location = new System.Drawing.Point(341, 229);
             this.chkLoginType1.Name = "chkLoginType1";
@@ -1084,11 +1137,11 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.Location = new System.Drawing.Point(160, 123);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 18);
+            this.label5.Size = new System.Drawing.Size(59, 18);
             this.label5.TabIndex = 531;
             this.label5.Text = "Sign In";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1106,7 +1159,7 @@
             this.txt_barcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_barcode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txt_barcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_barcode.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.txt_barcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txt_barcode.ForeColor = System.Drawing.Color.Black;
             this.txt_barcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_barcode.IconLeftOffset = new System.Drawing.Point(3, 0);
@@ -1125,6 +1178,177 @@
             this.txt_barcode.UseSystemPasswordChar = true;
             this.txt_barcode.Click += new System.EventHandler(this.username_text_Click);
             this.txt_barcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_barcode_KeyPress);
+            // 
+            // pnlLogin
+            // 
+            this.pnlLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlLogin.BackColor = System.Drawing.Color.Transparent;
+            this.pnlLogin.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlLogin.BorderRadius = 15;
+            this.pnlLogin.Controls.Add(this.guna2Panel2);
+            this.pnlLogin.Controls.Add(this.guna2CirclePictureBox2);
+            this.pnlLogin.Controls.Add(this.label2);
+            this.pnlLogin.Controls.Add(this.label14);
+            this.pnlLogin.Controls.Add(this.chkLoginType);
+            this.pnlLogin.Controls.Add(this.pass_text);
+            this.pnlLogin.Controls.Add(this.forgotten);
+            this.pnlLogin.Controls.Add(this.username_text);
+            this.pnlLogin.Controls.Add(this.login_btn);
+            this.pnlLogin.FillColor = System.Drawing.Color.White;
+            this.pnlLogin.Location = new System.Drawing.Point(395, 81);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(377, 481);
+            this.pnlLogin.TabIndex = 506;
+            this.pnlLogin.Visible = false;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BorderRadius = 35;
+            this.guna2Panel2.Controls.Add(this.pictureBox2);
+            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.guna2Panel2.Location = new System.Drawing.Point(151, 49);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(75, 75);
+            this.guna2Panel2.TabIndex = 535;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 534;
+            this.pictureBox2.TabStop = false;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(153, 49);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(70, 70);
+            this.guna2CirclePictureBox2.TabIndex = 534;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(93, 163);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 15);
+            this.label2.TabIndex = 531;
+            this.label2.Text = "Enter your credentials to sign in";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label14.ForeColor = System.Drawing.Color.Gray;
+            this.label14.Location = new System.Drawing.Point(160, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 20);
+            this.label14.TabIndex = 531;
+            this.label14.Text = "Sign In";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pass_text
+            // 
+            this.pass_text.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pass_text.BackColor = System.Drawing.Color.Transparent;
+            this.pass_text.BorderColor = System.Drawing.Color.LightGray;
+            this.pass_text.BorderRadius = 8;
+            this.pass_text.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.pass_text.DefaultText = "";
+            this.pass_text.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.pass_text.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.pass_text.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.pass_text.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.pass_text.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.pass_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.pass_text.ForeColor = System.Drawing.Color.Black;
+            this.pass_text.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.pass_text.IconLeftOffset = new System.Drawing.Point(3, 0);
+            this.pass_text.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.pass_text.IconRight = ((System.Drawing.Image)(resources.GetObject("pass_text.IconRight")));
+            this.pass_text.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.pass_text.IconRightSize = new System.Drawing.Size(22, 22);
+            this.pass_text.Location = new System.Drawing.Point(46, 273);
+            this.pass_text.Name = "pass_text";
+            this.pass_text.PasswordChar = '●';
+            this.pass_text.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.pass_text.PlaceholderText = "Password";
+            this.pass_text.SelectedText = "";
+            this.pass_text.Size = new System.Drawing.Size(285, 50);
+            this.pass_text.TabIndex = 1;
+            this.pass_text.TextOffset = new System.Drawing.Point(7, 0);
+            this.pass_text.UseSystemPasswordChar = true;
+            this.pass_text.Click += new System.EventHandler(this.username_text_Click);
+            this.pass_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.login_with_enter_key);
+            // 
+            // username_text
+            // 
+            this.username_text.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.username_text.BackColor = System.Drawing.Color.Transparent;
+            this.username_text.BorderColor = System.Drawing.Color.LightGray;
+            this.username_text.BorderRadius = 8;
+            this.username_text.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.username_text.DefaultText = "";
+            this.username_text.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.username_text.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.username_text.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.username_text.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.username_text.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.username_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.username_text.ForeColor = System.Drawing.Color.Black;
+            this.username_text.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.username_text.IconLeftOffset = new System.Drawing.Point(3, 0);
+            this.username_text.IconLeftSize = new System.Drawing.Size(25, 25);
+            this.username_text.IconRight = ((System.Drawing.Image)(resources.GetObject("username_text.IconRight")));
+            this.username_text.IconRightOffset = new System.Drawing.Point(5, 0);
+            this.username_text.Location = new System.Drawing.Point(46, 202);
+            this.username_text.Name = "username_text";
+            this.username_text.PasswordChar = '\0';
+            this.username_text.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.username_text.PlaceholderText = "User Name";
+            this.username_text.SelectedText = "";
+            this.username_text.Size = new System.Drawing.Size(285, 50);
+            this.username_text.TabIndex = 0;
+            this.username_text.TextOffset = new System.Drawing.Point(7, 0);
+            this.username_text.Click += new System.EventHandler(this.username_text_Click);
+            this.username_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.login_with_enter_key);
+            // 
+            // login_btn
+            // 
+            this.login_btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.login_btn.BackColor = System.Drawing.Color.Transparent;
+            this.login_btn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.login_btn.BorderRadius = 8;
+            this.login_btn.BorderThickness = 1;
+            this.login_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.login_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.login_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.login_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.login_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.login_btn.ForeColor = System.Drawing.Color.White;
+            this.login_btn.ImageSize = new System.Drawing.Size(16, 16);
+            this.login_btn.Location = new System.Drawing.Point(46, 343);
+            this.login_btn.Name = "login_btn";
+            this.login_btn.Size = new System.Drawing.Size(285, 50);
+            this.login_btn.TabIndex = 2;
+            this.login_btn.Text = "Login";
+            this.login_btn.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click_1);
             // 
             // panel15
             // 
@@ -1146,13 +1370,13 @@
             this.title_lable.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.title_lable.AutoSize = true;
             this.title_lable.BackColor = System.Drawing.Color.Transparent;
-            this.title_lable.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
+            this.title_lable.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.title_lable.ForeColor = System.Drawing.Color.Gray;
             this.title_lable.Location = new System.Drawing.Point(5, 14);
             this.title_lable.Name = "title_lable";
-            this.title_lable.Size = new System.Drawing.Size(326, 22);
+            this.title_lable.Size = new System.Drawing.Size(334, 22);
             this.title_lable.TabIndex = 530;
-            this.title_lable.Text = "Welcome to The Big Fat Point of Sale";
+            this.title_lable.Text = "Welcome to The SATA Point of Sale";
             this.title_lable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Button2
@@ -1196,7 +1420,7 @@
             this.guna2Button3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.guna2Button3.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.guna2Button3.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            this.guna2Button3.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
             this.guna2Button3.ImageSize = new System.Drawing.Size(16, 16);
             this.guna2Button3.Location = new System.Drawing.Point(1115, 6);
@@ -1210,11 +1434,11 @@
             this.txtDate.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
             this.txtDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
             this.txtDate.CustomFormat = "dd/MMMM/yyyy";
-            this.txtDate.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.txtDate.Location = new System.Drawing.Point(1133, 602);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(10, 24);
+            this.txtDate.Size = new System.Drawing.Size(10, 23);
             this.txtDate.TabIndex = 1019;
             this.txtDate.Value = new System.DateTime(2019, 9, 23, 0, 0, 0, 0);
             // 
@@ -1238,14 +1462,11 @@
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.pnlLogin.ResumeLayout(false);
-            this.pnlLogin.PerformLayout();
-            this.guna2Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.pnlPinCode.ResumeLayout(false);
             this.pnlPinCode.PerformLayout();
             this.pnlLoginByScanner.ResumeLayout(false);
@@ -1253,6 +1474,11 @@
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
+            this.guna2Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             this.ResumeLayout(false);
@@ -1317,5 +1543,19 @@
         private Guna.UI2.WinForms.Guna2Button btnPin;
         private Guna.UI2.WinForms.Guna2Button btnPassword;
         private Guna.UI2.WinForms.Guna2Button btnScan;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox server_name;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtpass;
+        private System.Windows.Forms.TextBox txtuser;
+        private System.Windows.Forms.ComboBox cmbAuth;
+        private System.Windows.Forms.Label lblpass;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbluser;
+        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button btnconnect;
+        private Guna.UI2.WinForms.Guna2Button btn_database;
     }
 }

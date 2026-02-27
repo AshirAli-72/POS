@@ -28,12 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_add_transaction));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_account_no = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_branch = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_type = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_employee = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_account = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_bank = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_status = new Guna.UI2.WinForms.Guna2Button();
             this.txt_date = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_amount = new Guna.UI2.WinForms.Guna2TextBox();
@@ -55,6 +62,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.add_button = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_bank_title = new System.Windows.Forms.ComboBox();
             this.txt_account_title = new System.Windows.Forms.ComboBox();
@@ -65,29 +73,28 @@
             this.pnl_save = new System.Windows.Forms.Panel();
             this.close_button = new Guna.UI2.WinForms.Guna2Button();
             this.pnl_exit = new System.Windows.Forms.Panel();
-            this.savebutton = new Guna.UI2.WinForms.Guna2Button();
             this.update_button = new Guna.UI2.WinForms.Guna2Button();
+            this.savebutton = new Guna.UI2.WinForms.Guna2Button();
             this.productListGridView = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.add_button = new Guna.UI2.WinForms.Guna2Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.refresh_button = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
@@ -95,13 +102,6 @@
             this.FormNamelabel = new System.Windows.Forms.Label();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.Closebutton = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_status = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_bank = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_account = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_employee = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_type = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_branch = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_account_no = new Guna.UI2.WinForms.Guna2Button();
             this.panel3.SuspendLayout();
             this.pnl_save.SuspendLayout();
             this.pnl_exit.SuspendLayout();
@@ -160,6 +160,167 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(895, 266);
             this.panel3.TabIndex = 90;
+            // 
+            // btn_account_no
+            // 
+            this.btn_account_no.BackColor = System.Drawing.Color.Transparent;
+            this.btn_account_no.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_account_no.BorderRadius = 4;
+            this.btn_account_no.BorderThickness = 1;
+            this.btn_account_no.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_account_no.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_account_no.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_account_no.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_account_no.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_account_no.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_account_no.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_account_no.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_account_no.ForeColor = System.Drawing.Color.White;
+            this.btn_account_no.Image = ((System.Drawing.Image)(resources.GetObject("btn_account_no.Image")));
+            this.btn_account_no.ImageSize = new System.Drawing.Size(16, 16);
+            this.btn_account_no.Location = new System.Drawing.Point(846, 137);
+            this.btn_account_no.Name = "btn_account_no";
+            this.btn_account_no.Size = new System.Drawing.Size(31, 28);
+            this.btn_account_no.TabIndex = 519;
+            this.btn_account_no.Click += new System.EventHandler(this.btn_account_no_Click);
+            // 
+            // btn_branch
+            // 
+            this.btn_branch.BackColor = System.Drawing.Color.Transparent;
+            this.btn_branch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_branch.BorderRadius = 4;
+            this.btn_branch.BorderThickness = 1;
+            this.btn_branch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_branch.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_branch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_branch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_branch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_branch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_branch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_branch.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_branch.ForeColor = System.Drawing.Color.White;
+            this.btn_branch.Image = ((System.Drawing.Image)(resources.GetObject("btn_branch.Image")));
+            this.btn_branch.ImageSize = new System.Drawing.Size(16, 16);
+            this.btn_branch.Location = new System.Drawing.Point(846, 95);
+            this.btn_branch.Name = "btn_branch";
+            this.btn_branch.Size = new System.Drawing.Size(31, 28);
+            this.btn_branch.TabIndex = 519;
+            this.btn_branch.Click += new System.EventHandler(this.btn_branch_Click);
+            // 
+            // btn_type
+            // 
+            this.btn_type.BackColor = System.Drawing.Color.Transparent;
+            this.btn_type.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_type.BorderRadius = 4;
+            this.btn_type.BorderThickness = 1;
+            this.btn_type.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_type.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_type.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_type.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_type.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_type.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_type.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_type.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_type.ForeColor = System.Drawing.Color.White;
+            this.btn_type.Image = ((System.Drawing.Image)(resources.GetObject("btn_type.Image")));
+            this.btn_type.ImageSize = new System.Drawing.Size(16, 16);
+            this.btn_type.Location = new System.Drawing.Point(846, 54);
+            this.btn_type.Name = "btn_type";
+            this.btn_type.Size = new System.Drawing.Size(31, 28);
+            this.btn_type.TabIndex = 519;
+            this.btn_type.Click += new System.EventHandler(this.btn_type_Click);
+            // 
+            // btn_employee
+            // 
+            this.btn_employee.BackColor = System.Drawing.Color.Transparent;
+            this.btn_employee.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_employee.BorderRadius = 4;
+            this.btn_employee.BorderThickness = 1;
+            this.btn_employee.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_employee.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_employee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_employee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_employee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_employee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_employee.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_employee.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_employee.ForeColor = System.Drawing.Color.White;
+            this.btn_employee.Image = ((System.Drawing.Image)(resources.GetObject("btn_employee.Image")));
+            this.btn_employee.ImageSize = new System.Drawing.Size(16, 16);
+            this.btn_employee.Location = new System.Drawing.Point(846, 13);
+            this.btn_employee.Name = "btn_employee";
+            this.btn_employee.Size = new System.Drawing.Size(31, 28);
+            this.btn_employee.TabIndex = 519;
+            this.btn_employee.Click += new System.EventHandler(this.btn_employee_Click);
+            // 
+            // btn_account
+            // 
+            this.btn_account.BackColor = System.Drawing.Color.Transparent;
+            this.btn_account.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_account.BorderRadius = 4;
+            this.btn_account.BorderThickness = 1;
+            this.btn_account.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_account.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_account.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_account.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_account.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_account.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_account.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_account.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_account.ForeColor = System.Drawing.Color.White;
+            this.btn_account.Image = ((System.Drawing.Image)(resources.GetObject("btn_account.Image")));
+            this.btn_account.ImageSize = new System.Drawing.Size(16, 16);
+            this.btn_account.Location = new System.Drawing.Point(385, 137);
+            this.btn_account.Name = "btn_account";
+            this.btn_account.Size = new System.Drawing.Size(31, 28);
+            this.btn_account.TabIndex = 519;
+            this.btn_account.Click += new System.EventHandler(this.btn_account_Click);
+            // 
+            // btn_bank
+            // 
+            this.btn_bank.BackColor = System.Drawing.Color.Transparent;
+            this.btn_bank.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_bank.BorderRadius = 4;
+            this.btn_bank.BorderThickness = 1;
+            this.btn_bank.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_bank.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_bank.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_bank.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_bank.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_bank.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_bank.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_bank.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_bank.ForeColor = System.Drawing.Color.White;
+            this.btn_bank.Image = ((System.Drawing.Image)(resources.GetObject("btn_bank.Image")));
+            this.btn_bank.ImageSize = new System.Drawing.Size(16, 16);
+            this.btn_bank.Location = new System.Drawing.Point(385, 95);
+            this.btn_bank.Name = "btn_bank";
+            this.btn_bank.Size = new System.Drawing.Size(31, 28);
+            this.btn_bank.TabIndex = 519;
+            this.btn_bank.Click += new System.EventHandler(this.btn_bank_Click);
+            // 
+            // btn_status
+            // 
+            this.btn_status.BackColor = System.Drawing.Color.Transparent;
+            this.btn_status.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_status.BorderRadius = 4;
+            this.btn_status.BorderThickness = 1;
+            this.btn_status.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_status.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.btn_status.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_status.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_status.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_status.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_status.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            this.btn_status.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_status.ForeColor = System.Drawing.Color.White;
+            this.btn_status.Image = ((System.Drawing.Image)(resources.GetObject("btn_status.Image")));
+            this.btn_status.ImageSize = new System.Drawing.Size(16, 16);
+            this.btn_status.Location = new System.Drawing.Point(385, 54);
+            this.btn_status.Name = "btn_status";
+            this.btn_status.Size = new System.Drawing.Size(31, 28);
+            this.btn_status.TabIndex = 519;
+            this.btn_status.Click += new System.EventHandler(this.btn_status_Click);
             // 
             // txt_date
             // 
@@ -464,6 +625,33 @@
             this.label5.TabIndex = 50;
             this.label5.Text = "Account #";
             // 
+            // add_button
+            // 
+            this.add_button.BackColor = System.Drawing.Color.Transparent;
+            this.add_button.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(90)))), ((int)(((byte)(0)))));
+            this.add_button.BorderRadius = 5;
+            this.add_button.BorderThickness = 1;
+            this.add_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.add_button.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.add_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.add_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.add_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.add_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.add_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(90)))), ((int)(((byte)(0)))));
+            this.add_button.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.add_button.ForeColor = System.Drawing.Color.White;
+            this.add_button.Image = ((System.Drawing.Image)(resources.GetObject("add_button.Image")));
+            this.add_button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.add_button.ImageSize = new System.Drawing.Size(18, 18);
+            this.add_button.Location = new System.Drawing.Point(791, 218);
+            this.add_button.Name = "add_button";
+            this.add_button.Size = new System.Drawing.Size(86, 41);
+            this.add_button.TabIndex = 16;
+            this.add_button.Text = "ADD";
+            this.add_button.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.add_button.TextOffset = new System.Drawing.Point(1, 0);
+            this.add_button.Click += new System.EventHandler(this.add_button_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -617,33 +805,6 @@
             this.pnl_exit.Size = new System.Drawing.Size(98, 58);
             this.pnl_exit.TabIndex = 203;
             // 
-            // savebutton
-            // 
-            this.savebutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.savebutton.BackColor = System.Drawing.Color.Transparent;
-            this.savebutton.BorderColor = System.Drawing.Color.Transparent;
-            this.savebutton.BorderRadius = 4;
-            this.savebutton.BorderThickness = 1;
-            this.savebutton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.savebutton.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.savebutton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.savebutton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.savebutton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.savebutton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.savebutton.FillColor = System.Drawing.Color.SeaGreen;
-            this.savebutton.Font = new System.Drawing.Font("Century Gothic", 8.5F, System.Drawing.FontStyle.Bold);
-            this.savebutton.ForeColor = System.Drawing.Color.White;
-            this.savebutton.Image = ((System.Drawing.Image)(resources.GetObject("savebutton.Image")));
-            this.savebutton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.savebutton.Location = new System.Drawing.Point(4, 5);
-            this.savebutton.Name = "savebutton";
-            this.savebutton.Size = new System.Drawing.Size(90, 49);
-            this.savebutton.TabIndex = 508;
-            this.savebutton.Text = "Save";
-            this.savebutton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.savebutton.TextOffset = new System.Drawing.Point(1, 0);
-            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
-            // 
             // update_button
             // 
             this.update_button.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -672,23 +833,50 @@
             this.update_button.TextOffset = new System.Drawing.Point(1, 0);
             this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
+            // savebutton
+            // 
+            this.savebutton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.savebutton.BackColor = System.Drawing.Color.Transparent;
+            this.savebutton.BorderColor = System.Drawing.Color.Transparent;
+            this.savebutton.BorderRadius = 4;
+            this.savebutton.BorderThickness = 1;
+            this.savebutton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.savebutton.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.savebutton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.savebutton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.savebutton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.savebutton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.savebutton.FillColor = System.Drawing.Color.SeaGreen;
+            this.savebutton.Font = new System.Drawing.Font("Century Gothic", 8.5F, System.Drawing.FontStyle.Bold);
+            this.savebutton.ForeColor = System.Drawing.Color.White;
+            this.savebutton.Image = ((System.Drawing.Image)(resources.GetObject("savebutton.Image")));
+            this.savebutton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.savebutton.Location = new System.Drawing.Point(4, 5);
+            this.savebutton.Name = "savebutton";
+            this.savebutton.Size = new System.Drawing.Size(90, 49);
+            this.savebutton.TabIndex = 508;
+            this.savebutton.Text = "Save";
+            this.savebutton.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.savebutton.TextOffset = new System.Drawing.Point(1, 0);
+            this.savebutton.Click += new System.EventHandler(this.savebutton_Click);
+            // 
             // productListGridView
             // 
             this.productListGridView.AllowUserToAddRows = false;
             this.productListGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            this.productListGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.productListGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.productListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.productListGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.productListGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.productListGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.productListGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.productListGridView.ColumnHeadersHeight = 18;
             this.productListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.productListGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -705,14 +893,14 @@
             this.Column11,
             this.Column12,
             this.Column13});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.productListGridView.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.productListGridView.DefaultCellStyle = dataGridViewCellStyle12;
             this.productListGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productListGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.productListGridView.Location = new System.Drawing.Point(0, 0);
@@ -746,99 +934,15 @@
             this.productListGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.productListGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productListGridView_CellContentClick);
             // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Amount";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 72;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Description";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 92;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "References";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 92;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Account #";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 87;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Account Title";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 101;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Branch Title";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 94;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Bank Title";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 82;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Transaction Type";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 121;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Status";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 62;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Employee";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 83;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Time";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 55;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 56;
-            // 
             // Delete
             // 
             this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White;
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 7F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            this.Delete.DefaultCellStyle = dataGridViewCellStyle11;
             this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete.HeaderText = "Del";
             this.Delete.MinimumWidth = 10;
@@ -849,6 +953,90 @@
             this.Delete.Text = "X";
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 40;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Date";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 56;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Time";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 55;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Employee";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 83;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Status";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 62;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Transaction Type";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 121;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Bank Title";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 82;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Branch Title";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 94;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Account Title";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 101;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Account #";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 87;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "References";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Width = 92;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Description";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Width = 92;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Amount";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Width = 72;
             // 
             // panel2
             // 
@@ -921,33 +1109,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(895, 58);
             this.panel1.TabIndex = 50;
-            // 
-            // add_button
-            // 
-            this.add_button.BackColor = System.Drawing.Color.Transparent;
-            this.add_button.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(90)))), ((int)(((byte)(0)))));
-            this.add_button.BorderRadius = 5;
-            this.add_button.BorderThickness = 1;
-            this.add_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.add_button.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.add_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.add_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.add_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.add_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.add_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(90)))), ((int)(((byte)(0)))));
-            this.add_button.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
-            this.add_button.ForeColor = System.Drawing.Color.White;
-            this.add_button.Image = ((System.Drawing.Image)(resources.GetObject("add_button.Image")));
-            this.add_button.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.add_button.ImageSize = new System.Drawing.Size(18, 18);
-            this.add_button.Location = new System.Drawing.Point(791, 218);
-            this.add_button.Name = "add_button";
-            this.add_button.Size = new System.Drawing.Size(86, 41);
-            this.add_button.TabIndex = 16;
-            this.add_button.Text = "ADD";
-            this.add_button.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.add_button.TextOffset = new System.Drawing.Point(1, 0);
-            this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
             // panel10
             // 
@@ -1074,167 +1235,6 @@
             this.Closebutton.Size = new System.Drawing.Size(42, 34);
             this.Closebutton.TabIndex = 522;
             this.Closebutton.Click += new System.EventHandler(this.close_button_Click);
-            // 
-            // btn_status
-            // 
-            this.btn_status.BackColor = System.Drawing.Color.Transparent;
-            this.btn_status.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_status.BorderRadius = 4;
-            this.btn_status.BorderThickness = 1;
-            this.btn_status.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_status.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btn_status.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_status.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_status.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_status.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_status.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_status.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_status.ForeColor = System.Drawing.Color.White;
-            this.btn_status.Image = ((System.Drawing.Image)(resources.GetObject("btn_status.Image")));
-            this.btn_status.ImageSize = new System.Drawing.Size(16, 16);
-            this.btn_status.Location = new System.Drawing.Point(385, 54);
-            this.btn_status.Name = "btn_status";
-            this.btn_status.Size = new System.Drawing.Size(31, 28);
-            this.btn_status.TabIndex = 519;
-            this.btn_status.Click += new System.EventHandler(this.btn_status_Click);
-            // 
-            // btn_bank
-            // 
-            this.btn_bank.BackColor = System.Drawing.Color.Transparent;
-            this.btn_bank.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_bank.BorderRadius = 4;
-            this.btn_bank.BorderThickness = 1;
-            this.btn_bank.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_bank.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btn_bank.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_bank.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_bank.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_bank.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_bank.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_bank.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_bank.ForeColor = System.Drawing.Color.White;
-            this.btn_bank.Image = ((System.Drawing.Image)(resources.GetObject("btn_bank.Image")));
-            this.btn_bank.ImageSize = new System.Drawing.Size(16, 16);
-            this.btn_bank.Location = new System.Drawing.Point(385, 95);
-            this.btn_bank.Name = "btn_bank";
-            this.btn_bank.Size = new System.Drawing.Size(31, 28);
-            this.btn_bank.TabIndex = 519;
-            this.btn_bank.Click += new System.EventHandler(this.btn_bank_Click);
-            // 
-            // btn_account
-            // 
-            this.btn_account.BackColor = System.Drawing.Color.Transparent;
-            this.btn_account.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_account.BorderRadius = 4;
-            this.btn_account.BorderThickness = 1;
-            this.btn_account.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_account.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btn_account.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_account.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_account.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_account.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_account.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_account.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_account.ForeColor = System.Drawing.Color.White;
-            this.btn_account.Image = ((System.Drawing.Image)(resources.GetObject("btn_account.Image")));
-            this.btn_account.ImageSize = new System.Drawing.Size(16, 16);
-            this.btn_account.Location = new System.Drawing.Point(385, 137);
-            this.btn_account.Name = "btn_account";
-            this.btn_account.Size = new System.Drawing.Size(31, 28);
-            this.btn_account.TabIndex = 519;
-            this.btn_account.Click += new System.EventHandler(this.btn_account_Click);
-            // 
-            // btn_employee
-            // 
-            this.btn_employee.BackColor = System.Drawing.Color.Transparent;
-            this.btn_employee.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_employee.BorderRadius = 4;
-            this.btn_employee.BorderThickness = 1;
-            this.btn_employee.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_employee.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btn_employee.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_employee.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_employee.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_employee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_employee.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_employee.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_employee.ForeColor = System.Drawing.Color.White;
-            this.btn_employee.Image = ((System.Drawing.Image)(resources.GetObject("btn_employee.Image")));
-            this.btn_employee.ImageSize = new System.Drawing.Size(16, 16);
-            this.btn_employee.Location = new System.Drawing.Point(846, 13);
-            this.btn_employee.Name = "btn_employee";
-            this.btn_employee.Size = new System.Drawing.Size(31, 28);
-            this.btn_employee.TabIndex = 519;
-            this.btn_employee.Click += new System.EventHandler(this.btn_employee_Click);
-            // 
-            // btn_type
-            // 
-            this.btn_type.BackColor = System.Drawing.Color.Transparent;
-            this.btn_type.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_type.BorderRadius = 4;
-            this.btn_type.BorderThickness = 1;
-            this.btn_type.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_type.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btn_type.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_type.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_type.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_type.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_type.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_type.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_type.ForeColor = System.Drawing.Color.White;
-            this.btn_type.Image = ((System.Drawing.Image)(resources.GetObject("btn_type.Image")));
-            this.btn_type.ImageSize = new System.Drawing.Size(16, 16);
-            this.btn_type.Location = new System.Drawing.Point(846, 54);
-            this.btn_type.Name = "btn_type";
-            this.btn_type.Size = new System.Drawing.Size(31, 28);
-            this.btn_type.TabIndex = 519;
-            this.btn_type.Click += new System.EventHandler(this.btn_type_Click);
-            // 
-            // btn_branch
-            // 
-            this.btn_branch.BackColor = System.Drawing.Color.Transparent;
-            this.btn_branch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_branch.BorderRadius = 4;
-            this.btn_branch.BorderThickness = 1;
-            this.btn_branch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_branch.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btn_branch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_branch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_branch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_branch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_branch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_branch.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_branch.ForeColor = System.Drawing.Color.White;
-            this.btn_branch.Image = ((System.Drawing.Image)(resources.GetObject("btn_branch.Image")));
-            this.btn_branch.ImageSize = new System.Drawing.Size(16, 16);
-            this.btn_branch.Location = new System.Drawing.Point(846, 95);
-            this.btn_branch.Name = "btn_branch";
-            this.btn_branch.Size = new System.Drawing.Size(31, 28);
-            this.btn_branch.TabIndex = 519;
-            this.btn_branch.Click += new System.EventHandler(this.btn_branch_Click);
-            // 
-            // btn_account_no
-            // 
-            this.btn_account_no.BackColor = System.Drawing.Color.Transparent;
-            this.btn_account_no.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_account_no.BorderRadius = 4;
-            this.btn_account_no.BorderThickness = 1;
-            this.btn_account_no.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_account_no.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btn_account_no.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_account_no.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_account_no.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_account_no.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_account_no.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(127)))), ((int)(((byte)(196)))));
-            this.btn_account_no.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_account_no.ForeColor = System.Drawing.Color.White;
-            this.btn_account_no.Image = ((System.Drawing.Image)(resources.GetObject("btn_account_no.Image")));
-            this.btn_account_no.ImageSize = new System.Drawing.Size(16, 16);
-            this.btn_account_no.Location = new System.Drawing.Point(846, 137);
-            this.btn_account_no.Name = "btn_account_no";
-            this.btn_account_no.Size = new System.Drawing.Size(31, 28);
-            this.btn_account_no.TabIndex = 519;
-            this.btn_account_no.Click += new System.EventHandler(this.btn_account_no_Click);
             // 
             // form_add_transaction
             // 

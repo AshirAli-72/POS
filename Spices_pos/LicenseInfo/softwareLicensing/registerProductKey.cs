@@ -37,6 +37,7 @@ namespace Spices_pos.LicenseInfo.softwareLicensing
         {
             try
             {
+                //rootsguruadmin@123
                 //7X9G1-0YZT4-EH509-D3XW3-06D5E-7WYB4
 
                 //Run Migrations Scripts

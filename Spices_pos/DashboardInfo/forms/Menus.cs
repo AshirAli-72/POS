@@ -42,6 +42,8 @@ using Spices_pos.LicenseInfo.forms;
 using Spices_pos.LicenseInfo.softwareLicensing;
 using Products_info.forms.RecipeDetails;
 using Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles;
+using Spices_pos.DatabaseInfo.WebConfig;
+using System.Data.SqlClient;
 
 namespace Spices_pos.DashboardInfo.Forms
 {
@@ -762,7 +764,7 @@ namespace Spices_pos.DashboardInfo.Forms
                     if (TextData.image_path != "nill" && TextData.image_path != "" && TextData.image_path != null)
                     {
                         logo_img.Image = Bitmap.FromFile(TextData.backup_path + TextData.image_path);
-                        logo_img2.Image = Bitmap.FromFile(TextData.backup_path + TextData.image_path);
+                        logo_img.Image = Bitmap.FromFile(TextData.backup_path + TextData.image_path);
                     }
                 }
 
@@ -1816,21 +1818,28 @@ namespace Spices_pos.DashboardInfo.Forms
 
         private void button10_Click(object sender, EventArgs e)
         {
-            if (spanel.Width != guna2Button1.Width)
+            if (spanel.Width != guna2Button1.Width) // panel expanded hai → collapse karo
             {
-                spanel.Width = guna2Button1.Width;
-                lbl_shop_title.Visible = false;
-                logo_img.Visible = false;
-                logo_img2.Visible = true;
+                spanel.Width = guna2Button1.Width;   // collapse
+                lbl_shop_title.Visible = false;      // label hide
+
+                logo_img1.Visible = true;            // chhota logo show
+                logo_img.Visible = false;            // bada logo hide
             }
-            else
+            else // panel collapsed hai → expand karo
             {
-                spanel.Width = 185;
-                lbl_shop_title.Visible = true;
-                logo_img.Visible = true;
-                logo_img2.Visible = false;
+                spanel.Width = 185;                  // expand
+                lbl_shop_title.Visible = true;       // label wapas show
+
+                logo_img1.Visible = false;           // chhota logo hide
+                logo_img.Visible = true;             // bada logo show
             }
         }
+
+
+
+
+
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -2481,7 +2490,8 @@ namespace Spices_pos.DashboardInfo.Forms
         //            data.insertUpdateCreateOrDelete(GetSetData.query);
 
 
-        //            GetSetData.query = @"select default_printer from pos_general_settings;";
+        //            GetSetData.query = @"select default_printer from
+        //            s;";
         //            string printer_name = data.SearchStringValuesFromDb(GetSetData.query);
 
         //            if (printer_name != "")

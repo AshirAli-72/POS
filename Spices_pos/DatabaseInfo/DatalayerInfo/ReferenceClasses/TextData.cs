@@ -2,6 +2,8 @@
 {
     public class TextData
     {
+        
+        public static string mobile { get; set; }
         public static string company_title { get; set; }
         public static string brand_title { get; set; }
         public static string dates { get; set; }
@@ -650,5 +652,6 @@
         public static bool newCharityPayment_update { get; set; }
         public static bool newCharityPayment_exit { get; set; }
         // *********************************************************************
+
     }
 }

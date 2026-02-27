@@ -2560,42 +2560,18 @@ namespace Spices_pos.ProductsInfo.reports {
                 base.Columns.Add(this.columnstatus);
                 this.columnremarks = new global::System.Data.DataColumn("remarks", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnremarks);
-                this.columnbrand_title.AllowDBNull = false;
                 this.columnbrand_title.MaxLength = 50;
-                this.columntitle.AllowDBNull = false;
                 this.columntitle.MaxLength = 50;
-                this.columnExpr1.AllowDBNull = false;
                 this.columnExpr1.MaxLength = 50;
-                this.columnExpr2.AllowDBNull = false;
                 this.columnExpr2.MaxLength = 50;
-                this.columnquantity.AllowDBNull = false;
-                this.columnpkg.AllowDBNull = false;
-                this.columntab_pieces.AllowDBNull = false;
-                this.columnpur_price.AllowDBNull = false;
-                this.columnfull_pak.AllowDBNull = false;
-                this.columnsale_price.AllowDBNull = false;
-                this.columnmarket_value.AllowDBNull = false;
-                this.columntrade_off.AllowDBNull = false;
-                this.columncarry_exp.AllowDBNull = false;
-                this.columntotal_pur_price.AllowDBNull = false;
-                this.columntotal_sale_price.AllowDBNull = false;
-                this.columnqty_alert.AllowDBNull = false;
-                this.columnalert_status.AllowDBNull = false;
                 this.columnalert_status.MaxLength = 50;
-                this.columnprod_name.AllowDBNull = false;
                 this.columnprod_name.MaxLength = 200;
                 this.columnbarcode.MaxLength = 50;
-                this.columnprod_state.AllowDBNull = false;
                 this.columnprod_state.MaxLength = 50;
-                this.columnunit.AllowDBNull = false;
                 this.columnunit.MaxLength = 50;
-                this.columnitem_type.AllowDBNull = false;
                 this.columnitem_type.MaxLength = 50;
-                this.columnimage_path.AllowDBNull = false;
                 this.columnimage_path.MaxLength = 1073741823;
-                this.columnstatus.AllowDBNull = false;
                 this.columnstatus.MaxLength = 50;
-                this.columnremarks.AllowDBNull = false;
                 this.columnremarks.MaxLength = 1073741823;
             }
             
@@ -4522,7 +4498,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string brand_title {
                 get {
-                    return ((string)(this[this.tableDataSet.brand_titleColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.brand_titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'brand_title\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.brand_titleColumn] = value;
@@ -4533,7 +4514,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string title {
                 get {
-                    return ((string)(this[this.tableDataSet.titleColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.titleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'title\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.titleColumn] = value;
@@ -4544,7 +4530,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Expr1 {
                 get {
-                    return ((string)(this[this.tableDataSet.Expr1Column]));
+                    try {
+                        return ((string)(this[this.tableDataSet.Expr1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Expr1\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.Expr1Column] = value;
@@ -4555,7 +4546,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Expr2 {
                 get {
-                    return ((string)(this[this.tableDataSet.Expr2Column]));
+                    try {
+                        return ((string)(this[this.tableDataSet.Expr2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Expr2\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.Expr2Column] = value;
@@ -4566,7 +4562,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double quantity {
                 get {
-                    return ((double)(this[this.tableDataSet.quantityColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.quantityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'quantity\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.quantityColumn] = value;
@@ -4577,7 +4578,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double pkg {
                 get {
-                    return ((double)(this[this.tableDataSet.pkgColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.pkgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pkg\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.pkgColumn] = value;
@@ -4588,7 +4594,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double tab_pieces {
                 get {
-                    return ((double)(this[this.tableDataSet.tab_piecesColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.tab_piecesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tab_pieces\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.tab_piecesColumn] = value;
@@ -4599,7 +4610,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double pur_price {
                 get {
-                    return ((double)(this[this.tableDataSet.pur_priceColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.pur_priceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'pur_price\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.pur_priceColumn] = value;
@@ -4610,7 +4626,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double full_pak {
                 get {
-                    return ((double)(this[this.tableDataSet.full_pakColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.full_pakColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'full_pak\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.full_pakColumn] = value;
@@ -4621,7 +4642,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double sale_price {
                 get {
-                    return ((double)(this[this.tableDataSet.sale_priceColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.sale_priceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'sale_price\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.sale_priceColumn] = value;
@@ -4632,7 +4658,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double market_value {
                 get {
-                    return ((double)(this[this.tableDataSet.market_valueColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.market_valueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'market_value\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.market_valueColumn] = value;
@@ -4643,7 +4674,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double trade_off {
                 get {
-                    return ((double)(this[this.tableDataSet.trade_offColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.trade_offColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'trade_off\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.trade_offColumn] = value;
@@ -4654,7 +4690,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double carry_exp {
                 get {
-                    return ((double)(this[this.tableDataSet.carry_expColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.carry_expColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'carry_exp\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.carry_expColumn] = value;
@@ -4665,7 +4706,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double total_pur_price {
                 get {
-                    return ((double)(this[this.tableDataSet.total_pur_priceColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.total_pur_priceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'total_pur_price\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.total_pur_priceColumn] = value;
@@ -4676,7 +4722,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double total_sale_price {
                 get {
-                    return ((double)(this[this.tableDataSet.total_sale_priceColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.total_sale_priceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'total_sale_price\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.total_sale_priceColumn] = value;
@@ -4687,7 +4738,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public double qty_alert {
                 get {
-                    return ((double)(this[this.tableDataSet.qty_alertColumn]));
+                    try {
+                        return ((double)(this[this.tableDataSet.qty_alertColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'qty_alert\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.qty_alertColumn] = value;
@@ -4698,7 +4754,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string alert_status {
                 get {
-                    return ((string)(this[this.tableDataSet.alert_statusColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.alert_statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'alert_status\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.alert_statusColumn] = value;
@@ -4709,7 +4770,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string prod_name {
                 get {
-                    return ((string)(this[this.tableDataSet.prod_nameColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.prod_nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prod_name\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.prod_nameColumn] = value;
@@ -4768,7 +4834,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string prod_state {
                 get {
-                    return ((string)(this[this.tableDataSet.prod_stateColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.prod_stateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'prod_state\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.prod_stateColumn] = value;
@@ -4779,7 +4850,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string unit {
                 get {
-                    return ((string)(this[this.tableDataSet.unitColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.unitColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'unit\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.unitColumn] = value;
@@ -4790,7 +4866,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string item_type {
                 get {
-                    return ((string)(this[this.tableDataSet.item_typeColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.item_typeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'item_type\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.item_typeColumn] = value;
@@ -4817,7 +4898,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string image_path {
                 get {
-                    return ((string)(this[this.tableDataSet.image_pathColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.image_pathColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'image_path\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.image_pathColumn] = value;
@@ -4828,7 +4914,12 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string status {
                 get {
-                    return ((string)(this[this.tableDataSet.statusColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.statusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'status\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.statusColumn] = value;
@@ -4839,11 +4930,232 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string remarks {
                 get {
-                    return ((string)(this[this.tableDataSet.remarksColumn]));
+                    try {
+                        return ((string)(this[this.tableDataSet.remarksColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'remarks\' in table \'DataSet\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataSet.remarksColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isbrand_titleNull() {
+                return this.IsNull(this.tableDataSet.brand_titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setbrand_titleNull() {
+                this[this.tableDataSet.brand_titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IstitleNull() {
+                return this.IsNull(this.tableDataSet.titleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SettitleNull() {
+                this[this.tableDataSet.titleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsExpr1Null() {
+                return this.IsNull(this.tableDataSet.Expr1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetExpr1Null() {
+                this[this.tableDataSet.Expr1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsExpr2Null() {
+                return this.IsNull(this.tableDataSet.Expr2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetExpr2Null() {
+                this[this.tableDataSet.Expr2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsquantityNull() {
+                return this.IsNull(this.tableDataSet.quantityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetquantityNull() {
+                this[this.tableDataSet.quantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IspkgNull() {
+                return this.IsNull(this.tableDataSet.pkgColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetpkgNull() {
+                this[this.tableDataSet.pkgColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istab_piecesNull() {
+                return this.IsNull(this.tableDataSet.tab_piecesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settab_piecesNull() {
+                this[this.tableDataSet.tab_piecesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ispur_priceNull() {
+                return this.IsNull(this.tableDataSet.pur_priceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setpur_priceNull() {
+                this[this.tableDataSet.pur_priceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isfull_pakNull() {
+                return this.IsNull(this.tableDataSet.full_pakColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setfull_pakNull() {
+                this[this.tableDataSet.full_pakColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Issale_priceNull() {
+                return this.IsNull(this.tableDataSet.sale_priceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setsale_priceNull() {
+                this[this.tableDataSet.sale_priceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Ismarket_valueNull() {
+                return this.IsNull(this.tableDataSet.market_valueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setmarket_valueNull() {
+                this[this.tableDataSet.market_valueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istrade_offNull() {
+                return this.IsNull(this.tableDataSet.trade_offColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settrade_offNull() {
+                this[this.tableDataSet.trade_offColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Iscarry_expNull() {
+                return this.IsNull(this.tableDataSet.carry_expColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setcarry_expNull() {
+                this[this.tableDataSet.carry_expColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istotal_pur_priceNull() {
+                return this.IsNull(this.tableDataSet.total_pur_priceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settotal_pur_priceNull() {
+                this[this.tableDataSet.total_pur_priceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Istotal_sale_priceNull() {
+                return this.IsNull(this.tableDataSet.total_sale_priceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Settotal_sale_priceNull() {
+                this[this.tableDataSet.total_sale_priceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isqty_alertNull() {
+                return this.IsNull(this.tableDataSet.qty_alertColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setqty_alertNull() {
+                this[this.tableDataSet.qty_alertColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isalert_statusNull() {
+                return this.IsNull(this.tableDataSet.alert_statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setalert_statusNull() {
+                this[this.tableDataSet.alert_statusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isprod_nameNull() {
+                return this.IsNull(this.tableDataSet.prod_nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setprod_nameNull() {
+                this[this.tableDataSet.prod_nameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4884,6 +5196,42 @@ namespace Spices_pos.ProductsInfo.reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isprod_stateNull() {
+                return this.IsNull(this.tableDataSet.prod_stateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setprod_stateNull() {
+                this[this.tableDataSet.prod_stateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsunitNull() {
+                return this.IsNull(this.tableDataSet.unitColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetunitNull() {
+                this[this.tableDataSet.unitColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isitem_typeNull() {
+                return this.IsNull(this.tableDataSet.item_typeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setitem_typeNull() {
+                this[this.tableDataSet.item_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IssizeNull() {
                 return this.IsNull(this.tableDataSet.sizeColumn);
             }
@@ -4892,6 +5240,42 @@ namespace Spices_pos.ProductsInfo.reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetsizeNull() {
                 this[this.tableDataSet.sizeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isimage_pathNull() {
+                return this.IsNull(this.tableDataSet.image_pathColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setimage_pathNull() {
+                this[this.tableDataSet.image_pathColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsstatusNull() {
+                return this.IsNull(this.tableDataSet.statusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetstatusNull() {
+                this[this.tableDataSet.statusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsremarksNull() {
+                return this.IsNull(this.tableDataSet.remarksColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetremarksNull() {
+                this[this.tableDataSet.remarksColumn] = global::System.Convert.DBNull;
             }
         }
         

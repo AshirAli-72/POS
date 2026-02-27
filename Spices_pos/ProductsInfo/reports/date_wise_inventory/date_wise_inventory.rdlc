@@ -149,10 +149,6 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="report_id">
-          <DataField>report_id</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
         <Field Name="title">
           <DataField>title</DataField>
           <rd:TypeName>System.String</rd:TypeName>

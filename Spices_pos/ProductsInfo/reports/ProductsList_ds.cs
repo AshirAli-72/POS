@@ -1,12 +1,15 @@
-﻿
+﻿namespace Spices_pos.ProductsInfo.reports
+{
+}
+
 namespace Spices_pos.ProductsInfo.reports
 {
+}
 
+namespace Spices_pos.ProductsInfo.reports
+{
+}
 
-    public partial class ProductsList_ds
-    {
-        partial class DataSetDataTable
-        {
-        }
-    }
+namespace Spices_pos.ProductsInfo.reports
+{
 }

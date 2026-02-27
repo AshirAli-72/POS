@@ -19,10 +19,19 @@ namespace Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles
             this.connectionString = connectionString;
             baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             jsonFilesFolder = Path.Combine(baseDirectory, "JsonFiles");
-            jsonFilePath = Path.Combine(jsonFilesFolder, "report_permissions.json"); // Updated file name
-            //CreateJsonFilesFolder();
-            //CreateOrUpdateJsonFile();
+            jsonFilePath = Path.Combine(jsonFilesFolder, "report_permissions.json");
+
+            if (!Directory.Exists(jsonFilesFolder))
+            {
+                Directory.CreateDirectory(jsonFilesFolder);
+            }
+
+            if (!File.Exists(jsonFilePath))
+            {
+                CreateOrUpdateJsonFile();
+            }
         }
+
 
         //private void CreateJsonFilesFolder()
         //{

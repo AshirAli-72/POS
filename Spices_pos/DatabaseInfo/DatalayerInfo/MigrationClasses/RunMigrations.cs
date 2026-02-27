@@ -1,8 +1,8 @@
 ﻿using System.Data.SqlClient;
 using System;
-using System.Windows;
+using System.Windows.Forms;
 using System.IO;
-using System.Windows.Markup;
+using System.Text.RegularExpressions; // for Regex.Split
 using Datalayer;
 using Spices_pos.DatabaseInfo.WebConfig;
 
@@ -26,8 +26,6 @@ namespace Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses
             {
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
                 string migrationsDirectory = Path.Combine(baseDirectory, "Migrations");
-                //string migrationFileName = "script_version_0.2.23.sql";
-
 
                 string migrationFilePath = Path.Combine(migrationsDirectory, migrationFileName);
 
@@ -46,11 +44,6 @@ namespace Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses
                     {
                         File.Copy(sourceMigrationFilePath, migrationFilePath);
                     }
-                    //else
-                    //{
-                    //    MessageBox.Show($"Source migration file not found at {sourceMigrationFilePath}");
-                    //    return;
-                    //}
                 }
 
                 // Read and execute the SQL script from the Migrations directory
@@ -58,11 +51,20 @@ namespace Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses
                 {
                     string sql = File.ReadAllText(migrationFilePath);
 
-
                     if (ExecuteMigration(sql))
                     {
-                        string query = @"insert into pos_migrations values ('" + DateTime.Now.ToShortDateString() + "' , '" + DateTime.Now.ToLongTimeString() + "', '" + migrationFileName + "');";
-                        data.insertUpdateCreateOrDelete(query);
+                        // use parameters instead of concatenation
+                        string query = "INSERT INTO pos_migrations (date,time, migration) VALUES (@date, @time, @file)";
+                        using (SqlConnection conn = new SqlConnection(this.connection_string))
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@date", DateTime.Now.ToShortDateString());
+                            cmd.Parameters.AddWithValue("@time", DateTime.Now.ToLongTimeString());
+                            cmd.Parameters.AddWithValue("@file", migrationFileName);
+
+                            conn.Open();
+                            cmd.ExecuteNonQuery();
+                        }
                     }
                 }
                 else
@@ -80,14 +82,16 @@ namespace Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses
                 {
                     connection.Open();
 
-                    // Split script on "GO" keyword
-                    string[] sqlCommands = sql.Split(new[] { "GO" }, StringSplitOptions.RemoveEmptyEntries);
+                    // Split script on "GO" (case-insensitive, line-based)
+                    string[] sqlCommands = Regex.Split(sql, @"^\s*GO\s*$",
+                        RegexOptions.Multiline | RegexOptions.IgnoreCase);
 
                     foreach (string command in sqlCommands)
                     {
-                        if (!string.IsNullOrWhiteSpace(command))
+                        string trimmed = command.Trim();
+                        if (!string.IsNullOrWhiteSpace(trimmed))
                         {
-                            using (SqlCommand sqlCommand = new SqlCommand(command, connection))
+                            using (SqlCommand sqlCommand = new SqlCommand(trimmed, connection))
                             {
                                 try
                                 {
@@ -95,8 +99,11 @@ namespace Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses
                                 }
                                 catch (SqlException ex)
                                 {
-                                    // Log or display the error message, but continue processing
-                                    //Console.WriteLine($"Warning: Error executing command - {ex.Message}");
+                                    MessageBox.Show($"Error executing SQL command:\n\n{trimmed}\n\n{ex.Message}",
+                                        "Migration Error",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                                    return false; // stop if error
                                 }
                             }
                         }
@@ -107,44 +114,12 @@ namespace Spices_pos.DatabaseInfo.DatalayerInfo.MigrationClasses
             }
             catch (Exception ex)
             {
-                // Log or display the overall error if the connection fails
-                MessageBox.Show($"An error occurred while executing the migration: {ex.Message}");
+                MessageBox.Show($"An error occurred while executing the migration: {ex.Message}",
+                    "Migration Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return false;
             }
         }
-
-
-        //private bool ExecuteMigration(string sql)
-        //{
-        //    try
-        //    {               
-        //        using (SqlConnection connection = new SqlConnection(this.connection_string))
-        //        {
-        //            connection.Open();
-
-        //            // Split script on "GO" keyword
-        //            string[] sqlCommands = sql.Split(new[] { "GO" }, StringSplitOptions.RemoveEmptyEntries);
-
-        //            foreach (string command in sqlCommands)
-        //            {
-        //                if (!string.IsNullOrWhiteSpace(command))
-        //                {
-        //                    using (SqlCommand sqlCommand = new SqlCommand(command, connection))
-        //                    {
-        //                        sqlCommand.ExecuteNonQuery();
-        //                    }
-        //                }
-        //            }
-        //        }
-
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"An error occurred while executing the migration: {ex.Message}");
-
-        //        return false;
-        //    }
-        //}
     }
 }

@@ -44,6 +44,7 @@
             this.btnDefaultShifts = new Guna.UI2.WinForms.Guna2Button();
             this.btnImportProductsExcel = new Guna.UI2.WinForms.Guna2Button();
             this.btnExportDataToDrive = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExportExcelFile = new Guna.UI2.WinForms.Guna2Button();
             this.expense_btn = new Guna.UI2.WinForms.Guna2Button();
             this.btn_bank = new Guna.UI2.WinForms.Guna2Button();
             this.recover_btn = new Guna.UI2.WinForms.Guna2Button();
@@ -58,13 +59,13 @@
             this.btn_db_backup = new Guna.UI2.WinForms.Guna2Button();
             this.btnRestore = new Guna.UI2.WinForms.Guna2Button();
             this.btnAbout = new Guna.UI2.WinForms.Guna2Button();
+            this.btnManagement = new Guna.UI2.WinForms.Guna2Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.btnMinMaxScreen = new Guna.UI2.WinForms.Guna2Button();
             this.label14 = new System.Windows.Forms.Label();
             this.title_lable = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.button8 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExportExcelFile = new Guna.UI2.WinForms.Guna2Button();
             this.panel7.SuspendLayout();
             this.panel18.SuspendLayout();
             this.guna2Panel10.SuspendLayout();
@@ -160,6 +161,7 @@
             this.pnl_list.Controls.Add(this.btn_db_backup);
             this.pnl_list.Controls.Add(this.btnRestore);
             this.pnl_list.Controls.Add(this.btnAbout);
+            this.pnl_list.Controls.Add(this.btnManagement);
             this.pnl_list.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_list.Location = new System.Drawing.Point(50, 50);
             this.pnl_list.Name = "pnl_list";
@@ -383,6 +385,30 @@
             this.btnExportDataToDrive.Text = "Export to Drive";
             this.btnExportDataToDrive.Tile = true;
             this.btnExportDataToDrive.Click += new System.EventHandler(this.btnExportDataToDrive_Click);
+            // 
+            // btnExportExcelFile
+            // 
+            this.btnExportExcelFile.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportExcelFile.BorderColor = System.Drawing.Color.MediumBlue;
+            this.btnExportExcelFile.BorderRadius = 7;
+            this.btnExportExcelFile.BorderThickness = 1;
+            this.btnExportExcelFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportExcelFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportExcelFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportExcelFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportExcelFile.FillColor = System.Drawing.Color.MediumBlue;
+            this.btnExportExcelFile.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.btnExportExcelFile.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcelFile.Image = ((System.Drawing.Image)(resources.GetObject("btnExportExcelFile.Image")));
+            this.btnExportExcelFile.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnExportExcelFile.Location = new System.Drawing.Point(675, 120);
+            this.btnExportExcelFile.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
+            this.btnExportExcelFile.Name = "btnExportExcelFile";
+            this.btnExportExcelFile.Size = new System.Drawing.Size(148, 85);
+            this.btnExportExcelFile.TabIndex = 559;
+            this.btnExportExcelFile.Text = "Export Excel File";
+            this.btnExportExcelFile.Tile = true;
+            this.btnExportExcelFile.Click += new System.EventHandler(this.btnExportExcelFile_Click);
             // 
             // expense_btn
             // 
@@ -720,6 +746,30 @@
             this.btnAbout.Tile = true;
             this.btnAbout.Click += new System.EventHandler(this.btnLicense_Click);
             // 
+            // btnManagement
+            // 
+            this.btnManagement.BackColor = System.Drawing.Color.Transparent;
+            this.btnManagement.BorderColor = System.Drawing.Color.Empty;
+            this.btnManagement.BorderRadius = 7;
+            this.btnManagement.BorderThickness = 1;
+            this.btnManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManagement.FillColor = System.Drawing.Color.SaddleBrown;
+            this.btnManagement.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.btnManagement.ForeColor = System.Drawing.Color.White;
+            this.btnManagement.Image = ((System.Drawing.Image)(resources.GetObject("btnManagement.Image")));
+            this.btnManagement.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnManagement.Location = new System.Drawing.Point(675, 420);
+            this.btnManagement.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
+            this.btnManagement.Name = "btnManagement";
+            this.btnManagement.Size = new System.Drawing.Size(148, 85);
+            this.btnManagement.TabIndex = 560;
+            this.btnManagement.Text = "Cash Management";
+            this.btnManagement.Tile = true;
+            this.btnManagement.Click += new System.EventHandler(this.btnManagement_Click);
+            // 
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(244)))), ((int)(((byte)(255)))));
@@ -771,9 +821,9 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label14.Location = new System.Drawing.Point(3, 4);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(216, 16);
+            this.label14.Size = new System.Drawing.Size(208, 16);
             this.label14.TabIndex = 530;
-            this.label14.Text = "Welcome to The Big Fat Point of Sale";
+            this.label14.Text = "Welcome to The SATA Point of Sale";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // title_lable
@@ -838,30 +888,6 @@
             this.button8.Size = new System.Drawing.Size(47, 39);
             this.button8.TabIndex = 522;
             this.button8.Click += new System.EventHandler(this.Closebutton_Click);
-            // 
-            // btnExportExcelFile
-            // 
-            this.btnExportExcelFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportExcelFile.BorderColor = System.Drawing.Color.MediumBlue;
-            this.btnExportExcelFile.BorderRadius = 7;
-            this.btnExportExcelFile.BorderThickness = 1;
-            this.btnExportExcelFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnExportExcelFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnExportExcelFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnExportExcelFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnExportExcelFile.FillColor = System.Drawing.Color.MediumBlue;
-            this.btnExportExcelFile.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
-            this.btnExportExcelFile.ForeColor = System.Drawing.Color.White;
-            this.btnExportExcelFile.Image = ((System.Drawing.Image)(resources.GetObject("btnExportExcelFile.Image")));
-            this.btnExportExcelFile.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnExportExcelFile.Location = new System.Drawing.Point(675, 120);
-            this.btnExportExcelFile.Margin = new System.Windows.Forms.Padding(5, 5, 5, 10);
-            this.btnExportExcelFile.Name = "btnExportExcelFile";
-            this.btnExportExcelFile.Size = new System.Drawing.Size(148, 85);
-            this.btnExportExcelFile.TabIndex = 559;
-            this.btnExportExcelFile.Text = "Export Excel File";
-            this.btnExportExcelFile.Tile = true;
-            this.btnExportExcelFile.Click += new System.EventHandler(this.btnExportExcelFile_Click);
             // 
             // settings
             // 
@@ -928,5 +954,6 @@
         private Guna.UI2.WinForms.Guna2Button btnExportDataToDrive;
         private Guna.UI2.WinForms.Guna2Button btnAgeRestrictedItems;
         private Guna.UI2.WinForms.Guna2Button btnExportExcelFile;
+        private Guna.UI2.WinForms.Guna2Button btnManagement;
     }
 }

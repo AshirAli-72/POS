@@ -19,8 +19,22 @@ namespace Spices_pos.DatabaseInfo.DatalayerInfo.JsonFiles
             this.connectionString = connectionString;
             baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             jsonFilesFolder = Path.Combine(baseDirectory, "JsonFiles");
-            jsonFilePath = Path.Combine(jsonFilesFolder, "general_settings.json"); // Updated file name
+            jsonFilePath = Path.Combine(jsonFilesFolder, "general_settings.json");
+
+            // Ensure folder exists
+            if (!Directory.Exists(jsonFilesFolder))
+            {
+                Directory.CreateDirectory(jsonFilesFolder);
+            }
+
+            // Ensure file exists
+            if (!File.Exists(jsonFilePath))
+            {
+                CreateOrUpdateJsonFile();   // <-- yeh line file banayegi
+            }
         }
+
+
 
         public void CreateOrUpdateJsonFile()
         {

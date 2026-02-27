@@ -1,18 +1,67 @@
 ﻿namespace Spices_pos.PurchasingInfo.All_Purchases_List
 {
+}
 
-    partial class all_purchase_list_ds
-    {
-        partial class pos_report_settingsDataTable
-        {
-        }
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
 
-        partial class DataTable1DataTable
-        {
-        }
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
 
-        partial class purchasesDataTable
-        {
-        }
-    }
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
+}
+
+namespace Spices_pos.PurchasingInfo.All_Purchases_List
+{
 }

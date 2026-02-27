@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 using Message_box_info.forms;
 using Datalayer;
 using RefereningMaterial;
-using Demand_info.All_Purchases_List;
+using Spices_pos.DemandsInfo.All_Purchases_List;
 using Spices_pos.DatabaseInfo.WebConfig;
 
 namespace Purchase_info.All_Purchases_List

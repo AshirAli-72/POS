@@ -30,7 +30,6 @@ namespace Purchase_info.All_Purchases_List
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllPurchaseList));
             this.lbl_company = new System.Windows.Forms.Label();
             this.txt_company = new System.Windows.Forms.ComboBox();
@@ -71,10 +70,6 @@ namespace Purchase_info.All_Purchases_List
             this.panel8 = new System.Windows.Forms.Panel();
             this.lbl_shop_title = new System.Windows.Forms.Label();
             this.logo_img2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.purchasesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.all_purchase_list_ds = new Spices_pos.PurchasingInfo.All_Purchases_List.all_purchase_list_ds();
-            this.pos_report_settingsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnl_all_transaction.SuspendLayout();
             this.pnl_date_wise.SuspendLayout();
             this.pnl_company_wise.SuspendLayout();
@@ -90,10 +85,6 @@ namespace Purchase_info.All_Purchases_List
             this.sidePanel.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_img2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchasesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.all_purchase_list_ds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pos_report_settingsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_company
@@ -695,26 +686,6 @@ namespace Purchase_info.All_Purchases_List
             this.logo_img2.TabStop = false;
             this.logo_img2.UseTransparentBackground = true;
             // 
-            // purchasesBindingSource
-            // 
-            this.purchasesBindingSource.DataMember = "purchases";
-            this.purchasesBindingSource.DataSource = this.all_purchase_list_ds;
-            // 
-            // all_purchase_list_ds
-            // 
-            this.all_purchase_list_ds.DataSetName = "all_purchase_list_ds";
-            this.all_purchase_list_ds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pos_report_settingsBindingSource
-            // 
-            this.pos_report_settingsBindingSource.DataMember = "pos_report_settings";
-            this.pos_report_settingsBindingSource.DataSource = this.all_purchase_list_ds;
-            // 
-            // DataTable1BindingSource
-            // 
-            this.DataTable1BindingSource.DataMember = "DataTable1";
-            this.DataTable1BindingSource.DataSource = this.all_purchase_list_ds;
-            // 
             // AllPurchaseList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -745,10 +716,6 @@ namespace Purchase_info.All_Purchases_List
             this.sidePanel.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo_img2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.purchasesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.all_purchase_list_ds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pos_report_settingsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -770,10 +737,6 @@ namespace Purchase_info.All_Purchases_List
         private Microsoft.Reporting.WinForms.ReportViewer viewer_company_wise;
         private System.Windows.Forms.Label lbl_company;
         private System.Windows.Forms.ComboBox txt_company;
-        private System.Windows.Forms.BindingSource purchasesBindingSource;
-        private all_purchase_list_ds all_purchase_list_ds;
-        private System.Windows.Forms.BindingSource pos_report_settingsBindingSource;
-        private System.Windows.Forms.BindingSource DataTable1BindingSource;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;

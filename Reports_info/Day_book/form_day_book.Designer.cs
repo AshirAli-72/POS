@@ -53,14 +53,14 @@
             this.RecoveriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PurchasesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ExpensesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.InventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Purchase_returnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.expired_itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pnl_summary = new System.Windows.Forms.Panel();
-            this.Viewer_Summary = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.InventoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnl_detailed = new System.Windows.Forms.Panel();
             this.viewer_detailed = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pnl_summary = new System.Windows.Forms.Panel();
+            this.Viewer_Summary = new Microsoft.Reporting.WinForms.ReportViewer();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
@@ -91,12 +91,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.RecoveriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PurchasesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InventoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Purchase_returnBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expired_itemsBindingSource)).BeginInit();
-            this.pnl_summary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryBindingSource)).BeginInit();
             this.pnl_detailed.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.pnl_summary.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel10.SuspendLayout();
@@ -139,11 +139,6 @@
             this.ExpensesBindingSource.DataMember = "Expenses";
             this.ExpensesBindingSource.DataSource = this.day_book_ds;
             // 
-            // InventoryBindingSource
-            // 
-            this.InventoryBindingSource.DataMember = "Inventory";
-            this.InventoryBindingSource.DataSource = this.day_book_ds;
-            // 
             // Purchase_returnBindingSource
             // 
             this.Purchase_returnBindingSource.DataMember = "Purchase_return";
@@ -154,51 +149,10 @@
             this.expired_itemsBindingSource.DataMember = "expired_items";
             this.expired_itemsBindingSource.DataSource = this.day_book_ds;
             // 
-            // pnl_summary
+            // InventoryBindingSource
             // 
-            this.pnl_summary.Controls.Add(this.Viewer_Summary);
-            this.pnl_summary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_summary.Location = new System.Drawing.Point(0, 0);
-            this.pnl_summary.Name = "pnl_summary";
-            this.pnl_summary.Size = new System.Drawing.Size(847, 584);
-            this.pnl_summary.TabIndex = 18;
-            // 
-            // Viewer_Summary
-            // 
-            this.Viewer_Summary.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "Customer_Sales";
-            reportDataSource1.Value = this.Customers_SalesBindingSource;
-            reportDataSource2.Name = "customer_returns";
-            reportDataSource2.Value = this.CustomerReturnsBindingSource;
-            reportDataSource3.Name = "recoveries";
-            reportDataSource3.Value = this.RecoveriesBindingSource;
-            reportDataSource4.Name = "purchases";
-            reportDataSource4.Value = this.PurchasesBindingSource;
-            reportDataSource5.Name = "expenses";
-            reportDataSource5.Value = this.ExpensesBindingSource;
-            reportDataSource6.Name = "inventory";
-            reportDataSource6.Value = this.InventoryBindingSource;
-            reportDataSource7.Name = "low_inventory";
-            reportDataSource7.Value = this.InventoryBindingSource;
-            reportDataSource8.Name = "purchases_return";
-            reportDataSource8.Value = this.Purchase_returnBindingSource;
-            reportDataSource9.Name = "expired_items";
-            reportDataSource9.Value = this.expired_itemsBindingSource;
-            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource1);
-            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource2);
-            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource3);
-            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource4);
-            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource5);
-            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource6);
-            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource7);
-            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource8);
-            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource9);
-            this.Viewer_Summary.LocalReport.ReportEmbeddedResource = "Reports_info.Day_book.summary_report.summay_reports.rdlc";
-            this.Viewer_Summary.Location = new System.Drawing.Point(0, 0);
-            this.Viewer_Summary.Name = "Viewer_Summary";
-            this.Viewer_Summary.ServerReport.BearerToken = null;
-            this.Viewer_Summary.Size = new System.Drawing.Size(847, 584);
-            this.Viewer_Summary.TabIndex = 15;
+            this.InventoryBindingSource.DataMember = "Inventory";
+            this.InventoryBindingSource.DataSource = this.day_book_ds;
             // 
             // pnl_detailed
             // 
@@ -211,30 +165,30 @@
             // viewer_detailed
             // 
             this.viewer_detailed.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource10.Name = "Customer_Sales";
-            reportDataSource10.Value = this.Customers_SalesBindingSource;
-            reportDataSource11.Name = "customer_returns";
-            reportDataSource11.Value = this.CustomerReturnsBindingSource;
-            reportDataSource12.Name = "recoveries";
-            reportDataSource12.Value = this.RecoveriesBindingSource;
-            reportDataSource13.Name = "purchases";
-            reportDataSource13.Value = this.PurchasesBindingSource;
-            reportDataSource14.Name = "expenses";
-            reportDataSource14.Value = this.ExpensesBindingSource;
-            reportDataSource15.Name = "purchases_return";
-            reportDataSource15.Value = this.Purchase_returnBindingSource;
-            reportDataSource16.Name = "expired_items";
-            reportDataSource16.Value = this.expired_itemsBindingSource;
-            reportDataSource17.Name = "low_inventory";
-            reportDataSource17.Value = this.InventoryBindingSource;
-            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource10);
-            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource11);
-            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource12);
-            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource13);
-            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource14);
-            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource15);
-            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource16);
-            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource17);
+            reportDataSource1.Name = "Customer_Sales";
+            reportDataSource1.Value = this.Customers_SalesBindingSource;
+            reportDataSource2.Name = "customer_returns";
+            reportDataSource2.Value = this.CustomerReturnsBindingSource;
+            reportDataSource3.Name = "recoveries";
+            reportDataSource3.Value = this.RecoveriesBindingSource;
+            reportDataSource4.Name = "purchases";
+            reportDataSource4.Value = this.PurchasesBindingSource;
+            reportDataSource5.Name = "expenses";
+            reportDataSource5.Value = this.ExpensesBindingSource;
+            reportDataSource6.Name = "purchases_return";
+            reportDataSource6.Value = this.Purchase_returnBindingSource;
+            reportDataSource7.Name = "expired_items";
+            reportDataSource7.Value = this.expired_itemsBindingSource;
+            reportDataSource8.Name = "low_inventory";
+            reportDataSource8.Value = this.InventoryBindingSource;
+            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource1);
+            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource2);
+            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource3);
+            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource4);
+            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource5);
+            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource6);
+            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource7);
+            this.viewer_detailed.LocalReport.DataSources.Add(reportDataSource8);
             this.viewer_detailed.LocalReport.ReportEmbeddedResource = "Reports_info.Day_book.detailed_report.detailed_report.rdlc";
             this.viewer_detailed.Location = new System.Drawing.Point(0, 0);
             this.viewer_detailed.Name = "viewer_detailed";
@@ -251,6 +205,52 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(847, 584);
             this.panel2.TabIndex = 21;
+            // 
+            // pnl_summary
+            // 
+            this.pnl_summary.Controls.Add(this.Viewer_Summary);
+            this.pnl_summary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_summary.Location = new System.Drawing.Point(0, 0);
+            this.pnl_summary.Name = "pnl_summary";
+            this.pnl_summary.Size = new System.Drawing.Size(847, 584);
+            this.pnl_summary.TabIndex = 18;
+            // 
+            // Viewer_Summary
+            // 
+            this.Viewer_Summary.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource9.Name = "Customer_Sales";
+            reportDataSource9.Value = this.Customers_SalesBindingSource;
+            reportDataSource10.Name = "customer_returns";
+            reportDataSource10.Value = this.CustomerReturnsBindingSource;
+            reportDataSource11.Name = "recoveries";
+            reportDataSource11.Value = this.RecoveriesBindingSource;
+            reportDataSource12.Name = "purchases";
+            reportDataSource12.Value = this.PurchasesBindingSource;
+            reportDataSource13.Name = "expenses";
+            reportDataSource13.Value = this.ExpensesBindingSource;
+            reportDataSource14.Name = "inventory";
+            reportDataSource14.Value = this.InventoryBindingSource;
+            reportDataSource15.Name = "low_inventory";
+            reportDataSource15.Value = this.InventoryBindingSource;
+            reportDataSource16.Name = "purchases_return";
+            reportDataSource16.Value = this.Purchase_returnBindingSource;
+            reportDataSource17.Name = "expired_items";
+            reportDataSource17.Value = this.expired_itemsBindingSource;
+            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource9);
+            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource10);
+            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource11);
+            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource12);
+            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource13);
+            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource14);
+            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource15);
+            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource16);
+            this.Viewer_Summary.LocalReport.DataSources.Add(reportDataSource17);
+            this.Viewer_Summary.LocalReport.ReportEmbeddedResource = "Reports_info.Day_book.summary_report.summay_reports.rdlc";
+            this.Viewer_Summary.Location = new System.Drawing.Point(0, 0);
+            this.Viewer_Summary.Name = "Viewer_Summary";
+            this.Viewer_Summary.ServerReport.BearerToken = null;
+            this.Viewer_Summary.Size = new System.Drawing.Size(847, 584);
+            this.Viewer_Summary.TabIndex = 15;
             // 
             // guna2Panel2
             // 
@@ -347,7 +347,7 @@
             this.view_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.view_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.view_button.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(110)))), ((int)(((byte)(190)))));
-            this.view_button.Font = new System.Drawing.Font("Century Gothic", 7.5F, System.Drawing.FontStyle.Bold);
+            this.view_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold);
             this.view_button.ForeColor = System.Drawing.Color.White;
             this.view_button.ImageOffset = new System.Drawing.Point(5, 0);
             this.view_button.ImageSize = new System.Drawing.Size(16, 16);
@@ -373,33 +373,33 @@
             this.ToDate.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
             this.ToDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
             this.ToDate.CustomFormat = "dd/MMMM/yyyy";
-            this.ToDate.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.ToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ToDate.Location = new System.Drawing.Point(337, 11);
             this.ToDate.Name = "ToDate";
-            this.ToDate.Size = new System.Drawing.Size(218, 24);
+            this.ToDate.Size = new System.Drawing.Size(218, 23);
             this.ToDate.TabIndex = 86;
             this.ToDate.Value = new System.DateTime(2019, 9, 23, 0, 0, 0, 0);
             // 
             // lbl_from_date
             // 
             this.lbl_from_date.AutoSize = true;
-            this.lbl_from_date.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_from_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.lbl_from_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbl_from_date.Location = new System.Drawing.Point(19, 15);
             this.lbl_from_date.Name = "lbl_from_date";
-            this.lbl_from_date.Size = new System.Drawing.Size(39, 16);
+            this.lbl_from_date.Size = new System.Drawing.Size(44, 15);
             this.lbl_from_date.TabIndex = 85;
             this.lbl_from_date.Text = "From:";
             // 
             // lbl_to_date
             // 
             this.lbl_to_date.AutoSize = true;
-            this.lbl_to_date.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.lbl_to_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.lbl_to_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbl_to_date.Location = new System.Drawing.Point(308, 15);
             this.lbl_to_date.Name = "lbl_to_date";
-            this.lbl_to_date.Size = new System.Drawing.Size(24, 16);
+            this.lbl_to_date.Size = new System.Drawing.Size(27, 15);
             this.lbl_to_date.TabIndex = 84;
             this.lbl_to_date.Text = "To:";
             // 
@@ -408,11 +408,11 @@
             this.FromDate.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
             this.FromDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(100)))), ((int)(((byte)(146)))));
             this.FromDate.CustomFormat = "dd/MMMM/yyyy";
-            this.FromDate.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.FromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FromDate.Location = new System.Drawing.Point(64, 11);
             this.FromDate.Name = "FromDate";
-            this.FromDate.Size = new System.Drawing.Size(219, 24);
+            this.FromDate.Size = new System.Drawing.Size(219, 23);
             this.FromDate.TabIndex = 87;
             this.FromDate.Value = new System.DateTime(2019, 9, 23, 0, 0, 0, 0);
             // 
@@ -436,11 +436,11 @@
             this.lblReportTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblReportTitle.AutoSize = true;
             this.lblReportTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblReportTitle.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Bold);
+            this.lblReportTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lblReportTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblReportTitle.Location = new System.Drawing.Point(4, 6);
             this.lblReportTitle.Name = "lblReportTitle";
-            this.lblReportTitle.Size = new System.Drawing.Size(166, 23);
+            this.lblReportTitle.Size = new System.Drawing.Size(172, 24);
             this.lblReportTitle.TabIndex = 539;
             this.lblReportTitle.Text = "Date Wise Report";
             this.lblReportTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -498,11 +498,12 @@
             this.guna2Button5.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button5.Image")));
             this.guna2Button5.ImageOffset = new System.Drawing.Point(0, 3);
             this.guna2Button5.ImageSize = new System.Drawing.Size(25, 28);
-            this.guna2Button5.Location = new System.Drawing.Point(856, 0);
+            this.guna2Button5.Location = new System.Drawing.Point(727, 1);
             this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.Size = new System.Drawing.Size(1, 44);
+            this.guna2Button5.Size = new System.Drawing.Size(38, 33);
             this.guna2Button5.TabIndex = 508;
-            this.guna2Button5.Visible = false;
+            this.guna2Button5.Visible = true;
+            this.guna2Button5.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // guna2Button1
             // 
@@ -558,7 +559,7 @@
             this.btn_detailed.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_detailed.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_detailed.FillColor = System.Drawing.Color.White;
-            this.btn_detailed.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_detailed.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_detailed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_detailed.HoverState.BorderColor = System.Drawing.Color.White;
             this.btn_detailed.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -587,7 +588,7 @@
             this.btn_summary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_summary.Dock = System.Windows.Forms.DockStyle.Top;
             this.btn_summary.FillColor = System.Drawing.Color.White;
-            this.btn_summary.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btn_summary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.btn_summary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_summary.HoverState.BorderColor = System.Drawing.Color.White;
             this.btn_summary.HoverState.CustomBorderColor = System.Drawing.Color.White;
@@ -600,7 +601,7 @@
             this.btn_summary.TabIndex = 535;
             this.btn_summary.Text = "Summary";
             this.btn_summary.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btn_summary.Click += new System.EventHandler(this.bill_wise_button_CheckedChanged);
+            this.btn_summary.Click += new System.EventHandler(this.btn_summary_Click);
             // 
             // panel8
             // 
@@ -616,7 +617,7 @@
             // lbl_shop_title
             // 
             this.lbl_shop_title.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_shop_title.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.lbl_shop_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.lbl_shop_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbl_shop_title.Location = new System.Drawing.Point(3, 67);
             this.lbl_shop_title.Name = "lbl_shop_title";
@@ -653,20 +654,22 @@
             this.Name = "form_day_book";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "form_day_book";
+            this.KeyPreview = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.form_day_book_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.form_day_book_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.Customers_SalesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.day_book_ds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerReturnsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RecoveriesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PurchasesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ExpensesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InventoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Purchase_returnBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expired_itemsBindingSource)).EndInit();
-            this.pnl_summary.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.InventoryBindingSource)).EndInit();
             this.pnl_detailed.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.pnl_summary.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel10.ResumeLayout(false);
@@ -684,9 +687,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnl_summary;
-        private Microsoft.Reporting.WinForms.ReportViewer Viewer_Summary;
         private System.Windows.Forms.Panel pnl_detailed;
         private Microsoft.Reporting.WinForms.ReportViewer viewer_detailed;
         private System.Windows.Forms.Panel panel2;
@@ -723,5 +723,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label lbl_shop_title;
         private Guna.UI2.WinForms.Guna2PictureBox logo_img2;
+        private System.Windows.Forms.Panel pnl_summary;
+        private Microsoft.Reporting.WinForms.ReportViewer Viewer_Summary;
     }
 }

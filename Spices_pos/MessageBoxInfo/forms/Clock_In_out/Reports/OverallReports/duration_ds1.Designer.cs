@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Message_box_info.forms.Clock_In_out.Reports.OverallReports {
+namespace Spices_pos.MessageBoxInfo.forms.Clock_In_out.Reports.OverallReports {
     
     
     /// <summary>

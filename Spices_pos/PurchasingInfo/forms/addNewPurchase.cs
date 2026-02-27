@@ -1807,6 +1807,10 @@ namespace Purchase_info.forms
                                                                         averageCost = double.Parse(salesAndReturnsGridView.Rows[i].Cells[10].Value.ToString());
                                                                     }
                                                                 }
+                                                                else
+                                                                {
+                                                                    averageCost = double.Parse(salesAndReturnsGridView.Rows[i].Cells[10].Value.ToString());
+                                                                }
 
                                                                 //*********************************************************
 
@@ -2178,6 +2182,10 @@ namespace Purchase_info.forms
                                                                     averageCost = double.Parse(salesAndReturnsGridView.Rows[i].Cells[10].Value.ToString());
                                                                 }
                                                             }
+                                                            else
+                                                            {
+                                                                averageCost = double.Parse(salesAndReturnsGridView.Rows[i].Cells[10].Value.ToString());
+                                                            }
 
                                                             //*********************************************************
                                                             GetSetData.query = @"insert into pos_pur_return_items values ('" + salesAndReturnsGridView.Rows[i].Cells[6].Value.ToString() + "' , '" + salesAndReturnsGridView.Rows[i].Cells[7].Value.ToString() + "' , '" + salesAndReturnsGridView.Rows[i].Cells[9].Value.ToString() + "' , '" + averageCost.ToString() + "' , '" + salesAndReturnsGridView.Rows[i].Cells[11].Value.ToString() + "' , '" + salesAndReturnsGridView.Rows[i].Cells[13].Value.ToString() + "' , '" + salesAndReturnsGridView.Rows[i].Cells[14].Value.ToString() + "' , '" + TextData.total_pur_price.ToString() + "' , '" + TextData.total_sale_price.ToString() + "' , '" + product_id_db.ToString() + "' , '" + purchase_id_db.ToString() + "', '" + salesAndReturnsGridView.Rows[i].Cells[19].Value.ToString() + "');";
@@ -2498,6 +2506,10 @@ namespace Purchase_info.forms
                                                             {
                                                                 averageCost = previousPurchasePrice;
                                                             }
+                                                        }
+                                                        else
+                                                        {
+                                                            averageCost = double.Parse(salesAndReturnsGridView.Rows[i].Cells[10].Value.ToString());
                                                         }
 
                                                             if (is_stock_exists != 0)
