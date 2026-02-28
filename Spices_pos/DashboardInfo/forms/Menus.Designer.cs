@@ -823,7 +823,7 @@
             this.btnCustomerDues.Name = "btnCustomerDues";
             this.btnCustomerDues.Size = new System.Drawing.Size(165, 39);
             this.btnCustomerDues.TabIndex = 536;
-            this.btnCustomerDues.Text = "Customer Duess";
+            this.btnCustomerDues.Text = "Customer Dues";
             this.btnCustomerDues.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomerDues.TextOffset = new System.Drawing.Point(15, 0);
             this.btnCustomerDues.Click += new System.EventHandler(this.btnSalaries_Click);
