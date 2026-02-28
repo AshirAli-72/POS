@@ -814,7 +814,7 @@
             this.btnCustomerDues.HoverState.CustomBorderColor = System.Drawing.Color.White;
             this.btnCustomerDues.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(120)))));
             this.btnCustomerDues.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnCustomerDues.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            this.btnCustomerDues.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnCustomerDues.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomerDues.Image")));
             this.btnCustomerDues.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomerDues.ImageOffset = new System.Drawing.Point(7, 0);
@@ -823,7 +823,7 @@
             this.btnCustomerDues.Name = "btnCustomerDues";
             this.btnCustomerDues.Size = new System.Drawing.Size(165, 39);
             this.btnCustomerDues.TabIndex = 536;
-            this.btnCustomerDues.Text = "Customer Dues";
+            this.btnCustomerDues.Text = "Customer Duess";
             this.btnCustomerDues.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomerDues.TextOffset = new System.Drawing.Point(15, 0);
             this.btnCustomerDues.Click += new System.EventHandler(this.btnSalaries_Click);
